@@ -1,0 +1,9 @@
+# 수집
+google-play-scraper>=1.2.7
+# 분류·번역·초안 (Claude API, anthropic 1.x)
+anthropic>=1.11,<2
+# 답변 등록 (post_replies.py --execute 때만 필요)
+google-api-python-client>=2.100
+google-auth>=2.20
+PyJWT[crypto]>=2.8
+requests>=2.31

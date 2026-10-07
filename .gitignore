@@ -1,0 +1,18 @@
+# 파이프라인 작업 폴더·결과
+work/
+posted_replies.jsonl
+approved_replies_*.json
+approved_replies_*.csv
+review_state_*.json
+
+# 비밀 정보 — 절대 커밋하지 않는다
+.env
+*.p8
+*service-account*.json
+
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+
+.DS_Store

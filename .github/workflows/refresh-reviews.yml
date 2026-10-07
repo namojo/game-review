@@ -1,0 +1,71 @@
+# 리뷰 수집 → 분류·번역·초안 → 검증 → data/reviews.json 갱신 → 커밋
+# 필요한 Secrets: ANTHROPIC_API_KEY
+# 누적 방식: 기존 data/reviews.json 에 이미 있는 리뷰는 ai 를 그대로 두고, 새 id 만 분류·초안을 만들어 추가한다.
+#            다시 수집된 기존 리뷰는 원문·기존 답변·status 만 최신으로 바뀐다. 보존 기간은 KEEP_DAYS(일).
+# 운영 전환 시에는 결과를 DB에 저장하고 화면이 DB에서 읽게 바꾼다(pipeline/README.md "운영 전환" 참고).
+name: refresh-reviews
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "수집 기간(일). 일일 운영은 2, 현황 분석은 60"
+        default: "2"
+        required: true
+  # 매일 09:00 KST(00:00 UTC). 운영 전환 때 주석을 푼다.
+  # schedule:
+  #   - cron: "0 0 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-reviews
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DAYS: ${{ github.event.inputs.days || '2' }}
+      KEEP_DAYS: "180"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 의존성 설치
+        run: pip install -r pipeline/requirements.txt
+
+      - name: 1. 수집 (Google Play + App Store RSS)
+        run: python pipeline/fetch_reviews.py --out work/01_collector_reviews_raw.json --days "$DAYS" --max-per-source 200
+
+      - name: 2. 사전 분류·배치 (이미 분석한 id 는 빼고 새 리뷰만)
+        run: python pipeline/make_batches.py --raw work/01_collector_reviews_raw.json --outdir work/02_batches --exclude-existing data/reviews.json
+
+      - name: 3. 분류·번역·초안 (Claude Haiku 4.5 + Sonnet 5.5)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python pipeline/draft_replies.py --manifest work/02_batches/manifest.json --outdir work --workers 4 --existing data/reviews.json
+
+      - name: 4. 검증 (오류가 있으면 데이터를 바꾸지 않고 멈춘다)
+        run: python pipeline/validate_drafts.py --all work
+
+      - name: 5. 누적 병합 → data/reviews.json (기존 리뷰·ai 유지, 새 id 추가, stats 전체 재계산)
+        run: python pipeline/merge_for_site.py --workspace work --base data/reviews.json --out data/reviews.json --keep-days "$KEEP_DAYS"
+
+      # 운영 전환: 여기서 P1 신규 건을 사내 메신저 웹훅으로 알린다.
+
+      - name: 6. 커밋·푸시 (Pages 가 자동으로 다시 배포)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/reviews.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "data: 리뷰 갱신 (최근 ${DAYS}일)"
+          git push
