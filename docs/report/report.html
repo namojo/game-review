@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>썬더게임즈 AI 전환 컨설팅 — 통합 보고서 | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../index.html">홈</a>
+<details class="side-sec" open><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="report.html" aria-current="page">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../task2/gallery.html">이미지 갤러리</a></li><li><a href="../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">통합 보고서<span class="path">deliverables/report/report.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#1-요약">1. 요약</a><ul><li><a href="#과제별-결론">과제별 결론</a></li><li><a href="#기대-효과시간">기대 효과(시간)</a></li><li><a href="#바로-결정할-일-3가지">바로 결정할 일 3가지</a></li></ul></li><li><a href="#2-진단">2. 진단</a><ul><li><a href="#21-고객이-알려-준-현재-방식원문-인용">2.1 고객이 알려 준 현재 방식(원문 인용)</a></li><li><a href="#22-데이터로-확인한-사실-공개-리뷰-378건2026-08-08-10-06">2.2 데이터로 확인한 사실 — 공개 리뷰 378건(2026-08-08 ~ 10-06)</a></li></ul></li><li><a href="#3-과제별-적용-방안">3. 과제별 적용 방안</a><ul><li><a href="#31-과제-1-리뷰-대응-자동화">3.1 과제 1 — 리뷰 대응 자동화</a></li><li><a href="#32-과제-2-게임-내-주간-이벤트-제작-자동화">3.2 과제 2 — 게임 내 주간 이벤트 제작 자동화</a></li><li><a href="#33-과제-3-metagoogle-광고-운영과-성과-분석-자동화">3.3 과제 3 — Meta·Google 광고 운영과 성과 분석 자동화</a></li></ul></li><li><a href="#4-roi">4. ROI</a><ul><li><a href="#41-과제-1-리뷰-대응">4.1 과제 1 — 리뷰 대응</a></li><li><a href="#42-과제-2-주간-이벤트">4.2 과제 2 — 주간 이벤트</a></li><li><a href="#43-과제-3-광고-운영">4.3 과제 3 — 광고 운영</a></li><li><a href="#44-합계">4.4 합계</a></li></ul></li><li><a href="#5-통합-로드맵12주-2026-10-12-2027-01-03">5. 통합 로드맵(12주, 2026-10-12 ~ 2027-01-03)</a></li><li><a href="#6-거버넌스-ai-사용-원칙">6. 거버넌스 — AI 사용 원칙</a></li><li><a href="#7-다음-단계확인-요청-사항">7. 다음 단계·확인 요청 사항</a></li><li><a href="#8-부록">8. 부록</a><ul><li><a href="#81-데이터-출처">8.1 데이터 출처</a></li><li><a href="#82-용어">8.2 용어</a></li><li><a href="#83-하네스-사용법-이-프로젝트를-claude-code로-다시-돌리는-방법">8.3 하네스 사용법 — 이 프로젝트를 Claude Code로 다시 돌리는 방법</a></li></ul></li></ul></details></aside>
+    <article class="doc"><h1 id="썬더게임즈-ai-전환-컨설팅-통합-보고서">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</h1>
+<ul>
+<li>고객: 썬더게임즈(T.G Inc, 부산) · 대상 게임: 「원시인 형님들 키우기 : 문명 x 방치형 RPG」(Google Play 평점 4.47[실측, 2026-10-07 ko 스토어 기준] · 설치 500만+, App Store <code>1490207503</code>)</li>
+<li>작성: 2026-10-07(수) · IT 전략 컨설팅팀</li>
+<li>숫자 표시: <strong>[실측]</strong> 이 프로젝트에서 데이터로 확인 · <strong>[고객]</strong> 썬더게임즈가 알려 준 값 · <strong>[가정]</strong> 컨설턴트 가정(근거를 함께 적음)</li>
+<li>과제별 상세: 과제 1 <a class="code-link" href="../task1-review-automation/guide.html"><code>../task1-review-automation/guide.md</code></a> · 과제 2 <code>../task2-weekly-event/</code> · 과제 3 <a class="code-link" href="../task3-ads-automation/guide.html"><code>../task3-ads-automation/guide.md</code></a></li>
+</ul>
+<hr />
+<h2 id="1-요약">1. 요약</h2>
+<h3 id="과제별-결론">과제별 결론</h3>
+<table>
+<thead>
+<tr>
+<th>과제</th>
+<th>결론</th>
+<th>PoC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 리뷰 대응 자동화</strong></td>
+<td>바로 도입한다. 절감 시간은 작지만(연 약 62시간), 답변 품질과 속도가 크게 바뀐다. 지금은 60일 동안 답변이 13일에만 몰려 등록되고, 답변까지 중앙값 3.3일(답변 뒤 리뷰를 고친 10건 제외)이 걸린다[실측]</td>
+<td>검수 웹서비스 https://namojo.github.io/game-review/ (리뷰 378건, 13개 언어)</td>
+</tr>
+<tr>
+<td><strong>2. 주간 이벤트 제작 자동화</strong></td>
+<td>바로 도입한다. 셋 중 절감 시간이 가장 크다(연 약 234~806시간). 디자인 1~2일 작업 중 키아트 생성과 13개 언어 배너 합성이 몇 분으로 줄어든다. 사람은 주제 승인, 수치 결정, 최종 검수를 맡는다[고객+가정, 4.2절]</td>
+<td>W44 「형님들의 할로윈 호박 사냥」 키트(13개 언어, 배너 39장, 스토어 시트)</td>
+</tr>
+<tr>
+<td><strong>3. 광고 운영·분석 자동화</strong></td>
+<td>데이터 접근 권한을 받은 뒤 3단계로 도입한다. 매일 1시간 이상 걸리던 작업이 15분 안팎으로 줄어든다(연 약 188~208시간)[가정]. 효과의 핵심은 추적 누락·CPI 급등·소재 피로를 하루 안에 찾는 것이다</td>
+<td>가상 데이터 분석 샘플. 심은 문제 7건 탐지, 오탐 0, 5줄 일일 리포트</td>
+</tr>
+</tbody>
+</table>
+<h3 id="기대-효과시간">기대 효과(시간)</h3>
+<table>
+<thead>
+<tr>
+<th>과제</th>
+<th>연간 절감</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 리뷰 대응</td>
+<td>약 62시간</td>
+<td>하루 6.3건[실측] × 365 × (2분[고객] − 검수 0.387분[가정]) ÷ 60</td>
+</tr>
+<tr>
+<td>2. 주간 이벤트</td>
+<td>약 234~806시간</td>
+<td>주 4.5~15.5시간 × 52. 운영 1~2시간[고객] → 0.5시간[가정], 디자인 8~16시간[고객] → 2~4시간[가정]</td>
+</tr>
+<tr>
+<td>3. 광고 운영</td>
+<td>약 188~208시간</td>
+<td>(60분[고객] − 10~15분[가정]) × 250일[가정] ÷ 60</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>약 483~1,076시간(FTE 약 0.25~0.56명분)</strong></td>
+<td>FTE 1명 = 연 1,920시간[가정]. 인건비 환산은 시간당 비용을 받은 뒤 계산한다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="바로-결정할-일-3가지">바로 결정할 일 3가지</h3>
+<ol>
+<li><strong>10/9(금)까지 할로윈 이벤트 스토어 제출 여부.</strong> App Store 사전 노출(10/12부터)과 Play 피처링 요청 마감(10/12)을 지키려면 이번 주에 제출해야 한다. 그 전에 [기획 확인 필요] 15건 가운데 두 가지를 먼저 정한다. #4 할로윈 주말 48시간 광고 없는 버프를 승인할지(B안: 하루 N회로 축소), #13 러시아 스토어 노출을 접속 장애 해결 뒤로 미룰지다.</li>
+<li><strong>리뷰 답변 등록용 자격 증명 2종 발급과 운영 방식 승인.</strong> Play 서비스 계정('리뷰 답변' 권한), App Store Connect API 키가 필요하다. 운영 방식은 A안을 권한다. 검수 화면을 claude.ai Artifact로 올리고 매일 예약 실행으로 초안을 만든다. 같은 날 미답변 결제 P1(1만원 결제 후 0원 표시) 1건을 처리한다.</li>
+<li><strong>광고 계정 읽기 권한과 데이터 현황 공유.</strong> 실제 매체, MMP, 미디에이션, 월 예산, 사내 메신저(C1~C16)를 알려 주면 과제 3의 1단계(노코드 리포트, 2~3주)를 바로 시작한다.</li>
+</ol>
+<hr />
+<h2 id="2-진단">2. 진단</h2>
+<h3 id="21-고객이-알려-준-현재-방식원문-인용">2.1 고객이 알려 준 현재 방식(원문 인용)</h3>
+<table>
+<thead>
+<tr>
+<th>과제</th>
+<th>현재 방식</th>
+<th>담당</th>
+<th>어려움</th>
+<th>검토 방향</th>
+<th>소요</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 리뷰 대응</td>
+<td>담당자가 리뷰를 직접 확인하고 번역·답변 작성(미리 작성해 놓은 답변 사용)</td>
+<td>운영</td>
+<td>매일 대응이 가장 좋지만 다른 업무 일정에 따라 며칠간의 리뷰를 한 번에 처리하는 경우가 많음</td>
+<td>리뷰 수집 → 유형 분류 → 번역 → 답변 초안 생성 → 담당자 검수 → 답변 등록</td>
+<td>리뷰 1개당 2분</td>
+</tr>
+<tr>
+<td>2. 주간 이벤트</td>
+<td>매주 이벤트 주제 선정, 문구 작성, 번역, 이미지 제작 및 스토어 등록을 각각 진행</td>
+<td>운영·디자인</td>
+<td>매주 유사한 제작 과정 반복, 국가별 문구·이미지 제작에 많은 시간</td>
+<td>주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국어 번역 → 스토어 이벤트 등록</td>
+<td>운영 매주 1~2시간, 디자인 1~2일</td>
+</tr>
+<tr>
+<td>3. 광고 운영</td>
+<td>담당자가 광고 데이터를 직접 확인하고 분석·운영</td>
+<td>마케팅</td>
+<td>국가·캠페인·소재별 데이터 확인과 반복 분석</td>
+<td>데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다음 액션 제안 → 리포트 작성</td>
+<td>매일 1시간 이상</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-데이터로-확인한-사실-공개-리뷰-378건2026-08-08-10-06">2.2 데이터로 확인한 사실 — 공개 리뷰 378건(2026-08-08 ~ 10-06)</h3>
+<table>
+<thead>
+<tr>
+<th>사실</th>
+<th>값</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>리뷰 양</td>
+<td>60일 378건(Play 362 · App Store 16), 하루 약 6.3건</td>
+<td>[실측] <code>stats.total</code>, <code>per_day_avg</code></td>
+</tr>
+<tr>
+<td>언어</td>
+<td>리뷰 언어 13개, 스토어×언어 16개 조합. 상위 ko 98 · en 77 · pt 71 · ru 41(답변 언어 기준)</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>운영 답변 문구</td>
+<td>343건이 50종, 상위 5종이 36%(124건). 별점 1~2점 리뷰 53건에 18종</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>몰아서 처리</td>
+<td>343건이 60일 중 13일에 등록. 9/27 하루 75건. 리뷰 → 답변 중앙값 3.3일</td>
+<td>[실측] <code>existing_reply.at</code></td>
+</tr>
+<tr>
+<td>우선순위</td>
+<td>P1 30 · P2 48 · P3 300. 고객센터 이관 18</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>미답변 P1</td>
+<td>2건. Play 결제 "1만원 결제 후 인게임 0원 표시"(미답변 확인), App Store "로그인·게스트 모두 불가"(RSS로는 답변 여부를 알 수 없어 App Store Connect 확인 필요)</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>러시아어 접속 장애</td>
+<td>P1 14건이 몰림(ru 리뷰 41건의 34%). 증상은 "서버 버전 확인 무한 반복 후 튕김", 3.63 버전 6건, 8/13~9/30. ru 평균 별점 3.51(전체 4.23)</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>보상형 광고</td>
+<td>광고 시청 뒤 재시작·보상 미지급이 4건 반복(en 3 · pt 1, 모두 별점 1~2)</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>커뮤니티 안전</td>
+<td>인게임 채팅 욕설·성희롱 신고 1건(App Store)</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>이벤트 설계 신호</td>
+<td>광고 피로(광고 관련 20건), 성장 정체(balance 12, monetization 8), 진입 장벽("이벤트 참여가 71스테이지부터"), 복귀·향수(11건, 평균 4.55점)</td>
+<td>[실측] 과제 2 캘린더</td>
+</tr>
+</tbody>
+</table>
+<p>이 데이터는 <strong>세 과제를 잇는다.</strong> 리뷰 분류 결과로 이벤트를 설계했고(과제 2), 같은 분류로 광고 피로와 광고 수익의 관계를 본다(과제 3).</p>
+<hr />
+<h2 id="3-과제별-적용-방안">3. 과제별 적용 방안</h2>
+<h3 id="31-과제-1-리뷰-대응-자동화">3.1 과제 1 — 리뷰 대응 자동화</h3>
+<p><strong>AS-IS → TO-BE</strong></p>
+<pre><code>AS-IS  리뷰 확인(사람) → 번역(사람) → 미리 쓴 답변 고르기(사람) → 등록(사람)        며칠 치를 몰아서
+TO-BE  리뷰 수집 → 유형 분류 → 번역 → 답변 초안 생성 → [담당자 검수] → [답변 등록]    매일 09:00
+       └──────────── 자동(Claude Haiku 4.5 · Sonnet 5.5) ────────────┘   └── 사람 ──┘
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>자동</th>
+<th>사람</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수집, 11개 유형·P1~P3·담당 부서 분류, 한국어 번역, 맞춤·템플릿 초안, 350자·언어·금지 표현 검사, 부서별 전달 목록, 몰림 경고</td>
+<td>P1부터 읽고 고치고 승인, 고객센터·개발 전달, 등록 실행, 템플릿 세트 승인</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PoC 결과</strong>
+- 검수 웹서비스: https://namojo.github.io/game-review/ (대시보드 · 검수 인박스 · 운영 가이드 · 설정). 공개 URL 시나리오 통과(33/34, 실패 1건은 수정 전 동작을 전제한 검사), 콘솔 오류 0, 390px 가로 스크롤 없음[실측, QA A]
+- 초안 품질: 378건 전수 기계 검사 통과, 언어별 표본 38건 중 34건 통과, 금지 사항 위반 0, 답변 언어 오류 0[실측, QA B]</p>
+<p><strong>현재 템플릿 답변 vs AI 맞춤 답변 — 실제 리뷰 3건(원문 인용)</strong></p>
+<table>
+<thead>
+<tr>
+<th>리뷰(원문)</th>
+<th>현재 운영 답변</th>
+<th>AI 맞춤 초안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>광고 불만</strong> <code>gp-ko-206cefc715</code> 별점 1<br>"광고가 적당히 나와야지.. 이건 뭐 광고가 3개씩 나오네;"</td>
+<td>(같은 문구 18회) "안녕하세요. 원시인 형님들 키우기 GM Mr. Bow입니다. 형님의 기대에 부응하지 못한 점 깊이 사과드립니다. 말씀해주신 부분은 꼭 반영해 더 재미있는 게임으로 보답드릴게요. …"</td>
+<td>"안녕하세요, 원시인 형님들 키우기 GM Mr. Bow입니다. 광고가 한 번에 3개씩 나와 형님, 흐름이 끊기셨겠습니다. 죄송합니다. 광고 노출 빈도에 대한 말씀은 담당 팀에 그대로 전달하겠습니다. 소중한 의견 감사합니다."</td>
+</tr>
+<tr>
+<td><strong>접속 장애</strong> <code>gp-ru-36f3661138</code> 별점 1, 3.63<br>"Бесконечная "Проверка версии с сервера" с последующей молчаливой ошибкой и выбросом на рабочий стол. Так и не запустилась."<br>(끝없는 "서버 버전 확인" 뒤 바탕화면으로 튕김, 끝내 실행 안 됨)</td>
+<td>(같은 문구 13회) "Здравствуйте, это GM Mr. Bow. Просим прощения за неудобства при использовании игры. Пожалуйста, отправьте подробности через [Настройки &gt; Центр поддержки] в игре. …"<br>(게임 <strong>안의</strong> 고객센터로 문의하라는 안내 — 이 사용자는 게임이 켜지지 않는다)</td>
+<td>"Здравствуйте, это GM Mr. Bow. Сожалеем, что игра застревает на проверке версии с сервера и не запускается. Мы передали информацию команде разработки. Если удастся зайти, пришлите модель устройства и версию ОС через [Настройки &gt; Центр поддержки]. Спасибо за терпение."<br>(서버 버전 확인에서 멈춘 점을 짚고, 개발팀 전달, 접속되면 기기·OS 정보 요청)</td>
+</tr>
+<tr>
+<td><strong>광고 보상 미지급</strong> <code>gp-en-6c497efd01</code> 별점 1<br>"…when you watch add there is always one option" google play" and half of the time that resets the game and you not get your rewards after 60 second of add!!! …"</td>
+<td>(같은 문구 6회) "Hello, this is GM Mr. Bow from Primitive Brothers. We sincerely apologize for not meeting your expectations. Your feedback will not be taken lightly. we'll make sure to reflect it in improving the game's quality and content. …"</td>
+<td>"Hello, this is GM Mr. Bow from Primitive Brothers. We're sorry the game resets after the ad and the reward doesn't arrive. That's frustrating after a full minute of watching. We've passed it to the dev team. Please send your device model and OS version via [Settings &gt; Customer Center]."</td>
+</tr>
+</tbody>
+</table>
+<p><strong>운영 전환(구현 가이드 요약)</strong></p>
+<ol>
+<li><strong>승인과 등록은 다르다.</strong> 화면의 승인 버튼은 브라우저에 저장만 한다. 실제 등록은 <code>post_replies.py --execute</code> 와 고객사 자격 증명으로 한다. Play에는 GCP 서비스 계정과 Play Console '리뷰 답변' 권한이, App Store에는 ASC API 키(.p8)·Key ID·Issuer ID가 필요하다. 답변 표시 명의: Play에서는 개발자 이름 'T.G Inc'로 보인다. App Store 조회 결과는 개발자 'T.G', 판매자 'Thundergames'이고, 답변 표시 명의는 App Store Connect에서 확인해야 한다(확인 요청 B-10). 'GM Mr. Bow'는 본문 서명이다.</li>
+<li><strong>추가 개발.</strong>
+   - 수집을 공식 API로 바꾼다. App Store RSS 리뷰 ID가 ASC 리뷰 ID와 같다는 보장이 없어 운영에서는 ASC API로 다시 수집한다. Play <code>reviews.list</code>는 최근 1주만 준다.
+   - 공유 백엔드를 만든다. DB, 승인자 기록, 감사 로그, 등록 큐, 중복 방지, 기존 답변 덮어쓰기 정책, 서버 쪽 350자 검사가 들어간다.
+   - 검수 화면에 사내 로그인(IAP)을 붙인다.
+   - 권장 구성은 Cloud Scheduler → Cloud Run Job → Firestore, IAP, Secret Manager다.
+   - 개발자 1명 약 2~3주[가정].</li>
+<li><strong>API 키 없이 쓰는 방법(A안, 권장 시작점).</strong>
+   - 검수 화면을 claude.ai Artifact로 올린다. 다시 쓰기는 보는 사람의 Claude 계정으로 하고(<code>sample</code>), 검수 상태는 담당자끼리 공유하고(<code>db</code>), 승인자를 기록한다(<code>user</code>)(claude.ai Artifact 런타임 기능 목록, 2026-10-07 이 계정에서 확인. 계정·플랜마다 다를 수 있음). 단, 스토어 등록은 여전히 서버 몫이다.
+   - 매일 초안은 하네스 수동 실행, Claude Code 예약 실행(루틴), Google Cloud Vertex AI의 Claude(GCP IAM) 중 하나로 만든다.
+   - 지금 규모에는 Artifact + 예약 실행을 권한다. 고도화 뒤에는 Vertex AI + GCP 백엔드(B안)로 간다.</li>
+<li><strong>템플릿은 운영자가 승인한 고정 세트로 관리한다.</strong> 지금 상한인 '언어별 최신 6종'은 매일 실행하면 다듬은 초기 템플릿을 밀어낸다(QA A 참고).</li>
+</ol>
+<p><strong>리스크:</strong> 오역·오분류(표본 38건 중 4건) → 사람 검수 유지. 채팅 욕설·성희롱 신고가 "건의/기획"으로 분류됨 → 분류 기준에 "커뮤니티·안전 신고 → P2 이상·고객센터·사람 검수" 규칙을 반영함(제재는 운영). 공개 URL에 운영 데이터 노출 → 사내 로그인 뒤로. 실제 등록·BYOK 호출은 자격 증명이 없어 미검증 → 첫 주 5건 시험.</p>
+<h3 id="32-과제-2-게임-내-주간-이벤트-제작-자동화">3.2 과제 2 — 게임 내 주간 이벤트 제작 자동화</h3>
+<p><strong>AS-IS → TO-BE</strong></p>
+<pre><code>AS-IS  주제 선정 → 문구 작성 → 번역 → 이미지 제작 → 스토어 등록        단계마다 따로, 매주 반복
+TO-BE  주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국어 번역 → 스토어 이벤트 등록
+       캘린더 초안(자동)  초안(자동)     키아트·배너(자동)  13개 언어(자동)  등록 시트(자동)
+       [승인: 사람]       [수치 확정: 사람] [선택·검수: 사람]                 [제출·피처링 요청: 사람]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>자동</th>
+<th>사람</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>리뷰 신호 → 이벤트 설계 원칙, 8주 캘린더 초안, 기획서·13개 언어 공지·푸시·스토어 문구, 글자 수 검증, 글자 없는 키아트 3규격, 언어별 배너 합성, 스토어 등록 시트</td>
+<td>주제 승인, 보상 수치·시스템 확인([기획 확인 필요] 15건), 키아트 선택·보정, 스토어 제출·피처링 요청</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PoC 결과 — W44 「형님들의 할로윈 호박 사냥」(2026-10-26 ~ 11-01)</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>결과</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>언어</td>
+<td>13개(ko·en·pt·es·ru·ja·zh-TW·id·th·tr·fr·de·vi)</td>
+<td>[실측] <a class="code-link" href="../task2-weekly-event/2026-w44-halloween/copy.json.html"><code>copy.json</code></a></td>
+</tr>
+<tr>
+<td>스토어 문구</td>
+<td>13개 언어 × 5개 필드 = 65개 필드, 글자 수 초과 0건(여유 1자 이하 5개)</td>
+<td>[실측] <a class="code-link" href="../task2-weekly-event/2026-w44-halloween/store_submission.html"><code>store_submission.md</code></a></td>
+</tr>
+<tr>
+<td>제출 일정</td>
+<td>App Store·Play 제출 <strong>10/9(금)</strong>, Play 피처링 마감 <strong>10/12(월)</strong>, Play 일반 마감 10/22(목)</td>
+<td>공식 문서 기준(<a class="code-link" href="../task2-weekly-event/2026-w44-halloween/store_submission.html"><code>store_submission.md</code></a> 출처 절)</td>
+</tr>
+<tr>
+<td>키아트</td>
+<td>글자 없는 3규격(16:9 · 9:16 · 1:1), 병렬 생성 약 4분(12:47:19 시작 → 12:51:12 마지막 파일, 로그·파일 시각), 장당 재생성 1회</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>배너</td>
+<td>13개 언어 × 3규격 = 39장, 합성 41초</td>
+<td>[실측] 리더 측정(파일 시각 기준 첫 장 → 마지막 장 38초)</td>
+</tr>
+<tr>
+<td>QA C(이벤트 키트 검수)</td>
+<td><strong>통과(재검증 차단 0건).</strong> 글자 수 위반 0, 배너 39장 잘림·가림 없음, 13개 언어 이벤트명·기간 일치. 처음 검사의 차단 1건(제출 이미지 경로가 규격 미달 원본을 가리킴)은 <code>keyart/store/</code> 규격 사본으로 고쳤다</td>
+<td>[실측] <a class="code-link" href="../records/08_qa_C_report.html"><code>08_qa_C_report.md</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>리뷰 불만 → 이벤트 설계 연결</strong></p>
+<table>
+<thead>
+<tr>
+<th>리뷰 신호</th>
+<th>이벤트 설계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>광고 피로·광고 보상 미지급(광고 관련 20건)[실측]</td>
+<td>미션에 광고 시청을 넣지 않는다. 할로윈 주말 <strong>48시간 동안 광고 버프를 광고 없이</strong> 켠다</td>
+</tr>
+<tr>
+<td>진입 장벽("이벤트 참여가 71스테이지부터")</td>
+<td>미션을 스테이지 조건 대신 <strong>횟수형</strong>(승패 무관 도전 N회)으로 만든다</td>
+</tr>
+<tr>
+<td>성장 정체·보석 부족(balance 12, monetization 8)</td>
+<td>교환소에 성장 재료와 보석을 넣는다</td>
+</tr>
+<tr>
+<td>복귀·향수(11건, 평균 4.55점)[실측]</td>
+<td>14일 이상 미접속 형님에게 <strong>복귀 호박 꾸러미</strong></td>
+</tr>
+<tr>
+<td>러시아어 접속 장애 14건</td>
+<td>러시아 스토어 노출은 장애 해결 확인 뒤에 켠다 [기획 확인 필요 #13]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>현지화·법규 판단(사람이 놓치기 쉬운 것)</strong>
+- ko: 10/29(목) <strong>이태원 참사 4주기</strong>에는 어떤 푸시도 보내지 않는다. 문구와 키아트에 파티·인파·가면 군중 표현을 쓰지 않는다.
+- ko 푸시: <strong>정보통신망법</strong> 제50조에 따라 "(광고)", 전송자 명칭, 수신 거부 방법을 넣는다. 21:00~08:00에는 보내지 않는다.
+- id 오컬트 표현 배제, mx 망자의 날 상징 혼용 금지, br 11/2 Finados 리마인드 금지.
+- <strong>스토어 이미지에는 글자를 넣지 않는다.</strong> App Store뿐 아니라 Google Play 프로모션 이미지도 로고·슬로건·이벤트명을 금지한다. 그래서 스토어에는 글자 없는 키아트를 올리고, 글자를 합성한 배너 39장은 인게임 공지·SNS에만 쓴다.</p>
+<p>미리 보기: 키아트 <a class="code-link" href="../task2-weekly-event/2026-w44-halloween/keyart/keyart_16x9.jpg"><code>../task2-weekly-event/2026-w44-halloween/keyart/keyart_16x9.png</code></a>, 언어별 배너 모음 <a class="code-link" href="../task2-weekly-event/2026-w44-halloween/localized/_preview_landscape.jpg"><code>../task2-weekly-event/2026-w44-halloween/localized/_preview_landscape.png</code></a></p>
+<p><strong>구현 가이드 요약</strong>
+- 매주 하네스로 "다음 주 이벤트 키트"를 실행한다. 캘린더에서 주제를 고르면 기획서·copy.json·스토어 시트·키아트·배너가 한 폴더에 나온다.
+- 스토어 등록은 두 갈래다. App Store는 App Store Connect API(<code>appEvents</code>·<code>appEventLocalizations</code>·<code>appEventScreenshots</code>)로 자동화할 수 있다. Google Play는 프로모션 콘텐츠용 공개 API를 찾지 못해 Play Console에 수동으로 붙여 넣는다(13개 언어 약 20~30분)[가정].
+- 시즌 이벤트는 시작 14일 전에 제출해야 두 스토어의 사전 노출을 모두 받는다. 주간 일반 이벤트는 Play에 4일 전까지 제출하면 된다.</p>
+<p><strong>리스크와 알려진 제한</strong>
+- <strong>9:16 키아트의 티라노가 초록색</strong>이라 16:9·1:1(갈색)과 색이 다르다. 다음 판부터 프롬프트에 색을 고정한다. 그 밖에 1:1 어깨끈, 9:16 피사체 크기 문제가 있다(<code>06_designer_review.md</code>).
+- <strong>codex 기본 모델 이슈:</strong> 사용자 전역 기본 모델(<code>gpt-6.1-sol</code>)이 ChatGPT 로그인에서 400 오류를 냈다. 스크립트는 이전 파일이 남아 있어 성공으로 오판했다. 대응으로 <a class="code-link" href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html"><code>gen_keyart.sh</code></a> 에 <code>CODEX_MODEL</code> 지정, 새로 만든 파일만 성공 판정, 오류 안내를 추가했다.
+- <strong>제출 이미지는 규격 사본이다.</strong> 생성 원본(1536×1024·1024×1536·1254×1254)은 스토어 규격과 달라서, 제출에는 <code>keyart/store/</code> 사본 3장(1920×1080·1080×1920·1080×1080)을 쓴다. <a class="code-link" href="../task2-weekly-event/2026-w44-halloween/store_submission.html"><code>store_submission.md</code></a>·<a class="code-link" href="../task2-weekly-event/2026-w44-halloween/copy.json.html"><code>copy.json</code></a> 은 이 사본을 가리키도록 고쳤다(QA C C-6 재검증 통과).
+- <strong>배너 기간은 KST 날짜다(의도).</strong> 예를 들어 en 배너는 "Oct 26 – Nov 1"이다. 미주·유럽에서는 실제로 11/1 낮에 끝나므로 종료일이 늦게 읽힌다. 정확한 시각은 현지 시각 공지가 알려 준다. 마지막 날 보상 불만이 나올 수 있어 유지 여부를 확인한다(확인 요청 4번).
+- <strong>배너 경미 2건:</strong> ja·zh-TW 가로 배너는 제목 여백이 다른 언어보다 좁다. 1:1 배너는 일부 언어에서 부제가 호박 등불과 살짝 겹친다. 둘 다 가독성에는 영향이 없다.
+- 보상 수치·시스템 실재 여부 [기획 확인 필요] 15건은 사람이 정한다. AI가 정한 수치는 없다.</p>
+<h3 id="33-과제-3-metagoogle-광고-운영과-성과-분석-자동화">3.3 과제 3 — Meta·Google 광고 운영과 성과 분석 자동화</h3>
+<p><strong>AS-IS → TO-BE</strong></p>
+<pre><code>AS-IS  매체 화면 3곳 내려받기 → 엑셀 정리 → 눈으로 비교 → 감으로 예산 조정 → 메신저 보고    매일 1시간+
+TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다음 액션 제안 → 리포트 작성 → [승인: 사람]
+       06:00 API     06:30 규칙 코드  이상·피로·과속  20% 상한·3일 쿨다운   Claude 5줄 + 숫자 검증   09:00
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>자동</th>
+<th>사람</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수집·정규화(BigQuery), 데이터 점검, 이상 탐지, 소재 피로, 예산 소진 속도, 예산 제안(안전장치 포함), 5줄 리포트 작성, 숫자 검증</td>
+<td>제안 승인·거절, 원인 해석(시즌·경쟁작·스토어), 월 예산 배정, 교체 소재 요청</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PoC 결과(가상 데이터 — 썬더게임즈 실제 광고 데이터가 아니다)</strong></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>결과</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가이드</td>
+<td>12장(목차 11장 + 과제 1·2 연결), 출처 S1~S56</td>
+<td>[실측] <code>guide.md</code></td>
+</tr>
+<tr>
+<td>심은 문제</td>
+<td>7건 모두 탐지(추적 누락, 월 예산 과속, 국가 CPI 급등, 소재 피로 2, 확장 후보, 예산 신호), 미끼 미탐지, 오탐 0</td>
+<td>[실측] QA D-2</td>
+</tr>
+<tr>
+<td>반복 시험</td>
+<td>시드 30개, 탐지율 90~100%</td>
+<td>[실측] QA D-2</td>
+</tr>
+<tr>
+<td>숫자 검증기</td>
+<td>일부러 틀린 변형 13건 차단(부호 반전·바꿔치기·지어낸 숫자). <strong>못 잡는 범위</strong>도 문서에 적었다: 키 없는 문장의 바꿔치기, 날짜, 숫자가 아닌 서술 오류. 그래서 처음 8주는 사람이 대조 검수한다</td>
+<td>[실측] <code>guide.md</code> 6.3</td>
+</tr>
+<tr>
+<td>일일 리포트 샘플</td>
+<td>"🔴 즉시 확인: 메타 iOS(META_A+APP_IOS_T1) KR·US 10/04~10/06 3일 연속 설치 0 — 지출 KR $233·US $349, 클릭은 정상" 등 5줄</td>
+<td><a class="code-link" href="../task3-ads-automation/sample/sample_daily_report.html"><code>sample_daily_report.md</code></a>(가상 데이터)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>도입 전에 알아야 할 플랫폼 변화(2026-10-07 공식 문서 확인)</strong>
+- Meta Marketing API <strong>v24.0은 2026-10-06에 만료</strong>됐다. 최신은 v26.0이다. 2026-01-12부터 <strong>7d_view·28d_view 어트리뷰션 값이 나오지 않는다</strong>.
+- <strong>레거시 Advantage+ 앱 캠페인</strong>은 v25.0부터 생성할 수 없고 v26.0부터 수정할 수 없다. 새 구조로 옮기면 학습이 다시 시작된다.
+- Google 앱 캠페인은 예산·목표 CPI를 <strong>한 번에 20% 넘게 바꾸지 말라</strong>고 권장한다. 자동 제안도 20% 상한과 3일 쿨다운을 지킨다.
+- <strong>러시아어 사용자 유입원 [확인 필요]:</strong> 2022년 Google·Meta가 러시아 광고를 중단했다는 보도가 있다(S52·S53). 2026년 현재도 유지되는지는 확인하지 못했다. ru 리뷰 41건의 유입원(자연 유입, 다른 매체, CIS 국가 집행)을 MMP로 확인한다.</p>
+<p><strong>구현 가이드 요약(로드맵)</strong></p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>기간</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 노코드 리포트</td>
+<td>2~3주[가정]</td>
+<td>커넥터(Supermetrics·Funnel 등) → 시트·Data Studio, Claude 일일 요약</td>
+</tr>
+<tr>
+<td>2. 코드 파이프라인</td>
+<td>4~6주[가정]</td>
+<td>API 수집 → BigQuery → 분석 스크립트 → Claude API 리포트 → 숫자 검증 → 메신저. 데이터 엔지니어 1명</td>
+</tr>
+<tr>
+<td>3. 승인형 실행</td>
+<td>8주 제안 운영 뒤</td>
+<td>승인한 예산 변경만 API로 실행</td>
+</tr>
+</tbody>
+</table>
+<p><strong>리스크:</strong> 광고 수익을 코호트에 붙이지 못하면 ROAS 기반 제안을 믿기 어렵다. 그 경우 범위를 데이터 점검·이상 탐지·소재 피로로 줄인다. 교체 소재를 만들 사람이 없으면 피로 탐지 효과가 반감된다. 과제 2의 키아트 파이프라인을 UA 소재 변형에도 쓸 수 있다. [확인 필요] C1~C16(매체, 국가, MMP, 미디에이션, 예산, 목표 ROAS, 메신저, 개발 인력, 캠페인 구조 등)이 풀려야 2단계 설계가 확정된다.</p>
+<hr />
+<h2 id="4-roi">4. ROI</h2>
+<p><a class="code-link" href="../harness/skills/consulting-report/references/roi-model.html"><code>.claude/skills/consulting-report/references/roi-model.md</code></a> 방식이다. 모든 가정값을 드러낸다. 인건비 환산은 고객이 시간당 비용을 알려 준 뒤에 한다.</p>
+<h3 id="41-과제-1-리뷰-대응">4.1 과제 1 — 리뷰 대응</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일평균 리뷰 수</td>
+<td>6.3건</td>
+<td>[실측] <code>stats.per_day_avg</code></td>
+</tr>
+<tr>
+<td>현재 1건 처리 시간</td>
+<td>2분</td>
+<td>[고객]</td>
+</tr>
+<tr>
+<td>자동화 뒤 검수 시간</td>
+<td>맞춤 0.5분 / 템플릿 0.2분</td>
+<td>[가정] 읽기·승인만</td>
+</tr>
+<tr>
+<td>템플릿 비율</td>
+<td>37.6%(142/378)</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>가중 평균 검수 시간</td>
+<td>0.387분 = 0.376 × 0.2 + 0.624 × 0.5</td>
+<td>계산</td>
+</tr>
+<tr>
+<td>현재 연간</td>
+<td>76.7시간 = 6.3 × 365 × 2 ÷ 60</td>
+<td>계산</td>
+</tr>
+<tr>
+<td>자동화 뒤 연간</td>
+<td>14.8시간 = 6.3 × 365 × 0.387 ÷ 60</td>
+<td>계산</td>
+</tr>
+<tr>
+<td><strong>연간 절감</strong></td>
+<td><strong>약 62시간(61.8)</strong></td>
+<td>계산</td>
+</tr>
+<tr>
+<td>Claude API 비용</td>
+<td>월 약 2~3달러 = 월 189건 × Haiku 4.5(입력 3,000·출력 400 토큰, $1/$5 per MTok) + 맞춤 118건 × Sonnet 5.5(입력 3,500·출력 400, $2/$10) ≈ $0.95 + $1.30</td>
+<td>[가정] 건당 토큰. 단가는 2026-09-25 Anthropic 공시</td>
+</tr>
+</tbody>
+</table>
+<p>절감 시간은 작다. 효과는 품질(맞춤 답변), 속도(P1 24시간, 지금 중앙값 3.3일), 인사이트(부서별 주간 전달), 번역 대기 제거에서 난다.</p>
+<h3 id="42-과제-2-주간-이벤트">4.2 과제 2 — 주간 이벤트</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현재 운영</td>
+<td>주 1~2시간</td>
+<td>[고객]</td>
+</tr>
+<tr>
+<td>현재 디자인</td>
+<td>주 1~2일 = 8~16시간</td>
+<td>[고객]</td>
+</tr>
+<tr>
+<td>자동화 뒤 운영</td>
+<td>주 0.5시간(주제 승인·문구 검수)</td>
+<td>[가정]</td>
+</tr>
+<tr>
+<td>자동화 뒤 디자인</td>
+<td>주 2~4시간(키아트 선택·보정·최종 검수)</td>
+<td>[가정]</td>
+</tr>
+<tr>
+<td>키아트 생성</td>
+<td>3규격 병렬 약 4분</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>배너 합성</td>
+<td>39장 41초</td>
+<td>[실측]</td>
+</tr>
+<tr>
+<td>Play 수동 등록</td>
+<td>13개 언어 약 20~30분</td>
+<td>[가정]</td>
+</tr>
+<tr>
+<td>주간 절감</td>
+<td>최소 4.5시간 = (1 − 0.5) + (8 − 4) / 최대 15.5시간 = (2 − 0.5) + (16 − 2)</td>
+<td>계산</td>
+</tr>
+<tr>
+<td><strong>연간 절감</strong></td>
+<td><strong>약 234~806시간</strong> = 주간 × 52</td>
+<td>계산</td>
+</tr>
+</tbody>
+</table>
+<p>범위가 넓은 이유가 있다. 이번 PoC는 1주 1회 실행이었고, 디자이너가 실제로 키아트를 고치는 시간은 아직 재지 않았다. W45~W48 4주 동안 실제 작업 시간을 기록해 범위를 좁힌다.</p>
+<h3 id="43-과제-3-광고-운영">4.3 과제 3 — 광고 운영</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현재</td>
+<td>매일 1시간 이상</td>
+<td>[고객]</td>
+</tr>
+<tr>
+<td>자동화 뒤</td>
+<td>매일 10~15분(리포트 읽기·제안 승인)</td>
+<td>[가정]</td>
+</tr>
+<tr>
+<td>근무일</td>
+<td>연 250일</td>
+<td>[가정]</td>
+</tr>
+<tr>
+<td><strong>연간 절감</strong></td>
+<td><strong>약 188~208시간</strong>(중간값 198 = (60 − 12.5) × 250 ÷ 60)</td>
+<td>계산</td>
+</tr>
+</tbody>
+</table>
+<p>낭비 예산을 일찍 막는 효과는 실제 지출 데이터가 없어 금액으로 쓰지 않는다. 대신 메커니즘으로 설명한다. 샘플에서는 메타 iOS 추적 누락으로 3일간 KR $233·US $349가 측정되지 않았는데(가상), 매일 점검하면 첫날에 잡는다.</p>
+<h3 id="44-합계">4.4 합계</h3>
+<table>
+<thead>
+<tr>
+<th>과제</th>
+<th>연간 절감</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 리뷰 대응</td>
+<td>약 62시간(4.1절 계산: [실측]·[고객]·[가정])</td>
+</tr>
+<tr>
+<td>2. 주간 이벤트</td>
+<td>약 234~806시간(4.2절 계산: [고객]·[가정])</td>
+</tr>
+<tr>
+<td>3. 광고 운영</td>
+<td>약 188~208시간(4.3절 계산: [고객]·[가정])</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>약 483~1,076시간 · FTE 약 0.25~0.56명분</strong>(1 FTE = 연 1,920시간[가정])</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-통합-로드맵12주-2026-10-12-2027-01-03">5. 통합 로드맵(12주, 2026-10-12 ~ 2027-01-03)</h2>
+<p>공통 기반을 먼저 깐다. 세 과제가 같은 기반을 쓴다.</p>
+<table>
+<thead>
+<tr>
+<th>공통 기반</th>
+<th>내용</th>
+<th>쓰는 과제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude 사용 계정</td>
+<td>claude.ai 팀 계정(Artifact·예약 실행) 또는 Vertex AI의 Claude(GCP IAM). API 키를 쓰면 조직 단위로 발급하고 월 상한을 건다</td>
+<td>1·2·3</td>
+</tr>
+<tr>
+<td>비밀 관리</td>
+<td>GCP Secret Manager 또는 GitHub Actions Secrets. 스토어·매체 키를 코드와 PC에 두지 않는다</td>
+<td>1·3</td>
+</tr>
+<tr>
+<td>스케줄러</td>
+<td>Cloud Scheduler 또는 Claude Code 예약 실행. 매일 06:00(광고), 09:00(리뷰)</td>
+<td>1·3</td>
+</tr>
+<tr>
+<td>메신저 알림</td>
+<td>사내 메신저 채널 1개(리뷰 P1, 광고 일일 리포트·실시간 알림)</td>
+<td>1·3</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>주차</th>
+<th>기간</th>
+<th>공통</th>
+<th>과제 1 리뷰</th>
+<th>과제 2 이벤트</th>
+<th>과제 3 광고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>이번 주</strong></td>
+<td>10/7~10/11</td>
+<td>과제별 담당자 지정</td>
+<td>미답변 결제 P1 처리, 러시아어 장애 개발 전달</td>
+<td><strong>W44 할로윈 10/9(금) 제출</strong></td>
+<td>데이터 현황(C1~C16) 공유</td>
+</tr>
+<tr>
+<td>W1</td>
+<td>10/12~10/18</td>
+<td>Claude 계정·비밀 관리 결정</td>
+<td>자격 증명 발급, 5건 등록 시험</td>
+<td>App Store 게시·Play 피처링 마감(10/12), W45 키트</td>
+<td>매체 읽기 권한</td>
+</tr>
+<tr>
+<td>W2~3</td>
+<td>10/19~11/1</td>
+<td>메신저 채널·스케줄러</td>
+<td>A안 운영 시작(Artifact + 예약 실행), 템플릿 고정 세트 승인</td>
+<td>W46·W47 키트, 작업 시간 기록 시작</td>
+<td>1단계 노코드 리포트</td>
+</tr>
+<tr>
+<td>W4~6</td>
+<td>11/2~11/22</td>
+<td>—</td>
+<td>공식 API 수집 교체</td>
+<td>W44 성과 확인 → "광고 없는 버프" 정례화 판단, W48·W49 키트</td>
+<td>2단계 착수(BigQuery·수집)</td>
+</tr>
+<tr>
+<td>W7~9</td>
+<td>11/23~12/13</td>
+<td>—</td>
+<td>8주 지표 중간 점검(승인율·수정률·P1 처리 시간)</td>
+<td><strong>W49 주간에 크리스마스 키트</strong>(12/7 마감)</td>
+<td>2단계 분석·리포트·검증, 기준선 4주</td>
+</tr>
+<tr>
+<td>W10~12</td>
+<td>12/14~1/3</td>
+<td>회고·다음 분기 계획</td>
+<td>B안(Vertex AI + GCP 백엔드) 여부 결정</td>
+<td>1분기 캘린더</td>
+<td>2단계 안정화, 3단계(승인형 실행) 준비</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-거버넌스-ai-사용-원칙">6. 거버넌스 — AI 사용 원칙</h2>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>규칙</th>
+<th>적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사람이 승인한다</td>
+<td>AI는 초안과 제안만 만든다. 공개 답변, 스토어 이벤트, 예산 변경은 사람이 승인한 것만 실행한다</td>
+<td>리뷰 등록, 스토어 제출, 예산 제안(처음 8주는 제안만)</td>
+</tr>
+<tr>
+<td>공개 게시물은 검수한다</td>
+<td>리뷰 답변: 날짜·보상·기능 약속 금지, 공개 개인정보 요구 금지, 부정 리뷰에 광고 제거 권유 금지, 경쟁작 언급 금지. 이벤트: 추모일·종교·법규 캘린더 확인</td>
+<td>과제 1·2</td>
+</tr>
+<tr>
+<td>이용자 안전</td>
+<td>채팅 욕설·성희롱·사기·계정 도용 신고는 P2 이상·사람 검수로 고객센터를 거쳐 운영이 제재한다. 미성년자 관련 리뷰도 사람이 본다</td>
+<td>과제 1 분류 기준에 반영됨</td>
+</tr>
+<tr>
+<td>개인정보</td>
+<td>작성자 이름은 해시 별칭으로 바꾼다. 광고 데이터는 집계 결과(findings.json)만 LLM에 보낸다. 사용자 단위 데이터는 BigQuery 안에서만 집계한다</td>
+<td>과제 1·3</td>
+</tr>
+<tr>
+<td>비용 상한</td>
+<td>Claude 사용량에 월 상한을 건다. 리뷰는 월 수 달러 수준이다[가정]. 이미 분석한 리뷰는 다시 과금하지 않는다(누적 병합)</td>
+<td>공통</td>
+</tr>
+<tr>
+<td>숫자는 코드가 계산한다</td>
+<td>리포트의 숫자는 검증기를 통과해야 발송한다. 검증기가 못 잡는 범위는 사람이 대조한다</td>
+<td>과제 3</td>
+</tr>
+<tr>
+<td>로그</td>
+<td>누가·언제·무엇을 승인·등록했는지 남긴다(감사 로그, <code>posted_replies.jsonl</code>, approvals 표)</td>
+<td>공통</td>
+</tr>
+<tr>
+<td>비밀 관리</td>
+<td>키는 저장소·PC에 두지 않는다. 공개 저장소 전체 이력 비밀 검사 0건 확인(QA A P-4)</td>
+<td>공통</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-다음-단계확인-요청-사항">7. 다음 단계·확인 요청 사항</h2>
+<p>전체 목록과 담당 제안은 <a class="code-link" href="../records/09_editor_open_questions.html"><code>_workspace/09_editor_open_questions.md</code></a> 에 있다. 우선순위가 높은 것만 모았다.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>확인할 것</th>
+<th>왜</th>
+<th>기한</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>할로윈 #4 광고 없는 버프 48시간 승인(또는 B안)</td>
+<td>리뷰 연결의 핵심, 광고 수익 영향</td>
+<td>10/8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>할로윈 #13 러시아 스토어 노출 보류 여부</td>
+<td>접속 장애 사용자에게 홍보하면 1점 리뷰 위험</td>
+<td>10/8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>나머지 [기획 확인 필요] 13건(보상 형태·수치·딥링크 등)</td>
+<td>제출 문구 확정</td>
+<td>10/9 1차</td>
+</tr>
+<tr>
+<td>4</td>
+<td>배너 기간을 KST 날짜로 둘지, 현지 날짜·"(KST)" 표기로 바꿀지</td>
+<td>미주·유럽에서 종료일이 늦게 읽힘</td>
+<td>10/9</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Play 서비스 계정·ASC API 키 발급 담당</td>
+<td>답변 등록</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>App Store 로그인 불가 리뷰 미답변 여부</td>
+<td>RSS로는 알 수 없음</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>러시아어 장애(3.63 서버 버전 확인) 원인·해결 여부</td>
+<td>리뷰·이벤트·광고 셋 다 영향</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>보상형 광고 재시작·보상 미지급 버그 인지 여부</td>
+<td>리뷰 4건 반복, 광고 수익</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>운영 방식 A안/B안, GCP 사용 여부</td>
+<td>구현 범위</td>
+<td>W1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>과제 3 C1~C16(매체·국가·MMP·미디에이션·예산·목표 ROAS·메신저·개발 인력 등)</td>
+<td>1·2단계 설계</td>
+<td>W1~W2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>러시아어 사용자 유입원, 2022년 광고 중단의 현재 유지 여부</td>
+<td>집행 가능 지역</td>
+<td>W2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>시간당 인건비(선택)</td>
+<td>ROI 금액 환산</td>
+<td>수시</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-부록">8. 부록</h2>
+<h3 id="81-데이터-출처">8.1 데이터 출처</h3>
+<table>
+<thead>
+<tr>
+<th>데이터</th>
+<th>경로</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>리뷰 378건</td>
+<td><a class="code-link ext" href="https://github.com/namojo/game-review/blob/main/data/reviews.json"><code>game-review/data/reviews.json</code></a>(sha1 <code>84969823583ca33339547a0b5725a98256296fea</code>)</td>
+<td>Google Play: google-play-scraper, App Store: iTunes RSS. 2026-08-08~10-06</td>
+</tr>
+<tr>
+<td>리뷰 웹서비스</td>
+<td>https://namojo.github.io/game-review/ · https://github.com/namojo/game-review</td>
+<td>커밋 759a252</td>
+</tr>
+<tr>
+<td>과제 1 QA</td>
+<td><a class="code-link" href="../records/08_qa_A_report.html"><code>_workspace/08_qa_A_report.md</code></a>(웹서비스), <a class="code-link" href="../records/08_qa_B_report.html"><code>08_qa_B_report.md</code></a>(초안 품질)</td>
+<td></td>
+</tr>
+<tr>
+<td>과제 2 키트</td>
+<td><code>deliverables/task2-weekly-event/</code>(event_calendar, 2026-w44-halloween/ brief·copy·store_submission·glossary·keyart·localized)</td>
+<td>동결 <code>_workspace/freeze_build.sha</code></td>
+</tr>
+<tr>
+<td>과제 2 검수</td>
+<td><code>_workspace/06_designer_review.md</code>, QA <a class="code-link" href="../records/08_qa_C_report.html"><code>08_qa_C_report.md</code></a></td>
+<td>QA C 통과(재검증 차단 0건)</td>
+</tr>
+<tr>
+<td>과제 3</td>
+<td><a class="code-link" href="../task3-ads-automation/guide.html"><code>deliverables/task3-ads-automation/guide.md</code></a>·<code>sample/</code>, <code>_workspace/07_strategist_notes.md</code>, QA <a class="code-link" href="../records/08_qa_D_report.html"><code>08_qa_D_report.md</code></a></td>
+<td>가상 데이터</td>
+</tr>
+<tr>
+<td>Claude 단가</td>
+<td>Anthropic 공시(2026-09-25 기준): Haiku 4.5 $1/$5, Sonnet 5.5 $2/$10, Opus 5.5 $4/$20 per MTok</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-용어">8.2 용어</h3>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1 / P2 / P3</td>
+<td>리뷰 우선순위. P1 = 돈·계정·진행 불가(24시간 안), P2 = 광고·BM·밸런스·일반 버그, P3 = 칭찬·건의</td>
+</tr>
+<tr>
+<td>맞춤 답변 / 템플릿</td>
+<td>리뷰 내용을 짚어 새로 쓴 답변 / 짧은 칭찬에 쓰는 언어별 고정 문구</td>
+</tr>
+<tr>
+<td>BYOK</td>
+<td>사용자가 자기 API 키를 넣어 쓰는 방식</td>
+</tr>
+<tr>
+<td>Artifact</td>
+<td>claude.ai에 올리는 웹 페이지. 보는 사람의 Claude 계정으로 동작하고, 공유 상태·사용자 정보를 쓸 수 있다</td>
+</tr>
+<tr>
+<td>IAP</td>
+<td>Google Cloud Identity-Aware Proxy. 사내 계정으로만 웹 화면을 열게 하는 로그인</td>
+</tr>
+<tr>
+<td>키아트</td>
+<td>글자 없는 이벤트 대표 그림</td>
+</tr>
+<tr>
+<td>CPI · IPM · ROAS</td>
+<td>설치당 비용 · 노출 1,000회당 설치 · 광고비 대비 수익</td>
+</tr>
+<tr>
+<td>MMP</td>
+<td>모바일 측정 파트너(AppsFlyer·Adjust 등). 설치·수익의 기준 원천</td>
+</tr>
+<tr>
+<td>FTE</td>
+<td>상근 인력 1명분(연 1,920시간 가정)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-하네스-사용법-이-프로젝트를-claude-code로-다시-돌리는-방법">8.3 하네스 사용법 — 이 프로젝트를 Claude Code로 다시 돌리는 방법</h3>
+<p>이 결과물은 Claude Code의 에이전트 하네스로 만들었다. 같은 프로젝트 폴더에서 Claude Code를 열고 한국어로 요청하면 다시 실행된다.</p>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="code-link" href="../harness/CLAUDE.html"><code>CLAUDE.md</code></a></td>
+<td>하네스 목표·호출 조건·변경 이력. Claude Code가 세션마다 읽는다</td>
+</tr>
+<tr>
+<td>오케스트레이터 스킬</td>
+<td><code>thunder-ai-consulting</code> — 요청을 해석해 에이전트 팀에 일을 나누고 QA를 거쳐 보고서까지 만든다</td>
+</tr>
+<tr>
+<td>에이전트 7</td>
+<td>review-ops-analyst(리뷰 분류·초안), review-service-engineer(웹서비스·파이프라인), liveops-event-planner(이벤트 기획·문구), event-visual-designer(키아트·배너), ads-growth-strategist(광고 자동화), consulting-qa(교차 검증), consulting-report-editor(통합 보고서)</td>
+</tr>
+<tr>
+<td>스킬 6</td>
+<td>thunder-ai-consulting, review-response-ops, review-web-service, weekly-event-production, ad-performance-automation, consulting-report</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자주 쓰는 요청 예</strong></p>
+<table>
+<thead>
+<tr>
+<th>이렇게 말하면</th>
+<th>하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"리뷰 데이터 갱신"</td>
+<td>최근 리뷰 수집 → 새 리뷰만 분류·번역·초안 → 검증 → 누적 병합 → 웹서비스 재배포</td>
+</tr>
+<tr>
+<td>"다음 주 이벤트 키트"</td>
+<td>캘린더에서 다음 주 주제 → 기획서·13개 언어 문구·스토어 시트 → 키아트 3규격 → 배너 39장</td>
+</tr>
+<tr>
+<td>"과제 3만 다시"</td>
+<td>광고 가이드·샘플 재생성</td>
+</tr>
+<tr>
+<td>"보고서 수정: ROI 장"</td>
+<td>해당 장만 고치고 요약 수치를 다시 맞춘다</td>
+</tr>
+<tr>
+<td>"재배포"</td>
+<td>웹서비스를 공개 전 점검 뒤 다시 올린다</td>
+</tr>
+</tbody>
+</table></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

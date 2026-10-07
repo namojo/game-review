@@ -5,6 +5,7 @@
 > 썬더게임즈 AI 전환 컨설팅 PoC — 공개 리뷰 데이터 기반, 실제 스토어에 답변을 등록하지 않음
 
 - 사이트: https://namojo.github.io/game-review/
+- 컨설팅 문서: https://namojo.github.io/game-review/docs/ — 과제별 가이드, 통합 보고서, 실행 방법, 하네스 구성(이 저장소의 `docs/` 폴더, `deliverables/site_build/build_site.py` 로 생성)
 - 데이터: 2026-08-08 ~ 2026-10-06 공개 리뷰 378건(Google Play 362, App Store 16, 13개 언어)
 
 ## 왜 만들었나
@@ -50,6 +51,7 @@ assets/icon.png            앱 아이콘(Google Play 공개 이미지 축소본)
 data/reviews.json          파이프라인 산출물(필드 계약: 아래)
 pipeline/                  수집·초안·검증·병합·등록 스크립트 → pipeline/README.md
 .github/workflows/refresh-reviews.yml   수동 실행 + (주석) 매일 09:00 KST
+docs/                      컨설팅 산출물 문서 사이트(생성물 — 직접 고치지 말고 다시 빌드)
 ```
 
 `data/reviews.json` 은 `meta`, `stats`, `templates`(언어별 짧은 칭찬 템플릿), `reviews[]` 로 이루어집니다. 리뷰마다 원본 필드와 `ai`(category, sentiment, priority, route_to, needs_cs, summary_ko, detected_lang, translation_ko, reply, reply_ko, reply_strategy, confidence, flags)가 있고, `ai` 가 `null` 이면 화면에 "분석 대기"로 보입니다. 필드 이름을 바꾸면 `pipeline/merge_for_site.py` 와 `assets/app.js` 를 함께 고칩니다.

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3) | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../task2/gallery.html">이미지 갤러리</a></li><li><a href="../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec" open><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="08_qa_D_report.html" aria-current="page">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">검증 기록<span class="path">_workspace/08_qa_D_report.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#1-검사-결과">1. 검사 결과</a></li><li><a href="#2-실행한-시험-재현용-세션-스크래치패드-trackd">2. 실행한 시험 (재현용, 세션 스크래치패드 trackd/)</a></li><li><a href="#3-수정-요청-모두-비차단">3. 수정 요청 (모두 비차단)</a></li></ul></details></aside>
+    <article class="doc"><h1 id="qa-트랙-d-광고-운영성과-분석-자동화-과제-3">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</h1>
+<ul>
+<li>검사일: 2026-10-07</li>
+<li>대상: <a class="code-link" href="../task3-ads-automation/guide.html"><code>deliverables/task3-ads-automation/guide.md</code></a>(495줄, 출처 S1~S53), <code>sample/</code>(generate_sample_data.py, analyze_ads.py, findings.json, check_report_numbers.py, make_report.py, report_prompt.md, sample_daily_report.md, budget_config.json, ads_daily_sample.csv), <code>_workspace/07_strategist_notes.md</code></li>
+<li>기준: <a class="code-link" href="../harness/skills/ad-performance-automation/SKILL.html"><code>.claude/skills/ad-performance-automation/SKILL.md</code></a> + references 3종, consulting-qa 트랙 D</li>
+<li>결론: <strong>통과(차단 이슈 0건)</strong>. 비차단 수정 요청 4건. 그중 #1(숫자 검증기가 부호 반전·바꿔치기를 못 잡는데 guide가 "품질을 보장한다"고 씀)은 고객 문서의 사실 서술 문제라 동결 전에 고치기를 권한다.</li>
+<li>산출물을 직접 실행하지 않고 스크래치 사본(<code>trackd/run1</code>, <code>run2</code>)에서 돌렸다. 결과 파일이 원본과 바이트 단위로 같아서 원본 폴더를 다시 쓸 필요가 없었다.</li>
+</ul>
+<h2 id="1-검사-결과">1. 검사 결과</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>검사 항목</th>
+<th>결과</th>
+<th>근거</th>
+<th>수정 요청</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-1</td>
+<td>지정 명령 실행 <code>generate_sample_data.py &amp;&amp; analyze_ads.py &amp;&amp; check_report_numbers.py sample_daily_report.md</code></td>
+<td>통과</td>
+<td>Python 3.12.8, 표준 라이브러리만 사용. 두 사본 모두 EXIT=0. "1434행 생성", findings F01~F07·B01~B06, "통과: 리포트의 숫자 190개가 모두 findings.json 에서 왔다"</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>D-1b</td>
+<td>재실행 결정성</td>
+<td>통과</td>
+<td>run1·run2·원본의 sha1이 같다: ads_daily_sample.csv <code>35bbcce3…</code>, findings.json <code>b4769c3f…</code>, budget_config.json <code>52f57db2…</code>. findings.json에 실행 시각이 없어 그대로 비교된다</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>D-2</td>
+<td>심은 문제 7건 탐지 + 미끼 미탐지(고정 시드)</td>
+<td>통과</td>
+<td>P1→F01·F02 data_issue(KR·US), P2→F04 anomaly(ID), P3→F05 fatigue(MV03·BR), P4→F06 fatigue(GV02), P5→F03 pacing(google), P6→F07 scale(MP01), P7→B01 감액·B02 증액·B03 쿨다운 보류·B05 표본 부족 보류. 미끼 MV02·ID는 near_misses에만 있음("frequency 1.9 ≤ 3"). 기대 밖 finding 0건</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>D-2b</td>
+<td>하드코딩이 아니라 규칙으로 잡는가</td>
+<td>통과</td>
+<td>① 코드: <a class="code-link" href="../task3-ads-automation/sample/analyze_ads.py.html"><code>analyze_ads.py</code></a>는 <code>--data</code>(CSV)와 <code>--config</code>(budget_config.json)만 연다. generate_sample_data import 없음, 캠페인·소재·국가 이름이나 날짜 하드코딩 없음(<code>2026</code>은 usage 문자열과 rules_version뿐). CSV에는 kpi-framework 표준 22개 컬럼만 있고 정답 컬럼이 없다. budget_config의 <code>last_budget_change</code>는 운영에서도 받는 입력이다. ② 데이터 변형 시험 <code>mutate.py</code> 7/7 통과. <strong>M1</strong> 소재 3개 이름·ID를 바꾸면 피로·확장 탐지가 새 이름을 따라간다. <strong>M2</strong> iOS KR·US 설치 0을 직전 중앙값으로 채우면 data_issue가 사라진다. <strong>M3</strong> 정답에 없던 GOOG_ACi_AOS_T2·MX에 설치 0을 심으면 새로 탐지(high)되고, 그 캠페인 예산은 hold가 된다. <strong>M4</strong> 미끼 MV02의 frequency를 3.9로 올리면 피로로 탐지된다. <strong>M5</strong> MV03 frequency를 1.9로 내리면 피로에서 빠져 near_miss로 간다. <strong>M6</strong> <code>--as-of 10/03</code>(문제 시작 전)이면 data_issue·ID anomaly가 없다. ③ 시드 1~30 반복(<code>seeds/sweep.py</code>): data_issue KR·US·pacing·ID anomaly·MP01 확장·감액 30/30, MV03 피로 28/30, GV02 피로 27/30, 증액 28/30, 미끼 미탐지 30/30 — strategist 노트·guide 5.3·11.2 수치와 같다</td>
+<td>기대 밖 finding은 30일에 <strong>9건</strong>(GH01 확장 4건 포함)으로, guide 5.3의 "30일 10건, 하루 0.33건"과 1건 다르다 → 3절 #4</td>
+</tr>
+<tr>
+<td>D-3</td>
+<td>리포트 숫자 무작위 5개 ↔ findings.json 직접 대조</td>
+<td>통과</td>
+<td><code>random.seed(20261007)</code>로 뽑은 5개. ① L23 F02 "직전 14일" → F02.reason "직전 14일 하루 중앙값 18건" 일치. ② L47 BR 설치 "286" = <code>summary.by_country.BR.installs</code> 286. ③ L47 BR "$1.04" = <code>by_country.BR.cpi</code> 1.04. ④ L25 F04 "CPM +25%" = <code>F04.drivers.cpm</code> 0.254. ⑤ L5 "KR $233" = <code>F01.spend_during</code> 233.41. 덧붙여 확인한 것: 월말 $27,613 = <code>pacing.google.projected_month_spend</code> 27613.04, 순변동 +$5 = <code>budget_net_change_daily</code> 5(B01 −50 + B02 +55), "$690 이하" = <code>daily_needed_to_fit</code> 690.48(내림), 광고 비중 50% = <code>ad_revenue_share_d0</code> 0.497</td>
+<td>경미: F02 baseline 18.5가 reason에서 "18건"으로 나온다(파이썬 <code>round</code> 은행원 반올림). 3절 #4</td>
+</tr>
+<tr>
+<td>D-3b</td>
+<td>숫자 검증기(<a class="code-link" href="../task3-ads-automation/sample/check_report_numbers.py.html"><code>check_report_numbers.py</code></a>)의 탐지력</td>
+<td><strong>실패(비차단)</strong></td>
+<td>리포트를 일부러 틀리게 고쳐 넣어 봤다. 잡은 것: 지어낸 숫자 $1.37, $27,900. <strong>못 잡은 것(모두 "통과")</strong>: 지출 −1%→+1%, MV03 CTR −35%→+35%(부호 반전), KR 지출 $233→$349(US 값으로 바꿔치기), F04 CPI $0.92→$0.64(ID 전체 CPI로 바꿔치기), B01·B02 제안액 맞바꾸기. 원인: <code>allowed_values()</code>가 <code>abs()</code>로 부호를 버리고, findings 전체의 숫자 집합과 문맥 없이 대조한다(<code>check_report_numbers.py:33-36, 55-63</code>). 그런데 guide 6.3·6.4는 "숫자 검증으로 품질을 보장한다"고 쓴다</td>
+<td>3절 #1</td>
+</tr>
+<tr>
+<td>D-4</td>
+<td>guide.md 목차 11개 + 연결 장</td>
+<td>통과</td>
+<td>한 장 요약 → 1 현황 진단 … 11 샘플 실행 방법(SKILL.md 순서·제목과 같음) → 12 과제 1·2 와의 연결 → 출처</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>D-4b</td>
+<td>가상 데이터 고지</td>
+<td>통과</td>
+<td>guide 5행 전제, CSV 첫 줄 <code># [가상 데이터]…</code>, budget_config <code>_notice</code>·<code>is_sample_data</code>, findings <code>is_sample_data: true</code>·<code>notice</code>, 리포트 첫 줄 <code>[… | 가상 데이터]</code>와 샘플 안내, 생성기·분석기 머리말, 실행 출력 <code>[가상 데이터]</code>. 실제 값은 [확인 필요]로 표시(C1~C16 표가 노트에 있음)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>D-4c</td>
+<td>API·정책 서술의 출처</td>
+<td>통과(경미 2건)</td>
+<td>본문이 S1~S53 중 51개를 인용한다. API 버전·한도·일몰·학습·SKAN·수익 내보내기·러시아 중단 서술에 S 번호가 있고, 확인하지 못한 6가지를 출처 절 끝에 따로 밝혔다. 공식 페이지로 직접 대조한 4건: Meta changelog(S1) "최신 v26.0 2026-07-29, v24.0 2026-10-06까지, 2026-07-29 자동 업그레이드" 일치 / Google S28 "budget &gt;20%, CPI &gt;20% 바꾸지 말 것, 일 예산은 목표 CPI의 50배" 일치 / Google S26 "first 100 conversions 전 변경 자제" 일치 / Google sunset 페이지(S16)는 v25가 최신인 것까지만 읽혔고 날짜표는 받아오지 못했다(미검증). 경미: ① S19(GAQL)·S51(BigQuery Sandbox)은 목록에만 있고 본문에서 인용하지 않는다. ② 출처 없는 정책 서술 2곳: 9장 개인정보 행의 "앱 추적 동의(ATT) 정책"(324행), 12.1의 "실제와 다른 소재는 매체 정책 위반 위험"(403행)</td>
+<td>3절 #3</td>
+</tr>
+<tr>
+<td>D-5</td>
+<td><code>make_report.py --dry-run</code></td>
+<td>통과</td>
+<td>키 없이 EXIT=0. model <code>claude-opus-5-5</code>, max_tokens 16000, <code>output_config.effort=low</code>, <code>betas=["server-side-fallback-2026-07-01"]</code>, <code>fallbacks="default"</code>, system·user에 findings.json을 그대로 넣는다. <code>daily_report_generated.md</code>는 만들지 않는다</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>D-5b</td>
+<td>(추가) SDK 실제 경로 — 가짜 API</td>
+<td><strong>실패(비차단)</strong></td>
+<td>anthropic 1.11.0 + 가짜 Messages 서버로 <a class="code-link" href="../task3-ads-automation/sample/make_report.py.html"><code>make_report.py</code></a>(dry-run 아님) 실행. 정상 응답이면 EXIT=0, <code>/v1/messages?beta=true</code>에 beta 헤더와 fallbacks·output_config가 실린다. <strong>fallback 응답</strong> <code>[text(잘림), fallback, text(전체)]</code>이면 <code>make_report.py:68</code>이 text 블록을 모두 이어 붙여 <code>"1) 어제 지출 $1,9[UA 일일 리포트 …"</code>처럼 깨진 리포트가 저장되고, 검증기도 통과시켜 EXIT=0(발송 대상)이 된다. 트랙 A에서 claude.js에 고친 것과 같은 문제다</td>
+<td>3절 #2</td>
+</tr>
+<tr>
+<td>D-6</td>
+<td>실제 Claude API 호출</td>
+<td>미검증</td>
+<td>키 없음(strategist도 같은 이유로 미실행)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-실행한-시험-재현용-세션-스크래치패드-trackd">2. 실행한 시험 (재현용, 세션 스크래치패드 <code>trackd/</code>)</h2>
+<ul>
+<li><code>run1/</code>, <code>run2/</code>: 산출물 사본에서 지정 명령 실행 → sha1 비교</li>
+<li><code>mutate.py</code>: CSV 변형 6종으로 analyze_ads.py 재실행(규칙 기반 여부)</li>
+<li><code>seeds/sweep.py 30</code>: 생성기 SEED만 바꿔 30회, 기대 탐지·기대 밖 finding 집계</li>
+<li>리포트 변형 7종 → check_report_numbers.py(검증기 탐지력)</li>
+<li><code>run1/fake_msg.py</code>: 가짜 Messages API(normal·fallback) → make_report.py 실제 경로</li>
+</ul>
+<h2 id="3-수정-요청-모두-비차단">3. 수정 요청 (모두 비차단)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>담당</th>
+<th>위치</th>
+<th>문제</th>
+<th>구체적 수정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>strategist</td>
+<td><code>sample/check_report_numbers.py:33-63</code>, <code>guide.md</code> 6.3(254-256행)·6.4(262행)</td>
+<td>검증기는 "입력 어디에도 없는 숫자"만 잡는다. 부호 반전(−35%→+35%)과 다른 항목 숫자로 바꿔치기(KR↔US 지출, B01↔B02 제안액)는 통과한다. 그런데 guide는 "숫자 검증으로 품질을 보장한다"고 쓴다. 증액·감액 방향이나 국가가 틀리면 담당자가 잘못된 예산을 승인하게 된다</td>
+<td>(a) 코드: ① <code>abs()</code>를 빼고 부호를 비교한다(−·+ 기호를 숫자에 붙여 읽고, 리포트 표기의 −/+가 change 부호와 같은지 본다). ② 리포트 줄에 F0x·B0x ID나 캠페인·국가 이름이 있으면 그 줄의 숫자는 해당 finding·proposal(과 summary)에서만 허용한다. 이 두 가지로 위 5개 변형 중 부호 2건·바꿔치기 3건이 잡히는지 시험을 추가한다. (b) 문서: 6.3·6.4의 "품질을 보장한다"를 "지어낸 숫자를 막는다. 부호·항목 대응은 (a) 규칙으로 함께 검사한다"처럼 실제 범위대로 쓴다</td>
+</tr>
+<tr>
+<td>2</td>
+<td>strategist</td>
+<td><code>sample/make_report.py:68</code></td>
+<td>서버 fallback이 출력 도중에 일어나면 앞 모델의 잘린 text와 뒤 모델의 text를 이어 붙인다(재현: <code>"$1,9[UA 일일 리포트 …"</code>). 검증기를 통과해 발송된다</td>
+<td>마지막 <code>fallback</code> 블록 뒤의 text 블록만 이어 붙인다(트랙 A claude.js와 같은 방식). <code>response.model</code>이 요청 모델과 다르면 리포트 끝이나 로그에 "○○ 모델이 대신 작성"을 남긴다. guide 6.4에 한 줄 추가</td>
+</tr>
+<tr>
+<td>3</td>
+<td>strategist</td>
+<td><code>guide.md</code> 출처 절, 324·403행</td>
+<td>쓰지 않는 출처 2개(S19, S51), 출처 없는 정책 서술 2곳(ATT, 소재 정책)</td>
+<td>S19는 4.2 Google 행 "GAQL" 옆에, S51은 8장 비용(BigQuery 무료 사용) 옆에 인용하거나 목록에서 뺀다. ATT는 Apple 공식 문서(App Tracking Transparency / User Privacy and Data Use), 소재 정책은 Meta 광고 정책·Google Ads 허위 진술 정책 링크를 출처에 추가한다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>strategist</td>
+<td><code>guide.md</code> 5.3 표(216행), <a class="code-link" href="../task3-ads-automation/sample/analyze_ads.py.html"><code>analyze_ads.py</code></a> reason 반올림</td>
+<td>(a) QA가 같은 방식(시드 1~30)으로 다시 세면 기대 밖 finding은 9건(하루 0.30건)이고, guide는 10건(0.33건)이다. 셈 기준(예산 제안 포함 여부)이 문서에 없다. (b) F02 baseline 18.5가 reason에서 "18건"이 된다</td>
+<td>(a) 기대 밖 finding을 무엇으로 셌는지 한 줄로 밝히고 숫자를 맞춘다. "초기 규칙만 1.6건·구글 63%"는 QA가 재현하지 않았다(규칙을 되돌려야 해서) — 재현 명령이나 스크립트를 sample/에 두면 좋다. (b) reason의 건수는 <code>f"{v:.1f}"</code> 또는 반올림 방식을 명시한다(<code>round(18.5)=18</code>)</td>
+</tr>
+<tr>
+<td>참고</td>
+<td>strategist</td>
+<td><code>sample/__pycache__/</code></td>
+<td>실행 부산물이 산출물 폴더에 남아 있다</td>
+<td>동결 전에 지우거나 .gitignore에 넣는다(리더 판단)</td>
+</tr>
+</tbody>
+</table></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

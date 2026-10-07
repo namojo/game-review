@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA 트랙 B — 리뷰 초안 품질 검사 | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../task2/gallery.html">이미지 갤러리</a></li><li><a href="../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec" open><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="08_qa_B_report.html" aria-current="page">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">검증 기록<span class="path">_workspace/08_qa_B_report.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#1-기계-검사-전수-378건">1. 기계 검사 (전수 378건)</a></li><li><a href="#2-언어별-표본-판정">2. 언어별 표본 판정</a></li><li><a href="#3-수정-요청-모두-비차단">3. 수정 요청 (모두 비차단)</a></li><li><a href="#4-재현-명령">4. 재현 명령</a></li></ul></details></aside>
+    <article class="doc"><h1 id="qa-트랙-b-리뷰-초안-품질-검사">QA 트랙 B — 리뷰 초안 품질 검사</h1>
+<ul>
+<li>검사일: 2026-10-07</li>
+<li>대상: <code>_workspace/03_analyst_drafts_*.json</code> 7개 배치(378건), 원본 <code>_workspace/01_collector_reviews_raw.json</code></li>
+<li>기준: <a class="code-link" href="../harness/skills/review-response-ops/SKILL.html"><code>.claude/skills/review-response-ops/SKILL.md</code></a>, <a class="code-link" href="../harness/skills/review-response-ops/references/taxonomy.html"><code>references/taxonomy.md</code></a>, <a class="code-link" href="../harness/skills/review-response-ops/references/reply-guidelines.html"><code>references/reply-guidelines.md</code></a></li>
+<li>결론: <strong>통과(차단 이슈 0건)</strong>. 비차단 수정 요청 9건(아래 3절). 동결 전에 생산자가 반영하기를 권한다.</li>
+</ul>
+<h2 id="1-기계-검사-전수-378건">1. 기계 검사 (전수 378건)</h2>
+<table>
+<thead>
+<tr>
+<th>검사 항목</th>
+<th>결과</th>
+<th>근거</th>
+<th>수정 요청</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validate_drafts.py --all 종료 코드</td>
+<td>통과</td>
+<td><code>EXIT=0</code>, 7배치 오류 0, 경고 7건(모두 "배치 언어 ≠ 리뷰 언어" 확인 경고)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>언어 불일치 경고 7건 실제 확인</td>
+<td>통과</td>
+<td>gp-pt-0cd35428f2, gp-id-b1dee42766, gp-id-55c8f4df4a, gp-id-1b9a58438f, gp-id-5375317ef5, gp-es-1edaee4fb3 → 영어 답변 확인. gp-zh-TW-846e169654 → 간체 답변 확인</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>id 누락·중복·초과</td>
+<td>통과</td>
+<td>raw 378 = drafts 378, missing 0, extra 0, 중복 0</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>스키마(필드 14개)</td>
+<td>통과</td>
+<td>378건 모두 같은 키 집합</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>Google Play 답변 350자 초과</td>
+<td>통과</td>
+<td>0건(전체 최대 307자, gp-en-3fc25e31af). 300자 초과 2건(gp-en-ae6fca780a 301, gp-en-3fc25e31af 307)은 한도 안</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>purchase_issue·account → needs_cs=true</td>
+<td>통과</td>
+<td>purchase_issue 7건·account 6건 전부 true. reward_issue 4건도 전부 true</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>purchase_issue·account → P1, route cs</td>
+<td>통과</td>
+<td>(purchase_issue,P1)=7, (account,P1)=6, route_to 전부 cs</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>서명 "Mr. Bow" 포함</td>
+<td>통과</td>
+<td>누락 0건. GM 유무 혼용(es·id·th·vi·tr)은 각 배치 <code>style_examples</code>의 실제 운영 답변과 같은 패턴</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>비한국어 translation_ko·reply_ko 존재</td>
+<td>통과</td>
+<td>누락 0건. 한국어 리뷰에 번역 필드 채운 건 0건</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>답변 문자 체계 = detected_lang</td>
+<td>통과</td>
+<td>한글·키릴·태국·가나·한자·라틴 문자 비율 검사, 불일치 0건. 라틴 계열 언어는 기능어 빈도로 재확인, 불일치 0건</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>confidence&lt;0.6 → needs_human</td>
+<td>통과</td>
+<td>위반 0건</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>refund_request·legal_threat → needs_human</td>
+<td>통과</td>
+<td>위반 0건(refund_request 1건 gp-ko-c7a5b7ba04에 needs_human 있음)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>금지: 날짜·보상·기능 확정 약속</td>
+<td>통과</td>
+<td>14개 언어 약속 패턴 정규식 검사. 걸린 4건은 "약속드릴 수 없지만"(부정형) 3건, "bis zu den nächsten Updates"(인사말) 1건으로 위반 아님</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>금지: 공개 개인정보 요구</td>
+<td>통과</td>
+<td>이메일·전화·비밀번호·카드번호·결제 금액 요구 0건. 걸린 1건(gp-ru-229b9a14b6 "телефон")은 "네 번째 휴대폰에 설치"를 언급한 것. 준비물은 모두 [설정 &gt; 고객센터] 경유</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>금지: 부정 리뷰에 광고 제거 업셀링</td>
+<td>통과</td>
+<td>"광고 제거" 언급 4건: purchase_issue 2건(리뷰 자체가 광고 제거 구매 건), monetization 1건(리뷰 내용 반복), ads 1건 gp-ko-0621b2fd21("구매했는데도 광고가 나오면 고객센터로") — 권유가 아닌 조건부 CS 안내라 위반 아님</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>금지: 경쟁작 언급</td>
+<td>통과</td>
+<td>답변에 경쟁작 이름 0건(gp-zh-TW-867d8aa794 리뷰의 點擊泰坦을 답변에서 반복하지 않음)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>이모지 최대 1개</td>
+<td>통과</td>
+<td>2개 이상 0건</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>맞춤 답변 완전 동일 문구 반복</td>
+<td><strong>실패</strong></td>
+<td>personalized 236건 중 고유 234 → 동일 답변 2쌍(4건, 1.7%): gp-ru-c258a7cd46 = gp-ru-055292c173, gp-ru-b4b2201778 = gp-ru-c16f8ddf33</td>
+<td>3절 #1</td>
+</tr>
+<tr>
+<td>맞춤 답변 문장 단위 반복률</td>
+<td>참고(통과)</td>
+<td>인사 문장 제외·20자 이상 문장 647개 중 2건 이상 답변에 그대로 나온 문장 101개(15.6%). 대부분 마무리·"개발팀에 전달" 류 짧은 문장</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>템플릿 3종·회전</td>
+<td>부분 실패</td>
+<td>21개 (배치,언어) 조합 모두 3종. 연속 같은 템플릿 1건(asia_es-2 en, gp-es-1edaee4fb3). 템플릿 목록에 없는 문구를 template으로 표시 1건(eu-1 fr, gp-fr-9bc8327e81)</td>
+<td>3절 #8</td>
+</tr>
+<tr>
+<td>템플릿 길이 100~200자</td>
+<td>참고</td>
+<td>zh-TW 36~65자, ja 69~104자, ko 92~100자로 하한 미만. 한자·가나 밀도를 고려하면 허용 범위로 판단</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>맞춤 답변 150~300자 목표</td>
+<td>참고</td>
+<td>150자 미만 78건 중 비CJK 18건(pt 11, en 4, ru 2, vi 1). 대부분 짧은 칭찬에 대한 짧은 답이라 결함 아님</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>한국어 "형님" 호칭</td>
+<td>부분 실패</td>
+<td>한국어 맞춤 답변 57건 중 호칭(제목 제외) 사용 20건. ko-1 6/30, ko-2 14/27. 템플릿은 41/41 사용</td>
+<td>3절 #9</td>
+</tr>
+<tr>
+<td>other 유형 우선순위·담당 일관성</td>
+<td>참고</td>
+<td>taxonomy 기본값(other → P3/none)과 다른 건: P2 5건, route planning 3건</td>
+<td>3절 #7</td>
+</tr>
+</tbody>
+</table>
+<p>분포(참고): category praise 262 / other 28 / bug 24 / ads 14 / content_request 13 / balance 12 / monetization 8 / purchase_issue 7 / account 6 / reward_issue 4. priority P1 30 / P2 48 / P3 300. personalized 236 / template 142.</p>
+<h2 id="2-언어별-표본-판정">2. 언어별 표본 판정</h2>
+<p>표본: 언어별로 무작위 섞은 뒤 P1 → 부정 → 낮은 별점 순으로 3건(zh-CN·zh-TW는 1건씩만 있음). 12개 언어×3 + 2 = <strong>38건</strong>. 표본과 별도로 칭찬 외 맞춤 답변 전부(56건)를 추가로 읽었다. 그 과정에서 찾은 문제는 표 아래에 따로 적었다.</p>
+<p>판정 기준: ① 리뷰 내용을 짚었는가 ② 금지 사항 없음 ③ 번역(translation_ko·reply_ko) 정확 ④ 분류·우선순위 타당 ⑤ 답변 언어 = 리뷰 언어</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>언어</th>
+<th>유형/우선순위</th>
+<th>①</th>
+<th>②</th>
+<th>③</th>
+<th>④</th>
+<th>⑤</th>
+<th>판정</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gp-de-a0761f5223</td>
+<td>de</td>
+<td>praise/P3 템플릿</td>
+<td>-</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>이모지만 있는 리뷰라 템플릿 적절</td>
+</tr>
+<tr>
+<td>gp-de-7a7b1ac364</td>
+<td>de</td>
+<td>praise/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>"lachen" 반영</td>
+</tr>
+<tr>
+<td>gp-de-d513eade33</td>
+<td>de</td>
+<td>praise/P3 템플릿</td>
+<td>-</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-en-ae6fca780a</td>
+<td>en</td>
+<td>purchase_issue/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>Instant Battle·GPA·UID 안내, 301자</td>
+</tr>
+<tr>
+<td>gp-en-4ccee37f89</td>
+<td>en</td>
+<td>account/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>사용자가 ID를 모른다고 해 UID를 요구하지 않음 — 잘 맞춤</td>
+</tr>
+<tr>
+<td>as-us-7cf7b5c790</td>
+<td>en</td>
+<td>monetization/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>rubies 반영</td>
+</tr>
+<tr>
+<td>gp-es-f969ccb2dc</td>
+<td>es</td>
+<td>ads/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>auto clicker 반영</td>
+</tr>
+<tr>
+<td>gp-es-7bb0125f16</td>
+<td>es</td>
+<td>other/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>비속어에 차분히 대응, profanity 플래그</td>
+</tr>
+<tr>
+<td>gp-es-6f8671f1ca</td>
+<td>es</td>
+<td>praise/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-fr-1dbe72adf0</td>
+<td>fr</td>
+<td>ads/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-fr-45411fd13b</td>
+<td>fr</td>
+<td>ads/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-fr-43bdfa4228</td>
+<td>fr</td>
+<td>other/P3</td>
+<td><strong>X</strong></td>
+<td>O</td>
+<td><strong>△</strong></td>
+<td>O</td>
+<td>O</td>
+<td><strong>실패</strong></td>
+<td>3절 #4</td>
+</tr>
+<tr>
+<td>gp-id-0761d1ad66</td>
+<td>id</td>
+<td>bug/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>"빨리 고쳐달라"에 일정 약속 없이 대응</td>
+</tr>
+<tr>
+<td>gp-id-61a74e62f6</td>
+<td>id</td>
+<td>ads/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>별점 5지만 내용 기준 negative — 지침에 맞음</td>
+</tr>
+<tr>
+<td>gp-id-887dfa260a</td>
+<td>id</td>
+<td>content_request/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>as-jp-12331e1ab7</td>
+<td>ja</td>
+<td>monetization/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과(경미)</td>
+<td>42241스테이지·월드 시스템 반영. "ご不満をおかけしておりますこと"는 어색한 일본어 → 3절 #6</td>
+</tr>
+<tr>
+<td>gp-ja-4611ee3853</td>
+<td>ja</td>
+<td>balance/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>as-jp-5f31370be7</td>
+<td>ja</td>
+<td>ads/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>"広告削除が必須"에 업셀링 없음, 업데이트 예고 불만에 일정 약속 없음</td>
+</tr>
+<tr>
+<td>gp-ko-068e8372af</td>
+<td>ko</td>
+<td>reward_issue/P1</td>
+<td>O</td>
+<td>O</td>
+<td>-</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-ko-cf52ec9e1e</td>
+<td>ko</td>
+<td>reward_issue/P1</td>
+<td>O</td>
+<td>O</td>
+<td>-</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>외부 리워드 앱 미션 보상으로 보임 — 검수자 참고</td>
+</tr>
+<tr>
+<td>gp-ko-2af3219973</td>
+<td>ko</td>
+<td>purchase_issue/P1</td>
+<td>O</td>
+<td>O</td>
+<td>-</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-pt-40dc542add</td>
+<td>pt</td>
+<td>purchase_issue/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-pt-94f6989555</td>
+<td>pt</td>
+<td>account/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>복구를 확정하지 않음</td>
+</tr>
+<tr>
+<td>gp-pt-4bafeee588</td>
+<td>pt</td>
+<td>balance/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-ru-a1445b9f01</td>
+<td>ru</td>
+<td>bug/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-ru-c258a7cd46</td>
+<td>ru</td>
+<td>bug/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td><strong>실패</strong></td>
+<td>gp-ru-055292c173과 답변 완전 동일 → 3절 #1</td>
+</tr>
+<tr>
+<td>gp-ru-dd127b0b18</td>
+<td>ru</td>
+<td>bug/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-th-242b95276b</td>
+<td>th</td>
+<td>purchase_issue/P1</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>"GM 연락처" 질문에 직접 답함</td>
+</tr>
+<tr>
+<td>gp-th-67f70a4874</td>
+<td>th</td>
+<td>bug/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-th-8f7f72a40a</td>
+<td>th</td>
+<td>balance/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>광고 불만도 포함 — route planning만으로는 bm 집계에서 빠짐(참고)</td>
+</tr>
+<tr>
+<td>gp-tr-5532632909</td>
+<td>tr</td>
+<td>other/P2</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>△</td>
+<td>O</td>
+<td>통과</td>
+<td>other 기본값 P3와 다름 → 3절 #7</td>
+</tr>
+<tr>
+<td>gp-tr-1383a07f57</td>
+<td>tr</td>
+<td>other/P2</td>
+<td><strong>X</strong></td>
+<td>O</td>
+<td>O</td>
+<td>△</td>
+<td>O</td>
+<td><strong>실패</strong></td>
+<td>3절 #3</td>
+</tr>
+<tr>
+<td>gp-tr-716b1f9117</td>
+<td>tr</td>
+<td>other/P3 템플릿</td>
+<td>-</td>
+<td>O</td>
+<td><strong>X</strong></td>
+<td><strong>X</strong></td>
+<td>O</td>
+<td><strong>실패</strong></td>
+<td>3절 #5</td>
+</tr>
+<tr>
+<td>gp-vi-8d98eeb4d3</td>
+<td>vi</td>
+<td>praise/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-vi-a1aa2c936a</td>
+<td>vi</td>
+<td>praise/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td></td>
+</tr>
+<tr>
+<td>gp-vi-46b58deac0</td>
+<td>vi</td>
+<td>praise/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>뜻이 애매해 needs_human 표시 — 적절</td>
+</tr>
+<tr>
+<td>gp-zh-TW-846e169654</td>
+<td>zh-CN</td>
+<td>balance/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>간체로 답함</td>
+</tr>
+<tr>
+<td>gp-zh-TW-867d8aa794</td>
+<td>zh-TW</td>
+<td>other/P3</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>통과</td>
+<td>경쟁작을 답변에서 반복하지 않음, competitor_mention 플래그</td>
+</tr>
+</tbody>
+</table>
+<p>표본 결과: <strong>38건 중 통과 34, 실패 4</strong>(금지 사항 위반 0, 답변 언어 오류 0).</p>
+<p>표본 밖 추가 정독(칭찬 외 맞춤 답변 56건)에서 찾은 것:
+- gp-id-bd558c092f — 번역 오역으로 칭찬을 불만으로 읽음(3절 #2)
+- gp-ru-b4b2201778 = gp-ru-c16f8ddf33 — 답변 완전 동일(3절 #1)
+- gp-ko-9f6f5d21c5 — "ev 어플"을 "이벤트"로 바꿔 씀(3절 #6)
+- 나머지 P1 30건 전부 읽음: 고객센터 안내·준비물·복구 비확정 원칙 지킴. gp-ko-c7a5b7ba04(환불 요청)는 환불을 확정하지 않고 needs_human 표시돼 있음.</p>
+<h2 id="3-수정-요청-모두-비차단">3. 수정 요청 (모두 비차단)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>담당 배치</th>
+<th>id</th>
+<th>문제</th>
+<th>구체적 수정 요청</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>eu-1</td>
+<td>gp-ru-c258a7cd46, gp-ru-055292c173 / gp-ru-b4b2201778, gp-ru-c16f8ddf33</td>
+<td>맞춤 답변이 글자까지 같음. 지침 금지 사항 "같은 문구를 여러 리뷰에 그대로 복사" 위반. 스토어 페이지에 나란히 보이면 기계적 응대로 읽힘</td>
+<td>각 쌍에서 1건씩 고쳐 쓴다. 055292c173은 "у меня вылетает"(실행 중 튕김)만 말했으므로 "при запуске и вы не можете зайти"(실행 시·접속 불가)를 빼고 튕김 자체를 짚는다. c16f8ddf33은 "그래도 별 1개는 받을 만하다 :)))"는 농담을 짧게 받아 주고, 설치 직후 서버 연결 실패를 짚는다</td>
+</tr>
+<tr>
+<td>2</td>
+<td>asia_es-1</td>
+<td>gp-id-bd558c092f</td>
+<td>오역. 원문 "bukan yang di gambarnya berubah tapi display di charnya ga berubah, ini keren"은 "아이콘만 바뀌고 캐릭터 모습은 안 바뀌는 그런 게 아니라서 멋지다", 즉 장비 강화가 캐릭터 외형에 반영되는 점을 칭찬한 것. translation_ko는 반대로 옮겼고 답변도 "캐릭터 장비 모습이 기대만큼 바뀌지 않는다면 전달하겠다"로 불만처럼 응답함</td>
+<td>translation_ko를 "장비 강화가 정말 다양해요. 아이콘만 바뀌고 캐릭터 모습은 그대로인 게 아니라 캐릭터에도 반영돼서 멋져요"로 고친다. category는 praise/positive/P3/none으로 바꾼다. 답변은 장비 외형이 캐릭터에 반영되는 점을 칭찬해 줘서 고맙다는 내용으로 다시 쓴다. needs_human은 빼도 된다</td>
+</tr>
+<tr>
+<td>3</td>
+<td>eu-1</td>
+<td>gp-tr-1383a07f57</td>
+<td>리뷰에 나온 Tapjoy를 짚지 않았고, "Beklentilerinizi karşılayamadığımız için üzgünüz"(기대에 부응하지 못해 죄송합니다)는 SKILL.md가 개선 대상으로 든 고정 문구 그대로임. other/P2는 taxonomy 기본값(P3)과도 다름</td>
+<td>답변에 "Tapjoy ödülleri için başladığınızı"처럼 리뷰 내용을 넣고, 오퍼월 보상 말고는 게임 자체에서 재미를 못 느꼈다는 점에 공감한 뒤 팀에 전달한다고 쓴다. 분류는 monetization(오퍼월로 유입된 이용자, bm 집계 대상)/P2/bm, 또는 other/P3/none 가운데 하나로 정하고 이유를 남긴다</td>
+</tr>
+<tr>
+<td>4</td>
+<td>eu-1</td>
+<td>gp-fr-43bdfa4228</td>
+<td>"ses juste Chen que on nous oblige a noter" = "c'est juste chiant qu'on nous oblige à noter"(평가를 강제로 요구하는 게 짜증날 뿐). 번역에서 "짜증난다"가 빠졌고, 답변은 "게임이 마음에 들지 않으셨다면"으로 요점(게임 안 평점 요청 팝업이 귀찮다)을 놓침</td>
+<td>translation_ko를 "그냥 평점을 매기라고 강요하는 게 짜증날 뿐이에요"로 고친다. 답변은 평가 요청 팝업이 번거로웠다는 점을 짚고 그 의견을 팀에 전달한다고 쓴다. 평점 요청 UX 건의이므로 category는 content_request/planning도 검토한다</td>
+</tr>
+<tr>
+<td>5</td>
+<td>eu-1</td>
+<td>gp-tr-716b1f9117</td>
+<td>"mük"는 터키어 구어에서 "mükemmel"(완벽해요)을 줄인 말이고 별점도 5점. translation_ko "(의미 없는 문자열)"과 category other는 틀림</td>
+<td>translation_ko를 "완벽해요(mükemmel의 줄임말)"로, category를 praise/positive로 고친다. summary_ko도 함께 고친다. 답변(템플릿)은 그대로 써도 된다</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ko-2 / asia_es-2</td>
+<td>gp-ko-9f6f5d21c5, as-jp-12331e1ab7</td>
+<td>(a) "ev 어플 9단계 클리어했는데 보너스 안들어옴" — "어플"이라고 했으니 외부 리워드 앱 미션일 가능성이 큰데, 답변은 근거 없이 "이벤트 9단계"로 바꿔 씀. 공개 답변에 사실과 다른 표현이 남음. (b) 일본어 "ご不満をおかけしておりますこと"는 쓰지 않는 결합(おかけする는 ご迷惑・ご不便과 쓰임)</td>
+<td>(a) 답변을 "ev 앱 9단계 미션을 완료하셨는데 보너스가 들어오지 않아"처럼 리뷰 표현 그대로 고친다. 준비물에 "참여한 앱 이름과 미션 완료 화면"을 넣는다. gp-ko-cf52ec9e1e(9문명 400원 리워드)도 같은 외부 리워드 건으로 보이니, CS가 리워드 제공사에 확인할 수 있도록 summary_ko에 "리워드 앱"을 적어 둔다. (b) "ご期待に沿えず申し訳ございません" 또는 "ご不便をおかけし申し訳ございません"으로 고친다</td>
+</tr>
+<tr>
+<td>7</td>
+<td>eu-1, ko-1, en-1</td>
+<td>gp-ru-481d6f2ffc, gp-tr-5532632909, gp-tr-1383a07f57, gp-ru-37cf892857, gp-ko-b4a9d11534(P2) / gp-en-0207bdd76d, gp-ru-37cf892857, gp-ko-b4a9d11534(route planning)</td>
+<td>other인데 taxonomy 기본값(P3/none)과 다른 값. 대시보드 P2 수(48)와 기획팀 전달 건수에 섞임</td>
+<td>의도한 것이면 해당 draft의 flags에 needs_human을 넣거나, 맞는 유형으로 다시 분류한다(예: gp-ru-37cf892857 닉네임 제한 → content_request/planning, gp-en-0207bdd76d 다른 플레이어 비매너 → 커뮤니티 운영 이슈). 의도가 아니면 P3/none으로 맞춘다</td>
+</tr>
+<tr>
+<td>8</td>
+<td>eu-1, asia_es-2</td>
+<td>gp-fr-9bc8327e81, gp-es-1edaee4fb3</td>
+<td>(a) reply_strategy가 template인데 문구가 eu-1의 fr 템플릿 3종에 없음. (b) asia_es-2의 en 템플릿이 연달아 같은 문구로 쓰임</td>
+<td>(a) fr 템플릿 3종 가운데 하나로 바꾸거나 strategy를 personalized로 바꾼다. (b) gp-es-1edaee4fb3에 바로 앞 en 템플릿 리뷰와 다른 템플릿을 배정한다</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ko-1(주로), ko-2</td>
+<td>한국어 맞춤 답변 37건</td>
+<td>reply-guidelines "한국어 호칭은 형님". 맞춤 답변에서 호칭 사용률이 ko-1 20%(6/30), ko-2 52%(14/27). style_examples는 사과 답변에도 "형님의 기대에 부응하지 못한 점"처럼 호칭을 씀. 배치마다 톤이 달라 같은 스토어 페이지에서 일관성이 떨어짐</td>
+<td>ko-1 맞춤 답변에 "형님" 호칭을 자연스럽게 넣는다(예: "형님, ~하셨군요"). 단, purchase_issue·account·환불 답변에서는 가볍게 들리지 않도록 검수자가 판단한다. 기준을 정하기 어려우면 reply-guidelines.md에 "부정·결제 답변에서의 호칭 사용"을 한 줄 추가하는 것을 리더에게 제안</td>
+</tr>
+</tbody>
+</table>
+<p>참고(수정 요청 아님): gp-ru-37cf892857의 translation_ko는 요약 번역이라 "PC에서는 다른 닉네임을 쓴다", "전쟁 중인 나라 사람들도 문제 삼지 않았다"가 빠졌다. 검수자 판단에는 지장이 없다.</p>
+<h2 id="4-재현-명령">4. 재현 명령</h2>
+<pre><code class="language-bash">./.venv/bin/python .claude/skills/review-response-ops/scripts/validate_drafts.py --all _workspace; echo &quot;EXIT=$?&quot;
+</code></pre>
+<p>기계 검사·표본 추출 스크립트는 세션 스크래치패드(join.py, chk2~5.py, sample.py, 시드 20261007)에 있다. 표본은 언어별로 random.shuffle한 뒤 (priority, sentiment, rating) 순으로 정렬해 앞 3건을 골랐다.</p></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

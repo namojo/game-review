@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01. 하네스를 처음부터 구성 요청하는 프롬프트 | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../task2/gallery.html">이미지 갤러리</a></li><li><a href="../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec" open><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="01_build_harness_prompts.html" aria-current="page">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">실행 가이드<span class="path">deliverables/howto/01_build_harness_prompts.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#a-전체-3과제-하네스-구성-프롬프트-완성형">(a) 전체 3과제 하네스 구성 프롬프트 — 완성형</a></li><li><a href="#b-과제별-단독-하네스-구성-프롬프트">(b) 과제별 단독 하네스 구성 프롬프트</a><ul><li><a href="#과제-1만-리뷰-대응">과제 1만 — 리뷰 대응</a></li><li><a href="#과제-2만-주간-이벤트">과제 2만 — 주간 이벤트</a></li><li><a href="#과제-3만-광고-운영분석">과제 3만 — 광고 운영·분석</a></li></ul></li><li><a href="#c-좋은-프롬프트의-요소">(c) 좋은 프롬프트의 요소</a></li><li><a href="#d-하네스가-만들어지면-확인할-것">(d) 하네스가 만들어지면 확인할 것</a></li><li><a href="#하네스-개선-요청-harnessevolve">하네스 개선 요청 — /harness:evolve</a></li></ul></details></aside>
+    <article class="doc"><h1 id="01-하네스를-처음부터-구성-요청하는-프롬프트">01. 하네스를 처음부터 구성 요청하는 프롬프트</h1>
+<p>이미 만든 하네스를 복사해 쓰는 방법은 <a href="00_setup.html">00_setup.md</a> 3절에 있다. 이 문서는 <strong>다른 게임, 다른 팀, 새 과제</strong>에 같은 방식으로 하네스를 새로 만들 때 쓴다. 하네스 플러그인(<code>harness@harness-marketplace</code>)을 설치해야 한다(00_setup.md 4절).</p>
+<p>하네스가 만들어 주는 것:</p>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>위치</th>
+<th>이 프로젝트의 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에이전트 정의</td>
+<td><code>.claude/agents/*.md</code></td>
+<td>review-ops-analyst, liveops-event-planner, event-visual-designer … 7개</td>
+</tr>
+<tr>
+<td>스킬(절차·스크립트·참고 문서)</td>
+<td><code>.claude/skills/*/SKILL.md</code>, <code>scripts/</code>, <code>references/</code></td>
+<td>review-response-ops, weekly-event-production … 6개</td>
+</tr>
+<tr>
+<td>오케스트레이터 스킬</td>
+<td><code>.claude/skills/{이름}/SKILL.md</code></td>
+<td>thunder-ai-consulting — 요청을 해석해 에이전트에 나누고 QA까지 돌린다</td>
+</tr>
+<tr>
+<td>프로젝트 안내</td>
+<td><a class="code-link" href="../harness/CLAUDE.html"><code>CLAUDE.md</code></a></td>
+<td>하네스 목표·호출 조건·변경 이력</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="a-전체-3과제-하네스-구성-프롬프트-완성형">(a) 전체 3과제 하네스 구성 프롬프트 — 완성형</h2>
+<p>이 프로젝트를 만들 때 쓴 요청을 다듬은 것이다. <code>{ }</code> 부분만 바꾸면 다른 게임에도 쓸 수 있다. Claude Code를 프로젝트 폴더에서 열고 그대로 붙여 넣는다.</p>
+<pre><code class="language-text">/harness:harness
+
+썬더게임즈(T.G Inc, 부산) AI 전환 컨설팅 하네스를 구성해줘. 에이전트 팀으로 3개 과제의 적용 방안·구현 가이드·동작하는 PoC를 만들고, 마지막에 통합 보고서까지 쓰는 구조다.
+
+## 고객·대상
+- 대표작: 「원시인 형님들 키우기 : 문명 x 방치형 RPG」
+- Google Play: com.primitivebrother.thunder.google (평점 4.47, 설치 500만+)
+- App Store: 1490207503
+
+## 과제 정의(고객 원문)
+| # | 과제 | 담당 | 현재 방식 | 어려움 | 검토 방향 | 소요 시간 |
+|---|---|---|---|---|---|---|
+| 1 | Google Play / App Store 리뷰 대응 자동화 | 운영 | 담당자가 리뷰를 직접 확인하고 번역·답변 작성(미리 작성해 놓은 답변 사용) | 매일 대응이 가장 좋지만 다른 업무 일정에 따라 며칠간의 리뷰를 한 번에 처리하는 경우가 많음 | 리뷰 수집 → 유형 분류 → 번역 → 답변 초안 생성 → 담당자 검수 → 답변 등록 | 리뷰 1개당 2분 |
+| 2 | 게임 내 주간 이벤트 제작 자동화 | 운영·디자인 | 매주 이벤트 주제 선정, 문구 작성, 번역, 이미지 제작 및 스토어 등록을 각각 진행 | 매주 유사한 제작 과정 반복, 국가별 문구·이미지 제작에 많은 시간 | 주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국어 번역 → 스토어 이벤트 등록 | 운영 매주 1~2시간, 디자인 1~2일 |
+| 3 | Meta / Google 광고 운영 및 성과 분석 자동화 | 마케팅 | 담당자가 광고 데이터를 직접 확인하고 분석·운영 | 국가·캠페인·소재별 데이터 확인과 반복 분석 | 데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다음 액션 제안 → 리포트 작성 | 매일 1시간 이상 |
+
+## 과제별 요구
+1. 과제 1: 실제 공개 리뷰(최근 60일, 두 스토어, 전 언어)를 수집해 유형·우선순위(P1~P3)·담당 부서로 분류하고, 한국어 번역과 GM Mr. Bow 말투의 답변 초안을 만든다. 담당자가 검수·승인하는 웹서비스(정적 SPA)를 만들어 https://namojo.github.io/game-review/ 에 배포한다(저장소 namojo/game-review, GitHub Pages). 리뷰가 많으므로 언어별 배치로 나눠 분석 에이전트를 병렬로 돌린다. 실제 스토어에 답변을 등록하지는 않는다. 등록 스크립트는 기본 dry-run으로 만든다.
+2. 과제 2: 향후 8주 이벤트 캘린더와 이번 주 이벤트 키트 1개(기획서, 다국어 copy.json, 스토어 등록 시트)를 만든다. 이미지는 codex-image 스킬(codex exec image_generation)로 글자 없는 키아트 3규격(16:9·9:16·1:1)을 병렬 생성하고, 언어별 문구는 스크립트로 합성한다. 게임 스크린샷을 화풍 참고로 쓴다. 리뷰 분석 결과(불만 유형)를 이벤트 설계에 연결한다.
+3. 과제 3: IT마케팅(퍼포먼스 마케팅·마테크) 전문가 관점으로 구현 가이드를 쓰고, 가상 데이터로 실제 동작하는 분석·일일 리포트 샘플을 만든다. 숫자는 코드가 계산하고 Claude는 문장만 쓰게 한다. API 버전·정책은 공식 문서로 확인하고 출처를 단다.
+
+## 공통
+- QA 에이전트가 과제별 산출물을 실제로 실행해 교차 검증하고(최대 2회 왕복), 통과한 산출물만 동결한다.
+- 마지막에 통합 보고서(HTML 단일 파일 + Markdown)를 쓴다: 요약, 진단, 과제별 적용 방안, ROI(가정 명시), 12주 로드맵, 거버넌스, 확인 요청 사항, 부록(하네스 사용법).
+- 숫자에는 [실측]/[고객]/[가정]을 붙인다. 없는 게임 시스템이나 수치를 지어내지 않고 [확인 필요]로 표시한다.
+
+## 산출물 위치
+- 웹서비스: game-review/ (공개 배포는 이것만)
+- 과제 2: deliverables/task2-weekly-event/
+- 과제 3: deliverables/task3-ads-automation/
+- 과제 1 가이드: deliverables/task1-review-automation/guide.md
+- 보고서: deliverables/report/index.html, report.md
+- 중간 산출물·QA 보고서: _workspace/
+
+## 사용할 도구·스킬
+- codex-image(키아트), Python venv(.venv, google-play-scraper·playwright), gh(배포), Claude API는 파이프라인 코드에서만(키는 환경 변수).
+
+## 진행 방식
+- 진행 상황을 한국어로 단계마다 짧게 보고해줘. 재생성·재작업은 1회까지만 하고, 남은 문제는 &quot;알려진 제한&quot;으로 기록해줘.
+- 나중에 &quot;리뷰 데이터 갱신&quot;, &quot;다음 주 이벤트 키트&quot;, &quot;과제 3만 다시&quot;, &quot;보고서 수정&quot; 같은 부분 재실행이 되게 오케스트레이터를 만들어줘.
+</code></pre>
+<p>하네스가 먼저 설계안(에이전트·스킬 목록, 실행 순서)을 보여 주고 확인을 받는다. 확인하면 파일을 만든다. 만든 뒤 바로 실행하려면 이어서 입력한다.</p>
+<pre><code class="language-text">썬더게임즈 컨설팅 하네스 실행해줘
+</code></pre>
+<hr />
+<h2 id="b-과제별-단독-하네스-구성-프롬프트">(b) 과제별 단독 하네스 구성 프롬프트</h2>
+<h3 id="과제-1만-리뷰-대응">과제 1만 — 리뷰 대응</h3>
+<pre><code class="language-text">/harness:harness
+
+「{게임명}」(Google Play {패키지명}, App Store {앱 ID})의 스토어 리뷰 대응 하네스를 만들어줘.
+
+- 현재: 운영 담당자가 리뷰를 직접 읽고 번역해 미리 써 둔 답변을 고른다. 1건 2분. 바쁘면 며칠 치를 몰아서 처리한다.
+- 목표 흐름: 리뷰 수집 → 유형 분류(P1 돈·계정·진행 불가 / P2 / P3) → 한국어 번역 → 답변 초안(GM {서명} 말투, 리뷰 언어로) → 담당자 검수 → 답변 등록
+- 구성: 수집·배치 스크립트, 언어 배치별 분석 에이전트(병렬), 검증 스크립트(Play 350자, 답변 언어, 금지 표현), 검수 웹서비스(정적 SPA, GitHub Pages {URL}), 승인 답변 등록 스크립트(기본 dry-run, 공식 API), QA 에이전트
+- 제약: 사람이 승인하기 전에는 등록하지 않는다. 답변에서 날짜·보상을 약속하지 않고 개인정보를 묻지 않는다. 작성자 이름은 해시로 바꾼다. 매일 실행해도 기존 리뷰와 분석이 사라지지 않게 누적 병합한다.
+- 산출물: game-review/(웹서비스+pipeline/), deliverables/task1-review-automation/guide.md
+- 재실행 요청 &quot;리뷰 데이터 갱신&quot;이 동작하게 해줘.
+</code></pre>
+<h3 id="과제-2만-주간-이벤트">과제 2만 — 주간 이벤트</h3>
+<pre><code class="language-text">/harness:harness
+
+「{게임명}」 게임 내 주간 이벤트 제작 하네스를 만들어줘.
+
+- 현재: 매주 주제 선정·문구·번역·이미지·스토어 등록을 따로 한다. 운영 주 1~2시간, 디자인 1~2일.
+- 목표 흐름: 주제 선정(8주 캘린더) → 제목·내용 작성(기획서, 공지, 푸시) → 이미지 제작 → 다국어 번역({언어 목록}) → 스토어 이벤트 등록 시트(Google Play 프로모션 콘텐츠, App Store 인앱 이벤트)
+- 이미지: codex-image 스킬(codex exec image_generation)로 글자 없는 키아트 3규격(16:9, 9:16, 1:1)을 병렬 생성한다. 화풍 참고 이미지는 _workspace/00_input/game_art/. 언어별 글자는 Python 스크립트로 합성한다(배너 = 언어 × 3규격).
+- 에이전트: 라이브옵스 기획자, 비주얼 디자이너, QA
+- 제약: 없는 게임 시스템·보상 수치를 지어내지 않고 [기획 확인 필요]로 표시한다. 스토어 이미지에는 글자를 넣지 않는다. 문구의 단일 원천은 copy.json. 글자 수 한도를 검증한다. 국가별 추모일·종교·광고 법규를 확인한다.
+- 산출물: deliverables/task2-weekly-event/event_calendar.md, {event_id}/ 아래 event_brief.md · copy.json · store_submission.md · keyart/ · localized/
+- 재실행 요청 &quot;다음 주 이벤트 키트&quot;, &quot;배너만 다시 합성&quot;, &quot;9:16 키아트만 다시&quot;가 동작하게 해줘.
+</code></pre>
+<h3 id="과제-3만-광고-운영분석">과제 3만 — 광고 운영·분석</h3>
+<pre><code class="language-text">/harness:harness
+
+「{게임명}」 Meta·Google 광고(UA) 운영·성과 분석 자동화 하네스를 만들어줘. 퍼포먼스 마케팅·마테크 전문가 관점이다.
+
+- 현재: 마케팅 담당자가 매일 1시간 넘게 매체 화면을 확인하고 엑셀로 비교한다.
+- 목표 흐름: 데이터 수집(Meta Marketing API, Google Ads API, MMP) → 성과 분석 → 문제점 파악(추적 누락, CPI 급등, 소재 피로, 예산 과속) → 예산·다음 액션 제안(변경 폭 상한, 쿨다운) → 5줄 일일 리포트
+- 산출물: deliverables/task3-ads-automation/guide.md(KPI, 데이터 아키텍처, 탐지 규칙, Claude 역할, 리포트 설계, 로드맵, 리스크, 출처), sample/(가상 데이터 생성기, 분석 스크립트, findings.json, 리포트 프롬프트, 숫자 검증기, 샘플 리포트)
+- 제약: 숫자는 코드가 계산하고 Claude는 findings.json만 읽어 문장을 쓴다. 리포트 숫자는 검증기로 확인한다. 실제 데이터가 없으면 가상 데이터임을 모든 파일에 표시한다. API 버전·정책은 공식 문서로 확인하고 출처를 단다. 확인하지 못한 것은 [확인 필요]로 둔다.
+- 재실행 요청 &quot;과제 3만 다시&quot;, &quot;어제 데이터로 일일 리포트&quot;가 동작하게 해줘.
+</code></pre>
+<hr />
+<h2 id="c-좋은-프롬프트의-요소">(c) 좋은 프롬프트의 요소</h2>
+<table>
+<thead>
+<tr>
+<th>요소</th>
+<th>왜 필요한가</th>
+<th>이 프로젝트의 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>과제 정의</td>
+<td>에이전트 역할과 범위가 여기서 정해진다</td>
+<td>과제 3개, 담당 부서</td>
+</tr>
+<tr>
+<td>현재 방식·소요 시간</td>
+<td>ROI 계산과 "무엇을 자동화할지"의 기준이 된다</td>
+<td>리뷰 1건 2분, 디자인 1~2일</td>
+</tr>
+<tr>
+<td>검토 방향(단계명)</td>
+<td>고객 용어 그대로 흐름도·스킬 단계가 만들어진다</td>
+<td>수집 → 분류 → 번역 → 초안 → 검수 → 등록</td>
+</tr>
+<tr>
+<td>산출물 형식·위치</td>
+<td>나중에 재실행·검수할 때 같은 곳에 쌓인다</td>
+<td><code>deliverables/task2-weekly-event/{event_id}/</code></td>
+</tr>
+<tr>
+<td>도구</td>
+<td>하네스가 쓸 수 있는 도구를 미리 알아야 설계가 맞는다</td>
+<td>codex-image, gh, venv</td>
+</tr>
+<tr>
+<td>제약</td>
+<td>자동화가 넘으면 안 되는 선</td>
+<td>사람 승인 전 등록 금지, 수치를 지어내지 않음, 이미지 글자 금지</td>
+</tr>
+<tr>
+<td>재실행 시나리오</td>
+<td>오케스트레이터가 부분 실행을 지원하게 된다</td>
+<td>"다음 주 이벤트 키트"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>나쁜 예</strong></p>
+<pre><code class="language-text">우리 게임 리뷰 자동으로 답변하는 거 만들어줘.
+</code></pre>
+<p>이렇게 쓰면 어떤 스토어인지, 누가 검수하는지, 어디에 배포하는지, 어떤 답변이 금지인지가 빠진다. 하네스가 가정을 채우게 되고, 결과가 회사 운영 방식과 맞지 않는다.</p>
+<p><strong>좋은 예</strong> — 같은 요청을 다듬은 것</p>
+<pre><code class="language-text">/harness:harness
+「원시인 형님들 키우기」 Google Play·App Store 리뷰 대응 하네스를 만들어줘.
+현재 운영 담당자가 리뷰를 직접 번역해 미리 쓴 답변 4~5종을 돌려 쓰고(1건 2분), 바쁘면 며칠 치를 몰아서 처리한다.
+흐름은 리뷰 수집 → 유형 분류(P1~P3, 담당 부서) → 한국어 번역 → GM Mr. Bow 말투 답변 초안 → 담당자 검수 → 답변 등록.
+검수 웹서비스는 GitHub Pages(namojo/game-review)에 배포하고, 등록 스크립트는 기본 dry-run.
+사람 승인 전 등록 금지, 날짜·보상 약속 금지, 개인정보 요구 금지. 매일 실행해도 누적되게.
+</code></pre>
+<hr />
+<h2 id="d-하네스가-만들어지면-확인할-것">(d) 하네스가 만들어지면 확인할 것</h2>
+<pre><code class="language-bash">ls .claude/agents .claude/skills
+sed -n 1,40p CLAUDE.md
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>확인</th>
+<th>기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에이전트</td>
+<td>과제마다 생산자 1명 이상 + QA 1명. 각 정의에 "핵심 역할·작업 원칙·입력·출력 규칙·통신 규칙·오류 처리"가 있다</td>
+</tr>
+<tr>
+<td>스킬</td>
+<td>각 <code>SKILL.md</code> 에 산출물 경로, 단계별 명령, 재실행 방법이 있다. 결정적 작업(수집·합성·검증)은 <code>scripts/</code> 에 스크립트로 있다</td>
+</tr>
+<tr>
+<td>오케스트레이터</td>
+<td>"0단계 기존 작업 확인"(처음/부분/새 실행 판단), 단계별 병렬 실행, QA 왕복 상한, 오류 처리 표가 있다</td>
+</tr>
+<tr>
+<td><a class="code-link" href="../harness/CLAUDE.html"><code>CLAUDE.md</code></a></td>
+<td>호출 조건(어떤 말에 하네스가 동작하는지)과 변경 이력 표가 있다</td>
+</tr>
+<tr>
+<td>첫 실행</td>
+<td>하네스를 만든 <strong>같은 세션</strong>에서는 새 에이전트 유형이 아직 등록되지 않아 <code>Agent type not found</code> 가 날 수 있다(2026-10-07 실제로 겪음). Claude Code를 다시 시작하거나, 오케스트레이터에 "이름을 붙여 호출하고 프롬프트 첫 줄에 역할 정의 파일을 읽게 한다"는 대응이 들어 있는지 본다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="하네스-개선-요청-harnessevolve">하네스 개선 요청 — <code>/harness:evolve</code></h2>
+<p>실행해 보고 아쉬운 점이 있으면, 그 경험을 하네스에 반영하게 한다. 개선 내용은 에이전트·스킬·오케스트레이터와 <a class="code-link" href="../harness/CLAUDE.html"><code>CLAUDE.md</code></a> 변경 이력에 남는다.</p>
+<pre><code class="language-text">/harness:evolve
+
+이번 실행 회고를 하네스에 반영해줘.
+1. 키아트 재생성이 반복돼 너무 오래 걸렸다 → 재생성은 1회까지만 하고 남은 문제는 &quot;알려진 제한&quot;으로 기록하게 해줘.
+2. codex 전역 기본 모델이 ChatGPT 로그인에서 지원되지 않아 실패했는데 스크립트가 [ok] 로 오판했다 → 새로 만든 파일만 성공으로 보고, CODEX_MODEL 로 모델을 지정할 수 있게 해줘.
+3. Google Play 프로모션 이미지도 글자가 금지인데 스킬 문서는 합성 배너를 Play용이라고 적었다 → store-event-specs.md 와 SKILL.md 를 고쳐줘.
+4. 스토어 제출 시트가 규격 미달 원본을 가리켰다 → 제출 이미지는 keyart/store/ 규격 사본을 쓰도록 절차와 시트 양식을 고쳐줘.
+</code></pre>
+<p>위 네 항목은 이 프로젝트에서 실제로 겪고 고친 것이다(<code>_workspace/progress.md</code> "하네스 개선 기록").</p>
+<p>다른 예:</p>
+<pre><code class="language-text">/harness:evolve
+리뷰 분류에서 인게임 채팅 욕설·성희롱 신고가 건의로 분류됐다. 커뮤니티·안전 신고는 P2 이상, 고객센터, 사람 검수로 가게 taxonomy 와 분석가 지침을 고쳐줘.
+</code></pre>
+<pre><code class="language-text">/harness:evolve
+매일 리뷰 갱신을 돌리니 분석가가 다듬은 초기 템플릿이 자동 생성 템플릿에 밀려났다. 운영자가 승인한 고정 템플릿 세트를 쓰고 새로 만들지 않게 바꿔줘.
+</code></pre>
+<p>다음 문서: <a href="01_task1_review_run.html">01_task1_review_run.md</a> · <a href="02_task2_weekly_event_run.html">02_task2_weekly_event_run.md</a> · <a href="03_task3_ads_run.html">03_task3_ads_run.md</a></p></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

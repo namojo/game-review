@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween) | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../../index.html"><img src="../../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec" open><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../../task2/gallery.html">이미지 갤러리</a></li><li><a href="../event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="copy.json.html">다국어 문구(copy.json)</a></li><li><a href="event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="store_submission.html" aria-current="page">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">과제 2 · 주간 이벤트 제작<span class="path">deliverables/task2-weekly-event/2026-w44-halloween/store_submission.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#0-제출-일정과-체크리스트">0. 제출 일정과 체크리스트</a></li><li><a href="#1-app-store-인앱-이벤트">1. App Store 인앱 이벤트</a><ul><li><a href="#공통-설정">공통 설정</a></li><li><a href="#언어별-문구-이름-30-짧은-설명-50-긴-설명-120">언어별 문구 (이름 ≤30 · 짧은 설명 ≤50 · 긴 설명 ≤120)</a></li></ul></li><li><a href="#2-google-play-프로모션-콘텐츠">2. Google Play 프로모션 콘텐츠</a><ul><li><a href="#공통-설정_1">공통 설정</a></li><li><a href="#언어별-문구-태그라인-80-설명-500">언어별 문구 (태그라인 ≤80 · 설명 ≤500)</a></li></ul></li><li><a href="#3-글자-수-검증-요약">3. 글자 수 검증 요약</a></li><li><a href="#4-제출-이미지">4. 제출 이미지</a></li><li><a href="#5-자동화-범위">5. 자동화 범위</a></li><li><a href="#6-출처-2026-10-07-확인">6. 출처 (2026-10-07 확인)</a></li></ul></details></aside>
+    <article class="doc"><h1 id="스토어-등록-시트-형님들의-할로윈-호박-사냥-2026-w44-halloween">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (<code>2026-w44-halloween</code>)</h1>
+<ul>
+<li>문구 원천: <a class="code-link" href="copy.json.html"><code>copy.json</code></a> (<code>locales.{lang}.appstore</code>, <code>locales.{lang}.play</code>). 이 시트의 문구는 copy.json에서 스크립트로 옮겼으므로 손으로 고치지 않는다.</li>
+<li>글자 수: 공백을 포함한 Python <code>len()</code> 값(유니코드 코드 포인트 수). th처럼 성조·모음 기호가 결합 문자로 따로 세어지는 언어는 화면에 보이는 글자 수보다 크게 나온다. 그래서 이 값이 한도 안이면 스토어 기준으로도 안전하다.</li>
+<li><strong>검증 결과: 13개 언어 × 5개 필드 = 65개 필드 모두 한도 이내. 초과 0건.</strong> 줄바꿈, 연속 문장부호, 전부 대문자인 단어도 0건이다. 여유가 1자 이하인 필드는 5개다(es·de App Store 이름 30/30, pt·tr 이름 29/30, id 긴 설명 119/120). 고칠 때 글자를 늘리지 않는다.</li>
+</ul>
+<h2 id="0-제출-일정과-체크리스트">0. 제출 일정과 체크리스트</h2>
+<table>
+<thead>
+<tr>
+<th>날짜</th>
+<th>스토어</th>
+<th>할 일</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>10/9(금)</strong></td>
+<td>App Store</td>
+<td>인앱 이벤트 제출(게시일 10/12로 설정)</td>
+<td>게시일은 시작일 기준 최대 14일 전</td>
+</tr>
+<tr>
+<td><strong>10/9(금)</strong></td>
+<td>Google Play</td>
+<td>프로모션 콘텐츠 제출 + <strong>피처링 요청</strong></td>
+<td>피처링 요청은 시작 14일 전(=10/12)까지 제출</td>
+</tr>
+<tr>
+<td>10/12(월)</td>
+<td>양쪽</td>
+<td>사전 노출 시작(App Store 게시, Play 미리보기·알림 신청)</td>
+<td></td>
+</tr>
+<tr>
+<td>10/22(목)</td>
+<td>Google Play</td>
+<td>일반 제출 최종 마감</td>
+<td>승인에 최대 4일. 시작 4일 전까지 제출 권장</td>
+</tr>
+<tr>
+<td>10/26(월) 00:00 KST</td>
+<td>양쪽</td>
+<td>이벤트 시작</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>등록 전 체크리스트</p>
+<ul>
+<li>[ ] <strong>기간</strong>: 시작 2026-10-26 00:00 KST(= 10-25 15:00 UTC), 종료 2026-11-01 23:59 KST(= 11-01 14:59 UTC). 두 스토어와 인게임이 같은 시각인가</li>
+<li>[ ] <strong>App Store 게시일</strong>: 2026-10-12 00:00 KST(시작 14일 전). 이보다 이르면 반려된다</li>
+<li>[ ] <strong>딥링크</strong>: 이벤트 화면으로 가는 링크가 있으면 두 스토어에 모두 넣는다. 단축 URL은 쓰지 않는다. 제출 전에 실기기에서 눌러 본다 [기획 확인 필요 #12]</li>
+<li>[ ] <strong>대상 국가</strong>: 전 지역. 단 <strong>ru는 접속 장애가 해결됐는지 확인한 뒤</strong> 노출한다 [기획 확인 필요 #13]. App Store는 지역별 시작일을 다르게 줄 수 있지만 모든 시작일이 48시간 안에 있어야 한다. Play는 모든 국가 그룹의 시작일이 같은 분기 안이어야 한다</li>
+<li>[ ] <strong>언어</strong>: 13개 언어 문구를 모두 넣었는가. Play는 현지화 설명이 있는 언어의 사용자에게만 노출된다</li>
+<li>[ ] <strong>이미지에 글자 없음</strong>: 두 스토어 모두 이미지 속 글자(로고, 슬로건, 이벤트명)와 CTA 버튼 모양을 금지한다. <strong>합성 배너(<code>localized/</code>)를 스토어에 올리지 않는다.</strong> 글자 없는 키아트 원본(<code>keyart/</code>)을 올린다</li>
+<li>[ ] <strong>Play 문구 규칙</strong>: 태그라인과 설명에 줄바꿈·글머리표 없음, "FREE·NOW"처럼 전부 대문자인 단어 없음, "지금 플레이" 같은 CTA 없음, 태그라인 문장이 설명에 그대로 반복되지 않음(검사 완료)</li>
+<li>[ ] <strong>Play 피처링 쿼터</strong>: 게임은 broad audience 피처링 요청이 분기당 4회다. 4분기 사용 계획은 할로윈, 블랙 프라이데이, 크리스마스, 예비 1회(<a class="code-link" href="../event_calendar.html"><code>event_calendar.md</code></a>)</li>
+<li>[ ] <strong>Play Console 메뉴</strong>: 이 앱 계정에 "프로모션 콘텐츠" 메뉴가 열려 있는가(Events 탭은 일부 지역 게임에만 열린다)</li>
+<li>[ ] <strong>[기획 확인 필요 #4] 광고 없는 버프</strong>가 B안으로 바뀌면 13개 언어의 Play 설명과 App Store 긴 설명을 다시 뽑는다(<a class="code-link" href="copy.json.html"><code>copy.json</code></a> 수정 → 이 시트 재생성)</li>
+</ul>
+<h2 id="1-app-store-인앱-이벤트">1. App Store 인앱 이벤트</h2>
+<h3 id="공통-설정">공통 설정</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>값</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reference name (≤64, 비공개)</td>
+<td><code>2026-w44-halloween</code></td>
+<td>18자</td>
+</tr>
+<tr>
+<td>Badge</td>
+<td><strong>Special Event</strong> (<code>SPECIAL_EVENT</code>)</td>
+<td>공식 정의: 다른 배지에 해당하지 않는 기간 한정 이벤트로, 여러 활동에 걸칠 수 있고 새 콘텐츠·기능·상품을 제공해야 한다. 미션 여러 개와 한정 보상, 시즌 테마가 함께 있으므로 Challenge보다 맞다</td>
+</tr>
+<tr>
+<td>Event purpose</td>
+<td><strong>Appropriate for all users</strong> (<code>APPROPRIATE_FOR_ALL_USERS</code>)</td>
+<td>복귀 유저 유입을 더 앞세우려면 <code>BRING_BACK_LAPSED_USERS</code>도 고려한다</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td><strong>High</strong> (<code>HIGH</code>)</td>
+<td>4분기 최대 시즌 이벤트</td>
+</tr>
+<tr>
+<td>In-app purchase required</td>
+<td>아니오</td>
+<td>결제 없이 참여할 수 있다</td>
+</tr>
+<tr>
+<td>Primary locale</td>
+<td>ko</td>
+<td></td>
+</tr>
+<tr>
+<td>Publish start</td>
+<td>2026-10-11T15:00:00Z (= 10-12 00:00 KST)</td>
+<td></td>
+</tr>
+<tr>
+<td>Event start / end</td>
+<td>2026-10-25T15:00:00Z / 2026-11-01T14:59:00Z</td>
+<td>7일(최대 31일)</td>
+</tr>
+<tr>
+<td>Territories</td>
+<td>전 지역(ru는 체크리스트 참조)</td>
+<td></td>
+</tr>
+<tr>
+<td>Deep link</td>
+<td>[기획 확인 필요 #12]</td>
+<td>유니버설 링크 권장</td>
+</tr>
+<tr>
+<td>Event card media (16:9)</td>
+<td><a class="code-link" href="keyart/store/keyart_16x9_1920x1080.jpg"><code>keyart/store/keyart_16x9_1920x1080.png</code></a> — 1920×1080 이상 3840×2160 이하, .png/.jpg</td>
+<td><strong>글자 없는 원본</strong></td>
+</tr>
+<tr>
+<td>Event details page media (9:16)</td>
+<td><a class="code-link" href="keyart/store/keyart_9x16_1080x1920.jpg"><code>keyart/store/keyart_9x16_1080x1920.png</code></a> — 1080×1920 이상 2160×3840 이하</td>
+<td><strong>글자 없는 원본</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="언어별-문구-이름-30-짧은-설명-50-긴-설명-120">언어별 문구 (이름 ≤30 · 짧은 설명 ≤50 · 긴 설명 ≤120)</h3>
+<p>App Store Connect 로케일 코드는 ko, en-US, pt-BR, es-MX, ru, ja, zh-Hant, id, th, tr, fr-FR, de-DE, vi로 넣는다.</p>
+<table>
+<thead>
+<tr>
+<th>언어</th>
+<th>이름</th>
+<th>자</th>
+<th>짧은 설명</th>
+<th>자</th>
+<th>긴 설명</th>
+<th>자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ko</td>
+<td>형님들의 할로윈 호박 사냥</td>
+<td>14</td>
+<td>원시인 형님들과 공룡 잡고 호박 모아 한정 보상 받기</td>
+<td>29</td>
+<td>사냥·보스토벌·형님의 탑·장비 합성 미션으로 호박을 모아 할로윈 한정 보상과 성장 재료로 바꾸세요. 할로윈 주말엔 광고 없이 버프가 켜집니다.</td>
+<td>79</td>
+</tr>
+<tr>
+<td>en</td>
+<td>Bros' Halloween Pumpkin Hunt</td>
+<td>28</td>
+<td>Hunt dinos and collect pumpkins for rewards</td>
+<td>43</td>
+<td>Clear hunting, Boss Raid, Tower and gear missions to earn pumpkins. Ad buffs turn on without ads on Halloween weekend.</td>
+<td>118</td>
+</tr>
+<tr>
+<td>pt</td>
+<td>Caça às Abóboras de Halloween</td>
+<td>29</td>
+<td>Cace dinossauros e junte abóboras por prêmios</td>
+<td>45</td>
+<td>Cumpra missões de caça, chefe, torre e equipamentos para ganhar abóboras. No fim de semana, bônus sem anúncios.</td>
+<td>111</td>
+</tr>
+<tr>
+<td>es</td>
+<td>Caza de Calabazas de Halloween</td>
+<td>30</td>
+<td>Caza dinosaurios y junta calabazas por premios</td>
+<td>46</td>
+<td>Cumple misiones de caza, jefes, torre y equipo para ganar calabazas. El fin de semana, potenciadores sin anuncios.</td>
+<td>114</td>
+</tr>
+<tr>
+<td>ru</td>
+<td>Хэллоуин: тыквенная охота</td>
+<td>25</td>
+<td>Охотьтесь на динозавров и собирайте тыквы</td>
+<td>41</td>
+<td>Выполняйте задания охоты, рейдов, башни и снаряжения, чтобы получать тыквы. В выходные бонусы без рекламы.</td>
+<td>106</td>
+</tr>
+<tr>
+<td>ja</td>
+<td>原人兄弟のハロウィンかぼちゃ狩り</td>
+<td>16</td>
+<td>恐竜を狩ってかぼちゃを集め、限定報酬をゲット</td>
+<td>22</td>
+<td>狩り・ボス討伐・兄弟の塔・装備合成でかぼちゃを集めて限定報酬と交換。ハロウィン週末は広告なしでバフが有効に。</td>
+<td>54</td>
+</tr>
+<tr>
+<td>zh-TW</td>
+<td>原始兄弟的萬聖節南瓜狩獵</td>
+<td>12</td>
+<td>獵恐龍、收集南瓜，換取萬聖節限定獎勵</td>
+<td>18</td>
+<td>完成狩獵、首領討伐、兄弟之塔與裝備合成任務收集南瓜，兌換限定獎勵。萬聖節週末免看廣告即享增益。</td>
+<td>47</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Perburuan Labu Halloween</td>
+<td>24</td>
+<td>Buru dinosaurus dan kumpulkan labu untuk hadiah</td>
+<td>47</td>
+<td>Selesaikan misi berburu, Boss Raid, menara, dan perlengkapan untuk dapat labu. Akhir pekan Halloween: buff tanpa iklan.</td>
+<td>119</td>
+</tr>
+<tr>
+<td>th</td>
+<td>ล่าฟักทองฮาโลวีน</td>
+<td>16</td>
+<td>ล่าไดโนเสาร์ เก็บฟักทอง แลกรางวัลพิเศษ</td>
+<td>38</td>
+<td>ทำภารกิจล่า Boss Raid หอคอย และรวมอุปกรณ์เพื่อเก็บฟักทองแลกรางวัล สุดสัปดาห์ฮาโลวีนรับบัฟโดยไม่ต้องดูโฆษณา</td>
+<td>106</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>Cadılar Bayramı Balkabağı Avı</td>
+<td>29</td>
+<td>Dinozor avla, balkabağı topla, ödül kazan</td>
+<td>41</td>
+<td>Av, Boss Baskını, kule ve ekipman görevleriyle balkabağı topla, ödüllerle takas et. Hafta sonu reklamsız güçlendirme.</td>
+<td>117</td>
+</tr>
+<tr>
+<td>fr</td>
+<td>La Grande Chasse d'Halloween</td>
+<td>28</td>
+<td>Chassez des dinos et récoltez des citrouilles</td>
+<td>45</td>
+<td>Missions de chasse, raids, tour et équipement pour gagner des citrouilles. Bonus sans pub le week-end d'Halloween.</td>
+<td>114</td>
+</tr>
+<tr>
+<td>de</td>
+<td>Die große Halloween-Kürbisjagd</td>
+<td>30</td>
+<td>Jage Dinos und sammle Kürbisse für Belohnungen</td>
+<td>46</td>
+<td>Erfülle Jagd-, Boss-Raid-, Turm- und Ausrüstungsmissionen für Kürbisse. Am Halloween-Wochenende Boni ohne Werbung.</td>
+<td>114</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>Săn Bí Ngô Halloween</td>
+<td>20</td>
+<td>Săn khủng long, gom bí ngô, nhận quà độc quyền</td>
+<td>46</td>
+<td>Làm nhiệm vụ săn, đánh boss, tháp và trang bị để gom bí ngô đổi quà. Cuối tuần Halloween có buff không cần quảng cáo.</td>
+<td>117</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-google-play-프로모션-콘텐츠">2. Google Play 프로모션 콘텐츠</h2>
+<h3 id="공통-설정_1">공통 설정</h3>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>값</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event name (내부용)</td>
+<td><code>2026-w44-halloween</code></td>
+<td>사용자에게 보이지 않는다</td>
+</tr>
+<tr>
+<td>Event type / subtype</td>
+<td>시간 한정 이벤트(Time-limited event) / <strong>Special</strong></td>
+<td>subtype은 COMPETITION_CHALLENGE, REAL-TIME, SPECIAL 중에서 고른다</td>
+</tr>
+<tr>
+<td>Start / End</td>
+<td>2026-10-26 00:00 KST / 2026-11-01 23:59 KST</td>
+<td>최대 4주</td>
+</tr>
+<tr>
+<td>Featuring</td>
+<td><strong>요청함</strong></td>
+<td>시작 14일 전까지 제출해야 한다</td>
+</tr>
+<tr>
+<td>Preview</td>
+<td>켬(기본값)</td>
+<td>시작 14일 전부터 알림 신청을 받는다</td>
+</tr>
+<tr>
+<td>Countries</td>
+<td>전 지역(ru는 체크리스트 참조)</td>
+<td></td>
+</tr>
+<tr>
+<td>Deep link</td>
+<td>[기획 확인 필요 #12]</td>
+<td></td>
+</tr>
+<tr>
+<td>Primary image (16:9)</td>
+<td><a class="code-link" href="keyart/store/keyart_16x9_1920x1080.jpg"><code>keyart/store/keyart_16x9_1920x1080.png</code></a> — 1920×1080, JPG 또는 24-bit PNG</td>
+<td><strong>글자 없는 원본.</strong> 안전 영역: 가장자리(위 15%, 좌우 10%, 아래 20%)에는 핵심 피사체를 두지 않는다</td>
+</tr>
+<tr>
+<td>Square image (1:1)</td>
+<td><a class="code-link" href="keyart/store/keyart_1x1_1080x1080.jpg"><code>keyart/store/keyart_1x1_1080x1080.png</code></a> — 1080×1080</td>
+<td>필수. 크기는 업계 가이드 기준이므로 Play Console 업로드 화면에서 다시 확인한다</td>
+</tr>
+<tr>
+<td>Translations</td>
+<td>Manage translations에서 13개 언어 추가</td>
+<td>Play 로케일: ko-KR, en-US, pt-BR, es-419, ru-RU, ja-JP, zh-TW, id, th, tr-TR, fr-FR, de-DE, vi</td>
+</tr>
+</tbody>
+</table>
+<h3 id="언어별-문구-태그라인-80-설명-500">언어별 문구 (태그라인 ≤80 · 설명 ≤500)</h3>
+<p>태그라인은 스포트라이트 형식 한도(라틴 문자 등 싱글바이트 48자, 한·중·일 더블바이트 23자)까지 맞췄다. 스포트라이트 노출을 받아도 잘리지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>언어</th>
+<th>태그라인</th>
+<th>자</th>
+<th>설명</th>
+<th>자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ko</td>
+<td>공룡 잡고 호박 모아 할로윈 한정 보상</td>
+<td>21</td>
+<td>원시 정글에 일주일 동안 할로윈이 찾아옵니다. 공룡·원시생물 사냥, 보스토벌, 형님의 탑, 장비 합성 미션을 달성하면 호박을 받고, 모은 호박은 호박 교환소에서 할로윈 한정 보상과 성장 재료, 보석으로 바꿀 수 있습니다. 미션은 승패와 관계없이 도전 횟수만 채우면 됩니다. 할로윈 주말에는 광고를 보지 않아도 광고 버프가 켜지고, 14일 이상 쉬었다가 돌아온 형님은 복귀 호박 꾸러미를 받습니다.</td>
+<td>221</td>
+</tr>
+<tr>
+<td>en</td>
+<td>Collect pumpkins for limited Halloween rewards</td>
+<td>46</td>
+<td>Halloween comes to the primitive jungle for one week. Hunt dinosaurs and primitive creatures, take on Boss Raids, challenge the Brothers' Tower, and merge gear to earn pumpkins. Trade them at the Pumpkin Exchange for limited Halloween rewards, growth materials, and rubies. Every attempt counts toward missions, win or lose. Over the Halloween weekend, ad buffs switch on automatically without watching ads, and Bros returning after 14 days or more get a Welcome-Back Pumpkin Pack.</td>
+<td>481</td>
+</tr>
+<tr>
+<td>pt</td>
+<td>Junte abóboras e ganhe prêmios de Halloween</td>
+<td>43</td>
+<td>O Halloween chegou à selva primitiva por uma semana. Cace dinossauros e criaturas primitivas, enfrente a Caçada ao Chefe, desafie a Torre dos Irmãos e combine equipamentos para ganhar abóboras. Troque-as por prêmios exclusivos de Halloween, materiais de evolução e gemas. Nas missões, cada tentativa conta, vencendo ou perdendo. No fim de semana de Halloween, os bônus de anúncio ficam ativos sem assistir anúncios, e quem volta depois de 14 dias ou mais ganha um pacote de abóboras de boas-vindas.</td>
+<td>498</td>
+</tr>
+<tr>
+<td>es</td>
+<td>Junta calabazas y gana premios de Halloween</td>
+<td>43</td>
+<td>Halloween llega a la selva primitiva por una semana. Caza dinosaurios y criaturas primitivas, enfrenta la Incursión de Jefes, desafía la Torre de los Hermanos y combina equipo para ganar calabazas. Cámbialas por premios exclusivos de Halloween, materiales de mejora y gemas. En las misiones cada intento cuenta, ganes o pierdas. El fin de semana de Halloween, los potenciadores de anuncios se activan sin ver anuncios, y quienes vuelven tras 14 días o más reciben un paquete de bienvenida.</td>
+<td>489</td>
+</tr>
+<tr>
+<td>ru</td>
+<td>Собирайте тыквы и получайте награды Хэллоуина</td>
+<td>45</td>
+<td>Целую неделю в первобытных джунглях празднуют Хэллоуин. Охотьтесь на динозавров и примитивных существ, сражайтесь в рейдах на боссов, штурмуйте Башню братьев и объединяйте снаряжение, чтобы получать тыквы. Меняйте их на эксклюзивные хэллоуинские награды, материалы для прокачки и рубины. В заданиях засчитывается каждая попытка, даже без победы. В хэллоуинские выходные бонусы за рекламу включаются без просмотра рекламы, а вернувшиеся после перерыва от 14 дней получают тыквенный набор.</td>
+<td>487</td>
+</tr>
+<tr>
+<td>ja</td>
+<td>かぼちゃを集めてハロウィン限定報酬をゲット</td>
+<td>21</td>
+<td>原始のジャングルで1週間のハロウィンイベントを開催。恐竜・原始生物の狩り、ボス討伐、兄弟の塔、装備合成のミッションでかぼちゃを集め、ハロウィン限定報酬や育成素材、ルビーと交換できます。ミッションは勝敗に関係なく、挑戦するだけでカウントされます。ハロウィン週末は広告を見なくても広告バフが有効になり、14日以上ぶりに戻った方には、おかえりかぼちゃパックをプレゼントします。</td>
+<td>185</td>
+</tr>
+<tr>
+<td>zh-TW</td>
+<td>收集南瓜換取萬聖節限定獎勵</td>
+<td>13</td>
+<td>原始叢林迎來為期一週的萬聖節活動。完成狩獵恐龍與原始生物、首領討伐、兄弟之塔、裝備合成等任務即可獲得南瓜，並可兌換萬聖節限定獎勵、養成材料與紅寶石。任務不論輸贏，只要挑戰就會計算次數。萬聖節週末不必觀看廣告也能開啟廣告增益，超過 14 天未登入的回歸玩家還能領取回歸南瓜禮包。</td>
+<td>138</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Kumpulkan labu untuk hadiah eksklusif Halloween</td>
+<td>47</td>
+<td>Halloween hadir di hutan purba selama satu minggu. Buru dinosaurus dan makhluk purba, ikuti Boss Raid, tantang Brothers' Tower, dan gabungkan perlengkapan untuk mendapatkan labu. Tukarkan labu dengan hadiah eksklusif Halloween, bahan peningkatan, dan permata. Setiap percobaan misi tetap dihitung, menang ataupun kalah. Saat akhir pekan Halloween, buff iklan aktif tanpa perlu menonton iklan, dan pemain yang kembali setelah 14 hari atau lebih mendapat paket labu selamat datang.</td>
+<td>479</td>
+</tr>
+<tr>
+<td>th</td>
+<td>เก็บฟักทองแลกรางวัลพิเศษฮาโลวีน</td>
+<td>31</td>
+<td>ฮาโลวีนมาถึงป่าดึกดำบรรพ์ตลอดหนึ่งสัปดาห์ ทำภารกิจล่าไดโนเสาร์และสัตว์ดึกดำบรรพ์ Boss Raid, Brothers' Tower และรวมอุปกรณ์เพื่อรับฟักทอง แล้วนำไปแลกรางวัลพิเศษฮาโลวีน วัตถุดิบเสริมพลัง และอัญมณี ภารกิจนับทุกครั้งที่ท้าทายไม่ว่าจะชนะหรือแพ้ ช่วงสุดสัปดาห์ฮาโลวีนบัฟจากโฆษณาจะเปิดใช้งานโดยไม่ต้องดูโฆษณา และผู้เล่นที่กลับมาหลังหายไป 14 วันขึ้นไปจะได้รับแพ็กฟักทองต้อนรับกลับ</td>
+<td>371</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>Balkabağı topla, Cadılar Bayramı ödülü kazan</td>
+<td>44</td>
+<td>İlkel ormanda bir hafta boyunca Cadılar Bayramı var. Dinozorları ve ilkel yaratıkları avla, Boss Baskını'na katıl, Kardeşler Kulesi'ne meydan oku ve ekipman birleştirerek balkabağı kazan. Balkabaklarını Cadılar Bayramı'na özel ödüller, gelişim malzemeleri ve mücevherlerle takas et. Görevlerde kazansan da kaybetsen de her deneme sayılır. Cadılar Bayramı hafta sonunda reklam güçlendirmeleri reklam izlemeden açılır, 14 gün veya daha uzun ara verip dönen oyuncular hoş geldin paketi alır.</td>
+<td>488</td>
+</tr>
+<tr>
+<td>fr</td>
+<td>Citrouilles à récolter, récompenses d'Halloween</td>
+<td>47</td>
+<td>Halloween s'invite une semaine dans la jungle primitive. Chassez dinosaures et créatures primitives, affrontez les Raids de boss, défiez la Tour des Frères et fusionnez l'équipement pour gagner des citrouilles, à échanger contre des récompenses exclusives, des matériaux d'amélioration et des gemmes. Victoire ou défaite, chaque tentative compte. Le week-end d'Halloween, les bonus publicitaires s'activent sans pub, et les joueurs de retour après 14 jours ou plus reçoivent un pack de bienvenue.</td>
+<td>496</td>
+</tr>
+<tr>
+<td>de</td>
+<td>Kürbisse sammeln, Halloween-Belohnungen sichern</td>
+<td>47</td>
+<td>Eine Woche lang ist Halloween im Urzeit-Dschungel. Jage Dinosaurier und Urzeitkreaturen, stell dich dem Boss-Raid, fordere den Turm der Brüder heraus und kombiniere Ausrüstung, um Kürbisse zu erhalten. Tausche sie gegen exklusive Halloween-Belohnungen, Entwicklungsmaterialien und Edelsteine. Bei den Missionen zählt jeder Versuch, ob Sieg oder Niederlage. Am Halloween-Wochenende gibt es Werbe-Boni ohne Werbung, und wer nach 14 Tagen oder mehr zurückkehrt, erhält ein Willkommens-Kürbispaket.</td>
+<td>494</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>Gom bí ngô đổi phần thưởng Halloween độc quyền</td>
+<td>46</td>
+<td>Halloween đến với khu rừng nguyên thủy trong một tuần. Săn khủng long và sinh vật nguyên thủy, tham gia Đánh Boss, thử thách Tháp Anh Em và hợp nhất trang bị để nhận bí ngô. Đổi bí ngô lấy phần thưởng Halloween độc quyền, nguyên liệu nâng cấp và đá quý. Mỗi lần thử nhiệm vụ đều được tính, dù thắng hay thua. Vào cuối tuần Halloween, buff quảng cáo tự bật mà không cần xem quảng cáo, và người chơi quay lại sau 14 ngày trở lên sẽ nhận gói bí ngô chào mừng.</td>
+<td>456</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-글자-수-검증-요약">3. 글자 수 검증 요약</h2>
+<table>
+<thead>
+<tr>
+<th>언어</th>
+<th>App Store 이름 (≤30)</th>
+<th>짧은 설명 (≤50)</th>
+<th>긴 설명 (≤120)</th>
+<th>Play 태그라인 (≤80)</th>
+<th>스포트라이트 (≤48, CJK ≤23)</th>
+<th>Play 설명 (≤500)</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ko</td>
+<td>14</td>
+<td>29</td>
+<td>79</td>
+<td>21</td>
+<td>21/23</td>
+<td>221</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>en</td>
+<td>28</td>
+<td>43</td>
+<td>118</td>
+<td>46</td>
+<td>46/48</td>
+<td>481</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>pt</td>
+<td>29</td>
+<td>45</td>
+<td>111</td>
+<td>43</td>
+<td>43/48</td>
+<td>498</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>es</td>
+<td>30</td>
+<td>46</td>
+<td>114</td>
+<td>43</td>
+<td>43/48</td>
+<td>489</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>ru</td>
+<td>25</td>
+<td>41</td>
+<td>106</td>
+<td>45</td>
+<td>45/48</td>
+<td>487</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>ja</td>
+<td>16</td>
+<td>22</td>
+<td>54</td>
+<td>21</td>
+<td>21/23</td>
+<td>185</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>zh-TW</td>
+<td>12</td>
+<td>18</td>
+<td>47</td>
+<td>13</td>
+<td>13/23</td>
+<td>138</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>id</td>
+<td>24</td>
+<td>47</td>
+<td>119</td>
+<td>47</td>
+<td>47/48</td>
+<td>479</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>th</td>
+<td>16</td>
+<td>38</td>
+<td>106</td>
+<td>31</td>
+<td>31/48</td>
+<td>371</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>29</td>
+<td>41</td>
+<td>117</td>
+<td>44</td>
+<td>44/48</td>
+<td>488</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>fr</td>
+<td>28</td>
+<td>45</td>
+<td>114</td>
+<td>47</td>
+<td>47/48</td>
+<td>496</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>de</td>
+<td>30</td>
+<td>46</td>
+<td>114</td>
+<td>47</td>
+<td>47/48</td>
+<td>494</td>
+<td>통과</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>20</td>
+<td>46</td>
+<td>117</td>
+<td>46</td>
+<td>46/48</td>
+<td>456</td>
+<td>통과</td>
+</tr>
+</tbody>
+</table>
+<p>검증 방법(재실행할 때):</p>
+<pre><code class="language-bash">python3 - &lt;&lt;'EOF'
+import json
+d = json.load(open(&quot;deliverables/task2-weekly-event/2026-w44-halloween/copy.json&quot;, encoding=&quot;utf-8&quot;))
+LIM = {(&quot;appstore&quot;,&quot;name&quot;):30, (&quot;appstore&quot;,&quot;short&quot;):50, (&quot;appstore&quot;,&quot;long&quot;):120, (&quot;play&quot;,&quot;tagline&quot;):80, (&quot;play&quot;,&quot;description&quot;):500}
+for lang, c in d[&quot;locales&quot;].items():
+    for (s, f), lim in LIM.items():
+        n = len(c[s][f])
+        if n &gt; lim or &quot;\n&quot; in c[s][f]:
+            print(&quot;초과/줄바꿈:&quot;, lang, s, f, n, lim)
+print(&quot;검사 끝&quot;)
+EOF
+</code></pre>
+<h2 id="4-제출-이미지">4. 제출 이미지</h2>
+<table>
+<thead>
+<tr>
+<th>용도</th>
+<th>파일</th>
+<th>규격</th>
+<th>글자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App Store 이벤트 카드</td>
+<td><a class="code-link" href="keyart/store/keyart_16x9_1920x1080.jpg"><code>keyart/store/keyart_16x9_1920x1080.png</code></a></td>
+<td>16:9, 1920×1080 이상</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>App Store 이벤트 상세 페이지</td>
+<td><a class="code-link" href="keyart/store/keyart_9x16_1080x1920.jpg"><code>keyart/store/keyart_9x16_1080x1920.png</code></a></td>
+<td>9:16, 1080×1920 이상</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>Play 기본 이미지</td>
+<td><a class="code-link" href="keyart/store/keyart_16x9_1920x1080.jpg"><code>keyart/store/keyart_16x9_1920x1080.png</code></a></td>
+<td>16:9, 1920×1080</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>Play 정사각 이미지</td>
+<td><a class="code-link" href="keyart/store/keyart_1x1_1080x1080.jpg"><code>keyart/store/keyart_1x1_1080x1080.png</code></a></td>
+<td>1:1, 1080×1080</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>인게임 공지·SNS(스토어 제출 아님)</td>
+<td><code>localized/banner_{lang}_{landscape,portrait,square}.png</code></td>
+<td>3규격 × 13개 언어 = 39장</td>
+<td>있음(합성)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>스킬 문서 정정 제안</strong>: <code>SKILL.md</code> 4단계는 합성 배너를 "인게임 공지·SNS·Play 프로모션용"이라고 적었다. 그러나 Google Play 공식 가이드라인은 프로모션 이미지에 글자를 넣지 못하게 한다(로고·슬로건·이벤트명 포함). <a class="code-link" href="../../harness/skills/weekly-event-production/references/store-event-specs.html"><code>references/store-event-specs.md</code></a>의 Play 이미지 항목도 "텍스트를 넣으면 잘릴 수 있다"가 아니라 "텍스트 금지, 정사각 이미지 필수, 안전 영역 15/10/20%"로 고쳐야 한다.</p>
+</blockquote>
+<h2 id="5-자동화-범위">5. 자동화 범위</h2>
+<table>
+<thead>
+<tr>
+<th>스토어</th>
+<th>자동화</th>
+<th>방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App Store</td>
+<td><strong>가능</strong>(App Store Connect API)</td>
+<td><code>POST /v1/appEvents</code>(referenceName, badge <code>SPECIAL_EVENT</code>, purpose, priority, deepLink, primaryLocale, purchaseRequirement, territorySchedules[territories, publishStart, eventStart, eventEnd]) → 언어마다 <code>POST /v1/appEventLocalizations</code>(locale, name, shortDescription, longDescription) → 로컬라이즈마다 <code>POST /v1/appEventScreenshots</code>(appEventAssetType <code>EVENT_CARD</code> / <code>EVENT_DETAILS_PAGE</code>) 업로드 → 심사 제출. <a class="code-link" href="copy.json.html"><code>copy.json</code></a>을 그대로 읽어 13개 언어를 한 번에 만들 수 있다</td>
+</tr>
+<tr>
+<td>Google Play</td>
+<td><strong>수동</strong>(Play Console 화면)</td>
+<td>프로모션 콘텐츠를 만드는 공개 API를 찾지 못했다. Play Console → 프로모션 콘텐츠 → 이벤트 만들기 → Manage translations에서 이 시트의 표를 복사해 붙인다. 13개 언어 기준 약 20~30분</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-출처-2026-10-07-확인">6. 출처 (2026-10-07 확인)</h2>
+<ul>
+<li>Apple — In-App Events 개요·메타데이터·미디어 규격·배지·기간: https://developer.apple.com/app-store/in-app-events/</li>
+<li>Apple — Offer in-app events(이름 30·짧은 설명 50·긴 설명 120자, Reference name 64자, 최대 31일, 게시는 최대 14일 전, 지역별 시작일 48시간 이내, 게시 10개·승인 15개): https://developer.apple.com/help/app-store-connect/offer-in-app-events/offer-in-app-events</li>
+<li>Apple — In-App Event badges(배지 정의): https://developer.apple.com/help/app-store-connect/reference/in-app-events/in-app-event-badges</li>
+<li>Apple — Submit an In-App Event(앱 버전 없이 단독 제출 가능, 해당 플랫폼 최신 버전과 함께 심사): https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-an-in-app-event</li>
+<li>Apple — App Store Connect API <code>POST /v1/appEvents</code>, <code>appEventLocalizations</code>, <code>appEventScreenshots</code>, AppEventAssetType: https://developer.apple.com/documentation/appstoreconnectapi/post-v1-appevents</li>
+<li>Google Play — Promotional content requirements(태그라인 80자·스포트라이트 48/23자, 설명 500자, 1920×1080 16:9, 안전 영역 15/10/20%, 이미지 글자 금지, 24시간 이후 시작일): https://support.google.com/googleplay/android-developer/answer/12929944</li>
+<li>Google Play — Create promotional content(최대 60일 전 제출, 승인 최대 4일, 피처링은 14일 전 제출, 최대 4주, 미리보기 14일, 정사각 이미지 필수, 피처링 쿼터 분기당 게임 4회, subtype): https://support.google.com/googleplay/android-developer/answer/12932541</li>
+<li>Google Play — Promotional content guidelines PDF(이미지 글자·CTA 금지, 줄바꿈·글머리표 금지, 대문자 단어 금지): https://services.google.com/fh/files/helpcenter/google_play_promotional_content_guidelines.pdf</li>
+<li>Play 정사각 이미지 1080×1080(업계 가이드, 공식 문서에서는 크기를 확인하지 못함): https://asomobile.net/en/blog/promotional-content-on-google-play-2024/</li>
+</ul>
+<blockquote>
+<p>제출 파일은 <code>keyart/store/</code> 의 규격 사본(가운데 기준 cover 크롭·리사이즈)이다. <code>keyart/</code> 의 원본은 생성 해상도(1536×1024, 1024×1536, 1254×1254) 그대로라 스토어 규격과 다르다.</p>
+</blockquote></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

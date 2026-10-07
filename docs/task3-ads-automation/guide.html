@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드 | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../task2/gallery.html">이미지 갤러리</a></li><li><a href="../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec" open><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="guide.html" aria-current="page">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="sample/budget_config.json.html">budget_config.json</a></li><li><a href="sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="sample/findings.json.html">findings.json</a></li><li><a href="sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="sample/make_report.py.html">make_report.py</a></li><li><a href="sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">과제 3 · 광고 성과 분석<span class="path">deliverables/task3-ads-automation/guide.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#한-장-요약">한 장 요약</a></li><li><a href="#1-현황-진단-지금의-1시간은-어디에-쓰이는가">1. 현황 진단 — 지금의 1시간은 어디에 쓰이는가</a></li><li><a href="#2-목표-상태와-원칙">2. 목표 상태와 원칙</a></li><li><a href="#3-kpi-체계-방치형-rpg-하이브리드-수익-기준">3. KPI 체계 — 방치형 RPG 하이브리드 수익 기준</a><ul><li><a href="#31-지표-정의">3.1 지표 정의</a></li><li><a href="#32-하이브리드-roas-를-제대로-계산하기-위한-조건">3.2 하이브리드 ROAS 를 제대로 계산하기 위한 조건</a></li><li><a href="#33-기준값-정하는-법">3.3 기준값 정하는 법</a></li><li><a href="#34-표준-컬럼일-매체-캠페인-국가-소재">3.4 표준 컬럼(일 × 매체 × 캠페인 × 국가 × 소재)</a></li></ul></li><li><a href="#4-데이터-아키텍처">4. 데이터 아키텍처</a><ul><li><a href="#41-전체-흐름">4.1 전체 흐름</a></li><li><a href="#42-소스별-연동">4.2 소스별 연동</a></li><li><a href="#43-적재정규화-규칙">4.3 적재·정규화 규칙</a></li><li><a href="#44-bigquery-표-구성권장">4.4 BigQuery 표 구성(권장)</a></li><li><a href="#45-보안권한">4.5 보안·권한</a></li></ul></li><li><a href="#5-분석-로직-탐지-규칙-예산-재배분-안전장치">5. 분석 로직 — 탐지 규칙, 예산 재배분, 안전장치</a><ul><li><a href="#51-매일-돌리는-검사순서대로">5.1 매일 돌리는 검사(순서대로)</a></li><li><a href="#52-예산-재배분-규칙">5.2 예산 재배분 규칙</a></li><li><a href="#53-플레이북-초기-규칙-위에-더한-통계-안전장치-왜-필요한가">5.3 플레이북 초기 규칙 위에 더한 통계 안전장치 — 왜 필요한가</a></li><li><a href="#54-진단까지-자동으로-cpi-분해와-매체-간-비교">5.4 진단까지 자동으로 — CPI 분해와 매체 간 비교</a></li></ul></li><li><a href="#6-aiclaude의-역할-계산은-코드-해석문장화는-claude">6. AI(Claude)의 역할 — 계산은 코드, 해석·문장화는 Claude</a><ul><li><a href="#61-분업">6.1 분업</a></li><li><a href="#62-프롬프트-설계samplereport_promptmd">6.2 프롬프트 설계(sample/report_prompt.md)</a></li><li><a href="#63-환각-방지-숫자-검증기로-발송을-막는다">6.3 환각 방지 — 숫자 검증기로 발송을 막는다</a></li><li><a href="#64-호출-설정samplemake_reportpy">6.4 호출 설정(sample/make_report.py)</a></li></ul></li><li><a href="#7-리포트알림-설계">7. 리포트·알림 설계</a><ul><li><a href="#71-일간매일-0900-전-메신저">7.1 일간(매일 09:00 전, 메신저)</a></li><li><a href="#72-주간월요일-오전-문서-1장">7.2 주간(월요일 오전, 문서 1장)</a></li><li><a href="#73-실시간-알림조건을-넘으면-즉시">7.3 실시간 알림(조건을 넘으면 즉시)</a></li></ul></li><li><a href="#8-도입-로드맵">8. 도입 로드맵</a></li><li><a href="#9-리스크와-대응">9. 리스크와 대응</a></li><li><a href="#10-기대-효과-가정을-밝히고-추정한다">10. 기대 효과 — 가정을 밝히고 추정한다</a></li><li><a href="#11-샘플-실행-방법과-결과-해설">11. 샘플 실행 방법과 결과 해설</a><ul><li><a href="#111-실행">11.1 실행</a></li><li><a href="#112-심은-문제와-탐지-결과고정-시드">11.2 심은 문제와 탐지 결과(고정 시드)</a></li><li><a href="#113-실데이터로-바꾸는-법">11.3 실데이터로 바꾸는 법</a></li></ul></li><li><a href="#12-과제-12-와의-연결">12. 과제 1·2 와의 연결</a><ul><li><a href="#121-과제-1리뷰-대응-광고-수익스토어-전환">12.1 과제 1(리뷰 대응) ↔ 광고 수익·스토어 전환</a></li><li><a href="#122-과제-2주간-이벤트-ua-소재집행-타이밍">12.2 과제 2(주간 이벤트) ↔ UA 소재·집행 타이밍</a></li><li><a href="#123-한-번에-보는-연결">12.3 한 번에 보는 연결</a></li></ul></li><li><a href="#출처-2026-10-07-확인">출처 (2026-10-07 확인)</a></li></ul></details></aside>
+    <article class="doc"><h1 id="과제-3-metagoogle-광고-운영과-성과-분석-자동화-적용-방안과-구현-가이드">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</h1>
+<ul>
+<li>고객: 썬더게임즈(T.G Inc, 부산) · 대상 게임: 「원시인 형님들 키우기 : 문명 x 방치형 RPG」(Android 설치 500만+, 평점 4.47, iOS 병행, 인앱 결제 + 광고 수익 하이브리드)</li>
+<li>작성: 2026-10-07 · ads-growth-strategist(퍼포먼스 마케팅·마테크 관점)</li>
+<li>전제: <strong>썬더게임즈의 실제 광고 계정·MMP·예산 데이터는 아직 받지 못했다.</strong> 이 문서의 숫자 예시와 <code>sample/</code> 결과는 모두 가상 데이터다. 고객이 확인해야 할 항목은 [확인 필요]로 표시했고, 전체 목록은 <code>_workspace/07_strategist_notes.md</code> 에 있다.</li>
+<li>API 버전·필드 이름·정책은 2026-10-07 에 공식 문서로 확인했다. 출처는 문서 끝에 있다.</li>
+</ul>
+<h2 id="한-장-요약">한 장 요약</h2>
+<ul>
+<li><strong>목표:</strong> 마케팅 담당자가 매일 1시간 넘게 하던 "내려받기 → 엑셀 정리 → 국가·캠페인·소재 비교 → 보고"를 없앤다. 매일 아침 9시 전에 <strong>5줄 리포트</strong>가 메신저로 오고, 담당자는 <strong>제안된 예산 변경을 승인하거나 거절하는 데 5~15분</strong>만 쓴다.</li>
+<li><strong>구조:</strong> 매체 API·MMP·수익 데이터를 BigQuery 에 모으고(수집), 표준 표 하나로 정리한다(정규화). 규칙 기반 분석 코드가 이상·소재 피로·예산 제안을 판정해 <a class="code-link" href="sample/findings.json.html"><code>findings.json</code></a> 을 만들고(분석), Claude 는 그 결과만 읽어 리포트 문장을 쓴다(문장화). 사람이 승인한 제안만 실행한다(승인).</li>
+<li><strong>원칙:</strong> 숫자는 코드가 계산하고, AI 는 제안만 하며, 결정은 사람이 한다. 데이터가 의심스러우면 판단을 멈춘다. 예산 변경은 한 번에 20% 이내로, 같은 캠페인은 3일에 한 번만 바꾼다. 매체의 학습 단계를 존중하기 위해서다.</li>
+<li><strong>로드맵:</strong> 1단계(2~3주) 노코드 커넥터 + 시트 + Claude 요약 → 2단계(4~6주) BigQuery + 분석 스크립트 + Claude API 리포트 → 3단계(8주 제안 운영 후) 승인형 예산 조정 실행.</li>
+<li><strong>샘플로 확인한 것:</strong> 가상 데이터에 일부러 심은 문제 7건(추적 누락, 월 예산 과속, 특정 국가 CPI 급등, 소재 피로 2건, 확장 후보 소재, 예산 신호)을 분석 스크립트가 모두 잡았고, 오탐은 0건이었다. 시드 30개로 반복해도 탐지율은 90~100%였고, 오탐은 하루 평균 0.33건이었다(11장).</li>
+</ul>
+<hr />
+<h2 id="1-현황-진단-지금의-1시간은-어디에-쓰이는가">1. 현황 진단 — 지금의 1시간은 어디에 쓰이는가</h2>
+<p>담당자 인터뷰 전이라 아래 시간 배분은 모바일 게임 UA 실무에서 흔한 패턴을 바탕으로 한 <strong>가정</strong>이다 [확인 필요: 담당자 1일 작업 기록 1주일분].</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>추정 시간/일</th>
+<th>지금 하는 방식</th>
+<th>자동화 가능 범위</th>
+<th>사람이 해야 하는 판단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 데이터 확인·내려받기</td>
+<td>15분</td>
+<td>Meta 광고 관리자, Google Ads, MMP 대시보드(있다면)에 각각 들어가 기간·국가·캠페인 필터를 걸고 내려받는다</td>
+<td><strong>전부</strong> — API 로 매일 06:00 에 수집</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>② 엑셀 정리</td>
+<td>15분</td>
+<td>매체마다 다른 컬럼 이름·통화·시간대를 맞추고, 설치·수익을 MMP 기준으로 바꾼다</td>
+<td><strong>전부</strong> — 표준 스키마로 변환하는 SQL</td>
+<td>매핑 규칙을 처음 한 번 정하는 일</td>
+</tr>
+<tr>
+<td>③ 비교·이상 찾기</td>
+<td>20분</td>
+<td>어제·지난주와 비교해 CPI 가 튄 국가, 지친 소재를 눈으로 찾는다</td>
+<td><strong>대부분</strong> — 기준선 대비 이상 탐지, 소재 피로 판정</td>
+<td>원인 해석(시즌·경쟁작·스토어 이슈 등)</td>
+</tr>
+<tr>
+<td>④ 예산·입찰 조정</td>
+<td>5~10분</td>
+<td>감으로 증감액을 정해 매체 화면에서 바꾼다</td>
+<td><strong>제안까지</strong> — 규칙 기반 증감 제안 + 안전장치</td>
+<td><strong>승인·거절</strong>, 월 예산 배정 변경</td>
+</tr>
+<tr>
+<td>⑤ 보고</td>
+<td>10분</td>
+<td>숫자를 옮겨 적어 메신저·메일로 공유한다</td>
+<td><strong>전부</strong> — Claude 가 5줄 요약 작성, 숫자 검증 후 자동 발송</td>
+<td>없음(필요하면 한 줄 코멘트)</td>
+</tr>
+</tbody>
+</table>
+<p>지금 방식에는 시간 말고도 비용이 숨어 있다.</p>
+<ul>
+<li><strong>늦은 발견.</strong> 추적 누락(지출은 나가는데 설치가 0)은 화면을 일일이 봐야 보인다. 며칠 늦게 알면 그동안의 예산이 측정되지 않은 채 쓰인다. 더 나쁜 경우에는 "성과가 나쁘다"고 오판해 멀쩡한 캠페인을 줄인다. 샘플 B06 이 그 예다(5·11장).</li>
+<li><strong>판단 기준이 매일 바뀐다.</strong> 같은 CPI 상승을 어떤 날은 넘기고 어떤 날은 줄인다. 규칙을 코드로 고정하면 판단이 일관되고, 나중에 규칙 자체를 고칠 수 있다.</li>
+<li><strong>소재 단위까지 내려가기 어렵다.</strong> 국가 6개 × 캠페인 8개 × 소재 12개를 매일 보는 것은 현실적으로 불가능하다. 그래서 소재 피로를 늦게 알아챈다.</li>
+</ul>
+<h2 id="2-목표-상태와-원칙">2. 목표 상태와 원칙</h2>
+<p><strong>목표 상태(2단계 완료 시점)</strong></p>
+<pre><code>06:00 KST  수집 작업 실행(Meta·Google·MMP·수익)          — 사람 개입 없음
+06:30      정규화·분석 → findings.json                   — 사람 개입 없음
+06:40      Claude 가 리포트 작성 → 숫자 검증 → 메신저 발송 — 검증 실패 시 발송 보류 + 담당자 알림
+09:00      담당자: 5줄 읽기 → 제안별 승인/거절 → (3단계부터) 승인분 자동 실행
+수시       실시간 알림(지출 폭주, 설치 0, 수집 실패, 토큰 만료)
+</code></pre>
+<p><strong>원칙과 이유</strong></p>
+<ol>
+<li><strong>AI 는 제안하고, 사람이 승인한다.</strong> 실행 권한이 있어도 처음 8주는 제안만 한다. 승인·거절 기록이 쌓여야 규칙을 믿고 고칠 수 있다.</li>
+<li><strong>데이터 정합성이 먼저다.</strong> 분석 전에 데이터 점검(신선도, 지출 대비 설치 0, 광고 수익 미적재)을 돌린다. 데이터 문제가 있는 범위는 예산 제안을 내지 않는다. 잘못된 데이터로 내린 결정이 가장 비싸다.</li>
+<li><strong>숫자는 코드가 계산한다.</strong> LLM 이 표를 직접 계산하면 틀린 숫자가 그럴듯하게 섞인다. Claude 는 코드가 만든 findings.json 만 읽고, 리포트의 모든 숫자는 검증기로 확인한다.</li>
+<li><strong>매체의 학습을 존중한다.</strong> Meta·Google 은 예산·입찰을 크게 바꾸면 학습을 다시 한다. 변경 폭 상한(20%)과 쿨다운(3일)을 규칙에 넣는다.</li>
+<li><strong>단계적으로 자동화한다.</strong> 노코드로 2~3주 안에 "매일 아침 리포트"를 먼저 체감하고, 그다음 코드 파이프라인과 실행 자동화로 넘어간다.</li>
+<li><strong>모든 판단은 근거를 남긴다.</strong> 각 제안에는 규칙, 수치, 표본 충분도(confidence), 안전장치 통과 여부가 붙는다. 누가 언제 무엇을 승인했는지도 기록한다.</li>
+</ol>
+<h2 id="3-kpi-체계-방치형-rpg-하이브리드-수익-기준">3. KPI 체계 — 방치형 RPG 하이브리드 수익 기준</h2>
+<h3 id="31-지표-정의">3.1 지표 정의</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>계산식</th>
+<th>왜 보는가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPM</td>
+<td>지출 ÷ 노출 × 1000</td>
+<td>경매 경쟁도. 4분기(블랙 프라이데이·연말)에 오른다</td>
+</tr>
+<tr>
+<td>CTR</td>
+<td>클릭 ÷ 노출</td>
+<td>소재의 첫 반응</td>
+</tr>
+<tr>
+<td>IPM</td>
+<td>설치 ÷ 노출 × 1000</td>
+<td>모바일 게임 소재 평가의 핵심 지표. CTR 과 CVR 을 합친 효과다</td>
+</tr>
+<tr>
+<td>CVR</td>
+<td>설치 ÷ 클릭</td>
+<td>스토어 페이지 전환. 스토어 평점·스크린샷(ASO)과 연결된다</td>
+</tr>
+<tr>
+<td>CPI</td>
+<td>지출 ÷ 설치 = CPM ÷ IPM</td>
+<td>획득 단가. CPI 가 오르면 CPM(경매)·CTR(소재)·CVR(스토어) 중 무엇이 움직였는지 분해한다</td>
+</tr>
+<tr>
+<td>Hook rate</td>
+<td>영상 3초 조회 ÷ 노출</td>
+<td>영상 소재의 첫 3초 흡인력(Meta)</td>
+</tr>
+<tr>
+<td>D1·D7 잔존율</td>
+<td>잔존 사용자 ÷ 설치</td>
+<td>유입 품질. CPI 만 싸고 바로 떠나는 트래픽을 거른다</td>
+</tr>
+<tr>
+<td><strong>ROAS D0·D7 (하이브리드)</strong></td>
+<td>(인앱 결제 수익 + <strong>광고 수익</strong>) ÷ 지출, 설치일 코호트 누적</td>
+<td>방치형은 광고 수익 비중이 커서 IAP 만 보면 ROAS 를 크게 낮게 본다. 샘플(가상)에서는 D0 수익의 약 50%가 광고 수익이다</td>
+</tr>
+<tr>
+<td>ARPU D7</td>
+<td>(IAP D7 + 광고 D7) ÷ 설치</td>
+<td>국가 간 품질 비교</td>
+</tr>
+<tr>
+<td>Payback</td>
+<td>누적 ROAS 가 100%에 닿는 일수</td>
+<td>예산 확대의 최종 기준. D7 이후는 LTV 예측 곡선으로 추정한다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-하이브리드-roas-를-제대로-계산하기-위한-조건">3.2 하이브리드 ROAS 를 제대로 계산하기 위한 조건</h3>
+<ul>
+<li><strong>광고 수익을 설치 코호트에 붙여야 한다.</strong> 미디에이션(AdMob·AppLovin MAX 등)의 <strong>노출 단위 광고 수익</strong>을 사용자별로 받아 설치일·유입 캠페인에 연결한다. Firebase/GA4 의 <code>ad_impression</code> 이벤트를 BigQuery 로 내보내거나, MMP 의 광고 수익 연동을 쓴다 [확인 필요: 미디에이션 제품, MMP 연동 여부].</li>
+<li><strong>"광고 제거" 상품을 따로 본다.</strong> 광고 제거를 산 사용자는 광고 수익이 0이 되는 대신 IAP 가 생긴다. 이 비율이 바뀌면 ROAS 구성이 바뀌므로 주간 리포트에서 광고/IAP 비중을 함께 보여 준다(12장).</li>
+<li><strong>D7 은 7일 뒤에 확정된다.</strong> 오늘의 판단은 D0 ROAS × (과거 확정 코호트의 D7÷D0 배수)로 <strong>추정</strong>하고, 추정치임을 표시한다. 샘플에서는 직전 14일 확정 코호트의 배수(약 2.9)를 캠페인별로 계산해 쓴다.</li>
+</ul>
+<h3 id="33-기준값-정하는-법">3.3 기준값 정하는 법</h3>
+<ul>
+<li>목표 CPI·ROAS 는 <strong>업계 평균이 아니라 자사 과거 데이터</strong>로 정한다. 국가 Tier 마다 LTV 가 크게 달라서 목표 하나로는 쓸모가 없다. 리뷰 언어 분포(ko 98 · pt 72 · en 71 · ru 41 · id 26 · es 24 · th 19)를 대리 지표로 보면 Tier 후보는 T1 KR·US(·JP), T2 BR·MX, T3 ID·TH 다 [확인 필요: 실제 집행 국가].</li>
+<li><strong>러시아어 사용자는 따로 확인해야 한다.</strong> Google 은 2022년 3월부터 러시아에서 광고 판매를 멈췄고, Meta 는 러시아 대상 광고를 중단했다(출처 S52·S53). 2026년 현재도 유지되는지와 ru 리뷰 41건의 유입원(자연 유입, 다른 매체, CIS 국가 집행)을 MMP 로 확인한다 [확인 필요].</li>
+<li>처음 4주는 기준선을 쌓는 기간이다. 국가 Tier 별 최근 28일 중앙값을 기준선으로 삼는다.</li>
+<li><strong>최소 표본</strong>이 있어야 판정한다. 소재는 노출 1만·설치 30건 이상, 캠페인 예산 판정은 최근 7일 지출 $200 이상이다. 표본이 부족하면 "판단 보류"로 둔다(샘플 B05).</li>
+</ul>
+<h3 id="34-표준-컬럼일-매체-캠페인-국가-소재">3.4 표준 컬럼(일 × 매체 × 캠페인 × 국가 × 소재)</h3>
+<p><code>date, network, campaign_id, campaign_name, campaign_type, country, platform, creative_id, creative_name, creative_format, spend, impressions, clicks, installs, video_3s_views, frequency, d1_retained, d7_retained, rev_iap_d0, rev_iap_d7, rev_ad_d0, rev_ad_d7</code></p>
+<ul>
+<li><code>date</code> 는 광고 계정 시간대 기준이다. KST 와 UTC 를 섞지 않는다 [확인 필요: 계정 시간대].</li>
+<li><code>spend</code> 는 USD 로 환산한다. <code>installs</code> 와 수익은 MMP 기준을 권장한다.</li>
+<li><code>frequency</code> 는 도달 기반 값이라 <strong>더하거나 평균 내면 안 된다</strong>. 분석 코드는 최신값만 쓴다.</li>
+<li>샘플 CSV 가 이 스키마를 그대로 따른다. 실제 데이터로 바꿀 때도 스키마는 유지하고 입력만 바꾼다.</li>
+</ul>
+<h2 id="4-데이터-아키텍처">4. 데이터 아키텍처</h2>
+<h3 id="41-전체-흐름">4.1 전체 흐름</h3>
+<pre><code class="language-mermaid">flowchart LR
+  subgraph SRC[소스]
+    META[Meta Marketing API&lt;br/&gt;Insights]
+    GADS[Google Ads API&lt;br/&gt;GAQL]
+    MMP[MMP API&lt;br/&gt;AppsFlyer·Adjust 등]
+    REV[수익&lt;br/&gt;Firebase→BigQuery&lt;br/&gt;미디에이션 노출 단위 수익]
+    REVIEW[과제 1 리뷰 분류]
+    CAL[과제 2 이벤트 캘린더]
+  end
+  SCH[스케줄러 06:00 KST&lt;br/&gt;Cloud Scheduler·GitHub Actions] --&gt; EXT
+  SRC --&gt; EXT[extract_*.py&lt;br/&gt;최근 7일 재수집]
+  EXT --&gt; RAW[(BigQuery raw_*)]
+  RAW --&gt; TF[transform.sql&lt;br/&gt;통화·시간대·ID 매핑]
+  TF --&gt; STD[(ads_daily&lt;br/&gt;표준 컬럼)]
+  STD --&gt; AN[analyze_ads.py&lt;br/&gt;규칙 판정]
+  AN --&gt; FJ[findings.json&lt;br/&gt;+ findings 이력 표]
+  FJ --&gt; LLM[Claude API&lt;br/&gt;문장화]
+  LLM --&gt; CHK[숫자 검증기]
+  CHK --&gt;|통과| MSG[메신저 5줄 + 상세 링크]
+  CHK --&gt;|실패| ALERT[담당자 알림·발송 보류]
+  MSG --&gt; APR[승인·거절 버튼]
+  APR --&gt; LOG[(approvals 감사 로그)]
+  APR --&gt;|3단계| ACT[예산 변경 API]
+  STD --&gt; BI[Data Studio 대시보드&lt;br/&gt;옛 Looker Studio]
+</code></pre>
+<h3 id="42-소스별-연동">4.2 소스별 연동</h3>
+<table>
+<thead>
+<tr>
+<th>소스</th>
+<th>방법</th>
+<th>받는 데이터</th>
+<th>주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Meta</strong></td>
+<td>Marketing API(Graph API v26.0) Insights <code>GET /act_{ad_account_id}/insights</code> — <code>level=ad</code>, <code>time_increment=1</code>, <code>breakdowns=country</code>, 기간이 길면 비동기 리포트 작업</td>
+<td>spend, impressions, clicks, frequency, actions 중 <code>mobile_app_install</code>, 3초 영상 조회(<code>actions</code> 의 <code>action_type=video_view</code> = 3초 영상 조회. <code>video_3_sec</code> 같은 별도 필드는 없다(S6))</td>
+<td>비즈니스 관리자 <strong>시스템 사용자 토큰</strong>(<code>ads_read</code>)을 쓴다. 기본은 만료되지 않지만 60일 만료 옵션으로 만들었다면 그 안에 갱신해야 한다(S11·S12) / 호출 한도: 비즈니스 사용 사례(BUC) 한도. 1시간 기준 ads_insights 는 Standard 등급 190,000 + 400 × 활성 광고 수다. 응답 헤더 <code>X-Business-Use-Case-Usage</code>·<code>x-fb-ads-insights-throttle</code> 를 보고 호출 속도를 늦춘다. 긴 기간은 비동기 작업(<code>report_run_id</code>)으로 받는다(S7·S8) / 버전: 최신 v26.0(2026-07-29). <strong>v24.0 은 2026-10-06 에 만료</strong>됐고, 2026-07-29부터 버전 자동 업그레이드가 적용된다(S1·S3) / <strong>2026-01-12부터 7d_view·28d_view 어트리뷰션 값이 나오지 않는다</strong>(1d_click·7d_click·28d_click·1d_view 등은 남음). frequency breakdown 은 6개월까지만 조회되므로 매일 적재해 둔다(S9·S10). 레거시 Advantage+ 앱 캠페인(SMART_APP_PROMOTION)은 v25.0부터 생성할 수 없고 v26.0부터 수정할 수 없다. 새 구조는 <code>advantage_state=ADVANTAGE_PLUS_APP</code> 이고, 기존 캠페인을 옮기면 학습이 다시 시작된다(S13) [확인 필요: 썬더게임즈 캠페인 구조]</td>
+</tr>
+<tr>
+<td><strong>Google</strong></td>
+<td>Google Ads API + GAQL(<code>SearchStream</code>, S19). 캠페인·광고 그룹은 <code>campaign</code>·<code>ad_group</code>, 국가는 <code>geographic_view</code>(실제 위치 또는 관심 지역 기준. 실제 위치만 보려면 <code>user_location_view</code>(S20·S21)), 소재는 <code>ad_group_ad_asset_view</code></td>
+<td><code>metrics.cost_micros</code>(÷1,000,000), impressions, clicks, conversions, conversions_value, <code>segments.date</code></td>
+<td>개발자 토큰 + OAuth2 + MCC 를 거칠 때 <code>login-customer-id</code> 헤더 / 버전: 최신 v25(2026-07-22, v25.2 는 2026-09-23). 일몰은 v22 2026-10, v23 2027-02, v24 2027-05, v25 2027-08 이고, 메이저 버전 수명은 약 12개월이다(S16·S17) / 앱 캠페인 에셋 성과는 <code>ad_group_ad_asset_view</code>(impressions·clicks·conversions·cost_micros, <code>performance_label</code>)로 받고, v23부터 에셋 조합 성과(<code>app_top_combination_view</code>)도 있다. <strong>에셋 지표는 서로 겹쳐 부풀 수 있어</strong> 합계는 캠페인 리소스 값을 쓴다(S22~S25). 에셋 보기를 국가로 나눠 받을 수 있는지는 공식 문서로 확인하지 못했다. 그래서 설계는 캠페인×에셋 단위 판정을 기본으로 둔다 [확인 필요: 실계정에서 GAQL 시험]</td>
+</tr>
+<tr>
+<td><strong>MMP</strong></td>
+<td>AppsFlyer: Pull API(원시·집계), Master API(LTV·잔존·코호트 KPI, 24~48시간 뒤 반영), Cohort API. 모두 Premium 등급 표기가 있다(S29~S32). Adjust: Report Service API(Datascape 집계, Bearer 토큰)(S33)</td>
+<td>매체 공통 기준의 설치, 코호트 수익(D0·D7), 잔존, 광고 수익(연동 시)</td>
+<td><strong>설치·ROAS 의 기준 원천은 MMP 다.</strong> 매체 자체 보고치와 다르다(어트리뷰션 창, 조회 기여, 중복 귀속)</td>
+</tr>
+<tr>
+<td><strong>iOS</strong></td>
+<td>SKAdNetwork 4·AdAttributionKit 포스트백을 MMP 를 거쳐 받는다. 포스트백 창은 0–2일·3–7일·8–35일이고, 무작위 지연은 1차 24–48시간, 2·3차 24–144시간이다. 크라우드 익명성 Tier 가 낮으면 대략적 전환값만 온다. AdAttributionKit 과 SKAN 은 상호 운용된다(S34~S36)</td>
+<td>집계된 설치·전환값</td>
+<td>사용자 단위 데이터가 없다. iOS 판단은 집계·추정 기반임을 리포트에 밝힌다</td>
+</tr>
+<tr>
+<td><strong>수익</strong></td>
+<td>GA4/Firebase → BigQuery 일일 내보내기(<code>events_YYYYMMDD</code>, 표준 속성 하루 100만 이벤트 한도, 스트리밍은 GB당 $0.05) + AdMob 노출 단위 광고 수익(<code>ad_impression</code>, 노출 단위 수익 설정 필요) 또는 AppLovin MAX 노출 단위 수익 API·S2S 포스트백(S37~S41)</td>
+<td>사용자별 IAP·광고 수익 → 설치 코호트에 결합</td>
+<td>방치형은 광고 수익을 빠뜨리면 ROAS 를 크게 낮게 본다</td>
+</tr>
+<tr>
+<td><strong>과제 1·2</strong></td>
+<td>리뷰 분류 JSON, 이벤트 캘린더</td>
+<td>일자별 광고 불만 리뷰 수, 이벤트 기간</td>
+<td>12장</td>
+</tr>
+</tbody>
+</table>
+<p>썬더게임즈가 실제로 쓰는 MMP·미디에이션·BI 는 확인 대상이다 [확인 필요]. 확인 전까지는 설계를 MMP 에 중립적으로 둔다. 원천을 바꿔도 표준 표(<code>ads_daily</code>)의 스키마는 그대로다.</p>
+<h3 id="43-적재정규화-규칙">4.3 적재·정규화 규칙</h3>
+<table>
+<thead>
+<tr>
+<th>규칙</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>매일 최근 7일을 다시 받아 덮어쓴다(멱등 적재).</strong> 날짜 × 캠페인 × 국가 × 소재 키로 MERGE</td>
+<td>매체·MMP 수치는 며칠 동안 계속 바뀐다(어트리뷰션 확정, 무효 트래픽 차감, SKAN 지연). D7 코호트 수익은 7일 뒤에야 확정된다</td>
+</tr>
+<tr>
+<td>원본(<code>raw_*</code>)은 지우지 않고 수집 시각을 남긴다</td>
+<td>숫자가 바뀐 이유를 나중에 추적한다</td>
+</tr>
+<tr>
+<td>통화는 수집일 환율로 USD 환산하고, 환율 표를 따로 둔다</td>
+<td>계정 통화가 섞여도 비교할 수 있다</td>
+</tr>
+<tr>
+<td>시간대는 계정 시간대로 통일한다(KST 권장)</td>
+<td>일자 경계가 어긋나면 "어제" 숫자가 매체마다 다르다</td>
+</tr>
+<tr>
+<td><strong>소재 ID 매핑 표</strong>(<code>creative_map</code>): 매체 광고 ID·에셋 ID ↔ MMP 의 ad/creative 이름 ↔ 사내 소재 코드(MV01 등)</td>
+<td>매체와 MMP 를 소재 단위로 붙이는 유일한 열쇠다. 소재 이름 규칙(예: <code>MV03_tower_climb_15s</code>)을 업로드 단계부터 강제한다</td>
+</tr>
+<tr>
+<td>구글 에셋 지표는 더하지 않는다</td>
+<td>한 노출에 여러 에셋이 함께 쓰이므로 에셋 합계 ≠ 캠페인 합계다. 캠페인 합계는 <code>campaign</code> 리소스에서 따로 받는다(샘플은 설명을 위해 더해지게 단순화했다)</td>
+</tr>
+<tr>
+<td>frequency 는 비가산 값으로 저장한다</td>
+<td>7일 frequency 는 기간 도달 기준이라 일별로 따로 받아 둔다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-bigquery-표-구성권장">4.4 BigQuery 표 구성(권장)</h3>
+<table>
+<thead>
+<tr>
+<th>표</th>
+<th>단위</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>raw_meta_insights</code>, <code>raw_gads_*</code>, <code>raw_mmp_*</code>, <code>raw_revenue_*</code></td>
+<td>원본 그대로 + 수집 시각</td>
+<td>감사·재처리</td>
+</tr>
+<tr>
+<td><code>ads_daily</code></td>
+<td>일 × 매체 × 캠페인 × 국가 × 소재(3.4절 표준 컬럼)</td>
+<td>분석·대시보드의 단일 원천</td>
+</tr>
+<tr>
+<td><code>campaign_config</code></td>
+<td>캠페인 × 일자: 일 예산, 목표, 변경 이력</td>
+<td>예산 규칙(쿨다운·제로섬)</td>
+</tr>
+<tr>
+<td><code>findings_history</code></td>
+<td>일 × 발견 사항</td>
+<td>오탐·누락 추적, 규칙 조정</td>
+</tr>
+<tr>
+<td><code>approvals</code></td>
+<td>제안 × 승인자·시각·결정·사유</td>
+<td>감사 로그, 승인율</td>
+</tr>
+<tr>
+<td><code>events_log</code></td>
+<td>일자 × 이벤트(앱 배포, 광고 정책 변경, 주간 이벤트)</td>
+<td>기준선 재설정, 원인 해석</td>
+</tr>
+</tbody>
+</table>
+<h3 id="45-보안권한">4.5 보안·권한</h3>
+<ul>
+<li>토큰·개발자 토큰·서비스 계정 키는 비밀 관리자(GitHub Secrets, GCP Secret Manager)에만 둔다. 코드·시트에 쓰지 않는다.</li>
+<li>1·2단계는 <strong>읽기 권한만</strong> 쓴다(Meta <code>ads_read</code>, Google Ads 읽기 전용 사용자). 3단계 실행 권한(<code>ads_management</code>, Google Ads 표준 권한)은 별도 시스템 사용자·서비스 계정으로 분리하고, 모든 변경을 <code>approvals</code> 표에 남긴다.</li>
+<li>광고 데이터는 집계 데이터라 개인정보가 거의 없다. 다만 MMP 원시 데이터(기기 ID·IP 등)를 적재하면 개인정보가 된다. 이 설계는 <strong>집계 지표만</strong> 쓰고 사용자 단위 원시 데이터는 적재하지 않는다(9장).</li>
+</ul>
+<h2 id="5-분석-로직-탐지-규칙-예산-재배분-안전장치">5. 분석 로직 — 탐지 규칙, 예산 재배분, 안전장치</h2>
+<p><a class="code-link" href="sample/analyze_ads.py.html"><code>sample/analyze_ads.py</code></a> 가 아래 규칙을 그대로 구현한다. 기준값은 모두 <code>RULES</code> 한곳에 모아 두었다. <strong>초기값</strong>이므로 4주 운영 뒤 자사 데이터와 승인 기록으로 조정한다.</p>
+<h3 id="51-매일-돌리는-검사순서대로">5.1 매일 돌리는 검사(순서대로)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>검사</th>
+<th>판정 규칙(초기값)</th>
+<th>결과 유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>데이터 신선도·완결성</td>
+<td>어제 날짜 행이 매체마다 있는가 / 국가×캠페인에서 지출 ≥ $30 인데 설치 0 인가(<strong>iOS 는 SKAN 지연 때문에 2일 연속일 때만</strong>) / 설치가 있는데 광고 수익이 0 인가</td>
+<td><code>data_issue</code> — 분석보다 먼저 보고</td>
+</tr>
+<tr>
+<td>1</td>
+<td>예산 소진 속도</td>
+<td>매체별 (월 누적 지출 ÷ 월 예산) ÷ 경과일 비율이 ±15% 밖. 현재 일 예산 합계를 유지할 때의 월말 예상 지출과, 월 예산에 맞추려면 필요한 일 예산을 함께 계산</td>
+<td><code>pacing</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>지표 이상</td>
+<td>국가×캠페인의 CPI·CTR·D0 ROAS 가 직전 14일 기준선(중앙값·MAD) 대비 강건 z &gt; 3, <strong>그리고 변화 폭 ≥ 25%(CTR 20%)</strong>. CPI 는 CPM·CTR·CVR 로 분해하고, 같은 국가 다른 매체가 정상인지 비교</td>
+<td><code>anomaly</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>소재 피로</td>
+<td>같은 소재의 최근 3일 CTR(구글은 IPM)이 첫 3일 대비 −25% 이상 + <strong>메타 frequency &gt; 3</strong> + 차이 검정 통과 + 같은 범위의 다른 소재는 함께 떨어지지 않음</td>
+<td><code>creative_fatigue</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>우수 소재</td>
+<td>같은 캠페인에서 최근 7일 IPM 상위 20%, 중앙값의 1.3배 이상, 표본 충분, 나머지 소재 대비 차이 검정 통과</td>
+<td><code>scale_creative</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>예산 재배분</td>
+<td>5.2 규칙</td>
+<td><code>budget_up</code> / <code>budget_down</code> / <code>hold</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>심각도 순서:</strong> data_issue &gt; pacing(지출 이상) &gt; anomaly(성과 급락) &gt; creative_fatigue &gt; scale_creative. 리포트도 이 순서로 쓴다.</p>
+<p><strong>매체별 차이를 규칙에 반영했다.</strong></p>
+<ul>
+<li>메타는 광고(소재)×국가 단위로 판정한다. Insights API 가 <code>level=ad</code> 에서 <code>country</code> 분할을 지원하기 때문이다(S4·S5).</li>
+<li>구글 앱 캠페인은 소재가 아니라 <strong>에셋 단위</strong> 성과를 주고, 에셋 지표는 서로 겹친다. 국가 분할 가능 여부도 확인하지 못했다(4.2절). 그래서 구글 소재는 <strong>캠페인×에셋 단위</strong>로, CTR 대신 <strong>IPM</strong> 으로 판정한다. frequency 가 없으므로 메타의 "frequency &gt; 3" 조건은 적용하지 않는다.</li>
+<li>iOS 는 SKAdNetwork·AdAttributionKit 포스트백이 늦게 오므로 하루치 설치 0 만으로는 판정하지 않는다.</li>
+</ul>
+<h3 id="52-예산-재배분-규칙">5.2 예산 재배분 규칙</h3>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>제안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상</td>
+<td>최근 7일 지출 ≥ $200 인 캠페인(미만이면 "판단 보류")</td>
+</tr>
+<tr>
+<td>기준 지표</td>
+<td><strong>추정 D7 ROAS</strong> = 최근 7일 D0 ROAS × 직전 14일 확정 코호트의 D7÷D0 배수. 확정 D7(7~13일 전 코호트)도 함께 표시</td>
+</tr>
+<tr>
+<td>목표 대비 ≥ 120% 이고 CPI 안정(최근 3일 CPI ≤ 직전 14일 중앙값 × 1.15)</td>
+<td><strong>증액</strong> +15%(≥150%면 +20%)</td>
+</tr>
+<tr>
+<td>최근 3일 모두 목표 대비 &lt; 70%</td>
+<td><strong>감액</strong> −20%. 확정 D7 도 70% 미만이면 "2주 지속 시 일시 중지 검토"를 덧붙인다</td>
+</tr>
+<tr>
+<td>그 사이</td>
+<td>유지(리포트에 쓰지 않음)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>안전장치(모든 제안에 적용)</strong></p>
+<ul>
+<li><strong>변경 폭 상한 20%, 같은 캠페인 쿨다운 3일.</strong> 매체 알고리즘은 예산·입찰이 크게 바뀌면 다시 학습하고, 그동안 성과가 흔들린다. Google 은 앱 캠페인 예산·목표 CPI 를 한 번에 20% 넘게 바꾸지 말라고 권장한다(S28). Meta 는 공식 % 기준이 없어 같은 상한을 쓴다(S15, 9장).</li>
+<li><strong>제로섬이 기본이다.</strong> 매체마다 증액분은 같은 매체의 감액분과 월 예산 여유분 안에서만 낸다. 매체 사이의 이동은 월 배정을 바꾸는 일이라 사람이 결정한다. 일 예산은 $5 단위로 맞추되, 증액은 올림·감액은 내림으로 처리해 변경 폭이 규칙보다 작아지지 않게 한다.</li>
+<li><strong>데이터 문제가 있는 범위는 모든 제안을 보류한다.</strong> 지표 이상이 있는 범위는 <strong>증액만</strong> 막는다(원인을 확인하기 전 감액은 안전하지만 증액은 위험하다).</li>
+<li><strong>월 예산을 과속 중인 매체는 증액하지 않는다.</strong></li>
+<li>모든 제안에 <code>reason</code>(규칙 + 수치), <code>guardrail</code>(통과한 안전장치), <code>confidence</code>(표본 충분도)를 붙인다.</li>
+</ul>
+<h3 id="53-플레이북-초기-규칙-위에-더한-통계-안전장치-왜-필요한가">5.3 플레이북 초기 규칙 위에 더한 통계 안전장치 — 왜 필요한가</h3>
+<p>플레이북의 초기 규칙(z &gt; 3, 첫 3일 대비 −25%)만 쓰면, 설치가 하루 수십 건인 범위에서는 <strong>우연한 출렁임이 이상으로 잡힌다.</strong> 같은 가상 데이터를 시드만 바꿔 30번 돌린 결과는 다음과 같다(심은 문제는 같고 잡음만 다르다).</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>초기 규칙만</th>
+<th>안전장치 추가 후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하루 평균 오탐</td>
+<td>약 1.6건</td>
+<td><strong>0.33건</strong>(30일 10건, 그중 4건은 실제로 IPM 이 조금 높게 설정된 구글 playable 을 확장 후보로 잡은 것)</td>
+</tr>
+<tr>
+<td>구글 소재 피로 탐지율</td>
+<td>63%</td>
+<td><strong>90%</strong></td>
+</tr>
+<tr>
+<td>지표 이상 오탐(30일 합계)</td>
+<td>26건</td>
+<td>4건</td>
+</tr>
+</tbody>
+</table>
+<p>셈 기준: 오탐은 심어 둔 7건에 해당하지 않는 findings 항목 수다. 시드마다 고유한 (유형·캠페인·국가·소재) 묶음을 1건으로 세고 30개 시드를 합했으며, 예산 제안은 넣지 않았다. 오른쪽 열은 <code>python3 sample/sweep_seeds.py 30</code> 으로 그대로 재현된다. 왼쪽 열("초기 규칙만")은 개발 중 안전장치를 넣기 전 버전으로 잰 참고값이라 지금 스크립트로는 재현되지 않는다.</p>
+<p>더한 장치는 다섯 가지다. ① 효과 크기 하한(실무상 의미 있는 변화만 잡는다), ② z 분모에 표본 잡음 하한(1/√n), ③ 사건 수가 적으면 소재 판정 창을 3일에서 7일로 넓히기, ④ 같은 범위의 다른 소재도 함께 떨어지면 소재 피로가 아니라 범위 단위 문제로 보기(국가 CPI 급등을 소재 피로로 오판하지 않게), ⑤ 두 비율 차이 검정. 실데이터에서도 첫 4주 동안 오탐·누락을 기록해 같은 방식으로 조정한다.</p>
+<h3 id="54-진단까지-자동으로-cpi-분해와-매체-간-비교">5.4 진단까지 자동으로 — CPI 분해와 매체 간 비교</h3>
+<p>CPI = CPM ÷ IPM 이고 IPM = CTR × CVR × 1000 이다. CPI 가 튀면 세 요소 중 무엇이 움직였는지 계산해 조치를 고른다.</p>
+<table>
+<thead>
+<tr>
+<th>주원인</th>
+<th>의심할 곳</th>
+<th>자동 조치 문구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CVR 급락 + 같은 국가 다른 매체 정상</td>
+<td>해당 매체 쪽 변화(노출 위치 구성, 최근 에셋·입찰·타깃 변경)</td>
+<td>"매체 쪽 변화 확인, 스토어 페이지 문제 가능성은 낮음"</td>
+</tr>
+<tr>
+<td>CVR 급락 + 다른 매체도 이상</td>
+<td>국가 공통 원인(스토어 페이지·현지화·앱 심사/배포 상태)</td>
+<td>"스토어 페이지·현지화 확인"</td>
+</tr>
+<tr>
+<td>CPM 급등</td>
+<td>경매 경쟁(시즌·대형 경쟁작)</td>
+<td>"입찰·타깃 점검"</td>
+</tr>
+<tr>
+<td>CTR 급락</td>
+<td>소재 노출 구성</td>
+<td>"소재 피로 항목 참고"</td>
+</tr>
+</tbody>
+</table>
+<p>샘플 F04 가 이 흐름을 보여 준다. 구글 T3 ID 의 CPI 가 +155% 올랐고, 분해하면 CVR −50%·CPM +25%였으며, 같은 국가의 메타 CPI 는 +12%(정상)였다. 그래서 "구글 쪽 변화 확인"을 제안했다.</p>
+<h2 id="6-aiclaude의-역할-계산은-코드-해석문장화는-claude">6. AI(Claude)의 역할 — 계산은 코드, 해석·문장화는 Claude</h2>
+<h3 id="61-분업">6.1 분업</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>담당</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수집·정규화·지표 계산</td>
+<td>코드(SQL·Python)</td>
+<td>결정적이어야 하고 재현할 수 있어야 한다</td>
+</tr>
+<tr>
+<td>이상·피로·예산 판정</td>
+<td>코드(규칙)</td>
+<td>기준이 일관되어야 하고, 사람이 규칙을 검토하고 고칠 수 있어야 한다</td>
+</tr>
+<tr>
+<td>우선순위 정리·리포트 문장화</td>
+<td><strong>Claude</strong></td>
+<td>여러 발견을 담당자가 읽기 쉬운 순서와 말로 엮는 일이다</td>
+</tr>
+<tr>
+<td>원인 가설의 추가 탐색(3단계)</td>
+<td>Claude + 조회 전용 도구(MCP)</td>
+<td>"ID 는 왜 CVR 이 떨어졌지?" 같은 질문에 데이터 조회로 답한다. 판단은 사람이 한다</td>
+</tr>
+<tr>
+<td>예산 변경 실행(3단계)</td>
+<td>코드 — <strong>사람의 승인 후에만</strong></td>
+<td>실행 권한은 별도 계정으로 분리하고 감사 로그를 남긴다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-프롬프트-설계samplereport_promptmd">6.2 프롬프트 설계(<a class="code-link" href="sample/report_prompt.html"><code>sample/report_prompt.md</code></a>)</h3>
+<ul>
+<li>입력은 <strong>findings.json 하나</strong>다. 원본 CSV 나 대시보드 숫자는 넣지 않는다.</li>
+<li>시스템 프롬프트에 숫자 규칙을 맨 앞에 둔다. ① 입력에 있는 숫자만 쓴다, ② 퍼센트 변환과 반올림 말고는 새 계산(합계·평균)을 하지 않는다, ③ 확실하지 않으면 숫자 대신 항목 ID(F01, B02)를 쓴다.</li>
+<li>우선순위(데이터 문제 우선), 출력 형식(5줄 + 상세 표), 길이(화면 한 장)를 명시한다.</li>
+<li>원인은 findings 의 reason·action 범위 안에서만 말하게 한다. 그럴듯한 추측을 막기 위해서다.</li>
+</ul>
+<h3 id="63-환각-방지-숫자-검증기로-발송을-막는다">6.3 환각 방지 — 숫자 검증기로 발송을 막는다</h3>
+<p><a class="code-link" href="sample/check_report_numbers.py.html"><code>sample/check_report_numbers.py</code></a> 는 리포트의 숫자를 모두 뽑아 findings.json 과 대조하고, <strong>문제가 하나라도 있으면 발송하지 않고</strong> 담당자에게 알린다. 검사하는 것은 다섯 가지다.</p>
+<table>
+<thead>
+<tr>
+<th>검사</th>
+<th>내용</th>
+<th>막는 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출처</td>
+<td>findings.json 의 값(그대로·반올림·×100 퍼센트)이나 reason 문장에 이미 적힌 숫자인가</td>
+<td>입력에 없는 합계 "$582", 지어낸 "$27,900"</td>
+</tr>
+<tr>
+<td>단위</td>
+<td>%가 붙은 숫자는 퍼센트 값과만, $·무단위 숫자는 퍼센트가 아닌 값과만 맞춘다</td>
+<td>비율을 금액처럼 쓴 경우</td>
+</tr>
+<tr>
+<td>부호</td>
+<td>+/− 또는 "하락·상승" 같은 방향 표현이 변화량의 부호와 같은가</td>
+<td>CTR −35% → +35%, 지출 −1% → +1%</td>
+</tr>
+<tr>
+<td>항목 대응</td>
+<td>줄에 F01·B01 같은 ID 나 캠페인·국가·소재 이름이 있으면, 뒤의 숫자는 그 항목의 값이어야 한다(표는 첫 칸의 ID 가 행의 주인)</td>
+<td>KR 지출에 US 값, F04 CPI 에 ID 전체 CPI, B01·B02 제안액 맞바꿈, 국가 표의 행 맞바꿈</td>
+</tr>
+<tr>
+<td>제안 ID·캠페인 짝</td>
+<td>제안 ID 바로 뒤의 캠페인 이름이 그 제안의 캠페인인가</td>
+<td>"B01(META_A+APP_AOS_T1 …)"</td>
+</tr>
+</tbody>
+</table>
+<p><a class="code-link" href="sample/test_check_report_numbers.py.html"><code>sample/test_check_report_numbers.py</code></a> 가 원본 리포트(숫자 161개, 날짜·목록 번호 제외)의 통과와 일부러 틀리게 고친 변형 13건의 차단을 확인한다. 13건에는 QA 가 쓴 바꿔치기 5건이 들어 있다. 작성 중 이전 실행값을 잘못 옮긴 숫자 1개를 검증기가 실제로 잡아내기도 했다.</p>
+<p><strong>검증기가 잡지 못하는 것</strong>도 있다. ① ID·이름 같은 키가 없는 문장에서 단위·부호가 같은 다른 전체 값으로 바꿔치기한 경우(예: "보류 4건"을 다른 건수로 바꿈), ② 날짜, ③ 숫자가 아닌 서술의 오류(원인 추측, 조치 문구 왜곡). 그래서 리포트 프롬프트는 키(ID·이름)를 숫자 앞에 쓰게 하고, 처음 8주는 담당자가 상세 표와 대조해 검수한다.</p>
+<h3 id="64-호출-설정samplemake_reportpy">6.4 호출 설정(<a class="code-link" href="sample/make_report.py.html"><code>sample/make_report.py</code></a>)</h3>
+<ul>
+<li>Claude Messages API(<code>POST /v1/messages</code>, S42), Python SDK(<code>anthropic</code>), 모델 <code>claude-opus-5-5</code>(S43), <code>output_config.effort="low"</code>. 하루 한 번 쓰는 짧은 요약이라 낮은 effort 로 충분하다. 입력이 약 1만 토큰이므로 비용은 하루 몇 센트 수준이다(가격은 출처 S45).</li>
+<li>드물게 안전 분류기가 요청을 거절할 때를 대비해 서버 쪽 대체 실행(<code>fallbacks="default"</code>)을 켰다. 대체 실행이 출력 도중에 일어나면 응답에 앞 모델의 잘린 글과 대체 모델의 전체 글이 함께 오므로, <strong>마지막 fallback 블록 뒤의 글만</strong> 리포트로 쓰고 "어느 모델이 대신 썼는지"를 로그에 남긴다. 그래도 거절되면 리포트를 보내지 않고 담당자에게 알린다.</li>
+<li>하루 1회 호출이라 프롬프트 캐싱의 이득이 없어 쓰지 않는다. 결과가 메신저용 Markdown 이므로 구조화 출력(Structured outputs, S44) 대신 숫자 검증기(6.3절)로 지어낸 숫자·부호 반전·항목 바꿔치기를 막는다. 서술의 정확성은 프롬프트 규칙과 담당자 검수가 맡는다. 3단계에서 승인 버튼용 데이터를 함께 받아야 하면 구조화 출력으로 바꾼다.</li>
+<li>키·토큰은 비밀 관리자(GitHub Secrets 또는 GCP Secret Manager)에만 둔다.</li>
+</ul>
+<h2 id="7-리포트알림-설계">7. 리포트·알림 설계</h2>
+<h3 id="71-일간매일-0900-전-메신저">7.1 일간(매일 09:00 전, 메신저)</h3>
+<pre><code>[UA 일일 리포트 | 10/06 | 가상 데이터]
+1) 어제 지출 $1,929(직전 7일 평균 대비 −1%) · 설치 1,512 · CPI $1.28(+14%) · D0 ROAS 2.8%
+2) 🔴 즉시 확인: 메타 iOS KR·US 3일 연속 설치 0 — 이 캠페인 예산 제안은 보류
+3) 🟠 소재: 피로 2개(MV03 BR CTR −35% · GV02 IPM −44%) / 확장 후보 1개(MP01 IPM 1.6배)
+4) 💰 예산 제안: 증액 1 / 감액 1, 순변동 +$5/일, 보류 4. 구글 월 예산 과속(+23%)
+5) 오늘 할 일: MMP iOS 연동 확인 · B01·B02 승인 · 교체 소재 요청 · 구글 월 배정 결정
+</code></pre>
+<ul>
+<li>5줄 아래에 상세 링크를 둔다(발견 사항 표, 예산 제안 표, 국가별 표). 전체 예시는 <a class="code-link" href="sample/sample_daily_report.html"><code>sample/sample_daily_report.md</code></a> 에 있다.</li>
+<li><strong>승인 동선:</strong> 예산 제안마다 [승인]·[거절]·[보류] 버튼을 둔다(Slack 의 인터랙티브 메시지 등 [확인 필요: 사내 메신저]). 누가·언제·무엇을·왜 눌렀는지 BigQuery <code>approvals</code> 표에 남긴다. 거절 사유는 규칙 조정의 재료가 된다.</li>
+</ul>
+<h3 id="72-주간월요일-오전-문서-1장">7.2 주간(월요일 오전, 문서 1장)</h3>
+<table>
+<thead>
+<tr>
+<th>섹션</th>
+<th>내용</th>
+<th>쓰임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가 Tier 별 코호트</td>
+<td>D1·D7 잔존, D7·D30 ROAS(확정), payback 추정</td>
+<td>다음 주 국가 배분</td>
+</tr>
+<tr>
+<td>소재 수명 곡선</td>
+<td>소재별 IPM 추이, 피로 시작일, 교체까지 걸린 일수</td>
+<td>디자인팀 소재 제작 계획</td>
+</tr>
+<tr>
+<td>매체 vs MMP 차이</td>
+<td>매체 보고 설치 ÷ MMP 설치 비율 추이</td>
+<td>어트리뷰션 이상 조기 발견</td>
+</tr>
+<tr>
+<td>iOS(SKAN)</td>
+<td>포스트백 수, 전환값 분포, 지연</td>
+<td>iOS 예산 판단의 근거</td>
+</tr>
+<tr>
+<td>광고/IAP 수익 비중</td>
+<td>국가별 광고 수익 비중, 광고 제거 상품 구매율</td>
+<td>리뷰의 광고 피로 대응과 ROAS 영향(12장)</td>
+</tr>
+<tr>
+<td>규칙 성과</td>
+<td>제안 수·승인율·승인한 제안의 7일 뒤 결과</td>
+<td>규칙 조정</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-실시간-알림조건을-넘으면-즉시">7.3 실시간 알림(조건을 넘으면 즉시)</h3>
+<table>
+<thead>
+<tr>
+<th>조건(초기값)</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>캠페인 시간당 지출이 일 예산 페이스의 2배를 넘음</td>
+<td>입찰·예산 설정 실수, 매체 오류</td>
+</tr>
+<tr>
+<td>지출 ≥ $50 인데 6시간 동안 MMP 설치 0(Android)</td>
+<td>추적 누락·SDK 장애</td>
+</tr>
+<tr>
+<td>수집 작업 실패, API 토큰 만료 7일 전</td>
+<td>아침 리포트가 비지 않게</td>
+</tr>
+<tr>
+<td>리포트 숫자 검증 실패</td>
+<td>잘못된 숫자·부호·항목 대응이 나가지 않게</td>
+</tr>
+<tr>
+<td>앱 신규 버전 배포 당일</td>
+<td>SDK·이벤트 회귀 확인 체크리스트 발송</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-도입-로드맵">8. 도입 로드맵</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>기간</th>
+<th>하는 일</th>
+<th>필요한 사람·권한</th>
+<th>비용 범위(가정)</th>
+<th>완료 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 노코드 리포트</strong></td>
+<td>2~3주</td>
+<td>커넥터(Supermetrics·Funnel 등)로 Meta·Google·MMP → Google Sheets 또는 BigQuery 를 매일 동기화한다. 표준 컬럼 시트와 Data Studio(옛 Looker Studio) 대시보드를 만들고, Claude 로 일일 요약을 쓴다(처음에는 사람이 붙여 넣는다)</td>
+<td>마케팅 담당자 1명 + 컨설턴트. 매체 계정 읽기 권한</td>
+<td>Supermetrics Starter 월 $39 ~ Growth 월 $159(연간 결제, 목적지는 Sheets·Looker Studio 등 1개, BigQuery 는 Enterprise 견적) 또는 Funnel 월 $300부터(BigQuery 포함은 월 $600부터)(S46·S47) [확인 필요: 소스 수 기준 견적]. Data Studio(옛 Looker Studio, 2026-04 개명) 무료 에디션(S48·S49). Claude 사용료 소액</td>
+<td>담당자가 "엑셀 정리" 없이 아침 대시보드로 업무를 시작한다. 1주 동안 수작업과 숫자 차이 ±2% 이내</td>
+</tr>
+<tr>
+<td><strong>2. 코드 파이프라인</strong></td>
+<td>4~6주</td>
+<td>직접 API 수집 스크립트(4장) → BigQuery → <code>transform.sql</code> → <a class="code-link" href="sample/analyze_ads.py.html"><code>analyze_ads.py</code></a> → Claude API 리포트 → 숫자 검증 → 메신저 발송. 스케줄러(Cloud Scheduler 또는 GitHub Actions). 4주는 기준선 수집과 규칙 조정</td>
+<td>데이터 엔지니어 1명(사내 또는 외주) + 마케팅 담당자. Meta 시스템 사용자 토큰(ads_read), Google Ads 개발자 토큰 + OAuth, MMP API 토큰, GCP 프로젝트</td>
+<td>BigQuery 는 이 규모(하루 수천 행)면 무료 등급(쿼리 월 1 TiB·저장 10 GiB) 안이다(S50). 시험 단계는 카드 없이 샌드박스로 시작할 수 있지만, 표가 60일 뒤 자동 만료되고 스트리밍·DML 을 쓸 수 없어 운영에는 맞지 않는다(S51). 스케줄러·함수는 월 수 달러, Claude API 도 월 수 달러 수준이다(S45). 주된 비용은 개발 인건비</td>
+<td>4주 연속 매일 09:00 전 자동 발송, 검증 실패 0건, 오탐·누락 기록으로 규칙 1차 조정 완료. 담당자 일일 작업 시간 15분 이하(측정)</td>
+</tr>
+<tr>
+<td><strong>3. 승인형 실행</strong></td>
+<td>8주 제안 운영 후 시작, 구축 2~3주</td>
+<td>승인 버튼 → Marketing API(ads_management)·Google Ads API 로 예산 변경 실행. 변경 전후 성과 자동 추적. Claude 대화형 분석(MCP, 조회 전용으로 시작)</td>
+<td>실행 전용 별도 시스템 사용자·서비스 계정, 변경 감사 로그, 승인 절차 문서</td>
+<td>추가 인프라 비용은 거의 없다. 권한 설계·검수 공수가 든다</td>
+<td>8주 동안 승인 제안의 결과가 기준을 넘는다(예: 승인한 증액의 7일 뒤 ROAS 가 목표 이상). 감사 로그 100%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>8주 제안 운영 기간</strong>을 두는 이유: 규칙의 정밀도(승인율)와 결과를 확인한 뒤에야 실행 권한을 주는 것이 안전하다.</li>
+<li><strong>1단계를 건너뛰어도 된다.</strong> 사내에 데이터 엔지니어가 있고 GCP 를 이미 쓰고 있다면 바로 2단계로 간다 [확인 필요: 사내 개발 인력, GCP 사용 여부].</li>
+</ul>
+<h2 id="9-리스크와-대응">9. 리스크와 대응</h2>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>내용</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>어트리뷰션 지연·SKAN</strong></td>
+<td>iOS 포스트백은 1차 24–48시간, 2·3차 24–144시간 무작위로 늦게 오고, 전환 창이 35일까지 이어진다. 크라우드 익명성 Tier 가 낮으면 세밀한 전환값이 오지 않는다(S34~S36)</td>
+<td>iOS 는 2일 연속 기준으로만 추적 누락을 판정한다. iOS 예산 판단은 주간 단위로 하고, 리포트에 "집계·추정"을 표시한다. 최근 7일 재수집으로 늦게 온 포스트백을 반영한다</td>
+</tr>
+<tr>
+<td><strong>API 권한·토큰 만료</strong></td>
+<td>Meta 시스템 사용자 토큰은 기본적으로 만료되지 않지만 60일 만료 옵션이 있고, 권한 회수나 관리자 변경으로 끊길 수 있다. Meta 앱 Access Tier(Limited·Full) 조건도 있다. Google Ads 는 개발자 토큰과 OAuth 갱신 토큰을 관리해야 한다(S11·S12·S18)</td>
+<td>시스템 사용자 토큰을 쓰고, 만료 7일 전 알림을 보낸다. 수집 실패 시 리포트에 "○○ 데이터 미수집 — 판단 보류"를 첫 줄에 쓴다(검사 0)</td>
+</tr>
+<tr>
+<td><strong>API 버전 일몰</strong></td>
+<td>Meta Marketing API 는 새 버전이 나온 뒤 이전 버전을 최소 90일 지원하며, v24.0 은 2026-10-06 에 만료됐다. Google Ads API 메이저 버전 수명은 약 12개월이다(v22 일몰 2026-10)(S1·S3·S16)</td>
+<td>버전 번호를 설정 파일 한곳에 두고, 분기마다 일몰 일정을 확인하는 점검 항목을 운영 달력에 넣는다</td>
+</tr>
+<tr>
+<td><strong>학습 단계 초기화</strong></td>
+<td>Meta 는 마지막 중요한 수정 뒤 약 1주 안에 최적화 결과 약 50건이 쌓여야 학습을 마친다. 입찰 전략·예산 변경은 "변경 폭에 따라" 중요한 수정이 되며, 공식 % 기준은 없다(S14·S15). Google 앱 캠페인은 예산·목표 CPI 를 한 번에 20% 넘게 바꾸지 말고, 첫 전환 100건 전에는 설정을 바꾸지 말며, 예산은 목표 CPI 의 50배 이상을 권장한다(S26~S28)</td>
+<td>변경 폭 20% 상한, 쿨다운 3일, 증액은 이벤트 시작 3일 전까지. 3단계 자동 실행도 같은 규칙을 지킨다</td>
+</tr>
+<tr>
+<td><strong>데이터 불일치(매체 vs MMP)</strong></td>
+<td>매체는 조회 기여·자체 어트리뷰션 창으로 설치를 더 많이 잡는 경향이 있고, MMP 는 매체 간 중복을 한 곳에 귀속한다</td>
+<td>판정은 MMP 기준으로 통일한다. 매체÷MMP 설치 비율을 주간 리포트로 보고, 비율이 급변하면 data_issue 로 올린다</td>
+</tr>
+<tr>
+<td><strong>수익 데이터 누락</strong></td>
+<td>광고 수익(미디에이션)이 하루 이틀 늦게 오거나 연동이 끊기면 하이브리드 ROAS 가 크게 낮게 나온다</td>
+<td>검사 0의 "설치가 있는데 광고 수익 0" 규칙. D0 판단을 보류하고 다음 날 재계산한다</td>
+</tr>
+<tr>
+<td><strong>러시아 등 집행 불가 지역</strong></td>
+<td>Google·Meta 는 2022년부터 러시아 내 광고를 중단했다(출처 S52·S53)</td>
+<td>ru 사용자 유입원을 MMP 로 확인한다. ru 는 접속 장애 해결 전까지 집행·프로모션을 보류한다(12장) [확인 필요]</td>
+</tr>
+<tr>
+<td><strong>개인정보</strong></td>
+<td>MMP 원시 데이터·사용자 단위 수익에는 기기 식별자가 들어간다. 한국 개인정보 보호법, 각국 규정이 적용된다. iOS 는 다른 회사 앱·웹을 넘나드는 추적이나 광고 식별자 접근에 앱 추적 투명성(ATT) 동의가 필요하다(S54) [확인 필요: 국내 법무 검토 범위]</td>
+<td>집계 지표만 적재한다. 사용자 단위 데이터가 꼭 필요하면 BigQuery 안에서만 집계하고, 접근 권한·보존 기간을 정한다. 광고 계정 데이터를 외부 LLM 에 보낼 때는 집계 결과(findings.json)만 보낸다</td>
+</tr>
+<tr>
+<td><strong>LLM 오류</strong></td>
+<td>숫자를 지어내거나, 부호·항목을 바꾸거나, 원인을 과하게 추측할 수 있다</td>
+<td>입력 제한(findings.json 만), 숫자 검증기(출처·단위·부호·항목 대응)로 발송 차단, 원인은 reason·action 범위 안에서만 쓰게 하고 처음 8주는 사람이 검수한다(6장). 검증기는 키 없는 문장의 같은 단위 바꿔치기와 서술 오류를 잡지 못한다</td>
+</tr>
+<tr>
+<td><strong>자동화 과신</strong></td>
+<td>규칙이 놓치는 상황(신작 경쟁작 출시, 스토어 피처링, 서버 장애)이 있다</td>
+<td>처음 8주는 제안만 한다. 주간 리포트에 "규칙 성과" 절을 두고, 담당자가 거절한 이유를 규칙에 반영한다</td>
+</tr>
+<tr>
+<td><strong>조직 의존</strong></td>
+<td>규칙과 파이프라인을 아는 사람이 한 명뿐이면 멈춘다</td>
+<td>규칙은 <code>RULES</code> 한곳, 변경은 이력과 함께 저장소로 관리한다. 운영 매뉴얼(재실행·토큰 갱신)을 만든다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-기대-효과-가정을-밝히고-추정한다">10. 기대 효과 — 가정을 밝히고 추정한다</h2>
+<p>근거 없는 "% 개선" 수치는 쓰지 않는다. 아래 숫자는 1장의 시간 배분 <strong>가정</strong>에서 나온 것이며, 2단계 완료 후 실제로 측정해 바꾼다.</p>
+<table>
+<thead>
+<tr>
+<th>효과</th>
+<th>추정</th>
+<th>가정·측정 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>담당자 일일 작업 시간</td>
+<td>약 60분 이상 → 약 15분(읽기 5분 + 승인 5분 + 예외 확인 5분)</td>
+<td>1장 작업 ①②⑤는 자동화, ③④는 판단만 남는다는 가정. 도입 전후 1주씩 작업 기록으로 측정</td>
+</tr>
+<tr>
+<td>연간 절감 시간</td>
+<td>하루 약 45분 × 근무일 약 250일 ≈ <strong>약 190시간</strong></td>
+<td>위 가정이 맞을 때. 주말·휴일에도 리포트가 오므로 공백이 줄어드는 효과는 따로 센다</td>
+</tr>
+<tr>
+<td>의사결정 속도</td>
+<td>문제 인지가 "화면을 볼 때"에서 <strong>다음 날 아침(실시간 알림은 수 시간 안)</strong>으로 당겨진다</td>
+<td>탐지일과 조치일의 차이를 approvals 표로 측정</td>
+</tr>
+<tr>
+<td>낭비 예산 조기 차단</td>
+<td>추적 누락·CPI 급등을 하루 안에 발견한다</td>
+<td>샘플 기준: 메타 iOS 추적 누락은 3일간 KR $233·US $349 지출이 측정되지 않았다. 매일 점검하면 첫날에 잡는다. 금액 효과는 실데이터로 측정한다</td>
+</tr>
+<tr>
+<td>잘못된 결정 방지</td>
+<td>데이터 문제가 있는 범위의 예산 제안을 자동으로 보류한다</td>
+<td>샘플 B06: 추적 누락 때문에 숫자상 목표의 61%로 보여 감액 신호가 났지만, 규칙이 보류했다. 사람이 대시보드만 봤다면 멀쩡한 캠페인을 줄였을 수 있다</td>
+</tr>
+<tr>
+<td>판단의 일관성·학습</td>
+<td>같은 상황에서 같은 제안이 나온다. 승인·거절 기록으로 규칙을 개선한다</td>
+<td>승인율, 승인한 제안의 7일 뒤 결과</td>
+</tr>
+</tbody>
+</table>
+<p><strong>효과가 나지 않는 조건도 미리 밝힌다.</strong> 수익 데이터(특히 광고 수익)를 코호트에 붙이지 못하면 ROAS 기반 예산 제안은 신뢰하기 어렵다. 그때는 2단계 범위를 데이터 점검·이상 탐지·소재 피로까지로 줄이고, 예산 제안은 수익 연동이 끝난 뒤에 켠다. 소재 피로를 잡아도 교체 소재를 만들 사람이 없으면 효과가 반감된다(12장).</p>
+<h2 id="11-샘플-실행-방법과-결과-해설">11. 샘플 실행 방법과 결과 해설</h2>
+<h3 id="111-실행">11.1 실행</h3>
+<pre><code class="language-bash">cd deliverables/task3-ads-automation/sample
+python3 generate_sample_data.py      # [가상 데이터] 1,434행 → ads_daily_sample.csv, budget_config.json
+python3 analyze_ads.py               # → findings.json (화면에 요약 출력)
+python3 check_report_numbers.py sample_daily_report.md   # 리포트 숫자 검증
+python3 test_check_report_numbers.py # 검증기 시험(원본 통과 + 변형 13건 차단)
+python3 sweep_seeds.py 30            # 시드 30개 반복 검증(5.3절 숫자 재현, 임시 폴더에서 실행)
+python3 make_report.py --dry-run     # Claude API 에 보낼 요청 확인(키 불필요)
+# 실제 생성: pip install anthropic, ANTHROPIC_API_KEY 설정 후 python3 make_report.py
+</code></pre>
+<p>Python 3.10 이상, 표준 라이브러리만 쓴다(<a class="code-link" href="sample/make_report.py.html"><code>make_report.py</code></a> 실호출에만 <code>anthropic</code> 필요). 시드가 고정되어 있어 몇 번을 돌려도 같은 결과가 나온다.</p>
+<table>
+<thead>
+<tr>
+<th>파일</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="code-link" href="sample/generate_sample_data.py.html"><code>generate_sample_data.py</code></a></td>
+<td>가상 데이터 생성기. 머리말에 심어 둔 문제 목록과 단순화한 점이 있다</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/ads_daily_sample.csv.html"><code>ads_daily_sample.csv</code></a></td>
+<td>2026-09-09 ~ 10-06, 메타 4 + 구글 4 캠페인, 6개국, 소재 12개. 첫 줄에 가상 데이터 표시(분석 스크립트는 <code>#</code> 줄을 건너뛴다)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/budget_config.json.html"><code>budget_config.json</code></a></td>
+<td>월 예산·일 예산·마지막 예산 변경일·국가 Tier 목표 ROAS(전부 가상)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/analyze_ads.py.html"><code>analyze_ads.py</code></a></td>
+<td>5장 규칙 구현. <code>RULES</code> 에 기준값이 모여 있다</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/findings.json.html"><code>findings.json</code></a></td>
+<td>판정 결과: summary, findings, budget_proposals, checks(검사 범위), near_misses(규칙 미충족 관찰)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/report_prompt.html"><code>report_prompt.md</code></a></td>
+<td>Claude 시스템·사용자 프롬프트와 설계 메모</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/make_report.py.html"><code>make_report.py</code></a></td>
+<td>Claude API 호출 → 리포트 저장 → 숫자 검증(실패 시 종료 코드 2, 발송 보류)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/check_report_numbers.py.html"><code>check_report_numbers.py</code></a></td>
+<td>리포트 숫자 검증기(출처·단위·부호·항목 대응, 6.3절)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/test_check_report_numbers.py.html"><code>test_check_report_numbers.py</code></a></td>
+<td>검증기 시험: 원본 통과, 부호 반전·바꿔치기·지어낸 숫자 변형 13건 차단</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/sweep_seeds.py.html"><code>sweep_seeds.py</code></a></td>
+<td>시드 반복 검증. 탐지율과 오탐을 센다</td>
+</tr>
+<tr>
+<td><a class="code-link" href="sample/sample_daily_report.html"><code>sample_daily_report.md</code></a></td>
+<td>결과 예시. <strong>Claude API 를 호출하지 않고</strong> strategist 가 findings.json 을 보고 프롬프트 규칙대로 직접 썼다(검증 통과, 숫자 161개)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-심은-문제와-탐지-결과고정-시드">11.2 심은 문제와 탐지 결과(고정 시드)</h3>
+<table>
+<thead>
+<tr>
+<th>심은 문제(가상)</th>
+<th>탐지</th>
+<th>findings.json 의 판정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1 메타 iOS(KR·US) 10/04부터 설치 0</td>
+<td>F01·F02 data_issue high</td>
+<td>3일 연속, KR 지출 $233·클릭 125건, US $349·174건. 이 캠페인 예산 제안 보류(B06)</td>
+</tr>
+<tr>
+<td>P5 구글 월 예산 과속</td>
+<td>F03 pacing medium</td>
+<td>소진 23.3% vs 경과 19.4%, 월말 예상 $27,613(+23%), 원인 후보로 10/01 GOOG_ACi_AOS_T1 $330→$400 변경을 제시</td>
+</tr>
+<tr>
+<td>P2 구글 T3 ID CPI 급등</td>
+<td>F04 anomaly high</td>
+<td>CPI +155%(z 19.0, 2일째), CVR −50%·CPM +25%, 같은 국가 메타 정상 → 구글 쪽 원인</td>
+</tr>
+<tr>
+<td>P3 메타 BR MV03 소재 피로</td>
+<td>F05 creative_fatigue high</td>
+<td>CTR −35%, frequency 3.9, 3초 조회율 30%→28%, 다른 소재 0%</td>
+</tr>
+<tr>
+<td>P4 구글 T1 GV02 소재 피로</td>
+<td>F06 creative_fatigue medium</td>
+<td>사건 수가 적어 7일 창으로 넓혀 판정, IPM −44%</td>
+</tr>
+<tr>
+<td>P6 메타 T1 MP01 playable 우수</td>
+<td>F07 scale_creative low</td>
+<td>IPM 중앙값의 1.6배, 설치 205건</td>
+</tr>
+<tr>
+<td>P7 예산 신호</td>
+<td>B01 감액·B02 증액·B03~B06 보류</td>
+<td>B01 T3 $250→$200(목표의 56%), B02 T1 $350→$405(목표의 131%, 재원 = 메타 감액분 $50 + 월 예산 여유 $11/일), B03 쿨다운 + 구글 과속, B04 ID 이상으로 증액 금지, B05 표본 부족, B06 추적 누락</td>
+</tr>
+<tr>
+<td>미끼: 메타 T3 ID MV02 CTR 하락(frequency 1.9)</td>
+<td><strong>잡히지 않아야 함</strong> → near_misses 에만 기록</td>
+<td>CTR −29%, frequency 1.9 ≤ 3 이라 피로 규칙 미충족</td>
+</tr>
+</tbody>
+</table>
+<p>오탐은 0건이다. 시드를 1~30으로 바꿔 반복한 결과는 5.3절 표에 있다(탐지율: data_issue·pacing·anomaly·확장 후보 100%, 메타 피로 93%, 구글 피로 90%, 감액 100%, 증액 93%).</p>
+<h3 id="113-실데이터로-바꾸는-법">11.3 실데이터로 바꾸는 법</h3>
+<ol>
+<li>4장의 수집 스크립트로 <code>raw_*</code> 표를 채우고 <code>transform.sql</code> 로 3.4절 표준 컬럼의 <code>ads_daily</code> 를 만든다.</li>
+<li><code>ads_daily</code> 를 CSV 로 내보내거나, <code>analyze_ads.load_rows()</code> 를 BigQuery 조회로 바꾼다. <strong>스키마는 그대로 둔다.</strong></li>
+<li><a class="code-link" href="sample/budget_config.json.html"><code>budget_config.json</code></a> 을 실제 월 예산·일 예산·변경 이력(매체 API 의 변경 이력 또는 approvals 표)·목표 ROAS 로 채운다. <code>is_sample_data</code> 를 false 로 바꾸면 리포트 머리말에서 "가상 데이터"가 빠진다.</li>
+<li>처음 4주는 결과를 발송하되 제안은 참고용으로만 쓰고, <code>RULES</code> 를 조정한다.</li>
+</ol>
+<h2 id="12-과제-12-와의-연결">12. 과제 1·2 와의 연결</h2>
+<p>세 과제는 따로 굴러가지 않는다. 리뷰(과제 1)는 광고 수익 구조와 스토어 전환율에 영향을 주고, 주간 이벤트(과제 2)는 UA 소재와 집행 타이밍을 정한다.</p>
+<h3 id="121-과제-1리뷰-대응-광고-수익스토어-전환">12.1 과제 1(리뷰 대응) ↔ 광고 수익·스토어 전환</h3>
+<ul>
+<li><strong>광고 피로가 리뷰에 이미 보인다.</strong> 최근 60일 리뷰 378건 가운데 광고 관련 리뷰가 20건(광고 불만 14건, 광고 시청 뒤 재시작·X 버튼 먹통 같은 버그 5건, 광고 보상 미지급 1건)이고, 1~2점 리뷰 57건 중 15건이 광고 관련이다(과제 2 이벤트 캘린더 1장, analyst 분류 기준). "광고 제거와 자동 사냥을 따로 파는 건 아쉽다"는 리뷰도 있다.</li>
+<li><strong>광고 빈도를 줄이면 ROAS 가 바뀐다.</strong> 방치형은 광고 수익이 ROAS 의 큰 몫이다(샘플 가상값으로는 D0 수익의 약 50%). 운영팀이 리뷰 대응으로 광고 빈도를 낮추거나 광고 제거 상품을 바꾸면, 광고 수익 ARPU 가 내려가고 IAP 가 오를 수 있다. 이 변화를 반영하지 않으면 UA 목표 ROAS 가 틀린 기준이 된다. → <strong>광고 정책을 바꾼 날을 <code>budget_config</code> 의 이벤트 로그에 남기고, 주간 리포트의 광고/IAP 비중 추이(7.2절)로 영향을 따로 본다.</strong></li>
+<li><strong>평점은 CVR 이다.</strong> 스토어 평점(현재 4.47)과 최근 리뷰는 스토어 페이지 전환율(CVR)에 영향을 준다. 광고 관련 1~2점 리뷰가 늘면 CVR 이 떨어지고 CPI 가 오른다. → <strong>주간 리포트에 국가별 CVR 과 해당 언어 리뷰의 광고 불만 비율을 나란히 둔다.</strong> 과제 1 대시보드의 분류 결과(category=ads, bug)를 BigQuery 로 함께 적재하면 바로 붙일 수 있다.</li>
+<li><strong>광고 시청 관련 버그는 수익 데이터 이상으로도 나타난다.</strong> "광고를 본 뒤 재시작·빈 화면" 같은 버그는 광고 수익 급감 또는 광고 노출 수 급감으로 먼저 보일 수 있다. 데이터 점검(검사 0)의 광고 수익 미적재 규칙이 이런 신호를 함께 잡는다. 과제 1의 bug 분류와 날짜를 맞춰 보면 원인을 빨리 찾는다.</li>
+<li><strong>UA 소재에서 "광고 없음"을 약속하지 않는다.</strong> 제품을 오해하게 만드는 광고는 Google 의 허위 진술(Misrepresentation) 정책과 Meta 광고 표준의 기만적 관행 금지에 걸릴 수 있고(S55·S56), 설치 뒤에는 실망 리뷰로 돌아온다. 소재 문구는 실제 게임 시스템(보스토벌·장비 합성·형님의 탑·토템 등)에 맞춘다.</li>
+</ul>
+<h3 id="122-과제-2주간-이벤트-ua-소재집행-타이밍">12.2 과제 2(주간 이벤트) ↔ UA 소재·집행 타이밍</h3>
+<ul>
+<li><strong>이벤트 키아트를 UA 소재로 재사용한다.</strong> 과제 2는 이벤트마다 글자 없는 키아트 3규격(16:9 · 9:16 · 1:1)을 만든다. 이것을 메타 피드·스토리·릴스와 구글 앱 캠페인 이미지 에셋으로 바로 쓰면 소재 교체 주기를 맞출 수 있다. 소재 피로 탐지(F05·F06)가 "교체 소재 필요"를 알리면, 다음 이벤트 키아트로 교체 소재를 만든다.</li>
+<li><strong>이벤트 일정에 맞춰 UA 를 미리 준비한다.</strong> 이벤트 시작 3~5일 전에 이벤트 테마 소재를 테스트 캠페인에 넣어 학습을 끝내 두고, 이벤트 기간에는 검증된 소재 위주로 집행한다. 이 기간에는 예산 쿨다운 규칙이 겹치므로, 증액은 이벤트 시작 3일 전까지 끝낸다.</li>
+<li>W44 할로윈(10/26~11/01): 키아트가 이번 주 완성되므로 10/21~23 에 소재 테스트를 시작할 수 있다.</li>
+<li>W48 블랙 프라이데이(11/23~29): 미국을 중심으로 CPM 이 오르는 기간이다. 이벤트가 "광고 제거·자동 사냥 묶음 혜택"이라 IAP 전환이 오르고 광고 수익 비중은 내려갈 수 있다. 이 주의 ROAS 기준값은 따로 보고, 신규 획득보다 복귀 사용자 대상(리타기팅·앱 참여 캠페인) 비중을 검토한다 [확인 필요: 복귀 사용자 캠페인 운영 여부].</li>
+<li><strong>러시아어권은 이벤트도 UA 도 장애 해결이 먼저다.</strong> 과제 2 캘린더는 ru 접속 장애 리뷰 14건 때문에 ru 스토어 프로모션 노출을 장애 해결 뒤로 미뤘다. UA 쪽도 같은 원칙을 쓴다. 게다가 Meta·Google 로는 러시아 내 집행이 어렵다(3.3절).</li>
+<li><strong>이벤트 기간 성과를 분리해 본다.</strong> 이벤트 기간에는 잔존·결제가 평소와 달라 D7 배수가 흔들린다. 분석 코드에 이벤트 캘린더를 입력으로 넣어 "이벤트 기간" 표시를 붙이고, 기준선(14일 중앙값)에서 이벤트 기간을 따로 다룬다(2단계 과제).</li>
+</ul>
+<h3 id="123-한-번에-보는-연결">12.3 한 번에 보는 연결</h3>
+<table>
+<thead>
+<tr>
+<th>신호(어디서)</th>
+<th>영향(어디로)</th>
+<th>자동화 연결</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>광고 불만·광고 버그 리뷰 증가(과제 1)</td>
+<td>광고 수익 ↓, CVR ↓ → ROAS·CPI</td>
+<td>리뷰 분류 결과를 BigQuery 에 적재, 주간 리포트에 나란히 표시</td>
+</tr>
+<tr>
+<td>광고 정책 변경(운영)</td>
+<td>ROAS 구성(광고/IAP) 변화</td>
+<td>이벤트 로그 → 기준선 재설정 알림</td>
+</tr>
+<tr>
+<td>소재 피로 탐지(과제 3)</td>
+<td>교체 소재 필요</td>
+<td>다음 이벤트 키아트(과제 2)로 교체 소재 제작 요청</td>
+</tr>
+<tr>
+<td>이벤트 일정(과제 2)</td>
+<td>소재 테마·집행 타이밍·기준선</td>
+<td>캘린더를 분석 입력으로 사용, 증액은 시작 3일 전까지</td>
+</tr>
+<tr>
+<td>ru 접속 장애(과제 1·2)</td>
+<td>ru 유입 낭비</td>
+<td>ru 집행·프로모션 보류</td>
+</tr>
+</tbody>
+</table>
+<h2 id="출처-2026-10-07-확인">출처 (2026-10-07 확인)</h2>
+<p><strong>Meta</strong>
+- S1 Graph API Changelog — https://developers.facebook.com/docs/graph-api/changelog
+- S2 Graph API Versioning — https://developers.facebook.com/docs/graph-api/guides/versioning
+- S3 Marketing API Versioning — https://developers.facebook.com/docs/marketing-api/overview/versioning
+- S4 Ad Account Insights Reference — https://developers.facebook.com/docs/marketing-api/reference/ad-account/insights
+- S5 Insights Breakdowns — https://developers.facebook.com/docs/marketing-api/insights/breakdowns
+- S6 Ads Action Stats — https://developers.facebook.com/docs/marketing-api/reference/ads-action-stats/
+- S7 Insights Best Practices(비동기 리포트) — https://developers.facebook.com/docs/marketing-api/insights/best-practices
+- S8 Rate Limiting — https://developers.facebook.com/docs/graph-api/overview/rate-limiting
+- S9 2025 Out-of-Cycle Changes — https://developers.facebook.com/docs/marketing-api/out-of-cycle-changes/occ-2025
+- S10 Ads Insights API Metric Availability Updates(2025-10-16) — https://developers.facebook.com/blog/post/2025/10/16/ads-insights-api-metric-availability-updates/
+- S11 Marketing API Authorization — https://developers.facebook.com/docs/marketing-api/get-started/authorization
+- S12 System User Tokens — https://developers.facebook.com/docs/business-management-apis/system-users/install-apps-and-generate-tokens/
+- S13 Advantage+ Campaign Experience — https://developers.facebook.com/docs/marketing-api/advantage-campaigns
+- S14 About the learning phase — https://www.facebook.com/business/help/112167992830700
+- S15 Last Significant Edit — https://www.facebook.com/business/help/942374239243867</p>
+<p><strong>Google Ads</strong>
+- S16 API Deprecation and Sunset — https://developers.google.com/google-ads/api/docs/sunset-dates
+- S17 API Release Notes — https://developers.google.com/google-ads/api/docs/release-notes
+- S18 REST Authorization — https://developers.google.com/google-ads/api/rest/auth
+- S19 Google Ads Query Language Overview — https://developers.google.com/google-ads/api/docs/query/overview
+- S20 GeographicView(v25) — https://developers.google.com/google-ads/api/reference/rpc/v25/GeographicView
+- S21 UserLocationView(v25) — https://developers.google.com/google-ads/api/reference/rpc/v25/UserLocationView
+- S22 ad_group_ad_asset_view(v25) — https://developers.google.com/google-ads/api/fields/v25/ad_group_ad_asset_view
+- S23 App campaign reporting — https://developers.google.com/google-ads/api/docs/app-campaigns/reporting
+- S24 Enhanced asset reporting for App campaigns — https://support.google.com/google-ads/answer/14594955
+- S25 About asset-level metrics — https://support.google.com/google-ads/answer/16259414
+- S26 Best practices for App campaigns — https://support.google.com/google-ads/answer/14104492
+- S27 Best practices guide: Setting up your App campaigns — https://support.google.com/google-ads/answer/6167162
+- S28 Tips for maximizing your App campaign — https://support.google.com/google-ads/answer/9176652</p>
+<p><strong>MMP</strong>
+- S29 AppsFlyer Pull API raw data — https://support.appsflyer.com/hc/en-us/articles/360007530258-Pull-API-raw-data
+- S30 AppsFlyer Pull API aggregate data — https://support.appsflyer.com/hc/en-us/articles/207034346-Pull-API-aggregate-data
+- S31 AppsFlyer Master API — https://support.appsflyer.com/hc/en-us/articles/213223166-Master-API-user-acquisition-metrics-via-API
+- S32 AppsFlyer Cohort API — https://support.appsflyer.com/hc/en-us/articles/360004799057-Cohort-API
+- S33 Adjust Report Service API — https://dev.adjust.com/en/api/rs-api/</p>
+<p><strong>Apple(iOS 어트리뷰션)</strong>
+- S34 Receiving postbacks in multiple conversion windows — https://developer.apple.com/documentation/storekit/receiving-postbacks-in-multiple-conversion-windows
+- S35 AdAttributionKit and SKAdNetwork interoperability — https://developer.apple.com/documentation/adattributionkit/adattributionkit-skadnetwork-interoperability
+- S36 Ad Attribution — https://developer.apple.com/app-store/ad-attribution/</p>
+<p><strong>수익 데이터</strong>
+- S37 GA4 BigQuery Export — https://support.google.com/analytics/answer/9358801
+- S38 Firebase: Measure ad revenue — https://firebase.google.com/docs/analytics/measure-ad-revenue
+- S39 AdMob: Impression-level ad revenue — https://support.google.com/admob/answer/11322405
+- S40 AppLovin MAX: Impression-Level User Revenue API for MMPs — https://support.applovin.com/en/max/ios/overview/impression-level-user-revenue-api-for-mmps
+- S41 AppLovin MAX: S2S Impression-Level API — https://support.applovin.com/en/max/advanced-features/s2s-impression-level-api</p>
+<p><strong>Claude API</strong>
+- S42 API Overview — https://platform.claude.com/docs/en/api/overview
+- S43 Models Overview — https://platform.claude.com/docs/en/models/overview
+- S44 Structured Outputs — https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+- S45 Pricing — https://platform.claude.com/docs/en/about-claude/pricing</p>
+<p><strong>커넥터·BI·저장소</strong>
+- S46 Supermetrics Pricing — https://supermetrics.com/pricing
+- S47 Funnel Pricing — https://funnel.io/pricing
+- S48 Looker Studio is Data Studio — https://cloud.google.com/blog/products/data-analytics/looker-studio-is-data-studio
+- S49 Data Studio Pro — https://docs.cloud.google.com/data-studio/about-pro
+- S50 Google Cloud Free Tier — https://docs.cloud.google.com/free/docs/free-cloud-features
+- S51 BigQuery Sandbox — https://docs.cloud.google.com/bigquery/docs/sandbox</p>
+<p><strong>러시아 광고 중단(보도, 2022-03)</strong>
+- S52 TechCrunch: Google, Microsoft pause sales in Russia — https://techcrunch.com/2022/03/04/google-microsoft-sales-pause-russia
+- S53 Search Engine Land: Platforms that suspended ads in Russia — https://searchengineland.com/platforms-that-suspended-ads-in-russia-382211</p>
+<p><strong>개인정보·광고 정책</strong>
+- S54 Apple: User Privacy and Data Use(App Tracking Transparency) — https://developer.apple.com/app-store/user-privacy-and-data-use/
+- S55 Google Ads 정책: Misrepresentation(허위 진술) — https://support.google.com/adspolicy/answer/6020955
+- S56 Meta Advertising Standards — https://transparency.meta.com/policies/ad-standards/</p>
+<p>확인하지 못한 것: Meta 예산 변경의 공식 % 기준(학습 재시작 조건), Google 에셋 보기의 국가 분할 가능 여부, <code>cost_micros</code> 환산식 문구(업계 관행상 1,000,000 micros = 1 통화 단위로 썼다), Google 앱 캠페인 tROAS 예산 배수와 학습 기간 일수, Google 에셋 수준 지표 출시 시점, 2026년 현재 러시아 광고 중단 유지 여부.</p></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+{
+  "event_id": "2026-w44-halloween",
+  "event_name_ko": "형님들의 할로윈 호박 사냥",
+  "accent": "#e8590c",
+  "period": {
+    "start_kst": "2026-10-26T00:00+09:00",
+    "end_kst": "2026-11-01T23:59+09:00",
+    "start_utc": "2026-10-25T15:00Z",
+    "end_utc": "2026-11-01T14:59Z",
+    "adfree_buff_start_kst": "2026-10-31T00:00+09:00",
+    "adfree_buff_end_kst": "2026-11-01T23:59+09:00",
+    "exchange_end_kst": "2026-11-02T23:59+09:00",
+    "assumption": "전 세계 동시 진행(KST 00:00 시작) 전제. 서버가 지역별로 초기화하면 notice 시각을 고친다 [기획 확인 필요]"
+  },
+  "store_assets": {
+    "appstore_card_16x9": "keyart/store/keyart_16x9_1920x1080.png (글자 없는 원본)",
+    "appstore_details_9x16": "keyart/store/keyart_9x16_1080x1920.png (글자 없는 원본)",
+    "play_primary_16x9": "keyart/store/keyart_16x9_1920x1080.png (글자 없는 원본 — Play도 이미지 내 글자 금지)",
+    "play_square_1x1": "keyart/store/keyart_1x1_1080x1080.png (글자 없는 원본)",
+    "ingame_sns": "localized/banner_{lang}_{format}.png (compose_banner.py 합성본)"
+  },
+  "confirm_terms": "용어·재화명 확인 목록은 glossary_additions.md, 기획 확인 항목은 event_brief.md 8장",
+  "locales": {
+    "ko": {
+      "event_name": "형님들의 할로윈 호박 사냥",
+      "tz_label": "한국 시간(KST, UTC+9)",
+      "banner": {
+        "title": "형님들의\n할로윈 호박 사냥",
+        "subtitle": "공룡 잡고 호박 모아 한정 보상 받자!",
+        "period": "10.26 – 11.01",
+        "badge": "기간 한정"
+      },
+      "notice": {
+        "title": "[이벤트] 형님들의 할로윈 호박 사냥 (10.26 – 11.01)",
+        "body": "할로윈 밤, 원시 정글에 호박이 굴러다닙니다!\n형님들, 공룡을 사냥하고 호박을 모아 할로윈 한정 보상을 받아 가세요.\n\n■ 기간\n2026.10.26(월) 00:00 – 11.01(일) 23:59 (한국 시간)\n호박 교환: 11.02(월) 23:59까지\n\n■ 참여 방법\n이벤트 화면의 미션을 달성하면 호박을 받습니다. 승패와 관계없이 도전 횟수만 채우면 됩니다.\n1. 매일 접속하기\n2. 공룡·원시생물 사냥하기\n3. 보스토벌 도전하기\n4. 형님의 탑 도전하기\n5. 장비 합성하기\n\n■ 보상\n모은 호박은 호박 교환소에서 할로윈 한정 보상, 성장 재료, 보석으로 바꿀 수 있습니다.\n호박을 많이 모을수록 누적 보상도 하나씩 열립니다.\n\n■ 할로윈 주말: 광고 없이 버프\n10.31(토) 00:00 – 11.01(일) 23:59에는 광고를 보지 않아도 광고 버프가 자동으로 켜집니다.\n\n■ 오랜만에 돌아온 형님께\n14일 이상 접속하지 않았던 형님은 이벤트 기간 첫 접속 때 복귀 호박 꾸러미를 받습니다.\n\n■ 안내\n· 교환 기간이 끝나면 남은 호박은 사라집니다. 기간 안에 꼭 사용하세요.\n· 계정을 찾을 수 없거나 보상을 받지 못했다면 [설정 > 고객센터]로 알려 주세요.\n· 이벤트 내용은 사정에 따라 바뀔 수 있으며, 바뀌면 공지로 알려 드립니다."
+      },
+      "push": [
+        "(광고) [원시인 형님들 키우기] 형님들의 할로윈 호박 사냥 시작! 공룡 잡고 호박 모아 한정 보상 받아 가세요. 수신거부: 설정>알림",
+        "(광고) [원시인 형님들 키우기] 할로윈 주말엔 광고 없이 버프가 켜져요! 11.01(일)까지 호박 모으고 보상 챙기세요. 수신거부: 설정>알림"
+      ],
+      "play": {
+        "tagline": "공룡 잡고 호박 모아 할로윈 한정 보상",
+        "description": "원시 정글에 일주일 동안 할로윈이 찾아옵니다. 공룡·원시생물 사냥, 보스토벌, 형님의 탑, 장비 합성 미션을 달성하면 호박을 받고, 모은 호박은 호박 교환소에서 할로윈 한정 보상과 성장 재료, 보석으로 바꿀 수 있습니다. 미션은 승패와 관계없이 도전 횟수만 채우면 됩니다. 할로윈 주말에는 광고를 보지 않아도 광고 버프가 켜지고, 14일 이상 쉬었다가 돌아온 형님은 복귀 호박 꾸러미를 받습니다."
+      },
+      "appstore": {
+        "name": "형님들의 할로윈 호박 사냥",
+        "short": "원시인 형님들과 공룡 잡고 호박 모아 한정 보상 받기",
+        "long": "사냥·보스토벌·형님의 탑·장비 합성 미션으로 호박을 모아 할로윈 한정 보상과 성장 재료로 바꾸세요. 할로윈 주말엔 광고 없이 버프가 켜집니다."
+      }
+    },
+    "en": {
+      "event_name": "Bros' Halloween Pumpkin Hunt",
+      "tz_label": "UTC",
+      "banner": {
+        "title": "Bros' Halloween\nPumpkin Hunt",
+        "subtitle": "Hunt dinos, grab pumpkins, win rewards!",
+        "period": "Oct 26 – Nov 1",
+        "badge": "Limited Time"
+      },
+      "notice": {
+        "title": "[Event] Bros' Halloween Pumpkin Hunt (Oct 26 – Nov 1)",
+        "body": "Halloween night has fallen on the primitive jungle, and there are pumpkins everywhere!\nHunt dinosaurs, collect pumpkins, and trade them for limited Halloween rewards, Bro.\n\n■ Event period\nOct 25, 15:00 – Nov 1, 14:59 (UTC)\nPumpkin exchange: until Nov 2, 14:59 (UTC)\n\n■ How to join\nComplete missions on the event screen to earn pumpkins. Winning doesn't matter: every attempt counts.\n1. Log in every day\n2. Hunt dinosaurs and primitive creatures\n3. Take on Boss Raids\n4. Challenge the Brothers' Tower\n5. Merge gear\n\n■ Rewards\nTrade your pumpkins at the Pumpkin Exchange for limited Halloween rewards, growth materials, and rubies.\nThe more pumpkins you collect, the more milestone rewards you unlock.\n\n■ Halloween weekend: buffs without ads\nFrom Oct 30, 15:00 to Nov 1, 14:59 (UTC), ad buffs turn on automatically. No ads to watch.\n\n■ Welcome back, Bro\nIf you haven't logged in for 14 days or more, you'll get a Welcome-Back Pumpkin Pack on your first login during the event.\n\n■ Notes\n· Unused pumpkins disappear when the exchange period ends.\n· If you can't find your account or didn't receive a reward, contact us via [Settings > Customer Center].\n· Event details may change. If they do, we'll let you know in a notice."
+      },
+      "push": [
+        "Bros' Halloween Pumpkin Hunt is on! Hunt dinos, collect pumpkins, and grab limited rewards.",
+        "It's Halloween weekend: ad buffs are on with no ads to watch. Collect your pumpkins by Nov 1!"
+      ],
+      "play": {
+        "tagline": "Collect pumpkins for limited Halloween rewards",
+        "description": "Halloween comes to the primitive jungle for one week. Hunt dinosaurs and primitive creatures, take on Boss Raids, challenge the Brothers' Tower, and merge gear to earn pumpkins. Trade them at the Pumpkin Exchange for limited Halloween rewards, growth materials, and rubies. Every attempt counts toward missions, win or lose. Over the Halloween weekend, ad buffs switch on automatically without watching ads, and Bros returning after 14 days or more get a Welcome-Back Pumpkin Pack."
+      },
+      "appstore": {
+        "name": "Bros' Halloween Pumpkin Hunt",
+        "short": "Hunt dinos and collect pumpkins for rewards",
+        "long": "Clear hunting, Boss Raid, Tower and gear missions to earn pumpkins. Ad buffs turn on without ads on Halloween weekend."
+      }
+    },
+    "pt": {
+      "event_name": "Caça às Abóboras de Halloween",
+      "tz_label": "horário de Brasília (UTC-3)",
+      "banner": {
+        "title": "Caça às Abóboras\nde Halloween",
+        "subtitle": "Cace dinos, junte abóboras e ganhe prêmios!",
+        "period": "26/10 – 01/11",
+        "badge": "Tempo limitado"
+      },
+      "notice": {
+        "title": "[Evento] Caça às Abóboras de Halloween (26/10 – 01/11)",
+        "body": "A noite de Halloween chegou à selva primitiva e tem abóbora pra todo lado!\nCace dinossauros, junte abóboras e troque por prêmios exclusivos de Halloween, irmão.\n\n■ Período do evento\n25/10 (dom) 12:00 – 01/11 (dom) 11:59 (horário de Brasília)\nTroca de abóboras: até 02/11 (seg) 11:59\n\n■ Como participar\nComplete as missões na tela do evento para ganhar abóboras. Vencer ou perder não importa: cada tentativa conta.\n1. Entre no jogo todos os dias\n2. Cace dinossauros e criaturas primitivas\n3. Enfrente a Caçada ao Chefe\n4. Desafie a Torre dos Irmãos\n5. Combine equipamentos\n\n■ Recompensas\nNa Troca de Abóboras, troque suas abóboras por prêmios exclusivos de Halloween, materiais de evolução e gemas.\nQuanto mais abóboras você juntar, mais recompensas por marco você desbloqueia.\n\n■ Fim de semana de Halloween: bônus sem anúncios\nDe 30/10 (sex) 12:00 a 01/11 (dom) 11:59, os bônus de anúncio ficam ativos automaticamente, sem precisar assistir a nenhum anúncio.\n\n■ Bem-vindo de volta, irmão\nSe você ficou 14 dias ou mais sem jogar, ganha um Pacote de Abóboras de Boas-Vindas no primeiro login durante o evento.\n\n■ Avisos\n· As abóboras não usadas somem quando o período de troca termina.\n· Se não encontrar sua conta ou não receber uma recompensa, fale com a gente em [Configurações > Central de Atendimento].\n· Os detalhes do evento podem mudar. Se mudarem, avisaremos por aqui."
+      },
+      "push": [
+        "A Caça às Abóboras de Halloween começou! Cace dinossauros, junte abóboras e garanta prêmios exclusivos.",
+        "Fim de semana de Halloween: bônus de anúncio ativos sem assistir anúncios. Junte suas abóboras até 01/11!"
+      ],
+      "play": {
+        "tagline": "Junte abóboras e ganhe prêmios de Halloween",
+        "description": "O Halloween chegou à selva primitiva por uma semana. Cace dinossauros e criaturas primitivas, enfrente a Caçada ao Chefe, desafie a Torre dos Irmãos e combine equipamentos para ganhar abóboras. Troque-as por prêmios exclusivos de Halloween, materiais de evolução e gemas. Nas missões, cada tentativa conta, vencendo ou perdendo. No fim de semana de Halloween, os bônus de anúncio ficam ativos sem assistir anúncios, e quem volta depois de 14 dias ou mais ganha um pacote de abóboras de boas-vindas."
+      },
+      "appstore": {
+        "name": "Caça às Abóboras de Halloween",
+        "short": "Cace dinossauros e junte abóboras por prêmios",
+        "long": "Cumpra missões de caça, chefe, torre e equipamentos para ganhar abóboras. No fim de semana, bônus sem anúncios."
+      }
+    },
+    "es": {
+      "event_name": "Caza de Calabazas de Halloween",
+      "tz_label": "hora del centro de México (UTC-6)",
+      "banner": {
+        "title": "Caza de Calabazas\nde Halloween",
+        "subtitle": "¡Caza dinos, junta calabazas y gana premios!",
+        "period": "26 oct – 1 nov",
+        "badge": "Tiempo limitado"
+      },
+      "notice": {
+        "title": "[Evento] Caza de Calabazas de Halloween (26 oct – 1 nov)",
+        "body": "¡Llegó la noche de Halloween a la selva primitiva y hay calabazas por todos lados!\nCaza dinosaurios, junta calabazas y cámbialas por premios exclusivos de Halloween, hermano.\n\n■ Periodo del evento\n25 oct (dom) 09:00 – 1 nov (dom) 08:59 (hora del centro de México)\nCanje de calabazas: hasta el 2 nov (lun) 08:59\n\n■ Cómo participar\nCompleta las misiones de la pantalla del evento para ganar calabazas. No importa si ganas o pierdes: cada intento cuenta.\n1. Inicia sesión todos los días\n2. Caza dinosaurios y criaturas primitivas\n3. Enfrenta la Incursión de Jefes\n4. Desafía la Torre de los Hermanos\n5. Combina equipo\n\n■ Recompensas\nEn el Canje de Calabazas, cambia tus calabazas por premios exclusivos de Halloween, materiales de mejora y gemas.\nMientras más calabazas juntes, más recompensas por meta desbloqueas.\n\n■ Fin de semana de Halloween: potenciadores sin anuncios\nDel 30 oct (vie) 09:00 al 1 nov (dom) 08:59, los potenciadores de anuncios se activan solos, sin ver ningún anuncio.\n\n■ Bienvenido de vuelta, hermano\nSi llevabas 14 días o más sin jugar, recibirás un Paquete de Calabazas de Bienvenida al iniciar sesión por primera vez durante el evento.\n\n■ Avisos\n· Las calabazas que no uses desaparecen al terminar el periodo de canje.\n· Si no encuentras tu cuenta o no recibiste una recompensa, contáctanos en [Ajustes > Centro de Atención].\n· Los detalles del evento pueden cambiar. Si cambian, te avisaremos aquí."
+      },
+      "push": [
+        "¡Empezó la Caza de Calabazas de Halloween! Caza dinosaurios, junta calabazas y llévate premios exclusivos.",
+        "Fin de semana de Halloween: potenciadores de anuncios activos sin ver anuncios. ¡Junta calabazas hasta el 1 nov!"
+      ],
+      "play": {
+        "tagline": "Junta calabazas y gana premios de Halloween",
+        "description": "Halloween llega a la selva primitiva por una semana. Caza dinosaurios y criaturas primitivas, enfrenta la Incursión de Jefes, desafía la Torre de los Hermanos y combina equipo para ganar calabazas. Cámbialas por premios exclusivos de Halloween, materiales de mejora y gemas. En las misiones cada intento cuenta, ganes o pierdas. El fin de semana de Halloween, los potenciadores de anuncios se activan sin ver anuncios, y quienes vuelven tras 14 días o más reciben un paquete de bienvenida."
+      },
+      "appstore": {
+        "name": "Caza de Calabazas de Halloween",
+        "short": "Caza dinosaurios y junta calabazas por premios",
+        "long": "Cumple misiones de caza, jefes, torre y equipo para ganar calabazas. El fin de semana, potenciadores sin anuncios."
+      }
+    },
+    "ru": {
+      "event_name": "Хэллоуин: тыквенная охота",
+      "tz_label": "МСК (UTC+3)",
+      "banner": {
+        "title": "Хэллоуин:\nтыквенная охота",
+        "subtitle": "Охотьтесь на динозавров и собирайте тыквы!",
+        "period": "26.10 – 01.11",
+        "badge": "Ограниченное время"
+      },
+      "notice": {
+        "title": "[Событие] Хэллоуин: тыквенная охота (26.10 – 01.11)",
+        "body": "В первобытные джунгли пришла ночь Хэллоуина, и тыквы теперь повсюду!\nОхотьтесь на динозавров, собирайте тыквы и обменивайте их на эксклюзивные хэллоуинские награды, братья.\n\n■ Сроки события\n25.10 (вс) 18:00 – 01.11 (вс) 17:59 (МСК)\nОбмен тыкв: до 02.11 (пн) 17:59\n\n■ Как участвовать\nВыполняйте задания на экране события и получайте тыквы. Победа не важна: засчитывается каждая попытка.\n1. Заходите в игру каждый день\n2. Охотьтесь на динозавров и примитивных существ\n3. Сражайтесь в рейдах на боссов\n4. Штурмуйте Башню братьев\n5. Объединяйте снаряжение\n\n■ Награды\nВ тыквенной лавке меняйте тыквы на эксклюзивные хэллоуинские награды, материалы для прокачки и рубины.\nЧем больше тыкв вы соберёте, тем больше наград за этапы откроется.\n\n■ Хэллоуинские выходные: бонусы без рекламы\nС 30.10 (пт) 18:00 до 01.11 (вс) 17:59 бонусы за рекламу включаются автоматически. Смотреть рекламу не нужно.\n\n■ С возвращением, брат!\nЕсли вы не заходили в игру 14 дней или дольше, при первом входе во время события вы получите тыквенный набор для вернувшихся.\n\n■ Примечания\n· Неиспользованные тыквы исчезнут после окончания обмена.\n· Если вы не можете найти аккаунт или не получили награду, напишите нам через [Настройки > Служба поддержки].\n· Условия события могут измениться. Если это случится, мы сообщим в объявлении."
+      },
+      "push": [
+        "Хэллоуин: тыквенная охота началась! Охотьтесь на динозавров, собирайте тыквы и забирайте награды.",
+        "Хэллоуинские выходные: бонусы за рекламу работают без рекламы. Собирайте тыквы до 01.11!"
+      ],
+      "play": {
+        "tagline": "Собирайте тыквы и получайте награды Хэллоуина",
+        "description": "Целую неделю в первобытных джунглях празднуют Хэллоуин. Охотьтесь на динозавров и примитивных существ, сражайтесь в рейдах на боссов, штурмуйте Башню братьев и объединяйте снаряжение, чтобы получать тыквы. Меняйте их на эксклюзивные хэллоуинские награды, материалы для прокачки и рубины. В заданиях засчитывается каждая попытка, даже без победы. В хэллоуинские выходные бонусы за рекламу включаются без просмотра рекламы, а вернувшиеся после перерыва от 14 дней получают тыквенный набор."
+      },
+      "appstore": {
+        "name": "Хэллоуин: тыквенная охота",
+        "short": "Охотьтесь на динозавров и собирайте тыквы",
+        "long": "Выполняйте задания охоты, рейдов, башни и снаряжения, чтобы получать тыквы. В выходные бонусы без рекламы."
+      }
+    },
+    "ja": {
+      "event_name": "原人兄弟のハロウィンかぼちゃ狩り",
+      "tz_label": "日本時間(JST, UTC+9)",
+      "banner": {
+        "title": "原人兄弟の\nハロウィン\nかぼちゃ狩り",
+        "subtitle": "恐竜を狩って、かぼちゃで限定報酬をゲット！",
+        "period": "10/26 – 11/1",
+        "badge": "期間限定"
+      },
+      "notice": {
+        "title": "【イベント】原人兄弟のハロウィンかぼちゃ狩り（10/26～11/1）",
+        "body": "原始のジャングルにハロウィンの夜がやってきた！あちこちにかぼちゃが転がっています。\n恐竜を狩ってかぼちゃを集め、ハロウィン限定報酬と交換しましょう！\n\n■ イベント期間\n10/26（月）0:00 ～ 11/1（日）23:59（日本時間）\nかぼちゃ交換：11/2（月）23:59まで\n\n■ 参加方法\nイベント画面のミッションを達成すると、かぼちゃがもらえます。勝敗は関係なく、挑戦した回数がカウントされます。\n1. 毎日ログインする\n2. 恐竜・原始生物を狩る\n3. ボス討伐に挑戦する\n4. 兄弟の塔に挑戦する\n5. 装備を合成する\n\n■ 報酬\n集めたかぼちゃは「かぼちゃ交換所」で、ハロウィン限定報酬・育成素材・ルビーと交換できます。\nかぼちゃをたくさん集めるほど、累計報酬も解放されます。\n\n■ ハロウィン週末：広告なしでバフ\n10/31（土）0:00 ～ 11/1（日）23:59は、広告を見なくても広告バフが自動で有効になります。\n\n■ おかえりなさい、兄貴\n14日以上ログインしていなかった方は、イベント期間中の初回ログイン時に「おかえりかぼちゃパック」がもらえます。\n\n■ ご注意\n・交換期間が終わると、残ったかぼちゃは消滅します。\n・アカウントが見つからない場合や報酬を受け取れなかった場合は、［設定 > カスタマーセンター］からお問い合わせください。\n・イベント内容は変更になる場合があります。変更時はお知らせでご案内します。"
+      },
+      "push": [
+        "原人兄弟のハロウィンかぼちゃ狩りがスタート！恐竜を狩って、かぼちゃを集めて限定報酬をゲットしよう。",
+        "ハロウィン週末は広告なしで広告バフが有効！11/1までにかぼちゃを集めよう。"
+      ],
+      "play": {
+        "tagline": "かぼちゃを集めてハロウィン限定報酬をゲット",
+        "description": "原始のジャングルで1週間のハロウィンイベントを開催。恐竜・原始生物の狩り、ボス討伐、兄弟の塔、装備合成のミッションでかぼちゃを集め、ハロウィン限定報酬や育成素材、ルビーと交換できます。ミッションは勝敗に関係なく、挑戦するだけでカウントされます。ハロウィン週末は広告を見なくても広告バフが有効になり、14日以上ぶりに戻った方には、おかえりかぼちゃパックをプレゼントします。"
+      },
+      "appstore": {
+        "name": "原人兄弟のハロウィンかぼちゃ狩り",
+        "short": "恐竜を狩ってかぼちゃを集め、限定報酬をゲット",
+        "long": "狩り・ボス討伐・兄弟の塔・装備合成でかぼちゃを集めて限定報酬と交換。ハロウィン週末は広告なしでバフが有効に。"
+      }
+    },
+    "zh-TW": {
+      "event_name": "原始兄弟的萬聖節南瓜狩獵",
+      "tz_label": "台灣時間(UTC+8)",
+      "banner": {
+        "title": "原始兄弟的\n萬聖節南瓜狩獵",
+        "subtitle": "獵恐龍、收集南瓜，換限定獎勵！",
+        "period": "10/26 – 11/1",
+        "badge": "期間限定"
+      },
+      "notice": {
+        "title": "【活動】原始兄弟的萬聖節南瓜狩獵（10/26～11/1）",
+        "body": "萬聖節之夜降臨原始叢林，到處都是南瓜！\n兄弟們，一起獵恐龍、收集南瓜，換取萬聖節限定獎勵吧！\n\n■ 活動期間\n10/25（日）23:00 ～ 11/1（日）22:59（台灣時間）\n南瓜兌換：至 11/2（一）22:59\n\n■ 參加方式\n完成活動畫面中的任務即可獲得南瓜。不論輸贏，每次挑戰都會計入次數。\n1. 每日登入\n2. 狩獵恐龍與原始生物\n3. 挑戰首領討伐\n4. 挑戰兄弟之塔\n5. 合成裝備\n\n■ 獎勵\n在「南瓜兌換所」可用南瓜兌換萬聖節限定獎勵、養成材料與紅寶石。\n收集越多南瓜，就能解鎖越多累積獎勵。\n\n■ 萬聖節週末：免看廣告也有增益\n10/30（五）23:00 ～ 11/1（日）22:59 期間，不必觀看廣告，廣告增益效果也會自動開啟。\n\n■ 歡迎回來，兄弟\n14 天以上未登入的玩家，在活動期間首次登入時可獲得「回歸南瓜禮包」。\n\n■ 注意事項\n・兌換期間結束後，未使用的南瓜將會消失。\n・若找不到帳號或未收到獎勵，請透過［設定 > 客服中心］與我們聯繫。\n・活動內容可能變更，如有變更將另行公告。"
+      },
+      "push": [
+        "原始兄弟的萬聖節南瓜狩獵開跑！獵恐龍、收集南瓜，限定獎勵等你拿。",
+        "萬聖節週末免看廣告也有廣告增益！11/1 前把南瓜收集起來吧。"
+      ],
+      "play": {
+        "tagline": "收集南瓜換取萬聖節限定獎勵",
+        "description": "原始叢林迎來為期一週的萬聖節活動。完成狩獵恐龍與原始生物、首領討伐、兄弟之塔、裝備合成等任務即可獲得南瓜，並可兌換萬聖節限定獎勵、養成材料與紅寶石。任務不論輸贏，只要挑戰就會計算次數。萬聖節週末不必觀看廣告也能開啟廣告增益，超過 14 天未登入的回歸玩家還能領取回歸南瓜禮包。"
+      },
+      "appstore": {
+        "name": "原始兄弟的萬聖節南瓜狩獵",
+        "short": "獵恐龍、收集南瓜，換取萬聖節限定獎勵",
+        "long": "完成狩獵、首領討伐、兄弟之塔與裝備合成任務收集南瓜，兌換限定獎勵。萬聖節週末免看廣告即享增益。"
+      }
+    },
+    "id": {
+      "event_name": "Perburuan Labu Halloween",
+      "tz_label": "WIB (UTC+7)",
+      "banner": {
+        "title": "Perburuan Labu\nHalloween",
+        "subtitle": "Buru dino, kumpulkan labu, raih hadiah!",
+        "period": "26 Okt – 1 Nov",
+        "badge": "Waktu Terbatas"
+      },
+      "notice": {
+        "title": "[Event] Perburuan Labu Halloween (26 Okt – 1 Nov)",
+        "body": "Malam Halloween tiba di hutan purba, dan labu ada di mana-mana!\nBuru dinosaurus, kumpulkan labu, lalu tukarkan dengan hadiah eksklusif Halloween, Bro.\n\n■ Periode event\n25 Okt (Min) 22.00 – 1 Nov (Min) 21.59 WIB\nPenukaran labu: sampai 2 Nov (Sen) 21.59 WIB\n\n■ Cara ikut\nSelesaikan misi di layar event untuk mendapatkan labu. Menang atau kalah tidak masalah, setiap percobaan tetap dihitung.\n1. Login setiap hari\n2. Buru dinosaurus dan makhluk purba\n3. Ikuti Boss Raid\n4. Tantang Brothers' Tower\n5. Gabungkan perlengkapan\n\n■ Hadiah\nTukarkan labu di Penukaran Labu dengan hadiah eksklusif Halloween, bahan peningkatan, dan permata.\nMakin banyak labu yang kamu kumpulkan, makin banyak hadiah tahapan yang terbuka.\n\n■ Akhir pekan Halloween: buff tanpa iklan\nMulai 30 Okt (Jum) 22.00 sampai 1 Nov (Min) 21.59 WIB, buff iklan aktif otomatis tanpa perlu menonton iklan.\n\n■ Selamat datang kembali, Bro\nKalau kamu tidak login selama 14 hari atau lebih, kamu akan mendapat Paket Labu Selamat Datang saat login pertama selama event.\n\n■ Catatan\n· Labu yang tidak dipakai akan hilang setelah periode penukaran berakhir.\n· Jika akunmu tidak ditemukan atau hadiah belum masuk, hubungi kami lewat [Pengaturan > Pusat Layanan].\n· Detail event dapat berubah. Jika ada perubahan, kami akan mengumumkannya."
+      },
+      "push": [
+        "Perburuan Labu Halloween dimulai! Buru dinosaurus, kumpulkan labu, dan raih hadiah eksklusif.",
+        "Akhir pekan Halloween: buff iklan aktif tanpa nonton iklan. Kumpulkan labu sampai 1 Nov!"
+      ],
+      "play": {
+        "tagline": "Kumpulkan labu untuk hadiah eksklusif Halloween",
+        "description": "Halloween hadir di hutan purba selama satu minggu. Buru dinosaurus dan makhluk purba, ikuti Boss Raid, tantang Brothers' Tower, dan gabungkan perlengkapan untuk mendapatkan labu. Tukarkan labu dengan hadiah eksklusif Halloween, bahan peningkatan, dan permata. Setiap percobaan misi tetap dihitung, menang ataupun kalah. Saat akhir pekan Halloween, buff iklan aktif tanpa perlu menonton iklan, dan pemain yang kembali setelah 14 hari atau lebih mendapat paket labu selamat datang."
+      },
+      "appstore": {
+        "name": "Perburuan Labu Halloween",
+        "short": "Buru dinosaurus dan kumpulkan labu untuk hadiah",
+        "long": "Selesaikan misi berburu, Boss Raid, menara, dan perlengkapan untuk dapat labu. Akhir pekan Halloween: buff tanpa iklan."
+      }
+    },
+    "th": {
+      "event_name": "ล่าฟักทองฮาโลวีน",
+      "tz_label": "เวลาประเทศไทย (UTC+7)",
+      "banner": {
+        "title": "ล่าฟักทอง\nฮาโลวีน",
+        "subtitle": "ล่าไดโนเสาร์ เก็บฟักทอง แลกรางวัล!",
+        "period": "26 ต.ค. – 1 พ.ย.",
+        "badge": "เวลาจำกัด"
+      },
+      "notice": {
+        "title": "[กิจกรรม] ล่าฟักทองฮาโลวีน (26 ต.ค. – 1 พ.ย.)",
+        "body": "คืนฮาโลวีนมาถึงป่าดึกดำบรรพ์แล้ว ฟักทองกลิ้งอยู่เต็มไปหมด!\nล่าไดโนเสาร์ เก็บฟักทอง แล้วนำไปแลกรางวัลพิเศษฮาโลวีนกันเลย พี่น้อง!\n\n■ ระยะเวลากิจกรรม\n25 ต.ค. (อา.) 22:00 – 1 พ.ย. (อา.) 21:59 น. (เวลาประเทศไทย)\nแลกฟักทองได้ถึง 2 พ.ย. (จ.) 21:59 น.\n\n■ วิธีเข้าร่วม\nทำภารกิจในหน้ากิจกรรมให้สำเร็จเพื่อรับฟักทอง ไม่ว่าจะชนะหรือแพ้ ทุกครั้งที่ท้าทายจะถูกนับ\n1. เข้าเกมทุกวัน\n2. ล่าไดโนเสาร์และสัตว์ดึกดำบรรพ์\n3. ท้าทาย Boss Raid\n4. ท้าทาย Brothers' Tower\n5. รวมอุปกรณ์\n\n■ รางวัล\nนำฟักทองไปแลกที่ร้านแลกฟักทอง รับรางวัลพิเศษฮาโลวีน วัตถุดิบเสริมพลัง และอัญมณี\nยิ่งเก็บฟักทองได้มาก ยิ่งปลดล็อกรางวัลสะสมได้มากขึ้น\n\n■ สุดสัปดาห์ฮาโลวีน: รับบัฟโดยไม่ต้องดูโฆษณา\nตั้งแต่ 30 ต.ค. (ศ.) 22:00 – 1 พ.ย. (อา.) 21:59 น. บัฟจากโฆษณาจะเปิดใช้งานอัตโนมัติโดยไม่ต้องดูโฆษณา\n\n■ ยินดีต้อนรับกลับมา พี่น้อง\nผู้เล่นที่ไม่ได้เข้าเกม 14 วันขึ้นไป จะได้รับแพ็กฟักทองต้อนรับกลับเมื่อเข้าเกมครั้งแรกในช่วงกิจกรรม\n\n■ หมายเหตุ\n· ฟักทองที่ไม่ได้ใช้จะหายไปเมื่อหมดช่วงเวลาแลก\n· หากหาบัญชีไม่เจอหรือไม่ได้รับรางวัล โปรดติดต่อเราที่ [ตั้งค่า > ศูนย์บริการลูกค้า]\n· รายละเอียดกิจกรรมอาจมีการเปลี่ยนแปลง หากมีการเปลี่ยนแปลงจะแจ้งให้ทราบผ่านประกาศ"
+      },
+      "push": [
+        "ล่าฟักทองฮาโลวีนเริ่มแล้ว! ล่าไดโนเสาร์ เก็บฟักทอง รับรางวัลสุดพิเศษ",
+        "สุดสัปดาห์ฮาโลวีน รับบัฟโดยไม่ต้องดูโฆษณา เก็บฟักทองได้ถึง 1 พ.ย.!"
+      ],
+      "play": {
+        "tagline": "เก็บฟักทองแลกรางวัลพิเศษฮาโลวีน",
+        "description": "ฮาโลวีนมาถึงป่าดึกดำบรรพ์ตลอดหนึ่งสัปดาห์ ทำภารกิจล่าไดโนเสาร์และสัตว์ดึกดำบรรพ์ Boss Raid, Brothers' Tower และรวมอุปกรณ์เพื่อรับฟักทอง แล้วนำไปแลกรางวัลพิเศษฮาโลวีน วัตถุดิบเสริมพลัง และอัญมณี ภารกิจนับทุกครั้งที่ท้าทายไม่ว่าจะชนะหรือแพ้ ช่วงสุดสัปดาห์ฮาโลวีนบัฟจากโฆษณาจะเปิดใช้งานโดยไม่ต้องดูโฆษณา และผู้เล่นที่กลับมาหลังหายไป 14 วันขึ้นไปจะได้รับแพ็กฟักทองต้อนรับกลับ"
+      },
+      "appstore": {
+        "name": "ล่าฟักทองฮาโลวีน",
+        "short": "ล่าไดโนเสาร์ เก็บฟักทอง แลกรางวัลพิเศษ",
+        "long": "ทำภารกิจล่า Boss Raid หอคอย และรวมอุปกรณ์เพื่อเก็บฟักทองแลกรางวัล สุดสัปดาห์ฮาโลวีนรับบัฟโดยไม่ต้องดูโฆษณา"
+      }
+    },
+    "tr": {
+      "event_name": "Cadılar Bayramı Balkabağı Avı",
+      "tz_label": "TSİ (UTC+3)",
+      "banner": {
+        "title": "Cadılar Bayramı\nBalkabağı Avı",
+        "subtitle": "Dinozor avla, balkabağı topla, ödül kazan!",
+        "period": "26 Eki – 1 Kas",
+        "badge": "Sınırlı Süre"
+      },
+      "notice": {
+        "title": "[Etkinlik] Cadılar Bayramı Balkabağı Avı (26 Eki – 1 Kas)",
+        "body": "İlkel ormana Cadılar Bayramı gecesi çöktü, her yer balkabağı dolu!\nDinozorları avla, balkabağı topla ve onları Cadılar Bayramı'na özel ödüllerle takas et, kardeşim.\n\n■ Etkinlik süresi\n25 Ekim (Paz) 18.00 – 1 Kasım (Paz) 17.59 (TSİ)\nBalkabağı takası: 2 Kasım (Pzt) 17.59'a kadar\n\n■ Nasıl katılırım?\nEtkinlik ekranındaki görevleri tamamlayarak balkabağı kazan. Kazanman ya da kaybetmen fark etmez, her deneme sayılır.\n1. Her gün oyuna giriş yap\n2. Dinozorları ve ilkel yaratıkları avla\n3. Boss Baskını'na katıl\n4. Kardeşler Kulesi'ne meydan oku\n5. Ekipman birleştir\n\n■ Ödüller\nBalkabağı Takas Noktası'nda balkabaklarını Cadılar Bayramı'na özel ödüller, gelişim malzemeleri ve mücevherlerle takas edebilirsin.\nNe kadar çok balkabağı toplarsan o kadar çok aşama ödülü açılır.\n\n■ Cadılar Bayramı hafta sonu: reklamsız güçlendirme\n30 Ekim (Cum) 18.00 – 1 Kasım (Paz) 17.59 arasında reklam güçlendirmeleri, reklam izlemene gerek kalmadan otomatik olarak açılır.\n\n■ Tekrar hoş geldin, kardeşim\n14 gün veya daha uzun süredir giriş yapmadıysan, etkinlik süresince ilk girişinde Hoş Geldin Balkabağı Paketi kazanırsın.\n\n■ Notlar\n· Kullanılmayan balkabakları takas süresi bitince silinir.\n· Hesabını bulamıyorsan ya da ödülünü alamadıysan [Ayarlar > Müşteri Merkezi] üzerinden bize ulaş.\n· Etkinlik ayrıntıları değişebilir. Değişiklik olursa duyuruyla bildireceğiz."
+      },
+      "push": [
+        "Cadılar Bayramı Balkabağı Avı başladı! Dinozor avla, balkabağı topla, özel ödülleri kap.",
+        "Cadılar Bayramı hafta sonu: reklam güçlendirmeleri reklamsız açık. 1 Kasım'a kadar balkabağı topla!"
+      ],
+      "play": {
+        "tagline": "Balkabağı topla, Cadılar Bayramı ödülü kazan",
+        "description": "İlkel ormanda bir hafta boyunca Cadılar Bayramı var. Dinozorları ve ilkel yaratıkları avla, Boss Baskını'na katıl, Kardeşler Kulesi'ne meydan oku ve ekipman birleştirerek balkabağı kazan. Balkabaklarını Cadılar Bayramı'na özel ödüller, gelişim malzemeleri ve mücevherlerle takas et. Görevlerde kazansan da kaybetsen de her deneme sayılır. Cadılar Bayramı hafta sonunda reklam güçlendirmeleri reklam izlemeden açılır, 14 gün veya daha uzun ara verip dönen oyuncular hoş geldin paketi alır."
+      },
+      "appstore": {
+        "name": "Cadılar Bayramı Balkabağı Avı",
+        "short": "Dinozor avla, balkabağı topla, ödül kazan",
+        "long": "Av, Boss Baskını, kule ve ekipman görevleriyle balkabağı topla, ödüllerle takas et. Hafta sonu reklamsız güçlendirme."
+      }
+    },
+    "fr": {
+      "event_name": "La Grande Chasse d'Halloween",
+      "tz_label": "heure de Paris (UTC+1)",
+      "banner": {
+        "title": "La Grande Chasse\nd'Halloween",
+        "subtitle": "Chassez des dinos, récoltez des citrouilles !",
+        "period": "26 oct. – 1er nov.",
+        "badge": "Durée limitée"
+      },
+      "notice": {
+        "title": "[Événement] La Grande Chasse d'Halloween (26 oct. – 1er nov.)",
+        "body": "La nuit d'Halloween est tombée sur la jungle primitive, et il y a des citrouilles partout !\nChassez les dinosaures, récoltez des citrouilles et échangez-les contre des récompenses exclusives d'Halloween.\n\n■ Période de l'événement\n25 oct. (dim.) 16 h 00 – 1er nov. (dim.) 15 h 59 (heure de Paris)\nÉchange des citrouilles : jusqu'au 2 nov. (lun.) 15 h 59\n\n■ Comment participer\nAccomplissez les missions de l'écran de l'événement pour gagner des citrouilles. Victoire ou défaite, chaque tentative compte.\n1. Connectez-vous chaque jour\n2. Chassez des dinosaures et des créatures primitives\n3. Affrontez les Raids de boss\n4. Défiez la Tour des Frères\n5. Fusionnez de l'équipement\n\n■ Récompenses\nÀ l'Échange de citrouilles, troquez vos citrouilles contre des récompenses exclusives d'Halloween, des matériaux d'amélioration et des gemmes.\nPlus vous récoltez de citrouilles, plus vous débloquez de récompenses de palier.\n\n■ Week-end d'Halloween : bonus sans pub\nDu 30 oct. (ven.) 16 h 00 au 1er nov. (dim.) 15 h 59, les bonus publicitaires s'activent automatiquement, sans regarder de pub.\n\n■ Bon retour parmi nous\nSi vous ne vous êtes pas connecté depuis 14 jours ou plus, vous recevrez un Pack de citrouilles de bienvenue à votre première connexion pendant l'événement.\n\n■ À noter\n· Les citrouilles non utilisées disparaissent à la fin de la période d'échange.\n· Si vous ne retrouvez pas votre compte ou n'avez pas reçu une récompense, contactez-nous via [Paramètres > Service client].\n· Les détails de l'événement peuvent changer. Le cas échéant, nous vous préviendrons par une annonce."
+      },
+      "push": [
+        "La Grande Chasse d'Halloween commence ! Chassez des dinos, récoltez des citrouilles et gagnez des récompenses exclusives.",
+        "Week-end d'Halloween : les bonus publicitaires sont actifs sans regarder de pub. Récoltez vos citrouilles jusqu'au 1er nov. !"
+      ],
+      "play": {
+        "tagline": "Citrouilles à récolter, récompenses d'Halloween",
+        "description": "Halloween s'invite une semaine dans la jungle primitive. Chassez dinosaures et créatures primitives, affrontez les Raids de boss, défiez la Tour des Frères et fusionnez l'équipement pour gagner des citrouilles, à échanger contre des récompenses exclusives, des matériaux d'amélioration et des gemmes. Victoire ou défaite, chaque tentative compte. Le week-end d'Halloween, les bonus publicitaires s'activent sans pub, et les joueurs de retour après 14 jours ou plus reçoivent un pack de bienvenue."
+      },
+      "appstore": {
+        "name": "La Grande Chasse d'Halloween",
+        "short": "Chassez des dinos et récoltez des citrouilles",
+        "long": "Missions de chasse, raids, tour et équipement pour gagner des citrouilles. Bonus sans pub le week-end d'Halloween."
+      }
+    },
+    "de": {
+      "event_name": "Die große Halloween-Kürbisjagd",
+      "tz_label": "MEZ (UTC+1)",
+      "banner": {
+        "title": "Die große\nHalloween-Kürbisjagd",
+        "subtitle": "Jage Dinos, sammle Kürbisse, hol dir Preise!",
+        "period": "26.10. – 01.11.",
+        "badge": "Nur kurze Zeit"
+      },
+      "notice": {
+        "title": "[Event] Die große Halloween-Kürbisjagd (26.10. – 01.11.)",
+        "body": "Die Halloween-Nacht ist über den Urzeit-Dschungel hereingebrochen, und überall liegen Kürbisse!\nJage Dinosaurier, sammle Kürbisse und tausche sie gegen exklusive Halloween-Belohnungen ein, Bro.\n\n■ Eventzeitraum\n25.10. (So) 16:00 – 01.11. (So) 15:59 Uhr (MEZ)\nKürbistausch: bis 02.11. (Mo) 15:59 Uhr\n\n■ So machst du mit\nErfülle die Missionen im Eventbildschirm, um Kürbisse zu erhalten. Sieg oder Niederlage ist egal: Jeder Versuch zählt.\n1. Melde dich täglich an\n2. Jage Dinosaurier und Urzeitkreaturen\n3. Stell dich dem Boss-Raid\n4. Fordere den Turm der Brüder heraus\n5. Kombiniere Ausrüstung\n\n■ Belohnungen\nIm Kürbistausch kannst du Kürbisse gegen exklusive Halloween-Belohnungen, Entwicklungsmaterialien und Edelsteine eintauschen.\nJe mehr Kürbisse du sammelst, desto mehr Stufenbelohnungen schaltest du frei.\n\n■ Halloween-Wochenende: Boni ohne Werbung\nVom 30.10. (Fr) 16:00 bis 01.11. (So) 15:59 Uhr werden Werbe-Boni automatisch aktiviert, ganz ohne Werbung anzusehen.\n\n■ Willkommen zurück, Bro\nWenn du dich 14 Tage oder länger nicht angemeldet hast, erhältst du beim ersten Login während des Events ein Willkommens-Kürbispaket.\n\n■ Hinweise\n· Nicht verwendete Kürbisse verfallen nach Ende des Tauschzeitraums.\n· Wenn du dein Konto nicht findest oder eine Belohnung nicht erhalten hast, kontaktiere uns über [Einstellungen > Kundencenter].\n· Eventdetails können sich ändern. In diesem Fall informieren wir dich per Ankündigung."
+      },
+      "push": [
+        "Die große Halloween-Kürbisjagd hat begonnen! Jage Dinos, sammle Kürbisse und sichere dir exklusive Belohnungen.",
+        "Halloween-Wochenende: Werbe-Boni sind ohne Werbung aktiv. Sammle deine Kürbisse bis zum 01.11.!"
+      ],
+      "play": {
+        "tagline": "Kürbisse sammeln, Halloween-Belohnungen sichern",
+        "description": "Eine Woche lang ist Halloween im Urzeit-Dschungel. Jage Dinosaurier und Urzeitkreaturen, stell dich dem Boss-Raid, fordere den Turm der Brüder heraus und kombiniere Ausrüstung, um Kürbisse zu erhalten. Tausche sie gegen exklusive Halloween-Belohnungen, Entwicklungsmaterialien und Edelsteine. Bei den Missionen zählt jeder Versuch, ob Sieg oder Niederlage. Am Halloween-Wochenende gibt es Werbe-Boni ohne Werbung, und wer nach 14 Tagen oder mehr zurückkehrt, erhält ein Willkommens-Kürbispaket."
+      },
+      "appstore": {
+        "name": "Die große Halloween-Kürbisjagd",
+        "short": "Jage Dinos und sammle Kürbisse für Belohnungen",
+        "long": "Erfülle Jagd-, Boss-Raid-, Turm- und Ausrüstungsmissionen für Kürbisse. Am Halloween-Wochenende Boni ohne Werbung."
+      }
+    },
+    "vi": {
+      "event_name": "Săn Bí Ngô Halloween",
+      "tz_label": "giờ Việt Nam (UTC+7)",
+      "banner": {
+        "title": "Săn Bí Ngô\nHalloween",
+        "subtitle": "Săn khủng long, gom bí ngô, nhận quà!",
+        "period": "26/10 – 01/11",
+        "badge": "Có thời hạn"
+      },
+      "notice": {
+        "title": "[Sự kiện] Săn Bí Ngô Halloween (26/10 – 01/11)",
+        "body": "Đêm Halloween đã phủ xuống khu rừng nguyên thủy, bí ngô lăn khắp nơi!\nSăn khủng long, gom bí ngô và đổi lấy phần thưởng Halloween độc quyền nhé, anh em!\n\n■ Thời gian sự kiện\n22:00 25/10 (CN) – 21:59 01/11 (CN) (giờ Việt Nam)\nĐổi bí ngô: đến 21:59 02/11 (T2)\n\n■ Cách tham gia\nHoàn thành nhiệm vụ trên màn hình sự kiện để nhận bí ngô. Thắng hay thua đều được, mỗi lần thử đều được tính.\n1. Đăng nhập mỗi ngày\n2. Săn khủng long và sinh vật nguyên thủy\n3. Tham gia Đánh Boss\n4. Thử thách Tháp Anh Em\n5. Hợp nhất trang bị\n\n■ Phần thưởng\nTại Quầy Đổi Bí Ngô, đổi bí ngô lấy phần thưởng Halloween độc quyền, nguyên liệu nâng cấp và đá quý.\nGom càng nhiều bí ngô, càng mở khóa nhiều phần thưởng tích lũy.\n\n■ Cuối tuần Halloween: buff không cần xem quảng cáo\nTừ 22:00 30/10 (T6) đến 21:59 01/11 (CN), buff quảng cáo sẽ tự động bật mà không cần xem quảng cáo.\n\n■ Chào mừng anh em trở lại\nNếu bạn chưa đăng nhập từ 14 ngày trở lên, bạn sẽ nhận Gói Bí Ngô Chào Mừng khi đăng nhập lần đầu trong thời gian sự kiện.\n\n■ Lưu ý\n· Bí ngô chưa dùng sẽ biến mất khi hết thời gian đổi.\n· Nếu không tìm thấy tài khoản hoặc chưa nhận được phần thưởng, hãy liên hệ với chúng tôi qua [Cài đặt > Trung tâm hỗ trợ].\n· Nội dung sự kiện có thể thay đổi. Nếu có thay đổi, chúng tôi sẽ thông báo."
+      },
+      "push": [
+        "Săn Bí Ngô Halloween đã bắt đầu! Săn khủng long, gom bí ngô và nhận quà độc quyền.",
+        "Cuối tuần Halloween: buff quảng cáo bật sẵn, không cần xem quảng cáo. Gom bí ngô đến hết 01/11!"
+      ],
+      "play": {
+        "tagline": "Gom bí ngô đổi phần thưởng Halloween độc quyền",
+        "description": "Halloween đến với khu rừng nguyên thủy trong một tuần. Săn khủng long và sinh vật nguyên thủy, tham gia Đánh Boss, thử thách Tháp Anh Em và hợp nhất trang bị để nhận bí ngô. Đổi bí ngô lấy phần thưởng Halloween độc quyền, nguyên liệu nâng cấp và đá quý. Mỗi lần thử nhiệm vụ đều được tính, dù thắng hay thua. Vào cuối tuần Halloween, buff quảng cáo tự bật mà không cần xem quảng cáo, và người chơi quay lại sau 14 ngày trở lên sẽ nhận gói bí ngô chào mừng."
+      },
+      "appstore": {
+        "name": "Săn Bí Ngô Halloween",
+        "short": "Săn khủng long, gom bí ngô, nhận quà độc quyền",
+        "long": "Làm nhiệm vụ săn, đánh boss, tháp và trang bị để gom bí ngô đổi quà. Cuối tuần Halloween có buff không cần quảng cáo."
+      }
+    }
+  }
+}

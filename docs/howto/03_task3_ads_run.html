@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03. 과제 3 — 광고 운영·성과 분석 실행 방법 | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../task2/gallery.html">이미지 갤러리</a></li><li><a href="../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec" open><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="03_task3_ads_run.html" aria-current="page">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">실행 가이드<span class="path">deliverables/howto/03_task3_ads_run.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#1-샘플-실행-5분">1. 샘플 실행 — 5분</a></li><li><a href="#2-하네스에-요청하는-프롬프트">2. 하네스에 요청하는 프롬프트</a></li><li><a href="#3-실제-데이터-연결-순서">3. 실제 데이터 연결 순서</a></li><li><a href="#4-리포트-검증기-사용">4. 리포트 검증기 사용</a></li><li><a href="#5-매일-자동-실행">5. 매일 자동 실행</a></li><li><a href="#6-확인이-필요한-것">6. 확인이 필요한 것</a></li></ul></details></aside>
+    <article class="doc"><h1 id="03-과제-3-광고-운영성과-분석-실행-방법">03. 과제 3 — 광고 운영·성과 분석 실행 방법</h1>
+<p>지금 있는 것은 <strong>가상 데이터로 동작하는 샘플</strong>이다. 썬더게임즈의 실제 광고 계정은 아직 연결하지 않았다. 설계 전체는 <a href="../task3-ads-automation/guide.html">과제 3 가이드</a>에 있다. 이 문서는 (1) 샘플을 직접 돌려 보는 방법, (2) 실제 데이터를 연결한 뒤 하네스에 요청하는 방법을 다룬다.</p>
+<p>원칙은 하나다. <strong>숫자는 코드가 계산하고, Claude는 그 결과(<a class="code-link" href="../task3-ads-automation/sample/findings.json.html"><code>findings.json</code></a>)만 읽어 문장을 쓴다. 리포트의 숫자는 검증기를 통과해야 발송한다.</strong></p>
+<hr />
+<h2 id="1-샘플-실행-5분">1. 샘플 실행 — 5분</h2>
+<p>Python 3.10 이상, 표준 라이브러리만 쓴다.</p>
+<pre><code class="language-bash">cd deliverables/task3-ads-automation/sample
+python3 generate_sample_data.py      # [가상 데이터] 1,434행 → ads_daily_sample.csv, budget_config.json
+python3 analyze_ads.py               # → findings.json (화면에 요약 출력)
+python3 check_report_numbers.py sample_daily_report.md   # 리포트 숫자 검증
+python3 test_check_report_numbers.py # 검증기 시험(원본 통과 + 변형 13건 차단)
+python3 sweep_seeds.py 30            # 시드 30개 반복 검증
+python3 make_report.py --dry-run     # Claude API 에 보낼 요청 확인(키 불필요)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>파일</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="code-link" href="../task3-ads-automation/sample/findings.json.html"><code>findings.json</code></a></td>
+<td>판정 결과: summary, findings(F01~), budget_proposals(B01~), checks, near_misses</td>
+</tr>
+<tr>
+<td><a class="code-link" href="../task3-ads-automation/sample/sample_daily_report.html"><code>sample_daily_report.md</code></a></td>
+<td>5줄 일일 리포트 예시(가상 데이터)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="../task3-ads-automation/sample/analyze_ads.py.html"><code>analyze_ads.py</code></a></td>
+<td>탐지 규칙. 기준값은 <code>RULES</code> 에 모여 있다</td>
+</tr>
+<tr>
+<td><a class="code-link" href="../task3-ads-automation/sample/budget_config.json.html"><code>budget_config.json</code></a></td>
+<td>월 예산·일 예산·마지막 변경일·Tier별 목표 ROAS(가상)</td>
+</tr>
+<tr>
+<td><a class="code-link" href="../task3-ads-automation/sample/report_prompt.html"><code>report_prompt.md</code></a></td>
+<td>Claude 시스템·사용자 프롬프트</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Claude로 리포트를 실제로 쓰게 하는 두 가지 방법</strong></p>
+<p>(1) API 키로:</p>
+<pre><code class="language-bash">pip install anthropic
+export ANTHROPIC_API_KEY=...
+python3 make_report.py               # 리포트 생성 → 숫자 검증. 실패하면 종료 코드 2(발송 보류)
+</code></pre>
+<p>(2) API 키 없이 Claude Code에서:</p>
+<pre><code class="language-text">deliverables/task3-ads-automation/sample/findings.json 을 report_prompt.md 규칙대로 5줄 일일 리포트로 써줘. findings.json 에 없는 숫자는 쓰지 말고, 다 쓰면 check_report_numbers.py 로 검증해서 통과한 것만 보여줘.
+</code></pre>
+<h2 id="2-하네스에-요청하는-프롬프트">2. 하네스에 요청하는 프롬프트</h2>
+<p>샘플·가이드 보완:</p>
+<pre><code class="language-text">과제 3만 다시 — guide.md 의 '오탐 하루 0.33건' 셈 기준을 밝히고 QA D 재계산(9건)과 맞춰줘. 끝나면 QA 트랙 D 재검증.
+</code></pre>
+<pre><code class="language-text">analyze_ads.py 소재 피로 규칙에 '3초 조회율 20% 이상 하락' 조건을 추가하고, sweep_seeds.py 30 으로 탐지율·오탐이 어떻게 바뀌는지 보여줘.
+</code></pre>
+<p>실제 데이터를 연결한 뒤(3절):</p>
+<pre><code class="language-text">Meta·Google 어제 데이터로 일일 리포트 만들어줘 — 데이터는 BigQuery ads_daily 표(또는 data/ads_daily_YYYYMMDD.csv). analyze_ads.py 로 findings.json 을 만들고, 리포트를 쓴 뒤 check_report_numbers.py 를 통과한 것만 보여줘. 예산 제안은 승인 대기로만.
+</code></pre>
+<pre><code class="language-text">지난주 UA 주간 리포트 써줘 — 매체·국가 Tier·소재별 CPI·D7 ROAS, 피로 소재와 교체 요청 목록, 다음 주 예산 제안(변경 폭 20% 이내, 같은 캠페인 3일 쿨다운).
+</code></pre>
+<pre><code class="language-text">메타 iOS 캠페인 설치가 0으로 나오는 게 추적 문제인지 진단해줘 — 지출·클릭·설치·SKAN 포스트백 추이를 비교하고, 확인할 MMP 설정 목록을 줘.
+</code></pre>
+<pre><code class="language-text">W48 블랙 프라이데이 이벤트(과제 2 캘린더)에 맞춰 UA 소재 변형 3종 아이디어와 집행 타이밍을 제안해줘. 이벤트 키아트(keyart/store/)를 소재로 쓸 수 있는지도 봐줘. '광고 없음'을 약속하는 문구는 빼고.
+</code></pre>
+<h2 id="3-실제-데이터-연결-순서">3. 실제 데이터 연결 순서</h2>
+<p><a href="../task3-ads-automation/guide.html">가이드</a> 4장·8장 요약이다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>할 일</th>
+<th>필요한 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 노코드(2~3주)</td>
+<td>커넥터(Supermetrics·Funnel 등)로 Meta·Google·MMP → 시트 또는 BigQuery. 표준 컬럼으로 맞추고, Claude 요약은 처음에 사람이 붙여 넣는다</td>
+<td>매체 읽기 권한</td>
+</tr>
+<tr>
+<td>2. 코드(4~6주)</td>
+<td>API 수집 → BigQuery <code>ads_daily</code> → <a class="code-link" href="../task3-ads-automation/sample/analyze_ads.py.html"><code>analyze_ads.py</code></a> → <a class="code-link" href="../task3-ads-automation/sample/make_report.py.html"><code>make_report.py</code></a> → 검증 → 메신저 발송. 스케줄러(Cloud Scheduler 또는 GitHub Actions)</td>
+<td>Meta 시스템 사용자 토큰(<code>ads_read</code>), Google Ads 개발자 토큰 + OAuth, MMP API 토큰, GCP 프로젝트</td>
+</tr>
+<tr>
+<td>3. 승인형 실행(8주 제안 운영 뒤)</td>
+<td>승인한 예산 변경만 API로 실행</td>
+<td>승인 기록(approvals 표)</td>
+</tr>
+</tbody>
+</table>
+<p><a class="code-link" href="../task3-ads-automation/sample/analyze_ads.py.html"><code>analyze_ads.py</code></a> 는 <code>--data</code>(CSV)와 <code>--config</code>(budget_config.json)만 읽는다. 실데이터를 같은 22개 표준 컬럼으로 맞추면 코드를 바꾸지 않고 돌릴 수 있다.</p>
+<pre><code class="language-bash">python3 analyze_ads.py --data /path/ads_daily_20261007.csv --config /path/budget_config.json --out findings.json
+# 기준일을 바꾸려면 --as-of 2026-10-06
+</code></pre>
+<blockquote>
+<p>도입 전에 확인할 플랫폼 변화(2026-10-07 공식 문서 확인): Meta Marketing API v24.0은 2026-10-06에 만료됐다. 7d_view·28d_view 어트리뷰션 값은 2026-01-12부터 나오지 않는다. 레거시 Advantage+ 앱 캠페인은 v25.0부터 만들 수 없다. Google 앱 캠페인은 예산·목표 CPI를 한 번에 20% 넘게 바꾸지 말라고 권장한다.</p>
+</blockquote>
+<h2 id="4-리포트-검증기-사용">4. 리포트 검증기 사용</h2>
+<pre><code class="language-bash">python3 check_report_numbers.py 오늘_리포트.md --findings findings.json   # 생략하면 sample/findings.json 과 대조
+echo $?                                                   # 0 = 통과(발송 가능), 1 = 발송 보류
+python3 test_check_report_numbers.py                      # 규칙을 고친 뒤 검증기 자체 시험
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>잡는 것</th>
+<th>못 잡는 것(사람이 대조)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입력에 없는 숫자, 단위 혼동, 부호 반전(−35% → +35%), 항목 바꿔치기(KR 지출에 US 값, 제안액 맞바꿈)</td>
+<td>ID·이름 같은 키가 없는 문장의 바꿔치기, 날짜, 숫자가 아닌 서술 오류(원인 추측, 조치 문구 왜곡)</td>
+</tr>
+</tbody>
+</table>
+<p>그래서 처음 8주는 담당자가 리포트를 상세 표와 대조해 검수한다.</p>
+<h2 id="5-매일-자동-실행">5. 매일 자동 실행</h2>
+<pre><code class="language-text">/schedule 매일 06:40(KST)에 이 프로젝트에서 &quot;어제 광고 데이터로 일일 리포트 만들어줘 — 검증 통과한 것만 메신저용 5줄로, 실패하면 실패 사유만&quot; 를 실행해줘
+</code></pre>
+<p>예약 실행은 클라우드 환경에서 돈다. 데이터 원천(BigQuery 등) 접근 권한을 그 환경에 줘야 한다. 서버 쪽 정식 운영은 가이드 2단계(Cloud Scheduler + <a class="code-link" href="../task3-ads-automation/sample/make_report.py.html"><code>make_report.py</code></a>)를 따른다.</p>
+<h2 id="6-확인이-필요한-것">6. 확인이 필요한 것</h2>
+<p>실데이터 연결 전에 고객이 알려 줘야 하는 C1~C16(매체, 국가 Tier, 러시아어 사용자 유입원, MMP, 미디에이션, 수익 데이터 위치, 월 예산, 목표 ROAS, 계정 시간대, 메신저, 개발 인력, API 권한, iOS·SKAN, 광고 수익 비중, 소재 제작 체계, 메타 캠페인 구조)은 <code>_workspace/07_strategist_notes.md</code> 에 있다.</p>
+<hr />
+<p>관련 문서: <a href="01_build_harness_prompts.html">하네스 구성 프롬프트</a> · <a href="../task3-ads-automation/guide.html">과제 3 가이드</a> · <a href="../task3-ads-automation/sample/sample_daily_report.html">일일 리포트 샘플</a> · <a href="../report/report.html">통합 보고서</a></p></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

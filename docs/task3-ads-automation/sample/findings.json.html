@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>findings.json | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../../index.html"><img src="../../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../../task2/gallery.html">이미지 갤러리</a></li><li><a href="../../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec" open><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="analyze_ads.py.html">analyze_ads.py</a></li><li><a href="budget_config.json.html">budget_config.json</a></li><li><a href="check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="findings.json.html" aria-current="page">findings.json</a></li><li><a href="generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="make_report.py.html">make_report.py</a></li><li><a href="report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="sample_daily_report.html">sample_daily_report</a></li><li><a href="sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">과제 3 · 광고 성과 분석<span class="path">deliverables/task3-ads-automation/sample/findings.json</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#table">표로 보기</a></li><li><a href="#raw">원본 JSON</a></li></ul></details></aside>
+    <article class="doc"><h1>findings.json</h1><p class="notice">[가상 데이터] 썬더게임즈 실제 광고 데이터가 아니다.</p><p class="actions"><a class="btn" href="findings.json" download>원본 JSON 내려받기</a></p><h2 id="table">표로 보기</h2><div class="table-scroll"><table class="kv"><tr><th>as_of</th><td>2026-10-06</td></tr><tr><th>report_date</th><td>2026-10-07</td></tr><tr><th>is_sample_data</th><td>true</td></tr><tr><th>notice</th><td>[가상 데이터] 썬더게임즈 실제 광고 데이터가 아니다.</td></tr><tr><th>currency</th><td>USD</td></tr><tr><th>rules_version</th><td>playbook-initial-2026-10</td></tr><tr><th>summary</th><td><table class="kv"><tr><th>spend</th><td><span class="num">1,929.40</span></td></tr><tr><th>installs</th><td><span class="num">1,512</span></td></tr><tr><th>cpi</th><td><span class="num">1.28</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0278</span></td></tr><tr><th>ad_revenue_share_d0</th><td><span class="num">0.497</span></td></tr><tr><th>vs_prev_7d</th><td><table class="kv"><tr><th>spend</th><td><span class="num">-0.008</span></td></tr><tr><th>cpi</th><td><span class="num">0.14</span></td></tr><tr><th>roas_d0</th><td><span class="num">-0.094</span></td></tr></table></td></tr><tr><th>excluding_data_issue</th><td><table class="kv"><tr><th>spend</th><td><span class="num">1,743.37</span></td></tr><tr><th>installs</th><td><span class="num">1,512</span></td></tr><tr><th>cpi</th><td><span class="num">1.15</span></td></tr><tr><th>note</th><td>추적 누락 의심 범위를 뺀 값</td></tr></table></td></tr><tr><th>by_network</th><td><table class="kv"><tr><th>google</th><td><table class="kv"><tr><th>spend</th><td><span class="num">863.46</span></td></tr><tr><th>installs</th><td><span class="num">662</span></td></tr><tr><th>cpi</th><td><span class="num">1.30</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0296</span></td></tr></table></td></tr><tr><th>meta</th><td><table class="kv"><tr><th>spend</th><td><span class="num">1,065.94</span></td></tr><tr><th>installs</th><td><span class="num">850</span></td></tr><tr><th>cpi</th><td><span class="num">1.25</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0263</span></td></tr></table></td></tr></table></td></tr><tr><th>by_country</th><td><table class="kv"><tr><th>BR</th><td><table class="kv"><tr><th>spend</th><td><span class="num">298.57</span></td></tr><tr><th>installs</th><td><span class="num">286</span></td></tr><tr><th>cpi</th><td><span class="num">1.04</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0344</span></td></tr></table></td></tr><tr><th>ID</th><td><table class="kv"><tr><th>spend</th><td><span class="num">270.56</span></td></tr><tr><th>installs</th><td><span class="num">420</span></td></tr><tr><th>cpi</th><td><span class="num">0.64</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0117</span></td></tr></table></td></tr><tr><th>KR</th><td><table class="kv"><tr><th>spend</th><td><span class="num">400.84</span></td></tr><tr><th>installs</th><td><span class="num">77</span></td></tr><tr><th>cpi</th><td><span class="num">5.21</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0281</span></td></tr></table></td></tr><tr><th>MX</th><td><table class="kv"><tr><th>spend</th><td><span class="num">209.33</span></td></tr><tr><th>installs</th><td><span class="num">223</span></td></tr><tr><th>cpi</th><td><span class="num">0.94</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0386</span></td></tr></table></td></tr><tr><th>TH</th><td><table class="kv"><tr><th>spend</th><td><span class="num">225.59</span></td></tr><tr><th>installs</th><td><span class="num">422</span></td></tr><tr><th>cpi</th><td><span class="num">0.53</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0211</span></td></tr></table></td></tr><tr><th>US</th><td><table class="kv"><tr><th>spend</th><td><span class="num">524.51</span></td></tr><tr><th>installs</th><td><span class="num">84</span></td></tr><tr><th>cpi</th><td><span class="num">6.24</span></td></tr><tr><th>roas_d0</th><td><span class="num">0.0307</span></td></tr></table></td></tr></table></td></tr><tr><th>pacing</th><td><table class="kv"><tr><th>meta</th><td><table class="kv"><tr><th>monthly_budget</th><td><span class="num">33,800</span></td></tr><tr><th>mtd_spend</th><td><span class="num">6,533.04</span></td></tr><tr><th>mtd_share</th><td><span class="num">0.1933</span></td></tr><tr><th>elapsed_share</th><td><span class="num">0.1935</span></td></tr><tr><th>pace_ratio</th><td><span class="num">0.999</span></td></tr><tr><th>daily_budget_now</th><td><span class="num">1,080</span></td></tr><tr><th>projected_month_spend</th><td><span class="num">33,533.04</span></td></tr><tr><th>projected_vs_budget</th><td><span class="num">-0.0079</span></td></tr><tr><th>daily_needed_to_fit</th><td><span class="num">1,090.68</span></td></tr><tr><th>headroom_daily</th><td><span class="num">10.68</span></td></tr></table></td></tr><tr><th>google</th><td><table class="kv"><tr><th>monthly_budget</th><td><span class="num">22,500</span></td></tr><tr><th>mtd_spend</th><td><span class="num">5,238.04</span></td></tr><tr><th>mtd_share</th><td><span class="num">0.2328</span></td></tr><tr><th>elapsed_share</th><td><span class="num">0.1935</span></td></tr><tr><th>pace_ratio</th><td><span class="num">1.20</span></td></tr><tr><th>daily_budget_now</th><td><span class="num">895</span></td></tr><tr><th>projected_month_spend</th><td><span class="num">27,613.04</span></td></tr><tr><th>projected_vs_budget</th><td><span class="num">0.2272</span></td></tr><tr><th>daily_needed_to_fit</th><td><span class="num">690.48</span></td></tr><tr><th>headroom_daily</th><td><span class="num">-204.52</span></td></tr></table></td></tr></table></td></tr><tr><th>budget_net_change_daily</th><td><span class="num">5</span></td></tr><tr><th>counts</th><td><table class="kv"><tr><th>data_issue</th><td><span class="num">2</span></td></tr><tr><th>pacing</th><td><span class="num">1</span></td></tr><tr><th>anomaly</th><td><span class="num">1</span></td></tr><tr><th>creative_fatigue</th><td><span class="num">2</span></td></tr><tr><th>scale_creative</th><td><span class="num">1</span></td></tr></table></td></tr></table></td></tr><tr><th>findings</th><td><ol><li><table class="kv"><tr><th>id</th><td>F01</td></tr><tr><th>type</th><td>data_issue</td></tr><tr><th>severity</th><td>high</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>country</th><td>KR</td></tr><tr><th>campaign</th><td>META_A+APP_IOS_T1</td></tr><tr><th>creative</th><td><span class="muted">null</span></td></tr><tr><th>metric</th><td>installs</td></tr><tr><th>value</th><td><span class="num">0</span></td></tr><tr><th>baseline</th><td><span class="num">14.00</span></td></tr><tr><th>change</th><td><span class="num">-1.00</span></td></tr><tr><th>reason</th><td>10/04~10/06 3일 연속 지출 $233·클릭 125건인데 MMP 설치 0 (직전 14일 하루 중앙값 14건)</td></tr><tr><th>action</th><td>MMP에서 이 매체 연동·포스트백 수신 확인(iOS 는 SKAN·최신 빌드 SDK 이벤트 포함). 확인 전까지 이 캠페인 예산 판단 보류</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>days</th><td><span class="num">3</span></td></tr><tr><th>spend_during</th><td><span class="num">233.41</span></td></tr><tr><th>clicks_during</th><td><span class="num">125</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>F02</td></tr><tr><th>type</th><td>data_issue</td></tr><tr><th>severity</th><td>high</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>country</th><td>US</td></tr><tr><th>campaign</th><td>META_A+APP_IOS_T1</td></tr><tr><th>creative</th><td><span class="muted">null</span></td></tr><tr><th>metric</th><td>installs</td></tr><tr><th>value</th><td><span class="num">0</span></td></tr><tr><th>baseline</th><td><span class="num">18.50</span></td></tr><tr><th>change</th><td><span class="num">-1.00</span></td></tr><tr><th>reason</th><td>10/04~10/06 3일 연속 지출 $349·클릭 174건인데 MMP 설치 0 (직전 14일 하루 중앙값 18.5건)</td></tr><tr><th>action</th><td>MMP에서 이 매체 연동·포스트백 수신 확인(iOS 는 SKAN·최신 빌드 SDK 이벤트 포함). 확인 전까지 이 캠페인 예산 판단 보류</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>days</th><td><span class="num">3</span></td></tr><tr><th>spend_during</th><td><span class="num">348.71</span></td></tr><tr><th>clicks_during</th><td><span class="num">174</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>F03</td></tr><tr><th>type</th><td>pacing</td></tr><tr><th>severity</th><td>medium</td></tr><tr><th>network</th><td>google</td></tr><tr><th>country</th><td><span class="muted">null</span></td></tr><tr><th>campaign</th><td><span class="muted">null</span></td></tr><tr><th>creative</th><td><span class="muted">null</span></td></tr><tr><th>metric</th><td>mtd_spend_share</td></tr><tr><th>value</th><td><span class="num">0.2328</span></td></tr><tr><th>baseline</th><td><span class="num">0.1935</span></td></tr><tr><th>change</th><td><span class="num">0.203</span></td></tr><tr><th>reason</th><td>구글 10월 예산 $22,500 중 $5,238(23.3%) 소진 — 경과일 비율 19.4%. 현재 일 예산 합계 $895 유지 시 월말 예상 $27,613(+23%). 이번 달 일 예산 변경: GOOG_ACi_AOS_T1 10/01 $330→$400.</td></tr><tr><th>action</th><td>월 배정 상향 승인 또는 남은 기간 일 예산 합계를 $690 이하로 조정</td></tr><tr><th>confidence</th><td>high</td></tr></table></li><li><table class="kv"><tr><th>id</th><td>F04</td></tr><tr><th>type</th><td>anomaly</td></tr><tr><th>severity</th><td>high</td></tr><tr><th>network</th><td>google</td></tr><tr><th>country</th><td>ID</td></tr><tr><th>campaign</th><td>GOOG_ACi_AOS_T3</td></tr><tr><th>creative</th><td><span class="muted">null</span></td></tr><tr><th>metric</th><td>cpi</td></tr><tr><th>value</th><td><span class="num">0.9164</span></td></tr><tr><th>baseline</th><td><span class="num">0.3599</span></td></tr><tr><th>change</th><td><span class="num">1.55</span></td></tr><tr><th>reason</th><td>CPI $0.92 — 직전 14일 중앙값 $0.36 대비 +155% (강건 z 19.0, 10/05부터 2일째). 분해: CPM +25%, CTR −3%, CVR −50%. 같은 국가 META_A+APP_AOS_T3 CPI +12%(정상) → 매체 쪽 원인 가능성.</td></tr><tr><th>action</th><td>CVR 급락이 주원인이고 같은 국가 다른 매체는 정상 — 구글 쪽 변화(노출 위치 구성, 최근 에셋·입찰·타깃 변경) 확인. 스토어 페이지 문제 가능성은 낮음. 원인 확인 전 이 캠페인 증액 금지</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>z</th><td><span class="num">19.00</span></td></tr><tr><th>days</th><td><span class="num">2</span></td></tr><tr><th>drivers</th><td><table class="kv"><tr><th>cpm</th><td><span class="num">0.254</span></td></tr><tr><th>ctr</th><td><span class="num">-0.03</span></td></tr><tr><th>cvr</th><td><span class="num">-0.495</span></td></tr></table></td></tr><tr><th>related</th><td><table class="kv"><tr><th>ctr</th><td><table class="kv"><tr><th>value</th><td><span class="num">0.0088</span></td></tr><tr><th>baseline</th><td><span class="num">0.009</span></td></tr><tr><th>change</th><td><span class="num">-0.03</span></td></tr><tr><th>z</th><td><span class="num">-0.8</span></td></tr></table></td></tr><tr><th>roas_d0</th><td><table class="kv"><tr><th>value</th><td><span class="num">0.0106</span></td></tr><tr><th>baseline</th><td><span class="num">0.026</span></td></tr><tr><th>change</th><td><span class="num">-0.595</span></td></tr><tr><th>z</th><td><span class="num">-4.90</span></td></tr></table></td></tr></table></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>F05</td></tr><tr><th>type</th><td>creative_fatigue</td></tr><tr><th>severity</th><td>high</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>country</th><td>BR</td></tr><tr><th>campaign</th><td>META_A+APP_AOS_T2</td></tr><tr><th>creative</th><td>MV03_tower_climb_15s</td></tr><tr><th>metric</th><td>ctr</td></tr><tr><th>value</th><td><span class="num">0.0094</span></td></tr><tr><th>baseline</th><td><span class="num">0.0145</span></td></tr><tr><th>change</th><td><span class="num">-0.353</span></td></tr><tr><th>reason</th><td>최근 3일 CTR 0.94% — 첫 3일(09/15~) 1.45% 대비 −35%, frequency 3.9, 3초 조회율 30%→28%, 같은 범위 다른 소재 0%</td></tr><tr><th>action</th><td>교체 소재 준비(같은 주제의 새 첫 3초 변형 2종), 이 소재 노출 비중 축소</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>frequency</th><td><span class="num">3.86</span></td></tr><tr><th>peer_change</th><td><span class="num">-0.003</span></td></tr><tr><th>z</th><td><span class="num">-5.80</span></td></tr><tr><th>window_days</th><td><span class="num">3</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>F06</td></tr><tr><th>type</th><td>creative_fatigue</td></tr><tr><th>severity</th><td>medium</td></tr><tr><th>network</th><td>google</td></tr><tr><th>country</th><td><span class="muted">null</span></td></tr><tr><th>campaign</th><td>GOOG_ACi_AOS_T1</td></tr><tr><th>creative</th><td>GV02_gear_merge_15s</td></tr><tr><th>metric</th><td>ipm</td></tr><tr><th>value</th><td><span class="num">1.63</span></td></tr><tr><th>baseline</th><td><span class="num">2.94</span></td></tr><tr><th>change</th><td><span class="num">-0.445</span></td></tr><tr><th>reason</th><td>최근 7일 IPM 1.63 — 첫 7일(09/09~) 2.94 대비 −44%, 구글은 frequency 미제공 — IPM 기준만 적용, 같은 범위 다른 소재 −10%</td></tr><tr><th>action</th><td>에셋 성과 라벨 확인 후 같은 광고 그룹에 새 영상 에셋 추가, 저성과 라벨이면 교체</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>frequency</th><td><span class="muted">null</span></td></tr><tr><th>peer_change</th><td><span class="num">-0.098</span></td></tr><tr><th>z</th><td><span class="num">-4.80</span></td></tr><tr><th>window_days</th><td><span class="num">7</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>F07</td></tr><tr><th>type</th><td>scale_creative</td></tr><tr><th>severity</th><td>low</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>country</th><td><span class="muted">null</span></td></tr><tr><th>campaign</th><td>META_A+APP_AOS_T1</td></tr><tr><th>creative</th><td>MP01_totem_tap_playable</td></tr><tr><th>metric</th><td>ipm</td></tr><tr><th>value</th><td><span class="num">5.01</span></td></tr><tr><th>baseline</th><td><span class="num">3.11</span></td></tr><tr><th>change</th><td><span class="num">0.611</span></td></tr><tr><th>reason</th><td>최근 7일 IPM 5.01 — 캠페인 소재 중앙값 3.11의 1.6배, 설치 205건, 지출 비중 25%</td></tr><tr><th>action</th><td>같은 콘셉트 변형 2~3종 제작, 다른 Tier 캠페인에 테스트 투입(기존 소재는 끄지 않음)</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>spend_share_7d</th><td><span class="num">0.249</span></td></tr></table></li></ol></td></tr><tr><th>budget_proposals</th><td><ol><li><table class="kv"><tr><th>id</th><td>B01</td></tr><tr><th>type</th><td>budget_down</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>campaign</th><td>META_A+APP_AOS_T3</td></tr><tr><th>current_daily</th><td><span class="num">250</span></td></tr><tr><th>proposed_daily</th><td><span class="num">200</span></td></tr><tr><th>change</th><td><span class="num">-0.2</span></td></tr><tr><th>reason</th><td>추정 D7 ROAS 4.4%(D0×2.88) — 목표 8%의 56%, 확정 D7(09/23~09/29 코호트) 4.5%, 확정 D7 도 70% 미만 — 2주 지속 시 일시 중지 검토. 최근 3일 모두 목표의 70% 미만</td></tr><tr><th>guardrail</th><td>변경 폭 20% 이내, 마지막 변경(09/28) 후 9일 경과</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>est_roas_d7</th><td><span class="num">0.0445</span></td></tr><tr><th>confirmed_roas_d7</th><td><span class="num">0.0452</span></td></tr><tr><th>target_roas_d7</th><td><span class="num">0.08</span></td></tr><tr><th>vs_target</th><td><span class="num">0.556</span></td></tr><tr><th>d7_d0_multiplier</th><td><span class="num">2.88</span></td></tr><tr><th>spend_7d</th><td><span class="num">1,746.88</span></td></tr><tr><th>installs_7d</th><td><span class="num">3,538</span></td></tr><tr><th>days_since_change</th><td><span class="num">9</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>B02</td></tr><tr><th>type</th><td>budget_up</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>campaign</th><td>META_A+APP_AOS_T1</td></tr><tr><th>current_daily</th><td><span class="num">350</span></td></tr><tr><th>proposed_daily</th><td><span class="num">405</span></td></tr><tr><th>change</th><td><span class="num">0.157</span></td></tr><tr><th>reason</th><td>추정 D7 ROAS 13.1%(D0×2.93) — 목표 10%의 131%, 확정 D7(09/23~09/29 코호트) 12.8%. CPI 안정(최근 3일 직전 14일 중앙값 대비 +15% 이내)</td></tr><tr><th>guardrail</th><td>변경 폭 20% 이내, 마지막 변경(09/01) 후 36일 경과, 재원 = 메타 감액분 $50 + 월 예산 여유 $11/일</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>est_roas_d7</th><td><span class="num">0.1306</span></td></tr><tr><th>confirmed_roas_d7</th><td><span class="num">0.1282</span></td></tr><tr><th>target_roas_d7</th><td><span class="num">0.1</span></td></tr><tr><th>vs_target</th><td><span class="num">1.31</span></td></tr><tr><th>d7_d0_multiplier</th><td><span class="num">2.93</span></td></tr><tr><th>spend_7d</th><td><span class="num">2,425.07</span></td></tr><tr><th>installs_7d</th><td><span class="num">590</span></td></tr><tr><th>days_since_change</th><td><span class="num">36</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>B03</td></tr><tr><th>type</th><td>hold</td></tr><tr><th>network</th><td>google</td></tr><tr><th>campaign</th><td>GOOG_ACi_AOS_T2</td></tr><tr><th>current_daily</th><td><span class="num">220</span></td></tr><tr><th>proposed_daily</th><td><span class="num">220</span></td></tr><tr><th>change</th><td><span class="num">0</span></td></tr><tr><th>reason</th><td>추정 D7 ROAS 11.6%(D0×2.91) — 목표 9%의 129%, 확정 D7(09/23~09/29 코호트) 12.0%. 증액 신호가 있으나 보류: 구글 월 예산 소진 속도 초과, 쿨다운 — 10/05 변경 후 2일</td></tr><tr><th>guardrail</th><td>데이터 문제·이상·쿨다운 범위에서는 예산 제안을 내지 않음</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>est_roas_d7</th><td><span class="num">0.1158</span></td></tr><tr><th>confirmed_roas_d7</th><td><span class="num">0.1204</span></td></tr><tr><th>target_roas_d7</th><td><span class="num">0.09</span></td></tr><tr><th>vs_target</th><td><span class="num">1.29</span></td></tr><tr><th>d7_d0_multiplier</th><td><span class="num">2.91</span></td></tr><tr><th>spend_7d</th><td><span class="num">1,447.02</span></td></tr><tr><th>installs_7d</th><td><span class="num">1,436</span></td></tr><tr><th>days_since_change</th><td><span class="num">2</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>B04</td></tr><tr><th>type</th><td>hold</td></tr><tr><th>network</th><td>google</td></tr><tr><th>campaign</th><td>GOOG_ACi_AOS_T3</td></tr><tr><th>current_daily</th><td><span class="num">250</span></td></tr><tr><th>proposed_daily</th><td><span class="num">250</span></td></tr><tr><th>change</th><td><span class="num">0</span></td></tr><tr><th>reason</th><td>추정 D7 ROAS 7.2%(D0×2.93) — 목표 8%의 89%, 확정 D7(09/23~09/29 코호트) 7.9%. 감액 신호 없음, CPI 이상(ID) — 원인 확인 전 증액 금지</td></tr><tr><th>guardrail</th><td>지표 이상 범위는 원인 확인 전 증액하지 않음</td></tr><tr><th>confidence</th><td>high</td></tr><tr><th>est_roas_d7</th><td><span class="num">0.0716</span></td></tr><tr><th>confirmed_roas_d7</th><td><span class="num">0.0794</span></td></tr><tr><th>target_roas_d7</th><td><span class="num">0.08</span></td></tr><tr><th>vs_target</th><td><span class="num">0.895</span></td></tr><tr><th>d7_d0_multiplier</th><td><span class="num">2.93</span></td></tr><tr><th>spend_7d</th><td><span class="num">1,756.10</span></td></tr><tr><th>installs_7d</th><td><span class="num">3,717</span></td></tr><tr><th>days_since_change</th><td><span class="num">36</span></td></tr></table></li><li><table class="kv"><tr><th>id</th><td>B05</td></tr><tr><th>type</th><td>hold</td></tr><tr><th>network</th><td>google</td></tr><tr><th>campaign</th><td>GOOG_ACi_IOS_T1</td></tr><tr><th>current_daily</th><td><span class="num">25</span></td></tr><tr><th>proposed_daily</th><td><span class="num">25</span></td></tr><tr><th>change</th><td><span class="num">0</span></td></tr><tr><th>reason</th><td>최근 7일 지출 $175 — 최소 표본 $200 미만, 판단 보류</td></tr><tr><th>guardrail</th><td>표본 부족</td></tr><tr><th>confidence</th><td>low</td></tr></table></li><li><table class="kv"><tr><th>id</th><td>B06</td></tr><tr><th>type</th><td>hold</td></tr><tr><th>network</th><td>meta</td></tr><tr><th>campaign</th><td>META_A+APP_IOS_T1</td></tr><tr><th>current_daily</th><td><span class="num">200</span></td></tr><tr><th>proposed_daily</th><td><span class="num">200</span></td></tr><tr><th>change</th><td><span class="num">0</span></td></tr><tr><th>reason</th><td>추정 D7 ROAS 6.1%(D0×2.87) — 목표 10%의 61%, 확정 D7(09/23~09/29 코호트) 9.2%. 감액 신호가 있으나 보류: 추적 누락 의심(KR·US)</td></tr><tr><th>guardrail</th><td>데이터 문제·이상·쿨다운 범위에서는 예산 제안을 내지 않음</td></tr><tr><th>confidence</th><td>medium</td></tr><tr><th>est_roas_d7</th><td><span class="num">0.0611</span></td></tr><tr><th>confirmed_roas_d7</th><td><span class="num">0.092</span></td></tr><tr><th>target_roas_d7</th><td><span class="num">0.1</span></td></tr><tr><th>vs_target</th><td><span class="num">0.611</span></td></tr><tr><th>d7_d0_multiplier</th><td><span class="num">2.87</span></td></tr><tr><th>spend_7d</th><td><span class="num">1,393.23</span></td></tr><tr><th>installs_7d</th><td><span class="num">140</span></td></tr><tr><th>days_since_change</th><td><span class="num">36</span></td></tr></table></li></ol></td></tr><tr><th>checks</th><td><table class="kv"><tr><th>data_issue</th><td><table class="kv"><tr><th>networks</th><td><span class="num">2</span></td></tr><tr><th>scopes_evaluated</th><td><span class="num">14</span></td></tr><tr><th>revenue_checks</th><td><span class="num">2</span></td></tr><tr><th>flagged</th><td><span class="num">2</span></td></tr></table></td></tr><tr><th>pacing</th><td><table class="kv"><tr><th>networks</th><td><span class="num">2</span></td></tr><tr><th>flagged</th><td><span class="num">1</span></td></tr></table></td></tr><tr><th>anomaly</th><td><table class="kv"><tr><th>scopes_evaluated</th><td><span class="num">12</span></td></tr><tr><th>metrics</th><td>cpi, ctr, roas_d0</td></tr><tr><th>flagged</th><td><span class="num">1</span></td></tr></table></td></tr><tr><th>creative_fatigue</th><td><table class="kv"><tr><th>creatives_evaluated</th><td><span class="num">28</span></td></tr><tr><th>flagged</th><td><span class="num">2</span></td></tr></table></td></tr><tr><th>scale_creative</th><td><table class="kv"><tr><th>campaigns_evaluated</th><td><span class="num">6</span></td></tr><tr><th>flagged</th><td><span class="num">1</span></td></tr></table></td></tr><tr><th>budget</th><td><table class="kv"><tr><th>campaigns_evaluated</th><td><span class="num">8</span></td></tr><tr><th>up</th><td><span class="num">1</span></td></tr><tr><th>down</th><td><span class="num">1</span></td></tr><tr><th>hold</th><td><span class="num">4</span></td></tr></table></td></tr></table></td></tr><tr><th>near_misses</th><td><div class="table-scroll"><table class="grid"><thead><tr><th>check</th><th>network</th><th>campaign</th><th>country</th><th>creative</th><th>metric</th><th>change</th><th>frequency</th><th>note</th></tr></thead><tbody><tr><td>creative_fatigue</td><td>meta</td><td>META_A+APP_AOS_T3</td><td>ID</td><td>MV02_gear_merge_20s</td><td>ctr</td><td><span class="num">-0.289</span></td><td><span class="num">1.91</span></td><td>하락은 있으나 규칙 미충족: frequency 1.9 ≤ 3</td></tr></tbody></table></div></td></tr></table></div><h2 id="raw">원본 JSON</h2><pre><code class="language-json">{
+  &quot;as_of&quot;: &quot;2026-10-06&quot;,
+  &quot;report_date&quot;: &quot;2026-10-07&quot;,
+  &quot;is_sample_data&quot;: true,
+  &quot;notice&quot;: &quot;[가상 데이터] 썬더게임즈 실제 광고 데이터가 아니다.&quot;,
+  &quot;currency&quot;: &quot;USD&quot;,
+  &quot;rules_version&quot;: &quot;playbook-initial-2026-10&quot;,
+  &quot;summary&quot;: {
+    &quot;spend&quot;: 1929.4,
+    &quot;installs&quot;: 1512,
+    &quot;cpi&quot;: 1.28,
+    &quot;roas_d0&quot;: 0.0278,
+    &quot;ad_revenue_share_d0&quot;: 0.497,
+    &quot;vs_prev_7d&quot;: {
+      &quot;spend&quot;: -0.008,
+      &quot;cpi&quot;: 0.14,
+      &quot;roas_d0&quot;: -0.094
+    },
+    &quot;excluding_data_issue&quot;: {
+      &quot;spend&quot;: 1743.37,
+      &quot;installs&quot;: 1512,
+      &quot;cpi&quot;: 1.15,
+      &quot;note&quot;: &quot;추적 누락 의심 범위를 뺀 값&quot;
+    },
+    &quot;by_network&quot;: {
+      &quot;google&quot;: {
+        &quot;spend&quot;: 863.46,
+        &quot;installs&quot;: 662,
+        &quot;cpi&quot;: 1.3,
+        &quot;roas_d0&quot;: 0.0296
+      },
+      &quot;meta&quot;: {
+        &quot;spend&quot;: 1065.94,
+        &quot;installs&quot;: 850,
+        &quot;cpi&quot;: 1.25,
+        &quot;roas_d0&quot;: 0.0263
+      }
+    },
+    &quot;by_country&quot;: {
+      &quot;BR&quot;: {
+        &quot;spend&quot;: 298.57,
+        &quot;installs&quot;: 286,
+        &quot;cpi&quot;: 1.04,
+        &quot;roas_d0&quot;: 0.0344
+      },
+      &quot;ID&quot;: {
+        &quot;spend&quot;: 270.56,
+        &quot;installs&quot;: 420,
+        &quot;cpi&quot;: 0.64,
+        &quot;roas_d0&quot;: 0.0117
+      },
+      &quot;KR&quot;: {
+        &quot;spend&quot;: 400.84,
+        &quot;installs&quot;: 77,
+        &quot;cpi&quot;: 5.21,
+        &quot;roas_d0&quot;: 0.0281
+      },
+      &quot;MX&quot;: {
+        &quot;spend&quot;: 209.33,
+        &quot;installs&quot;: 223,
+        &quot;cpi&quot;: 0.94,
+        &quot;roas_d0&quot;: 0.0386
+      },
+      &quot;TH&quot;: {
+        &quot;spend&quot;: 225.59,
+        &quot;installs&quot;: 422,
+        &quot;cpi&quot;: 0.53,
+        &quot;roas_d0&quot;: 0.0211
+      },
+      &quot;US&quot;: {
+        &quot;spend&quot;: 524.51,
+        &quot;installs&quot;: 84,
+        &quot;cpi&quot;: 6.24,
+        &quot;roas_d0&quot;: 0.0307
+      }
+    },
+    &quot;pacing&quot;: {
+      &quot;meta&quot;: {
+        &quot;monthly_budget&quot;: 33800,
+        &quot;mtd_spend&quot;: 6533.04,
+        &quot;mtd_share&quot;: 0.1933,
+        &quot;elapsed_share&quot;: 0.1935,
+        &quot;pace_ratio&quot;: 0.999,
+        &quot;daily_budget_now&quot;: 1080,
+        &quot;projected_month_spend&quot;: 33533.04,
+        &quot;projected_vs_budget&quot;: -0.0079,
+        &quot;daily_needed_to_fit&quot;: 1090.68,
+        &quot;headroom_daily&quot;: 10.68
+      },
+      &quot;google&quot;: {
+        &quot;monthly_budget&quot;: 22500,
+        &quot;mtd_spend&quot;: 5238.04,
+        &quot;mtd_share&quot;: 0.2328,
+        &quot;elapsed_share&quot;: 0.1935,
+        &quot;pace_ratio&quot;: 1.203,
+        &quot;daily_budget_now&quot;: 895,
+        &quot;projected_month_spend&quot;: 27613.04,
+        &quot;projected_vs_budget&quot;: 0.2272,
+        &quot;daily_needed_to_fit&quot;: 690.48,
+        &quot;headroom_daily&quot;: -204.52
+      }
+    },
+    &quot;budget_net_change_daily&quot;: 5,
+    &quot;counts&quot;: {
+      &quot;data_issue&quot;: 2,
+      &quot;pacing&quot;: 1,
+      &quot;anomaly&quot;: 1,
+      &quot;creative_fatigue&quot;: 2,
+      &quot;scale_creative&quot;: 1
+    }
+  },
+  &quot;findings&quot;: [
+    {
+      &quot;id&quot;: &quot;F01&quot;,
+      &quot;type&quot;: &quot;data_issue&quot;,
+      &quot;severity&quot;: &quot;high&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;country&quot;: &quot;KR&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_IOS_T1&quot;,
+      &quot;creative&quot;: null,
+      &quot;metric&quot;: &quot;installs&quot;,
+      &quot;value&quot;: 0,
+      &quot;baseline&quot;: 14.0,
+      &quot;change&quot;: -1.0,
+      &quot;reason&quot;: &quot;10/04~10/06 3일 연속 지출 $233·클릭 125건인데 MMP 설치 0 (직전 14일 하루 중앙값 14건)&quot;,
+      &quot;action&quot;: &quot;MMP에서 이 매체 연동·포스트백 수신 확인(iOS 는 SKAN·최신 빌드 SDK 이벤트 포함). 확인 전까지 이 캠페인 예산 판단 보류&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;days&quot;: 3,
+      &quot;spend_during&quot;: 233.41,
+      &quot;clicks_during&quot;: 125
+    },
+    {
+      &quot;id&quot;: &quot;F02&quot;,
+      &quot;type&quot;: &quot;data_issue&quot;,
+      &quot;severity&quot;: &quot;high&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;country&quot;: &quot;US&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_IOS_T1&quot;,
+      &quot;creative&quot;: null,
+      &quot;metric&quot;: &quot;installs&quot;,
+      &quot;value&quot;: 0,
+      &quot;baseline&quot;: 18.5,
+      &quot;change&quot;: -1.0,
+      &quot;reason&quot;: &quot;10/04~10/06 3일 연속 지출 $349·클릭 174건인데 MMP 설치 0 (직전 14일 하루 중앙값 18.5건)&quot;,
+      &quot;action&quot;: &quot;MMP에서 이 매체 연동·포스트백 수신 확인(iOS 는 SKAN·최신 빌드 SDK 이벤트 포함). 확인 전까지 이 캠페인 예산 판단 보류&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;days&quot;: 3,
+      &quot;spend_during&quot;: 348.71,
+      &quot;clicks_during&quot;: 174
+    },
+    {
+      &quot;id&quot;: &quot;F03&quot;,
+      &quot;type&quot;: &quot;pacing&quot;,
+      &quot;severity&quot;: &quot;medium&quot;,
+      &quot;network&quot;: &quot;google&quot;,
+      &quot;country&quot;: null,
+      &quot;campaign&quot;: null,
+      &quot;creative&quot;: null,
+      &quot;metric&quot;: &quot;mtd_spend_share&quot;,
+      &quot;value&quot;: 0.2328,
+      &quot;baseline&quot;: 0.1935,
+      &quot;change&quot;: 0.203,
+      &quot;reason&quot;: &quot;구글 10월 예산 $22,500 중 $5,238(23.3%) 소진 — 경과일 비율 19.4%. 현재 일 예산 합계 $895 유지 시 월말 예상 $27,613(+23%). 이번 달 일 예산 변경: GOOG_ACi_AOS_T1 10/01 $330→$400.&quot;,
+      &quot;action&quot;: &quot;월 배정 상향 승인 또는 남은 기간 일 예산 합계를 $690 이하로 조정&quot;,
+      &quot;confidence&quot;: &quot;high&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F04&quot;,
+      &quot;type&quot;: &quot;anomaly&quot;,
+      &quot;severity&quot;: &quot;high&quot;,
+      &quot;network&quot;: &quot;google&quot;,
+      &quot;country&quot;: &quot;ID&quot;,
+      &quot;campaign&quot;: &quot;GOOG_ACi_AOS_T3&quot;,
+      &quot;creative&quot;: null,
+      &quot;metric&quot;: &quot;cpi&quot;,
+      &quot;value&quot;: 0.9164,
+      &quot;baseline&quot;: 0.3599,
+      &quot;change&quot;: 1.546,
+      &quot;reason&quot;: &quot;CPI $0.92 — 직전 14일 중앙값 $0.36 대비 +155% (강건 z 19.0, 10/05부터 2일째). 분해: CPM +25%, CTR −3%, CVR −50%. 같은 국가 META_A+APP_AOS_T3 CPI +12%(정상) → 매체 쪽 원인 가능성.&quot;,
+      &quot;action&quot;: &quot;CVR 급락이 주원인이고 같은 국가 다른 매체는 정상 — 구글 쪽 변화(노출 위치 구성, 최근 에셋·입찰·타깃 변경) 확인. 스토어 페이지 문제 가능성은 낮음. 원인 확인 전 이 캠페인 증액 금지&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;z&quot;: 19.0,
+      &quot;days&quot;: 2,
+      &quot;drivers&quot;: {
+        &quot;cpm&quot;: 0.254,
+        &quot;ctr&quot;: -0.03,
+        &quot;cvr&quot;: -0.495
+      },
+      &quot;related&quot;: {
+        &quot;ctr&quot;: {
+          &quot;value&quot;: 0.0088,
+          &quot;baseline&quot;: 0.009,
+          &quot;change&quot;: -0.03,
+          &quot;z&quot;: -0.8
+        },
+        &quot;roas_d0&quot;: {
+          &quot;value&quot;: 0.0106,
+          &quot;baseline&quot;: 0.026,
+          &quot;change&quot;: -0.595,
+          &quot;z&quot;: -4.9
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;F05&quot;,
+      &quot;type&quot;: &quot;creative_fatigue&quot;,
+      &quot;severity&quot;: &quot;high&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;country&quot;: &quot;BR&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_AOS_T2&quot;,
+      &quot;creative&quot;: &quot;MV03_tower_climb_15s&quot;,
+      &quot;metric&quot;: &quot;ctr&quot;,
+      &quot;value&quot;: 0.0094,
+      &quot;baseline&quot;: 0.0145,
+      &quot;change&quot;: -0.353,
+      &quot;reason&quot;: &quot;최근 3일 CTR 0.94% — 첫 3일(09/15~) 1.45% 대비 −35%, frequency 3.9, 3초 조회율 30%→28%, 같은 범위 다른 소재 0%&quot;,
+      &quot;action&quot;: &quot;교체 소재 준비(같은 주제의 새 첫 3초 변형 2종), 이 소재 노출 비중 축소&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;frequency&quot;: 3.86,
+      &quot;peer_change&quot;: -0.003,
+      &quot;z&quot;: -5.8,
+      &quot;window_days&quot;: 3
+    },
+    {
+      &quot;id&quot;: &quot;F06&quot;,
+      &quot;type&quot;: &quot;creative_fatigue&quot;,
+      &quot;severity&quot;: &quot;medium&quot;,
+      &quot;network&quot;: &quot;google&quot;,
+      &quot;country&quot;: null,
+      &quot;campaign&quot;: &quot;GOOG_ACi_AOS_T1&quot;,
+      &quot;creative&quot;: &quot;GV02_gear_merge_15s&quot;,
+      &quot;metric&quot;: &quot;ipm&quot;,
+      &quot;value&quot;: 1.6345,
+      &quot;baseline&quot;: 2.944,
+      &quot;change&quot;: -0.445,
+      &quot;reason&quot;: &quot;최근 7일 IPM 1.63 — 첫 7일(09/09~) 2.94 대비 −44%, 구글은 frequency 미제공 — IPM 기준만 적용, 같은 범위 다른 소재 −10%&quot;,
+      &quot;action&quot;: &quot;에셋 성과 라벨 확인 후 같은 광고 그룹에 새 영상 에셋 추가, 저성과 라벨이면 교체&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;frequency&quot;: null,
+      &quot;peer_change&quot;: -0.098,
+      &quot;z&quot;: -4.8,
+      &quot;window_days&quot;: 7
+    },
+    {
+      &quot;id&quot;: &quot;F07&quot;,
+      &quot;type&quot;: &quot;scale_creative&quot;,
+      &quot;severity&quot;: &quot;low&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;country&quot;: null,
+      &quot;campaign&quot;: &quot;META_A+APP_AOS_T1&quot;,
+      &quot;creative&quot;: &quot;MP01_totem_tap_playable&quot;,
+      &quot;metric&quot;: &quot;ipm&quot;,
+      &quot;value&quot;: 5.01,
+      &quot;baseline&quot;: 3.11,
+      &quot;change&quot;: 0.611,
+      &quot;reason&quot;: &quot;최근 7일 IPM 5.01 — 캠페인 소재 중앙값 3.11의 1.6배, 설치 205건, 지출 비중 25%&quot;,
+      &quot;action&quot;: &quot;같은 콘셉트 변형 2~3종 제작, 다른 Tier 캠페인에 테스트 투입(기존 소재는 끄지 않음)&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;spend_share_7d&quot;: 0.249
+    }
+  ],
+  &quot;budget_proposals&quot;: [
+    {
+      &quot;id&quot;: &quot;B01&quot;,
+      &quot;type&quot;: &quot;budget_down&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_AOS_T3&quot;,
+      &quot;current_daily&quot;: 250,
+      &quot;proposed_daily&quot;: 200,
+      &quot;change&quot;: -0.2,
+      &quot;reason&quot;: &quot;추정 D7 ROAS 4.4%(D0×2.88) — 목표 8%의 56%, 확정 D7(09/23~09/29 코호트) 4.5%, 확정 D7 도 70% 미만 — 2주 지속 시 일시 중지 검토. 최근 3일 모두 목표의 70% 미만&quot;,
+      &quot;guardrail&quot;: &quot;변경 폭 20% 이내, 마지막 변경(09/28) 후 9일 경과&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;est_roas_d7&quot;: 0.0445,
+      &quot;confirmed_roas_d7&quot;: 0.0452,
+      &quot;target_roas_d7&quot;: 0.08,
+      &quot;vs_target&quot;: 0.556,
+      &quot;d7_d0_multiplier&quot;: 2.88,
+      &quot;spend_7d&quot;: 1746.88,
+      &quot;installs_7d&quot;: 3538,
+      &quot;days_since_change&quot;: 9
+    },
+    {
+      &quot;id&quot;: &quot;B02&quot;,
+      &quot;type&quot;: &quot;budget_up&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_AOS_T1&quot;,
+      &quot;current_daily&quot;: 350,
+      &quot;proposed_daily&quot;: 405,
+      &quot;change&quot;: 0.157,
+      &quot;reason&quot;: &quot;추정 D7 ROAS 13.1%(D0×2.93) — 목표 10%의 131%, 확정 D7(09/23~09/29 코호트) 12.8%. CPI 안정(최근 3일 직전 14일 중앙값 대비 +15% 이내)&quot;,
+      &quot;guardrail&quot;: &quot;변경 폭 20% 이내, 마지막 변경(09/01) 후 36일 경과, 재원 = 메타 감액분 $50 + 월 예산 여유 $11/일&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;est_roas_d7&quot;: 0.1306,
+      &quot;confirmed_roas_d7&quot;: 0.1282,
+      &quot;target_roas_d7&quot;: 0.1,
+      &quot;vs_target&quot;: 1.306,
+      &quot;d7_d0_multiplier&quot;: 2.93,
+      &quot;spend_7d&quot;: 2425.07,
+      &quot;installs_7d&quot;: 590,
+      &quot;days_since_change&quot;: 36
+    },
+    {
+      &quot;id&quot;: &quot;B03&quot;,
+      &quot;type&quot;: &quot;hold&quot;,
+      &quot;network&quot;: &quot;google&quot;,
+      &quot;campaign&quot;: &quot;GOOG_ACi_AOS_T2&quot;,
+      &quot;current_daily&quot;: 220,
+      &quot;proposed_daily&quot;: 220,
+      &quot;change&quot;: 0.0,
+      &quot;reason&quot;: &quot;추정 D7 ROAS 11.6%(D0×2.91) — 목표 9%의 129%, 확정 D7(09/23~09/29 코호트) 12.0%. 증액 신호가 있으나 보류: 구글 월 예산 소진 속도 초과, 쿨다운 — 10/05 변경 후 2일&quot;,
+      &quot;guardrail&quot;: &quot;데이터 문제·이상·쿨다운 범위에서는 예산 제안을 내지 않음&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;est_roas_d7&quot;: 0.1158,
+      &quot;confirmed_roas_d7&quot;: 0.1204,
+      &quot;target_roas_d7&quot;: 0.09,
+      &quot;vs_target&quot;: 1.287,
+      &quot;d7_d0_multiplier&quot;: 2.91,
+      &quot;spend_7d&quot;: 1447.02,
+      &quot;installs_7d&quot;: 1436,
+      &quot;days_since_change&quot;: 2
+    },
+    {
+      &quot;id&quot;: &quot;B04&quot;,
+      &quot;type&quot;: &quot;hold&quot;,
+      &quot;network&quot;: &quot;google&quot;,
+      &quot;campaign&quot;: &quot;GOOG_ACi_AOS_T3&quot;,
+      &quot;current_daily&quot;: 250,
+      &quot;proposed_daily&quot;: 250,
+      &quot;change&quot;: 0.0,
+      &quot;reason&quot;: &quot;추정 D7 ROAS 7.2%(D0×2.93) — 목표 8%의 89%, 확정 D7(09/23~09/29 코호트) 7.9%. 감액 신호 없음, CPI 이상(ID) — 원인 확인 전 증액 금지&quot;,
+      &quot;guardrail&quot;: &quot;지표 이상 범위는 원인 확인 전 증액하지 않음&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;est_roas_d7&quot;: 0.0716,
+      &quot;confirmed_roas_d7&quot;: 0.0794,
+      &quot;target_roas_d7&quot;: 0.08,
+      &quot;vs_target&quot;: 0.895,
+      &quot;d7_d0_multiplier&quot;: 2.93,
+      &quot;spend_7d&quot;: 1756.1,
+      &quot;installs_7d&quot;: 3717,
+      &quot;days_since_change&quot;: 36
+    },
+    {
+      &quot;id&quot;: &quot;B05&quot;,
+      &quot;type&quot;: &quot;hold&quot;,
+      &quot;network&quot;: &quot;google&quot;,
+      &quot;campaign&quot;: &quot;GOOG_ACi_IOS_T1&quot;,
+      &quot;current_daily&quot;: 25,
+      &quot;proposed_daily&quot;: 25,
+      &quot;change&quot;: 0.0,
+      &quot;reason&quot;: &quot;최근 7일 지출 $175 — 최소 표본 $200 미만, 판단 보류&quot;,
+      &quot;guardrail&quot;: &quot;표본 부족&quot;,
+      &quot;confidence&quot;: &quot;low&quot;
+    },
+    {
+      &quot;id&quot;: &quot;B06&quot;,
+      &quot;type&quot;: &quot;hold&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_IOS_T1&quot;,
+      &quot;current_daily&quot;: 200,
+      &quot;proposed_daily&quot;: 200,
+      &quot;change&quot;: 0.0,
+      &quot;reason&quot;: &quot;추정 D7 ROAS 6.1%(D0×2.87) — 목표 10%의 61%, 확정 D7(09/23~09/29 코호트) 9.2%. 감액 신호가 있으나 보류: 추적 누락 의심(KR·US)&quot;,
+      &quot;guardrail&quot;: &quot;데이터 문제·이상·쿨다운 범위에서는 예산 제안을 내지 않음&quot;,
+      &quot;confidence&quot;: &quot;medium&quot;,
+      &quot;est_roas_d7&quot;: 0.0611,
+      &quot;confirmed_roas_d7&quot;: 0.092,
+      &quot;target_roas_d7&quot;: 0.1,
+      &quot;vs_target&quot;: 0.611,
+      &quot;d7_d0_multiplier&quot;: 2.87,
+      &quot;spend_7d&quot;: 1393.23,
+      &quot;installs_7d&quot;: 140,
+      &quot;days_since_change&quot;: 36
+    }
+  ],
+  &quot;checks&quot;: {
+    &quot;data_issue&quot;: {
+      &quot;networks&quot;: 2,
+      &quot;scopes_evaluated&quot;: 14,
+      &quot;revenue_checks&quot;: 2,
+      &quot;flagged&quot;: 2
+    },
+    &quot;pacing&quot;: {
+      &quot;networks&quot;: 2,
+      &quot;flagged&quot;: 1
+    },
+    &quot;anomaly&quot;: {
+      &quot;scopes_evaluated&quot;: 12,
+      &quot;metrics&quot;: [
+        &quot;cpi&quot;,
+        &quot;ctr&quot;,
+        &quot;roas_d0&quot;
+      ],
+      &quot;flagged&quot;: 1
+    },
+    &quot;creative_fatigue&quot;: {
+      &quot;creatives_evaluated&quot;: 28,
+      &quot;flagged&quot;: 2
+    },
+    &quot;scale_creative&quot;: {
+      &quot;campaigns_evaluated&quot;: 6,
+      &quot;flagged&quot;: 1
+    },
+    &quot;budget&quot;: {
+      &quot;campaigns_evaluated&quot;: 8,
+      &quot;up&quot;: 1,
+      &quot;down&quot;: 1,
+      &quot;hold&quot;: 4
+    }
+  },
+  &quot;near_misses&quot;: [
+    {
+      &quot;check&quot;: &quot;creative_fatigue&quot;,
+      &quot;network&quot;: &quot;meta&quot;,
+      &quot;campaign&quot;: &quot;META_A+APP_AOS_T3&quot;,
+      &quot;country&quot;: &quot;ID&quot;,
+      &quot;creative&quot;: &quot;MV02_gear_merge_20s&quot;,
+      &quot;metric&quot;: &quot;ctr&quot;,
+      &quot;change&quot;: -0.289,
+      &quot;frequency&quot;: 1.91,
+      &quot;note&quot;: &quot;하락은 있으나 규칙 미충족: frequency 1.9 ≤ 3&quot;
+    }
+  ]
+}</code></pre></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

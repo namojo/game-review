@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>썬더게임즈 AI 전환 보고서</title>
+<meta name="description" content="썬더게임즈 「원시인 형님들 키우기」 리뷰 대응·주간 이벤트·광고 분석 자동화 통합 컨설팅 보고서">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ecede8; --surface:#f7f7f3; --sunk:#e2e4de; --ink:#1c201e; --muted:#58605c; --rule:#c6cbc4;
+  --accent:#8f5306; --accent-fill:#e0a33a; --accent-soft:#f3e2bf; --night:#241a45;
+  --human:#2d5d8a; --auto:#5b6460; --warn:#a33a1c;
+  --radius-s:4px; --radius-m:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151816; --surface:#1d211f; --sunk:#252a27; --ink:#e3e6e2; --muted:#a2aaa5; --rule:#353c38;
+    --accent:#e8b257; --accent-fill:#c98a23; --accent-soft:#3a2f1c; --night:#1b1433;
+    --human:#7fb0dd; --auto:#9aa39e; --warn:#f08a68;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151816; --surface:#1d211f; --sunk:#252a27; --ink:#e3e6e2; --muted:#a2aaa5; --rule:#353c38;
+  --accent:#e8b257; --accent-fill:#c98a23; --accent-soft:#3a2f1c; --night:#1b1433;
+  --human:#7fb0dd; --auto:#9aa39e; --warn:#f08a68;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 "IBM Plex Sans KR",system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+code{font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:.86em;background:var(--sunk);padding:.08em .35em;border-radius:3px}
+strong{font-weight:700}
+
+/* layout */
+.shell{display:grid;grid-template-columns:250px minmax(0,1fr);max-width:1180px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:32px 20px 32px 24px;border-right:1px solid var(--rule)}
+.toc .brand{font:400 20px/1.2 "Black Han Sans",sans-serif;letter-spacing:.01em;margin:0 0 4px}
+.toc .sub{color:var(--muted);font-size:13px;margin:0 0 24px}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:ch}
+.toc li{margin:0}
+.toc ol a{display:grid;grid-template-columns:28px 1fr;gap:4px;padding:6px 8px;border-radius:var(--radius-s);color:var(--ink);text-decoration:none;font-size:14.5px;line-height:1.45}
+.toc ol a span:first-child{font:400 15px/1.45 "Black Han Sans",sans-serif;color:var(--muted)}
+.toc ol a:hover{background:var(--sunk)}
+.toc ol a.on{background:var(--accent-soft)}
+.toc ol a.on span:first-child{color:var(--accent)}
+.toc .tools{margin-top:24px;display:flex;flex-direction:column;gap:8px;font-size:13.5px}
+.btn{font:inherit;font-size:13.5px;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius-s);padding:6px 10px;cursor:pointer;text-align:left}
+.btn:hover{border-color:var(--muted)}
+.mtoc{display:none}
+main{padding:0 40px 96px;min-width:0}
+.col{max-width:780px}
+
+/* hero */
+.hero{position:relative;margin:0 -40px 56px;background:var(--night);color:#f3eee2;overflow:hidden}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero .over{position:absolute;inset:0;padding:48px 40px;display:flex;flex-direction:column;justify-content:flex-end;max-width:50%;background:linear-gradient(90deg,rgba(20,14,40,.88) 0%,rgba(20,14,40,.55) 70%,rgba(20,14,40,0) 100%)}
+.hero .client{font-size:14px;color:#d9cfee;margin:0 0 12px}
+.hero h1{font:400 clamp(30px,4.2vw,48px)/1.15 "Black Han Sans",sans-serif;margin:0 0 16px;letter-spacing:.005em}
+.hero .lede{font-size:16px;line-height:1.65;margin:0;color:#ece6f6;max-width:34em}
+.hero figcaption{position:absolute;right:12px;bottom:8px;font-size:11.5px;color:#cfc6e6;opacity:.85}
+
+/* chapters */
+section.ch{padding-top:24px;margin-bottom:64px}
+.chhead{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:28px}
+.chnum{font:400 64px/0.9 "Black Han Sans",sans-serif;color:var(--accent-fill)}
+.chhead h2{font-weight:700;font-size:28px;line-height:1.3;margin:0}
+h3{font-size:20px;line-height:1.4;margin:40px 0 12px}
+h4{font-size:16.5px;margin:28px 0 8px}
+p{margin:0 0 14px}
+ul,ol.plain{padding-left:1.25em;margin:0 0 16px}
+li{margin:0 0 6px}
+.muted{color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+
+/* source tags: shape, not just color */
+.t{display:inline-block;font-size:11.5px;line-height:1;padding:3px 5px 3px;border-radius:3px;vertical-align:1px;margin-left:3px;white-space:nowrap;font-weight:500}
+.t.m{background:var(--ink);color:var(--bg)}
+.t.c{border:1px solid var(--ink);color:var(--ink)}
+.t.a{border:1px dashed var(--muted);color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--muted);margin:0 0 24px}
+
+/* tables */
+.tbl{overflow-x:auto;margin:0 0 20px;border:1px solid var(--rule);border-radius:var(--radius-m);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.6}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+thead th{background:var(--sunk);font-weight:700;font-size:13.5px;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{font-weight:700;background:var(--accent-soft)}
+.wide table{min-width:720px}
+
+/* summary: three verdicts */
+.verdicts{display:grid;gap:0;border:1px solid var(--rule);border-radius:var(--radius-m);background:var(--surface);margin:0 0 24px}
+.verdict{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:18px 20px;border-bottom:1px solid var(--rule);align-items:baseline}
+.verdict:last-child{border-bottom:0}
+.verdict .name{font-weight:700}
+.verdict .hours{font:400 26px/1 "Black Han Sans",sans-serif;color:var(--accent);white-space:nowrap;text-align:right}
+.verdict .hours small{display:block;font:400 12px/1.4 "IBM Plex Sans KR",sans-serif;color:var(--muted);margin-top:6px}
+.verdict p{margin:0}
+.sumline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:14px 20px;background:var(--ink);color:var(--bg);border-radius:var(--radius-m);margin:0 0 32px}
+.sumline b{font:400 22px/1.2 "Black Han Sans",sans-serif}
+
+.decide{counter-reset:d;list-style:none;padding:0;margin:0 0 16px}
+.decide li{counter-increment:d;position:relative;padding:14px 16px 14px 56px;border-left:3px solid var(--accent-fill);background:var(--surface);margin:0 0 10px;border-radius:0 var(--radius-m) var(--radius-m) 0}
+.decide li::before{content:counter(d);position:absolute;left:16px;top:10px;font:400 26px/1 "Black Han Sans",sans-serif;color:var(--accent)}
+
+/* flow */
+.flow{margin:0 0 20px;padding:16px;border:1px solid var(--rule);border-radius:var(--radius-m);background:var(--surface)}
+.flow .row{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:0 0 6px}
+.flow .lab{flex:0 0 64px;font-size:12.5px;color:var(--muted);padding-top:8px}
+.step{flex:1 1 92px;padding:8px 10px;border-radius:var(--radius-s);font-size:14px;line-height:1.45;background:var(--sunk);border:1px solid transparent}
+.step small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.step.auto{border-color:var(--rule)}
+.step.human{background:transparent;border:2px solid var(--human)}
+.step.human b{color:var(--human)}
+.step.asis{opacity:.9;background:transparent;border:1px dashed var(--muted)}
+.flow .key{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);margin-top:10px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:4px}
+.sw.a{background:var(--sunk);border:1px solid var(--rule)}
+.sw.h{border:2px solid var(--human)}
+
+/* compare */
+.cmp{border:1px solid var(--rule);border-radius:var(--radius-m);background:var(--surface);margin:0 0 18px;overflow:hidden}
+.cmp .rev{padding:16px 18px;border-bottom:1px solid var(--rule)}
+.cmp .meta{font-size:13px;color:var(--muted);margin:0 0 6px}
+.cmp blockquote{margin:0;font-size:15.5px;line-height:1.65}
+.cmp blockquote .tr{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+.cmp .two{display:grid;grid-template-columns:1fr 1fr}
+.cmp .two > div{padding:14px 18px;font-size:14.5px;line-height:1.65}
+.cmp .two > div + div{border-left:1px solid var(--rule)}
+.cmp .now{background:var(--sunk)}
+.cmp h5{font-size:13px;margin:0 0 6px;font-weight:700}
+.cmp .now h5{color:var(--muted)}
+.cmp .ai h5{color:var(--accent)}
+.cmp .why{padding:12px 18px;border-top:1px solid var(--rule);font-size:14px}
+
+/* images */
+figure{margin:0 0 20px}
+figure img{display:block;width:100%;height:auto;border-radius:var(--radius-m);border:1px solid var(--rule);background:var(--night)}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.trio{display:grid;grid-template-columns:16fr 9fr 9fr;gap:10px;align-items:start}
+.cta{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:16px 18px;border:2px solid var(--ink);border-radius:var(--radius-m);margin:0 0 20px;background:var(--surface)}
+.cta a.go{font-weight:700;font-size:17px}
+
+pre{white-space:pre-wrap;font-size:13px;background:var(--sunk);padding:12px 14px;border-radius:var(--radius-m);overflow-x:auto}
+.callout{padding:12px 16px;border-left:3px solid var(--warn);background:var(--surface);margin:0 0 16px;font-size:14.5px;border-radius:0 var(--radius-m) var(--radius-m) 0}
+
+footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+
+/* responsive */
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}
+  .toc{display:none}
+  .mtoc{display:block;position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--rule)}
+  .mtoc summary{padding:12px 16px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+  .mtoc summary::-webkit-details-marker{display:none}
+  .mtoc summary::after{content:"목차 열기";font-weight:400;font-size:13px;color:var(--muted)}
+  .mtoc[open] summary::after{content:"닫기"}
+  .mtoc ol{list-style:none;margin:0;padding:0 8px 12px}
+  .mtoc a{display:block;padding:8px;color:var(--ink);text-decoration:none;font-size:15px}
+  .mtoc .btn{margin:0 8px 12px 16px}
+  main{padding:0 16px 72px}
+  .hero{margin:0 -16px 40px}
+  .hero .over{position:static;max-width:none;background:var(--night);padding:20px 16px 24px}
+  .hero figcaption{position:static;padding:0 16px 10px;background:var(--night);margin:0}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .chnum{font-size:48px}
+  .chhead h2{font-size:22px}
+  .verdict{grid-template-columns:1fr;gap:6px}
+  .verdict .hours{text-align:left}
+  .cmp .two{grid-template-columns:1fr}
+  .cmp .two > div + div{border-left:0;border-top:1px solid var(--rule)}
+  .trio{grid-template-columns:1fr 1fr}
+  .trio figure:first-child{grid-column:1 / -1}
+  .flow .lab{flex-basis:100%;padding-top:0}
+  th,td{padding:8px 10px}
+}
+
+/* print */
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  :root{--bg:#fff;--surface:#fff;--sunk:#f1f1ee;--ink:#000;--muted:#444;--rule:#bbb;--accent:#7a4605;--accent-fill:#b87a1c;--accent-soft:#f5ead5;--human:#1d4a75}
+  body{font-size:10.5pt;line-height:1.6;background:#fff}
+  .toc,.mtoc,.noprint{display:none!important}
+  .shell{display:block;max-width:none}
+  main{padding:0}
+  .col{max-width:none}
+  .hero{margin:0 0 24px;break-after:page}
+  .hero .over{position:static;max-width:none;background:none;color:#000;padding:16px 0}
+  .hero .client,.hero .lede{color:#000}
+  .hero figcaption{position:static;color:#444}
+  section.ch{break-before:page;padding-top:0}
+  section#s1{break-before:auto}
+  .tbl{overflow:visible;border-color:#bbb}
+  .wide table{min-width:0}
+  tr,.cmp,.verdict,figure,.decide li,.flow{break-inside:avoid}
+  h3,h4{break-after:avoid}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:#444}
+}
+</style>
+</head>
+<body><div style="position:sticky;top:0;z-index:99;background:#1e1c1a;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:8px 16px;display:flex;gap:16px;flex-wrap:wrap"><a href="../index.html" style="color:#fff">← 산출물 문서 홈</a><a href="report.html" style="color:#fff">Markdown 판 보기</a></div>
+<details class="mtoc">
+  <summary>썬더게임즈 AI 전환 보고서</summary>
+  <ol>
+    <li><a href="#s1">1 요약</a></li><li><a href="#s2">2 진단</a></li><li><a href="#s3">3 과제별 적용 방안</a></li><li><a href="#s4">4 ROI</a></li><li><a href="#s5">5 12주 로드맵</a></li><li><a href="#s6">6 거버넌스</a></li><li><a href="#s7">7 다음 단계·확인 요청</a></li><li><a href="#s8">8 부록</a></li>
+  </ol>
+  <button class="btn" type="button" data-theme-toggle>화면 테마 바꾸기</button>
+</details>
+<div class="shell">
+<nav class="toc" aria-label="목차">
+  <p class="brand">썬더게임즈<br>AI 전환 보고서</p>
+  <p class="sub">2026-10-07 · 통합본</p>
+  <ol>
+    <li><a href="#s1"><span>1</span><span>요약</span></a></li>
+    <li><a href="#s2"><span>2</span><span>진단</span></a></li>
+    <li><a href="#s3"><span>3</span><span>과제별 적용 방안</span></a></li>
+    <li><a href="#s4"><span>4</span><span>ROI</span></a></li>
+    <li><a href="#s5"><span>5</span><span>12주 로드맵</span></a></li>
+    <li><a href="#s6"><span>6</span><span>거버넌스</span></a></li>
+    <li><a href="#s7"><span>7</span><span>다음 단계·확인 요청</span></a></li>
+    <li><a href="#s8"><span>8</span><span>부록</span></a></li>
+  </ol>
+  <div class="tools">
+    <a href="https://namojo.github.io/game-review/">리뷰 검수 웹서비스 열기</a>
+    <button class="btn" type="button" data-theme-toggle>화면 테마 바꾸기</button>
+    <button class="btn" type="button" onclick="window.print()">인쇄·PDF로 저장</button>
+  </div>
+</nav>
+
+<main>
+<figure class="hero">
+  <img src="../task2-weekly-event/2026-w44-halloween/keyart/store/keyart_16x9_1920x1080.jpg" alt="할로윈 키아트: 보름달 아래 몽둥이를 멘 원시인 형님과 호박 투구를 쓴 티라노사우루스">
+  <div class="over">
+    <p class="client">썬더게임즈(T.G Inc, 부산) · 「원시인 형님들 키우기 : 문명 x 방치형 RPG」</p>
+    <h1>리뷰 답변, 주간 이벤트, 광고 분석을 사람이 승인만 하는 일로 바꿉니다</h1>
+    <p class="lede">세 과제 모두 동작하는 결과물로 확인했습니다. 리뷰 378건을 분류해 답변 초안을 만든 검수 웹서비스, 13개 언어 할로윈 이벤트 키트, 광고 이상 탐지 샘플입니다. 이 문서는 무엇을, 어떤 순서로, 얼마의 노력으로 할지 정리합니다.</p>
+  </div>
+  <figcaption>이 프로젝트에서 생성한 W44 할로윈 키아트(글자 없는 스토어 제출용)</figcaption>
+</figure>
+
+<div class="col">
+<p class="legend"><span><span class="t m">실측</span> 이 프로젝트에서 데이터로 확인</span><span><span class="t c">고객</span> 썬더게임즈가 알려 준 값</span><span><span class="t a">가정</span> 컨설턴트 가정(근거를 함께 적음)</span></p>
+
+<!-- 1 -->
+<section class="ch" id="s1">
+<div class="chhead"><span class="chnum">1</span><h2>요약</h2></div>
+
+<div class="verdicts">
+  <div class="verdict">
+    <span class="name">리뷰 대응 자동화</span>
+    <p><strong>바로 도입한다.</strong> 절감 시간은 작지만 답변 품질과 속도가 크게 바뀐다. 지금은 60일 동안 답변이 13일에만 몰려 등록되고, 답변까지 중앙값 3.3일(답변 뒤 리뷰를 고친 10건 제외)이 걸린다<span class="t m">실측</span></p>
+    <span class="hours">62시간<small>연간 절감</small></span>
+  </div>
+  <div class="verdict">
+    <span class="name">주간 이벤트 제작 자동화</span>
+    <p><strong>바로 도입한다.</strong> 셋 중 절감이 가장 크다. 디자인 1~2일 작업 중 키아트 생성과 13개 언어 배너 합성이 몇 분으로 줄어든다. 사람은 주제 승인, 수치 결정, 최종 검수를 맡는다<span class="t c">고객</span><span class="t a">가정</span></p>
+    <span class="hours">234~806시간<small>연간 절감</small></span>
+  </div>
+  <div class="verdict">
+    <span class="name">광고 운영·분석 자동화</span>
+    <p><strong>데이터 권한을 받은 뒤 3단계로 도입한다.</strong> 매일 1시간 넘게 걸리던 작업이 15분 안팎이 된다. 효과의 핵심은 추적 누락·CPI 급등·소재 피로를 하루 안에 찾는 것이다<span class="t c">고객</span><span class="t a">가정</span></p>
+    <span class="hours">188~208시간<small>연간 절감</small></span>
+  </div>
+</div>
+<div class="sumline"><span>세 과제 합계 · 연간</span><b>약 483~1,076시간 · FTE 0.25~0.56명분</b></div>
+<p class="note">FTE 1명 = 연 1,920시간<span class="t a">가정</span>. 인건비 환산은 시간당 비용을 받은 뒤에 계산합니다. 계산식은 4장에 있습니다.</p>
+
+<h3>바로 결정할 일 3가지</h3>
+<ol class="decide">
+  <li><strong>10/9(금)까지 할로윈 이벤트 스토어 제출 여부.</strong> App Store 사전 노출(10/12부터)과 Play 피처링 요청 마감(10/12)을 지키려면 이번 주에 제출해야 합니다. 그 전에 두 가지를 먼저 정합니다. 할로윈 주말 48시간 광고 없는 버프를 승인할지(#4, 축소안: 하루 N회), 러시아 스토어 노출을 접속 장애 해결 뒤로 미룰지(#13)입니다.</li>
+  <li><strong>리뷰 답변 등록용 자격 증명 2종 발급과 운영 방식 승인.</strong> Play 서비스 계정('리뷰 답변' 권한)과 App Store Connect API 키가 필요합니다. 운영 방식은 A안을 권합니다. 검수 화면을 claude.ai Artifact로 올리고, 매일 예약 실행으로 초안을 만듭니다. 미답변 결제 P1(1만원 결제 후 0원 표시) 1건은 오늘 처리합니다.</li>
+  <li><strong>광고 계정 읽기 권한과 데이터 현황 공유.</strong> 실제 매체, MMP, 미디에이션, 월 예산, 사내 메신저 등 확인 항목 C1~C16을 알려 주시면 과제 3 1단계(노코드 리포트, 2~3주)를 바로 시작합니다.</li>
+</ol>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="s2">
+<div class="chhead"><span class="chnum">2</span><h2>진단</h2></div>
+<h3>고객이 알려 준 현재 방식</h3>
+<p class="note">썬더게임즈가 준 원문을 그대로 옮겼습니다<span class="t c">고객</span></p>
+<div class="tbl wide"><table>
+<thead><tr><th>과제</th><th>현재 방식</th><th>담당</th><th>어려움</th><th>소요</th></tr></thead>
+<tbody>
+<tr><td>리뷰 대응</td><td>담당자가 리뷰를 직접 확인하고 번역·답변 작성(미리 작성해 놓은 답변 사용)</td><td>운영</td><td>매일 대응이 가장 좋지만 다른 업무 일정에 따라 며칠간의 리뷰를 한 번에 처리하는 경우가 많음</td><td>리뷰 1개당 2분</td></tr>
+<tr><td>주간 이벤트</td><td>매주 이벤트 주제 선정, 문구 작성, 번역, 이미지 제작 및 스토어 등록을 각각 진행</td><td>운영·디자인</td><td>매주 유사한 제작 과정 반복, 국가별 문구·이미지 제작에 많은 시간</td><td>운영 매주 1~2시간, 디자인 1~2일</td></tr>
+<tr><td>광고 운영</td><td>담당자가 광고 데이터를 직접 확인하고 분석·운영</td><td>마케팅</td><td>국가·캠페인·소재별 데이터 확인과 반복 분석</td><td>매일 1시간 이상</td></tr>
+</tbody></table></div>
+
+<h3>데이터로 확인한 사실 — 공개 리뷰 378건</h3>
+<p class="note">2026-08-08 ~ 10-06, Google Play 362건 · App Store 16건<span class="t m">실측</span></p>
+<div class="tbl"><table>
+<thead><tr><th>사실</th><th>값</th></tr></thead>
+<tbody>
+<tr><td>리뷰 양</td><td>60일 378건, 하루 약 6.3건. 리뷰 언어 13개, 스토어×언어 16개 조합</td></tr>
+<tr><td>운영 답변 문구</td><td>343건이 50종. 상위 5종이 36%(124건). 별점 1~2점 리뷰 53건에 18종</td></tr>
+<tr><td>몰아서 처리</td><td>343건이 60일 중 13일에 등록됐다. 9/27 하루에 75건. 리뷰부터 답변까지 중앙값 3.3일</td></tr>
+<tr><td>우선순위</td><td>P1 30 · P2 48 · P3 300. 고객센터 이관 필요 18</td></tr>
+<tr><td>미답변 P1</td><td>2건. Play "1만원 결제 후 인게임 0원 표시"는 미답변 확인. App Store "로그인·게스트 모두 불가"는 RSS에 개발자 답변이 나오지 않아 App Store Connect에서 확인해야 한다</td></tr>
+<tr><td>러시아어 접속 장애</td><td>P1 14건이 몰렸다(ru 리뷰 41건의 34%). 증상은 "서버 버전 확인" 무한 반복 뒤 튕김. 3.63 버전 6건, 8/13~9/30. ru 평균 별점 3.51(전체 4.23)</td></tr>
+<tr><td>보상형 광고</td><td>광고 시청 뒤 재시작·보상 미지급 리뷰 4건(en 3 · pt 1, 별점 1~2)</td></tr>
+<tr><td>커뮤니티 안전</td><td>인게임 채팅 욕설·성희롱 신고 1건(App Store)</td></tr>
+<tr><td>이벤트 설계 신호</td><td>광고 피로(광고 관련 20건), 성장 정체(balance 12, monetization 8), 진입 장벽("이벤트 참여가 71스테이지부터"), 복귀·향수(11건, 평균 4.55점)<span class="t m">실측</span></td></tr>
+</tbody></table></div>
+<p>이 데이터가 <strong>세 과제를 잇습니다.</strong> 리뷰 분류 결과로 이벤트를 설계했고(과제 2), 같은 분류로 광고 피로와 광고 수익의 관계를 봅니다(과제 3).</p>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="s3">
+<div class="chhead"><span class="chnum">3</span><h2>과제별 적용 방안</h2></div>
+
+<h3 id="t1">과제 1 · 리뷰 대응 자동화</h3>
+<div class="flow" role="img" aria-label="리뷰 대응 흐름: 지금은 사람이 확인·번역·고르기·등록을 모두 한다. 앞으로는 수집·분류·번역·초안 생성을 자동으로 하고, 사람은 검수와 등록만 한다">
+  <div class="row"><span class="lab">지금</span><span class="step asis">리뷰 확인</span><span class="step asis">번역</span><span class="step asis">미리 쓴 답변 고르기</span><span class="step asis">등록<small>며칠 치를 몰아서</small></span></div>
+  <div class="row"><span class="lab">앞으로</span><span class="step auto">리뷰 수집<small>매일 09:00</small></span><span class="step auto">유형 분류<small>11개 유형·P1~P3·부서</small></span><span class="step auto">번역<small>한국어</small></span><span class="step auto">답변 초안 생성<small>맞춤·템플릿, 350자 검사</small></span><span class="step human"><b>담당자 검수</b><small>P1부터 고치고 승인</small></span><span class="step human"><b>답변 등록</b><small>승인분만 공식 API</small></span></div>
+  <div class="key"><span><span class="sw a"></span>자동(Claude Haiku 4.5 · Sonnet 5.5)</span><span><span class="sw h"></span>사람</span></div>
+</div>
+
+<div class="cta"><a class="go" href="https://namojo.github.io/game-review/">검수 웹서비스 열기 — namojo.github.io/game-review</a><span class="muted">대시보드 · 검수 인박스 · 운영 가이드 · 설정. 공개 리뷰 데이터 PoC이며 스토어에 답변을 등록하지 않습니다.</span></div>
+<ul>
+<li>공개 URL 시나리오 33/34 통과(실패 1건은 수정 전 동작을 전제한 검사), 콘솔 오류 0, 390px 가로 스크롤 없음<span class="t m">실측</span></li>
+<li>378건 전수 기계 검사 통과. 언어별 표본 38건 중 34건 통과, 금지 사항 위반 0, 답변 언어 오류 0<span class="t m">실측</span></li>
+</ul>
+
+<h4>현재 템플릿 답변 vs AI 맞춤 답변 — 실제 리뷰 3건</h4>
+<p class="note">리뷰와 답변은 데이터 원문 그대로입니다. "같은 문구 N회"는 운영 답변 343건 중 글자까지 같은 답변의 수입니다<span class="t m">실측</span></p>
+
+<article class="cmp">
+  <div class="rev"><p class="meta">광고 불만 · Google Play · 별점 1 · 2026-09-29 · <code>gp-ko-206cefc715</code></p>
+  <blockquote>광고가 적당히 나와야지.. 이건 뭐 광고가 3개씩 나오네;</blockquote></div>
+  <div class="two">
+    <div class="now"><h5>현재 운영 답변 · 같은 문구 18회</h5>안녕하세요. 원시인 형님들 키우기 GM Mr. Bow입니다. 형님의 기대에 부응하지 못한 점 깊이 사과드립니다. 말씀해주신 부분은 꼭 반영해 더 재미있는 게임으로 보답드릴게요. 앞으로 더 나은 모습으로 보답드릴 수 있도록 최선을 다하겠습니다. 감사합니다.</div>
+    <div class="ai"><h5>AI 맞춤 초안</h5>안녕하세요, 원시인 형님들 키우기 GM Mr. Bow입니다. 광고가 한 번에 3개씩 나와 형님, 흐름이 끊기셨겠습니다. 죄송합니다. 광고 노출 빈도에 대한 말씀은 담당 팀에 그대로 전달하겠습니다. 소중한 의견 감사합니다.</div>
+  </div>
+  <p class="why">현재 답변은 불만이 무엇인지 말하지 않고 "꼭 반영해"라고 약속합니다. 초안은 "3개씩"을 짚고, 약속 대신 전달만 말합니다.</p>
+</article>
+
+<article class="cmp">
+  <div class="rev"><p class="meta">접속 장애 · Google Play · 러시아어 · 별점 1 · 버전 3.63 · <code>gp-ru-36f3661138</code></p>
+  <blockquote>Бесконечная "Проверка версии с сервера" с последующей молчаливой ошибкой и выбросом на рабочий стол. Так и не запустилась.<span class="tr">끝없는 "서버 버전 확인" 뒤에 조용히 오류가 나며 바탕화면으로 튕깁니다. 끝내 실행되지 않았습니다.</span></blockquote></div>
+  <div class="two">
+    <div class="now"><h5>현재 운영 답변 · 같은 문구 13회</h5>Здравствуйте, это GM Mr. Bow. Просим прощения за неудобства при использовании игры. Пожалуйста, отправьте подробности через [Настройки &gt; Центр поддержки] в игре. Мы не можем помочь напрямую здесь, но служба поддержки сможет помочь быстрее. Спасибо.</div>
+    <div class="ai"><h5>AI 맞춤 초안</h5>Здравствуйте, это GM Mr. Bow. Сожалеем, что игра застревает на проверке версии с сервера и не запускается. Мы передали информацию команде разработки. Если удастся зайти, пришлите модель устройства и версию ОС через [Настройки &gt; Центр поддержки]. Спасибо за терпение.<span class="tr muted" style="display:block;margin-top:6px">서버 버전 확인에서 멈춰 실행되지 않아 죄송합니다. 개발팀에 전달했습니다. 접속이 되시면 [설정 &gt; 고객센터]로 기기 모델과 OS 버전을 보내 주세요.</span></div>
+  </div>
+  <p class="why">이 사용자는 게임이 켜지지 않는데, 현재 답변은 <strong>게임 안의</strong> 고객센터로 문의하라고 합니다. 같은 증상 14건이 몰린 사실은 대시보드가 개발팀에 따로 알립니다.</p>
+</article>
+
+<article class="cmp">
+  <div class="rev"><p class="meta">광고 시청 후 보상 미지급 · Google Play · 영어 · 별점 1 · 버전 3.58 · <code>gp-en-6c497efd01</code></p>
+  <blockquote>very bad game i suggest not to download it, when you watch add there is always one option" google play" and half of the time that resets the game and you not get your rewards after 60 second of add!!! I strongly suggest to not play this game unless you want to ruin your mood by a 60sec add then no reward</blockquote></div>
+  <div class="two">
+    <div class="now"><h5>현재 운영 답변 · 같은 문구 6회</h5>Hello, this is GM Mr. Bow from Primitive Brothers. We sincerely apologize for not meeting your expectations. Your feedback will not be taken lightly. we'll make sure to reflect it in improving the game's quality and content. We'll do our best to show you a better version of the game moving forward. Thank you.</div>
+    <div class="ai"><h5>AI 맞춤 초안</h5>Hello, this is GM Mr. Bow from Primitive Brothers. We're sorry the game resets after the ad and the reward doesn't arrive. That's frustrating after a full minute of watching. We've passed it to the dev team. Please send your device model and OS version via [Settings &gt; Customer Center].</div>
+  </div>
+  <p class="why">버그 신고에 일반 사과만 하던 것을, 증상을 짚고 재현 정보를 받는 답변으로 바꿉니다. 같은 증상 4건이 개발 전달 목록에 모입니다.</p>
+</article>
+
+<h4>운영 전환 — 구현 가이드 요약</h4>
+<ol class="plain">
+<li><strong>승인과 등록은 다릅니다.</strong> 화면의 승인 버튼은 브라우저에 저장만 합니다. 실제 등록은 <code>post_replies.py --execute</code>와 고객사 자격 증명으로 합니다. Play에는 GCP 서비스 계정과 Play Console '리뷰 답변' 권한이, App Store에는 ASC API 키(.p8)·Key ID·Issuer ID가 필요합니다. 답변 표시 명의는 Play에서 개발자 이름 'T.G Inc'입니다. App Store 조회 결과는 개발자 'T.G', 판매자 'Thundergames'이고, 실제 답변 표시 명의는 App Store Connect에서 확인합니다(확인 요청 B-10). 'GM Mr. Bow'는 본문 서명입니다.</li>
+<li><strong>추가 개발이 필요합니다.</strong>
+  <ul>
+    <li>수집을 공식 API로 바꿉니다. App Store RSS 리뷰 ID가 ASC 리뷰 ID와 같다는 보장이 없어 운영에서는 ASC API로 다시 수집합니다. Play <code>reviews.list</code>는 최근 1주만 줍니다.</li>
+    <li>공유 백엔드를 만듭니다. DB, 승인자, 감사 로그, 등록 큐, 중복 방지, 기존 답변 덮어쓰기 정책, 서버 쪽 350자 검사가 들어갑니다.</li>
+    <li>검수 화면에 사내 로그인(IAP)을 붙입니다.</li>
+    <li>권장 구성은 Cloud Scheduler → Cloud Run Job → Firestore, IAP, Secret Manager입니다. 개발자 1명 약 2~3주<span class="t a">가정</span></li>
+  </ul></li>
+<li><strong>API 키 없이 쓰는 방법(A안, 권장 시작점).</strong> 검수 화면을 claude.ai Artifact로 올립니다. 그러면 보는 사람의 Claude 계정으로 초안을 다시 쓰고(sample), 담당자끼리 상태를 공유하고(db), 승인자를 기록합니다(user)(claude.ai Artifact 런타임 기능 목록, 2026-10-07 이 계정에서 확인. 계정·플랜마다 다를 수 있음). 단, 스토어 등록은 여전히 서버가 해야 합니다. 매일 초안은 하네스 수동 실행, Claude Code 예약 실행(루틴), Google Cloud Vertex AI의 Claude(GCP IAM) 중 하나로 만듭니다. 지금 규모에는 Artifact + 예약 실행을 권하고, 고도화 뒤에는 Vertex AI + GCP 백엔드(B안)로 갑니다.</li>
+<li><strong>템플릿은 운영자가 승인한 고정 세트로 관리합니다.</strong> 지금 상한인 '언어별 최신 6종'은 매일 실행하면 다듬은 초기 템플릿을 밀어냅니다(QA 참고).</li>
+</ol>
+<p class="callout"><strong>리스크.</strong> 오역·오분류가 표본 38건 중 4건 있었으므로 사람 검수를 유지합니다. 채팅 욕설·성희롱 신고가 "건의/기획"으로 분류됐던 일을 계기로, 분류 기준에 "커뮤니티·안전 신고 → P2 이상·고객센터·사람 검수" 규칙을 넣었습니다(제재는 운영). 운영 데이터는 사내 로그인 뒤에 둡니다. 실제 등록은 자격 증명이 없어 검증하지 못했으므로 첫 주에 5건으로 시험합니다.</p>
+<p class="note">상세: <a href="../task1-review-automation/guide.html">과제 1 구현 가이드</a> · <a href="https://github.com/namojo/game-review">저장소</a></p>
+
+<h3 id="t2">과제 2 · 게임 내 주간 이벤트 제작 자동화</h3>
+<div class="flow" role="img" aria-label="주간 이벤트 흐름: 주제 선정, 제목·내용 작성, 이미지 제작, 다국어 번역, 스토어 등록. 초안은 자동, 승인·수치 확정·검수·제출은 사람">
+  <div class="row"><span class="lab">지금</span><span class="step asis">주제 선정</span><span class="step asis">문구 작성</span><span class="step asis">번역</span><span class="step asis">이미지 제작</span><span class="step asis">스토어 등록<small>단계마다 따로, 매주</small></span></div>
+  <div class="row"><span class="lab">앞으로</span><span class="step auto">주제 선정<small>리뷰 신호 → 8주 캘린더</small></span><span class="step auto">제목·내용 작성<small>기획서·공지·푸시</small></span><span class="step auto">이미지 제작<small>키아트 3규격 + 배너 39장</small></span><span class="step auto">다국어 번역<small>13개 언어, 글자 수 검증</small></span><span class="step auto">스토어 이벤트 등록<small>등록 시트</small></span></div>
+  <div class="row"><span class="lab">사람</span><span class="step human"><b>주제 승인</b></span><span class="step human"><b>수치·시스템 확정</b><small>[기획 확인 필요] 15건</small></span><span class="step human"><b>키아트 선택·검수</b></span><span class="step human"><b>제출·피처링 요청</b></span></div>
+  <div class="key"><span><span class="sw a"></span>자동</span><span><span class="sw h"></span>사람</span></div>
+</div>
+
+<h4>PoC — W44 「형님들의 할로윈 호박 사냥」 2026-10-26 ~ 11-01</h4>
+<div class="trio">
+  <figure><img loading="lazy" src="../task2-weekly-event/2026-w44-halloween/keyart/store/keyart_16x9_1920x1080.jpg" alt="16:9 키아트"><figcaption>16:9 · App Store 카드, Play 기본</figcaption></figure>
+  <figure><img loading="lazy" src="../task2-weekly-event/2026-w44-halloween/keyart/store/keyart_9x16_1080x1920.jpg" alt="9:16 키아트"><figcaption>9:16 · App Store 상세</figcaption></figure>
+  <figure><img loading="lazy" src="../task2-weekly-event/2026-w44-halloween/keyart/store/keyart_1x1_1080x1080.jpg" alt="1:1 키아트"><figcaption>1:1 · Play 정사각</figcaption></figure>
+</div>
+<figure><img loading="lazy" src="../task2-weekly-event/2026-w44-halloween/localized/_preview_landscape.jpg" alt="13개 언어 가로 배너 모음"><figcaption>13개 언어 가로 배너(인게임 공지·SNS용). 세로·정사각 포함 39장은 <code>localized/</code>에 있습니다.</figcaption></figure>
+
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th>결과</th></tr></thead>
+<tbody>
+<tr><td>언어</td><td>13개(ko·en·pt·es·ru·ja·zh-TW·id·th·tr·fr·de·vi)<span class="t m">실측</span></td></tr>
+<tr><td>스토어 문구</td><td>13개 언어 × 5개 필드 = 65개 필드, 글자 수 초과 0건<span class="t m">실측</span></td></tr>
+<tr><td>제출 일정</td><td>App Store·Play 제출 <strong>10/9(금)</strong>, Play 피처링 마감 <strong>10/12(월)</strong>, Play 일반 마감 10/22(목)</td></tr>
+<tr><td>키아트</td><td>글자 없는 3규격 병렬 생성 약 4분(12:47:19 시작 → 12:51:12 마지막 파일), 장당 재생성 1회<span class="t m">실측</span></td></tr>
+<tr><td>배너</td><td>13개 언어 × 3규격 = 39장 합성 41초<span class="t m">실측</span></td></tr>
+<tr><td>QA C(이벤트 키트 검수)</td><td><strong>통과(재검증 차단 0건).</strong> 글자 수 위반 0, 배너 39장 잘림·가림 없음, 13개 언어 이벤트명·기간 일치. 처음 검사의 차단 1건(제출 이미지 경로가 규격 미달 원본을 가리킴)은 <code>keyart/store/</code> 규격 사본으로 고쳤다<span class="t m">실측</span></td></tr>
+</tbody></table></div>
+
+<h4>리뷰 불만을 이벤트 설계로</h4>
+<div class="tbl"><table>
+<thead><tr><th>리뷰 신호</th><th>이벤트 설계</th></tr></thead>
+<tbody>
+<tr><td>광고 피로·보상 미지급(광고 관련 20건)<span class="t m">실측</span></td><td>미션에 광고 시청을 넣지 않는다. 할로윈 주말 <strong>48시간 동안 광고 버프를 광고 없이</strong> 켠다</td></tr>
+<tr><td>진입 장벽("이벤트 참여가 71스테이지부터")</td><td>스테이지 조건 대신 <strong>횟수형 미션</strong>(승패 무관 도전 N회)</td></tr>
+<tr><td>성장 정체·보석 부족</td><td>교환소에 성장 재료와 보석</td></tr>
+<tr><td>복귀·향수(11건, 평균 4.55점)</td><td>14일 이상 미접속 형님에게 <strong>복귀 호박 꾸러미</strong></td></tr>
+<tr><td>러시아어 접속 장애 14건</td><td>러시아 스토어 노출은 장애 해결 확인 뒤에 켠다(#13)</td></tr>
+</tbody></table></div>
+
+<h4>사람이 놓치기 쉬운 현지화·법규 판단</h4>
+<ul>
+<li>ko: 10/29(목) <strong>이태원 참사 4주기</strong>에는 어떤 푸시도 보내지 않습니다. 파티·인파·가면 군중 표현을 쓰지 않습니다.</li>
+<li>ko 푸시는 <strong>정보통신망법</strong> 제50조에 따라 "(광고)", 전송자 명칭, 수신 거부 방법을 넣고 21:00~08:00에는 보내지 않습니다.</li>
+<li>id 오컬트 표현 배제, mx 망자의 날 상징 혼용 금지, br 11/2 Finados 리마인드 금지.</li>
+<li><strong>스토어 이미지에는 글자를 넣지 않습니다.</strong> Google Play 프로모션 이미지도 로고·슬로건·이벤트명을 금지합니다. 스토어에는 글자 없는 키아트를, 배너 39장은 인게임 공지·SNS에 씁니다.</li>
+</ul>
+
+<h4>구현 가이드 요약</h4>
+<ul>
+<li>매주 하네스에 "다음 주 이벤트 키트"를 요청합니다. 기획서·copy.json·스토어 시트·키아트·배너가 한 폴더에 나옵니다.</li>
+<li>App Store는 App Store Connect API(<code>appEvents</code> 등)로 등록을 자동화할 수 있습니다. Google Play는 프로모션 콘텐츠 공개 API를 찾지 못해 Play Console에 붙여 넣습니다(13개 언어 약 20~30분<span class="t a">가정</span>).</li>
+<li>시즌 이벤트는 시작 14일 전에 제출해야 두 스토어의 사전 노출을 모두 받습니다.</li>
+</ul>
+<p class="callout"><strong>알려진 제한.</strong> 9:16 키아트의 티라노가 초록색이라 다른 두 규격(갈색)과 색이 다릅니다. 다음 판부터 색을 고정합니다. codex 전역 기본 모델이 ChatGPT 로그인에서 400 오류를 냈고, 스크립트가 이전 파일을 보고 성공으로 오판했습니다. 모델 지정과 새 파일만 성공 판정하도록 고쳤습니다. 제출에는 생성 원본이 아니라 <code>keyart/store/</code> 규격 사본 3장(1920×1080·1080×1920·1080×1080)을 씁니다. 배너의 기간은 KST 날짜라(예: en "Oct 26 – Nov 1") 미주·유럽에서는 종료일이 늦게 읽힙니다. 의도한 표기이고 정확한 시각은 현지 공지가 알려 줍니다(확인 요청 4번). ja·zh-TW 가로 배너는 제목 여백이 좁고, 1:1 배너 일부 언어는 부제가 호박 등불과 살짝 겹칩니다. 가독성에는 영향이 없습니다.</p>
+<p class="note">상세: <a href="../task2-weekly-event/event_calendar.html">8주 캘린더</a> · <a href="../task2-weekly-event/2026-w44-halloween/event_brief.html">기획서</a> · <a href="../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트</a></p>
+
+<h3 id="t3">과제 3 · Meta·Google 광고 운영과 성과 분석 자동화</h3>
+<div class="flow" role="img" aria-label="광고 운영 흐름: 데이터 수집, 성과 분석, 문제점 파악, 예산·다음 액션 제안, 리포트 작성은 자동, 승인은 사람">
+  <div class="row"><span class="lab">지금</span><span class="step asis">매체 3곳 내려받기</span><span class="step asis">엑셀 정리</span><span class="step asis">눈으로 비교</span><span class="step asis">감으로 예산 조정</span><span class="step asis">메신저 보고<small>매일 1시간+</small></span></div>
+  <div class="row"><span class="lab">앞으로</span><span class="step auto">데이터 수집<small>06:00 API</small></span><span class="step auto">성과 분석<small>규칙 코드</small></span><span class="step auto">문제점 파악<small>이상·피로·과속</small></span><span class="step auto">예산·액션 제안<small>20% 상한·3일 쿨다운</small></span><span class="step auto">리포트 작성<small>Claude 5줄 + 숫자 검증</small></span><span class="step human"><b>승인</b><small>09:00 담당자</small></span></div>
+  <div class="key"><span><span class="sw a"></span>자동</span><span><span class="sw h"></span>사람</span></div>
+</div>
+<p class="note">아래 결과는 가상 데이터입니다. 썬더게임즈의 실제 광고 데이터가 아닙니다.</p>
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th>결과</th></tr></thead>
+<tbody>
+<tr><td>가이드</td><td>12장, 출처 S1~S56<span class="t m">실측</span></td></tr>
+<tr><td>심은 문제</td><td>7건 모두 탐지(추적 누락, 월 예산 과속, 국가 CPI 급등, 소재 피로 2, 확장 후보, 예산 신호), 미끼 미탐지, 오탐 0<span class="t m">실측</span></td></tr>
+<tr><td>반복 시험</td><td>시드 30개, 탐지율 90~100%<span class="t m">실측</span></td></tr>
+<tr><td>숫자 검증기</td><td>일부러 틀린 변형 13건 차단(부호 반전·바꿔치기·지어낸 숫자). 못 잡는 범위도 밝혔다: 키 없는 문장의 바꿔치기, 날짜, 숫자가 아닌 서술. 그래서 처음 8주는 사람이 대조 검수한다</td></tr>
+</tbody></table></div>
+<figure>
+<pre>[UA 일일 리포트 | 10/06 | 가상 데이터]
+1) 어제 지출 $1,929(직전 7일 평균 대비 −1%) · 설치 1,512 · CPI $1.28(+14%) · D0 ROAS 2.8%(−9%)
+2) 🔴 즉시 확인: 메타 iOS(META_A+APP_IOS_T1) KR·US 10/04~10/06 3일 연속 설치 0 — 지출 KR $233·US $349, 클릭은 정상
+3) 🟠 소재: 피로 2개 — MV03(BR, CTR −35%, frequency 3.9), GV02(구글 T1, IPM −44%) / 확장 후보 1개 — MP01
+4) 💰 예산 제안: 증액 1건 / 감액 1건, 순변동 +$5/일, 보류 4건. 구글 월말 예상 $27,613(+23%)
+5) 오늘 할 일: MMP 연동 확인 · B01·B02 승인 여부 · 교체 소재 요청 · 구글 일 예산 $690 이하 조정 결정</pre>
+<figcaption>일일 리포트 샘플(<code>sample_daily_report.md</code>에서 줄임)</figcaption>
+</figure>
+
+<h4>도입 전에 알아야 할 플랫폼 변화(2026-10-07 공식 문서 확인)</h4>
+<ul>
+<li>Meta Marketing API <strong>v24.0은 2026-10-06에 만료</strong>됐습니다(최신 v26.0). 2026-01-12부터 7d_view·28d_view 어트리뷰션 값이 나오지 않습니다.</li>
+<li>레거시 Advantage+ 앱 캠페인은 v25.0부터 생성할 수 없고 v26.0부터 수정할 수 없습니다. 새 구조로 옮기면 학습이 다시 시작됩니다.</li>
+<li>Google 앱 캠페인은 예산·목표 CPI를 <strong>한 번에 20% 넘게 바꾸지 말라</strong>고 권장합니다.</li>
+<li><strong>러시아어 사용자 유입원 [확인 필요]:</strong> 2022년 Google·Meta가 러시아 광고를 중단했다는 보도가 있습니다. 지금도 유지되는지는 확인하지 못했습니다. ru 리뷰 41건의 유입원을 MMP로 확인합니다.</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>단계</th><th>기간</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>1. 노코드 리포트</td><td class="n">2~3주<span class="t a">가정</span></td><td>커넥터 → 시트·Data Studio, Claude 일일 요약</td></tr>
+<tr><td>2. 코드 파이프라인</td><td class="n">4~6주<span class="t a">가정</span></td><td>API 수집 → BigQuery → 분석 스크립트 → Claude 리포트 → 숫자 검증 → 메신저. 데이터 엔지니어 1명</td></tr>
+<tr><td>3. 승인형 실행</td><td class="n">8주 운영 뒤</td><td>승인한 예산 변경만 API로 실행</td></tr>
+</tbody></table></div>
+<p class="callout"><strong>리스크.</strong> 광고 수익을 설치 코호트에 붙이지 못하면 ROAS 기반 제안을 믿기 어렵습니다. 그때는 범위를 데이터 점검·이상 탐지·소재 피로로 줄입니다. 교체 소재를 만들 사람이 없으면 피로 탐지 효과가 반감됩니다. 과제 2의 키아트 파이프라인을 UA 소재 변형에 쓸 수 있습니다.</p>
+<p class="note">상세: <a href="../task3-ads-automation/guide.html">과제 3 가이드</a> · <a href="../task3-ads-automation/sample/sample_daily_report.html">일일 리포트 샘플</a></p>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="s4">
+<div class="chhead"><span class="chnum">4</span><h2>ROI</h2></div>
+<p>모든 가정값을 드러냅니다. 인건비 환산은 시간당 비용을 받은 뒤에 합니다.</p>
+
+<h3>과제 1 · 리뷰 대응</h3>
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th class="n">값</th><th>출처·계산</th></tr></thead>
+<tbody>
+<tr><td>일평균 리뷰</td><td class="n">6.3건</td><td><span class="t m">실측</span> 378 ÷ 60일</td></tr>
+<tr><td>현재 1건 처리</td><td class="n">2분</td><td><span class="t c">고객</span></td></tr>
+<tr><td>자동화 뒤 검수</td><td class="n">맞춤 0.5분 · 템플릿 0.2분</td><td><span class="t a">가정</span> 읽기·승인만</td></tr>
+<tr><td>템플릿 비율</td><td class="n">37.6%</td><td><span class="t m">실측</span> 142 ÷ 378</td></tr>
+<tr><td>가중 평균 검수</td><td class="n">0.387분</td><td>0.376 × 0.2 + 0.624 × 0.5</td></tr>
+<tr><td>현재 연간</td><td class="n">76.7시간</td><td>6.3 × 365 × 2 ÷ 60</td></tr>
+<tr><td>자동화 뒤 연간</td><td class="n">14.8시간</td><td>6.3 × 365 × 0.387 ÷ 60</td></tr>
+<tr class="total"><td>연간 절감</td><td class="n">약 62시간</td><td>76.7 − 14.8</td></tr>
+<tr><td>Claude API 비용</td><td class="n">월 약 2~3달러</td><td><span class="t a">가정</span> 월 189건 × Haiku 4.5(입력 3,000·출력 400 토큰, $1/$5) + 맞춤 118건 × Sonnet 5.5(입력 3,500·출력 400, $2/$10) ≈ $0.95 + $1.30. 단가는 2026-09-25 Anthropic 공시</td></tr>
+</tbody></table></div>
+<p>절감 시간은 작습니다. 효과는 품질(맞춤 답변), 속도(P1 24시간 안, 지금 중앙값 3.3일), 인사이트(부서별 주간 전달), 번역 대기 제거에서 납니다.</p>
+
+<h3>과제 2 · 주간 이벤트</h3>
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th class="n">값</th><th>출처·계산</th></tr></thead>
+<tbody>
+<tr><td>현재 운영</td><td class="n">주 1~2시간</td><td><span class="t c">고객</span></td></tr>
+<tr><td>현재 디자인</td><td class="n">주 8~16시간</td><td><span class="t c">고객</span> 1~2일</td></tr>
+<tr><td>자동화 뒤 운영</td><td class="n">주 0.5시간</td><td><span class="t a">가정</span> 주제 승인·문구 검수</td></tr>
+<tr><td>자동화 뒤 디자인</td><td class="n">주 2~4시간</td><td><span class="t a">가정</span> 키아트 선택·보정·최종 검수</td></tr>
+<tr><td>키아트 생성 · 배너 합성</td><td class="n">약 4분 · 41초</td><td><span class="t m">실측</span></td></tr>
+<tr><td>주간 절감</td><td class="n">4.5~15.5시간</td><td>(1 − 0.5) + (8 − 4) ~ (2 − 0.5) + (16 − 2)</td></tr>
+<tr class="total"><td>연간 절감</td><td class="n">약 234~806시간</td><td>주간 × 52</td></tr>
+</tbody></table></div>
+<p>범위가 넓은 이유는 디자이너가 실제로 키아트를 고치는 시간을 아직 재지 않았기 때문입니다. W45~W48 4주 동안 작업 시간을 기록해 범위를 좁힙니다.</p>
+
+<h3>과제 3 · 광고 운영</h3>
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th class="n">값</th><th>출처·계산</th></tr></thead>
+<tbody>
+<tr><td>현재</td><td class="n">매일 60분 이상</td><td><span class="t c">고객</span></td></tr>
+<tr><td>자동화 뒤</td><td class="n">매일 10~15분</td><td><span class="t a">가정</span> 리포트 읽기·제안 승인</td></tr>
+<tr><td>근무일</td><td class="n">연 250일</td><td><span class="t a">가정</span></td></tr>
+<tr class="total"><td>연간 절감</td><td class="n">약 188~208시간</td><td>(60 − 15~10) × 250 ÷ 60, 중간값 198</td></tr>
+</tbody></table></div>
+<p>낭비 예산을 일찍 막는 효과는 실제 지출 데이터가 없어 금액으로 쓰지 않습니다. 샘플에서 메타 iOS 추적 누락으로 3일간 KR $233·US $349가 측정되지 않았는데(가상), 매일 점검하면 첫날에 잡습니다.</p>
+
+<h3>합계</h3>
+<div class="tbl"><table>
+<thead><tr><th>과제</th><th class="n">연간 절감</th></tr></thead>
+<tbody>
+<tr><td>1. 리뷰 대응 <span class="note">4.1 계산</span><span class="t m">실측</span><span class="t c">고객</span><span class="t a">가정</span></td><td class="n">약 62시간</td></tr>
+<tr><td>2. 주간 이벤트 <span class="note">4.2 계산</span><span class="t c">고객</span><span class="t a">가정</span></td><td class="n">약 234~806시간</td></tr>
+<tr><td>3. 광고 운영 <span class="note">4.3 계산</span><span class="t c">고객</span><span class="t a">가정</span></td><td class="n">약 188~208시간</td></tr>
+<tr class="total"><td>합계</td><td class="n">약 483~1,076시간 · FTE 0.25~0.56명분</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="s5">
+<div class="chhead"><span class="chnum">5</span><h2>12주 로드맵</h2></div>
+<p>2026-10-12부터 2027-01-03까지입니다. 세 과제가 같이 쓰는 공통 기반을 먼저 깝니다.</p>
+<div class="tbl"><table>
+<thead><tr><th>공통 기반</th><th>내용</th><th>쓰는 과제</th></tr></thead>
+<tbody>
+<tr><td>Claude 사용 계정</td><td>claude.ai 팀 계정(Artifact·예약 실행) 또는 Vertex AI의 Claude(GCP IAM). API 키를 쓰면 조직 단위로 발급하고 월 상한을 건다</td><td>1·2·3</td></tr>
+<tr><td>비밀 관리</td><td>GCP Secret Manager 또는 GitHub Actions Secrets</td><td>1·3</td></tr>
+<tr><td>스케줄러</td><td>Cloud Scheduler 또는 Claude Code 예약 실행. 광고 06:00, 리뷰 09:00</td><td>1·3</td></tr>
+<tr><td>메신저 알림</td><td>사내 메신저 채널 1개(리뷰 P1, 광고 일일 리포트·실시간 알림)</td><td>1·3</td></tr>
+</tbody></table></div>
+<div class="tbl wide"><table>
+<thead><tr><th>주차</th><th>공통</th><th>과제 1 리뷰</th><th>과제 2 이벤트</th><th>과제 3 광고</th></tr></thead>
+<tbody>
+<tr class="total"><td>이번 주<br>10/7~10/11</td><td>과제별 담당자 지정</td><td>미답변 결제 P1 처리, 러시아어 장애 개발 전달</td><td>W44 할로윈 10/9(금) 제출</td><td>데이터 현황(C1~C16) 공유</td></tr>
+<tr><td>W1<br>10/12~</td><td>Claude 계정·비밀 관리 결정</td><td>자격 증명 발급, 5건 등록 시험</td><td>App Store 게시·Play 피처링 마감(10/12), W45 키트</td><td>매체 읽기 권한</td></tr>
+<tr><td>W2~3<br>10/19~11/1</td><td>메신저 채널·스케줄러</td><td>A안 운영 시작, 템플릿 고정 세트 승인</td><td>W46·W47 키트, 작업 시간 기록</td><td>1단계 노코드 리포트</td></tr>
+<tr><td>W4~6<br>11/2~11/22</td><td></td><td>공식 API 수집 교체</td><td>W44 성과 확인 → "광고 없는 버프" 정례화 판단, W48·W49 키트</td><td>2단계 착수(BigQuery·수집)</td></tr>
+<tr><td>W7~9<br>11/23~12/13</td><td></td><td>8주 지표 중간 점검(승인율·수정률·P1 처리 시간)</td><td>W49 주간에 크리스마스 키트(12/7 마감)</td><td>2단계 분석·리포트·검증, 기준선 4주</td></tr>
+<tr><td>W10~12<br>12/14~1/3</td><td>회고·다음 분기 계획</td><td>B안(Vertex AI + GCP 백엔드) 여부 결정</td><td>1분기 캘린더</td><td>2단계 안정화, 3단계 준비</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="s6">
+<div class="chhead"><span class="chnum">6</span><h2>거버넌스</h2></div>
+<div class="tbl"><table>
+<thead><tr><th>원칙</th><th>규칙</th></tr></thead>
+<tbody>
+<tr><td>사람이 승인한다</td><td>AI는 초안과 제안만 만든다. 공개 답변, 스토어 이벤트, 예산 변경은 사람이 승인한 것만 실행한다. 광고 예산은 처음 8주 동안 제안만 한다</td></tr>
+<tr><td>공개 게시물은 검수한다</td><td>리뷰 답변에서 날짜·보상·기능 약속, 공개 개인정보 요구, 부정 리뷰에 광고 제거 권유, 경쟁작 언급을 금지한다. 이벤트는 추모일·종교·법규 캘린더를 확인한다</td></tr>
+<tr><td>이용자 안전</td><td>채팅 욕설·성희롱·사기·계정 도용 신고는 P2 이상·사람 검수로 고객센터를 거쳐 운영이 제재한다. 미성년자 관련 리뷰도 사람이 본다(분류 기준에 반영됨)</td></tr>
+<tr><td>개인정보</td><td>작성자 이름은 해시 별칭으로 바꾼다. 광고 데이터는 집계 결과만 LLM에 보낸다</td></tr>
+<tr><td>비용 상한</td><td>Claude 사용량에 월 상한을 건다. 이미 분석한 리뷰는 다시 과금하지 않는다</td></tr>
+<tr><td>숫자는 코드가 계산한다</td><td>리포트 숫자는 검증기를 통과해야 발송한다. 검증기가 못 잡는 범위는 사람이 대조한다</td></tr>
+<tr><td>로그</td><td>누가·언제·무엇을 승인·등록했는지 남긴다</td></tr>
+<tr><td>비밀 관리</td><td>키는 저장소·PC에 두지 않는다. 공개 저장소 전체 이력 비밀 검사 0건 확인</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="s7">
+<div class="chhead"><span class="chnum">7</span><h2>다음 단계·확인 요청</h2></div>
+<p>전체 27건(과제 2 [기획 확인 필요] 15건과 과제 3 C1~C16은 묶음 1건씩으로 셈) 가운데 우선순위가 높은 것입니다.</p>
+<div class="tbl wide"><table>
+<thead><tr><th class="n">#</th><th>확인할 것</th><th>왜</th><th>기한</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>할로윈 #4 광고 없는 버프 48시간 승인(또는 축소안)</td><td>리뷰 연결의 핵심, 광고 수익 영향</td><td>10/8</td></tr>
+<tr><td class="n">2</td><td>할로윈 #13 러시아 스토어 노출 보류 여부</td><td>접속 불가 사용자에게 홍보하면 1점 리뷰 위험</td><td>10/8</td></tr>
+<tr><td class="n">3</td><td>나머지 [기획 확인 필요] 13건</td><td>제출 문구 확정</td><td>10/9 1차</td></tr>
+<tr><td class="n">4</td><td>배너 기간을 KST 날짜로 둘지, 현지 날짜·"(KST)" 표기로 바꿀지</td><td>미주·유럽에서 종료일이 늦게 읽힘</td><td>10/9</td></tr>
+<tr><td class="n">5</td><td>Play 서비스 계정·ASC API 키 발급 담당</td><td>답변 등록</td><td>W1</td></tr>
+<tr><td class="n">6</td><td>App Store 로그인 불가 리뷰 미답변 여부</td><td>RSS로는 알 수 없음</td><td>W1</td></tr>
+<tr><td class="n">7</td><td>러시아어 장애(3.63 서버 버전 확인) 원인·해결 여부</td><td>리뷰·이벤트·광고 모두 영향</td><td>W1</td></tr>
+<tr><td class="n">8</td><td>보상형 광고 재시작·보상 미지급 버그 인지 여부</td><td>리뷰 4건 반복, 광고 수익</td><td>W1</td></tr>
+<tr><td class="n">9</td><td>운영 방식 A안/B안, GCP 사용 여부</td><td>구현 범위</td><td>W1</td></tr>
+<tr><td class="n">10</td><td>과제 3 C1~C16(매체·국가·MMP·미디에이션·예산·목표 ROAS·메신저·개발 인력 등)</td><td>1·2단계 설계</td><td>W1~W2</td></tr>
+<tr><td class="n">11</td><td>러시아어 사용자 유입원, 광고 중단의 현재 유지 여부</td><td>집행 가능 지역</td><td>W2</td></tr>
+<tr><td class="n">12</td><td>시간당 인건비(선택)</td><td>ROI 금액 환산</td><td>수시</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="s8">
+<div class="chhead"><span class="chnum">8</span><h2>부록</h2></div>
+<h3>데이터 출처</h3>
+<div class="tbl wide"><table>
+<thead><tr><th>데이터</th><th>위치</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>리뷰 378건</td><td><code>game-review/data/reviews.json</code></td><td>sha1 84969823…, Play: google-play-scraper, App Store: iTunes RSS</td></tr>
+<tr><td>리뷰 웹서비스</td><td><a href="https://namojo.github.io/game-review/">namojo.github.io/game-review</a> · <a href="https://github.com/namojo/game-review">저장소</a></td><td>커밋 759a252</td></tr>
+<tr><td>과제 1 QA</td><td><code>_workspace/08_qa_A_report.md</code>, <code>08_qa_B_report.md</code></td><td>웹서비스, 초안 품질</td></tr>
+<tr><td>과제 2 키트</td><td><code>deliverables/task2-weekly-event/</code></td><td>동결 <code>_workspace/freeze_build.sha</code>, QA C 통과(재검증 차단 0건)</td></tr>
+<tr><td>과제 3</td><td><code>deliverables/task3-ads-automation/</code>, <code>_workspace/07_strategist_notes.md</code>, <code>08_qa_D_report.md</code></td><td>가상 데이터</td></tr>
+<tr><td>Claude 단가</td><td>Anthropic 공시(2026-09-25)</td><td>Haiku 4.5 $1/$5, Sonnet 5.5 $2/$10, Opus 5.5 $4/$20 per MTok</td></tr>
+</tbody></table></div>
+
+<h3>용어</h3>
+<div class="tbl"><table>
+<tbody>
+<tr><td>P1 / P2 / P3</td><td>리뷰 우선순위. P1 = 돈·계정·진행 불가(24시간 안), P2 = 광고·BM·밸런스·일반 버그, P3 = 칭찬·건의</td></tr>
+<tr><td>맞춤 답변 / 템플릿</td><td>리뷰 내용을 짚어 새로 쓴 답변 / 짧은 칭찬에 쓰는 언어별 고정 문구</td></tr>
+<tr><td>Artifact</td><td>claude.ai에 올리는 웹 페이지. 보는 사람의 Claude 계정으로 동작하고 공유 상태·사용자 정보를 쓸 수 있다</td></tr>
+<tr><td>IAP</td><td>Google Cloud Identity-Aware Proxy. 사내 계정으로만 화면을 열게 하는 로그인</td></tr>
+<tr><td>키아트</td><td>글자 없는 이벤트 대표 그림</td></tr>
+<tr><td>CPI · IPM · ROAS</td><td>설치당 비용 · 노출 1,000회당 설치 · 광고비 대비 수익</td></tr>
+<tr><td>MMP</td><td>모바일 측정 파트너(AppsFlyer·Adjust 등). 설치·수익의 기준 원천</td></tr>
+<tr><td>FTE</td><td>상근 인력 1명분(연 1,920시간 가정)</td></tr>
+</tbody></table></div>
+
+<h3>하네스 사용법 — Claude Code로 다시 돌리기</h3>
+<p>이 결과물은 Claude Code 에이전트 하네스로 만들었습니다. 같은 프로젝트 폴더에서 Claude Code를 열고 한국어로 요청하면 다시 실행됩니다.</p>
+<div class="tbl"><table>
+<tbody>
+<tr><td><code>CLAUDE.md</code></td><td>하네스 목표·호출 조건·변경 이력. Claude Code가 세션마다 읽는다</td></tr>
+<tr><td>오케스트레이터</td><td><code>thunder-ai-consulting</code> 스킬. 요청을 해석해 에이전트 팀에 나누고, QA를 거쳐 보고서까지 만든다</td></tr>
+<tr><td>에이전트 7</td><td>review-ops-analyst, review-service-engineer, liveops-event-planner, event-visual-designer, ads-growth-strategist, consulting-qa, consulting-report-editor</td></tr>
+<tr><td>스킬 6</td><td>thunder-ai-consulting, review-response-ops, review-web-service, weekly-event-production, ad-performance-automation, consulting-report</td></tr>
+</tbody></table></div>
+<div class="tbl"><table>
+<thead><tr><th>이렇게 말하면</th><th>하는 일</th></tr></thead>
+<tbody>
+<tr><td>"리뷰 데이터 갱신"</td><td>최근 리뷰 수집 → 새 리뷰만 분류·번역·초안 → 검증 → 누적 병합 → 웹서비스 재배포</td></tr>
+<tr><td>"다음 주 이벤트 키트"</td><td>캘린더의 다음 주 주제 → 기획서·13개 언어 문구·스토어 시트 → 키아트 3규격 → 배너 39장</td></tr>
+<tr><td>"과제 3만 다시"</td><td>광고 가이드·샘플 재생성</td></tr>
+<tr><td>"보고서 수정: ROI 장"</td><td>그 장만 고치고 요약 수치를 다시 맞춘다</td></tr>
+<tr><td>"재배포"</td><td>공개 전 점검 뒤 웹서비스를 다시 올린다</td></tr>
+</tbody></table></div>
+</section>
+
+<footer>썬더게임즈 AI 전환 컨설팅 · 2026-10-07 · 같은 내용의 Markdown: <a href="report.html">report.md</a></footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var root=document.documentElement, KEY='tg-report-theme';
+  try{var s=localStorage.getItem(KEY); if(s==='light'||s==='dark') root.setAttribute('data-theme',s);}catch(e){}
+  function current(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  document.querySelectorAll('[data-theme-toggle]').forEach(function(b){
+    b.addEventListener('click',function(){var n=current()==='dark'?'light':'dark'; root.setAttribute('data-theme',n); try{localStorage.setItem(KEY,n);}catch(e){}});
+  });
+  var links=[].slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var m=document.querySelector('.mtoc');
+  document.querySelectorAll('.mtoc a').forEach(function(a){a.addEventListener('click',function(){m.open=false;});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('section.ch').forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>

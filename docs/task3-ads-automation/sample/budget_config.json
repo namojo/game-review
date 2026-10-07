@@ -1,0 +1,131 @@
+{
+  "_notice": "[가상 데이터] 예산·목표값은 설명용 가정이다. 실제 값은 썬더게임즈 확인 대상[확인 필요].",
+  "is_sample_data": true,
+  "currency": "USD",
+  "timezone": "Asia/Seoul",
+  "month": "2026-10",
+  "monthly_budget": {
+    "meta": 33800,
+    "google": 22500
+  },
+  "country_tier": {
+    "KR": "T1",
+    "US": "T1",
+    "BR": "T2",
+    "MX": "T2",
+    "ID": "T3",
+    "TH": "T3"
+  },
+  "target_roas_d7": {
+    "T1": 0.1,
+    "T2": 0.09,
+    "T3": 0.08
+  },
+  "d7_d0_multiplier_fallback": 2.9,
+  "campaigns": [
+    {
+      "campaign_id": "120214500000101",
+      "campaign_name": "META_A+APP_AOS_T1",
+      "network": "meta",
+      "platform": "android",
+      "tier": "T1",
+      "daily_budget": 350,
+      "last_budget_change": {
+        "date": "2026-09-01",
+        "from": null,
+        "to": 350
+      }
+    },
+    {
+      "campaign_id": "120214500000102",
+      "campaign_name": "META_A+APP_AOS_T2",
+      "network": "meta",
+      "platform": "android",
+      "tier": "T2",
+      "daily_budget": 280,
+      "last_budget_change": {
+        "date": "2026-09-01",
+        "from": null,
+        "to": 280
+      }
+    },
+    {
+      "campaign_id": "120214500000103",
+      "campaign_name": "META_A+APP_AOS_T3",
+      "network": "meta",
+      "platform": "android",
+      "tier": "T3",
+      "daily_budget": 250,
+      "last_budget_change": {
+        "date": "2026-09-28",
+        "from": 300,
+        "to": 250
+      }
+    },
+    {
+      "campaign_id": "120214500000104",
+      "campaign_name": "META_A+APP_IOS_T1",
+      "network": "meta",
+      "platform": "ios",
+      "tier": "T1",
+      "daily_budget": 200,
+      "last_budget_change": {
+        "date": "2026-09-01",
+        "from": null,
+        "to": 200
+      }
+    },
+    {
+      "campaign_id": "21987650001",
+      "campaign_name": "GOOG_ACi_AOS_T1",
+      "network": "google",
+      "platform": "android",
+      "tier": "T1",
+      "daily_budget": 400,
+      "last_budget_change": {
+        "date": "2026-10-01",
+        "from": 330,
+        "to": 400
+      }
+    },
+    {
+      "campaign_id": "21987650002",
+      "campaign_name": "GOOG_ACi_AOS_T2",
+      "network": "google",
+      "platform": "android",
+      "tier": "T2",
+      "daily_budget": 220,
+      "last_budget_change": {
+        "date": "2026-10-05",
+        "from": 200,
+        "to": 220
+      }
+    },
+    {
+      "campaign_id": "21987650003",
+      "campaign_name": "GOOG_ACi_AOS_T3",
+      "network": "google",
+      "platform": "android",
+      "tier": "T3",
+      "daily_budget": 250,
+      "last_budget_change": {
+        "date": "2026-09-01",
+        "from": null,
+        "to": 250
+      }
+    },
+    {
+      "campaign_id": "21987650004",
+      "campaign_name": "GOOG_ACi_IOS_T1",
+      "network": "google",
+      "platform": "ios",
+      "tier": "T1",
+      "daily_budget": 25,
+      "last_budget_change": {
+        "date": "2026-09-01",
+        "from": null,
+        "to": 25
+      }
+    }
+  ]
+}

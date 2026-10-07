@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>analyze_ads.py | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../../index.html"><img src="../../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../../task2/gallery.html">이미지 갤러리</a></li><li><a href="../../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec" open><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="analyze_ads.py.html" aria-current="page">analyze_ads.py</a></li><li><a href="budget_config.json.html">budget_config.json</a></li><li><a href="check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="findings.json.html">findings.json</a></li><li><a href="generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="make_report.py.html">make_report.py</a></li><li><a href="report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="sample_daily_report.html">sample_daily_report</a></li><li><a href="sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">과제 3 · 광고 성과 분석<span class="path">deliverables/task3-ads-automation/sample/analyze_ads.py</span></p>
+    
+    <article class="doc"><h1>analyze_ads.py</h1><p class="actions"><a class="btn" href="analyze_ads.py" download>원본 내려받기</a></p><div class="docstring"><p class="pre">[가상 데이터로 시연] UA 일일 성과 분석 — analysis-playbook 규칙 → findings.json
+
+숫자 계산과 판정은 전부 이 스크립트가 한다. Claude 는 findings.json 만 받아 문장으로 바꾼다
+(report_prompt.md). 그래서 리포트에 나오는 모든 숫자는 이 파일이 만든 값이어야 한다.
+
+검사 순서(analysis-playbook.md)
+  0 데이터 신선도·완결성  → data_issue      (추적 누락 의심은 분석보다 먼저 보고)
+  1 예산 소진 속도        → pacing
+  2 지표 이상(강건 z)     → anomaly
+  3 소재 피로             → creative_fatigue
+  4 우수 소재             → scale_creative
+  5 예산 재배분           → budget_up / budget_down / hold
+
+규칙의 기준값은 &#x27;초기값&#x27;이다. 4주 운영 후 자사 데이터로 조정한다(RULES 한곳에 모아 둠).
+
+실행: python3 analyze_ads.py [--data ads_daily_sample.csv] [--config budget_config.json]
+                             [--as-of 2026-10-06] [--out findings.json]
+표준 라이브러리만 쓴다.</p></div><h2 id="code">코드 (791줄)</h2><pre><code class="language-py">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+[가상 데이터로 시연] UA 일일 성과 분석 — analysis-playbook 규칙 → findings.json
+
+숫자 계산과 판정은 전부 이 스크립트가 한다. Claude 는 findings.json 만 받아 문장으로 바꾼다
+(report_prompt.md). 그래서 리포트에 나오는 모든 숫자는 이 파일이 만든 값이어야 한다.
+
+검사 순서(analysis-playbook.md)
+  0 데이터 신선도·완결성  → data_issue      (추적 누락 의심은 분석보다 먼저 보고)
+  1 예산 소진 속도        → pacing
+  2 지표 이상(강건 z)     → anomaly
+  3 소재 피로             → creative_fatigue
+  4 우수 소재             → scale_creative
+  5 예산 재배분           → budget_up / budget_down / hold
+
+규칙의 기준값은 &#x27;초기값&#x27;이다. 4주 운영 후 자사 데이터로 조정한다(RULES 한곳에 모아 둠).
+
+실행: python3 analyze_ads.py [--data ads_daily_sample.csv] [--config budget_config.json]
+                             [--as-of 2026-10-06] [--out findings.json]
+표준 라이브러리만 쓴다.
+&quot;&quot;&quot;
+import argparse
+import calendar
+import csv
+import json
+import math
+from collections import defaultdict
+from datetime import date, timedelta
+from pathlib import Path
+from statistics import median
+
+HERE = Path(__file__).resolve().parent
+
+RULES = {
+    &quot;track_min_spend&quot;: 30.0,          # 이 지출 이상인데 설치 0이면 추적 누락 의심
+    &quot;track_ios_min_days&quot;: 2,          # iOS 는 SKAN 포스트백 지연이 있어 2일 연속일 때만 판정
+    &quot;pacing_tolerance&quot;: 0.15,         # 월 예산 소진 비율 / 경과일 비율 이 ±15% 밖
+    &quot;anomaly_baseline_days&quot;: 14,
+    &quot;anomaly_z&quot;: 3.0,
+    &quot;anomaly_min_installs&quot;: 20,       # 어제 표본이 이보다 작으면 이상 탐지 생략
+    &quot;anomaly_min_spend&quot;: 50.0,
+    &quot;anomaly_min_change&quot;: {&quot;cpi&quot;: 0.25, &quot;ctr&quot;: 0.20, &quot;roas_d0&quot;: 0.25},  # 추가 안전장치: 실무상 의미 있는 크기만
+    &quot;fatigue_window&quot;: 3,
+    &quot;fatigue_window_wide&quot;: 7,         # 추가 안전장치: 3일 창의 사건 수가 적으면 7일 창으로 넓힌다
+    &quot;fatigue_min_events&quot;: 100,        # 창마다 분자(클릭 또는 설치) 100건 미만이면 넓힌다
+    &quot;fatigue_drop&quot;: -0.25,
+    &quot;fatigue_meta_frequency&quot;: 3.0,
+    &quot;creative_min_impressions&quot;: 10000,  # kpi-framework: 소재 판정 최소 표본
+    &quot;creative_min_installs&quot;: 30,
+    &quot;significance_z&quot;: 1.96,           # 추가 안전장치: 두 비율 차이 검정(95%)
+    &quot;scale_top_share&quot;: 0.20,
+    &quot;scale_min_lift&quot;: 1.30,           # 캠페인 중앙값 대비 IPM 1.3배 이상
+    &quot;budget_min_spend_7d&quot;: 200.0,
+    &quot;budget_up_ratio&quot;: 1.20,
+    &quot;budget_up_strong_ratio&quot;: 1.50,
+    &quot;budget_down_ratio&quot;: 0.70,
+    &quot;budget_down_days&quot;: 3,
+    &quot;budget_step_up&quot;: 0.15,
+    &quot;budget_step_up_strong&quot;: 0.20,
+    &quot;budget_step_down&quot;: -0.20,
+    &quot;budget_max_change&quot;: 0.20,        # 변경 폭 상한 — 학습 단계 재시작을 피하려고
+    &quot;budget_cooldown_days&quot;: 3,        # 같은 캠페인 쿨다운
+    &quot;cpi_stable_tolerance&quot;: 0.15,     # 최근 3일 CPI 가 직전 14일 중앙값 대비 +15% 이내
+}
+
+TYPE_ORDER = {&quot;data_issue&quot;: 0, &quot;pacing&quot;: 1, &quot;anomaly&quot;: 2, &quot;creative_fatigue&quot;: 3, &quot;scale_creative&quot;: 4}
+SEVERITY_ORDER = {&quot;high&quot;: 0, &quot;medium&quot;: 1, &quot;low&quot;: 2}
+ADDITIVE = [&quot;spend&quot;, &quot;impressions&quot;, &quot;clicks&quot;, &quot;installs&quot;, &quot;video_3s_views&quot;, &quot;d1_retained&quot;, &quot;d7_retained&quot;,
+            &quot;rev_iap_d0&quot;, &quot;rev_iap_d7&quot;, &quot;rev_ad_d0&quot;, &quot;rev_ad_d7&quot;]
+NETWORK_KO = {&quot;meta&quot;: &quot;메타&quot;, &quot;google&quot;: &quot;구글&quot;}
+
+
+# ---------- 공통 도구 ----------
+def load_rows(path):
+    with open(path, newline=&quot;&quot;, encoding=&quot;utf-8&quot;) as f:
+        lines = [ln for ln in f if not ln.startswith(&quot;#&quot;)]      # 머리말(가상 데이터 표시) 건너뛰기
+    rows = []
+    for r in csv.DictReader(lines):
+        row = dict(r)
+        row[&quot;date&quot;] = date.fromisoformat(r[&quot;date&quot;])
+        for k in ADDITIVE + [&quot;frequency&quot;]:
+            v = r.get(k, &quot;&quot;)
+            row[k] = float(v) if v not in (&quot;&quot;, None) else None
+        rows.append(row)
+    return rows
+
+
+def agg(rows):
+    s = defaultdict(float)
+    for r in rows:
+        for k in ADDITIVE:
+            if r[k] is not None:
+                s[k] += r[k]
+    return s
+
+
+def rev_d0(s):
+    return s[&quot;rev_iap_d0&quot;] + s[&quot;rev_ad_d0&quot;]
+
+
+def metrics(s):
+    imp, clk, ins, sp = s[&quot;impressions&quot;], s[&quot;clicks&quot;], s[&quot;installs&quot;], s[&quot;spend&quot;]
+    return {
+        &quot;spend&quot;: sp,
+        &quot;installs&quot;: ins,
+        &quot;cpi&quot;: sp / ins if ins else None,
+        &quot;ctr&quot;: clk / imp if imp else None,
+        &quot;cvr&quot;: ins / clk if clk else None,
+        &quot;ipm&quot;: ins / imp * 1000 if imp else None,
+        &quot;cpm&quot;: sp / imp * 1000 if imp else None,
+        &quot;roas_d0&quot;: rev_d0(s) / sp if sp else None,
+    }
+
+
+def robust_z(x, series, noise_rel=0.0):
+    &quot;&quot;&quot;중앙값·MAD 기반 z. noise_rel 은 표본 크기에서 오는 상대 잡음(1/√n) — 14개 점으로 잰 MAD 가
+    우연히 작을 때 작은 변화가 이상으로 잡히는 것을 막는 하한이다.&quot;&quot;&quot;
+    med = median(series)
+    mad = median([abs(v - med) for v in series])
+    scale = max(1.4826 * mad, abs(med) * noise_rel, abs(med) * 0.01, 1e-9)
+    return (x - med) / scale, med
+
+
+def two_prop_z(x1, n1, x2, n2):
+    &quot;&quot;&quot;비율 x2/n2 가 x1/n1 과 다른지 — z 값(음수면 감소).&quot;&quot;&quot;
+    if n1 &lt;= 0 or n2 &lt;= 0:
+        return 0.0
+    p = (x1 + x2) / (n1 + n2)
+    se = math.sqrt(p * (1 - p) * (1 / n1 + 1 / n2)) if 0 &lt; p &lt; 1 else 0
+    return ((x2 / n2) - (x1 / n1)) / se if se else 0.0
+
+
+def pct(x, digits=0):
+    &quot;&quot;&quot;+12% / −31% 형식(유니코드 마이너스).&quot;&quot;&quot;
+    s = f&quot;{x * 100:+.{digits}f}%&quot;
+    if float(s[1:-1]) == 0:
+        return f&quot;{0:.{digits}f}%&quot;
+    return s.replace(&quot;-&quot;, &quot;−&quot;)
+
+
+def usd(x, digits=0):
+    return f&quot;${x:,.{digits}f}&quot;
+
+
+def md(d):
+    return d.strftime(&quot;%m/%d&quot;)
+
+
+def r2(x, n=4):
+    return None if x is None else round(x, n)
+
+
+# ---------- 분석 ----------
+class Analyzer:
+    def __init__(self, rows, config, as_of):
+        self.rows = [r for r in rows if r[&quot;date&quot;] &lt;= as_of]
+        self.cfg = config
+        self.as_of = as_of
+        self.report_date = as_of + timedelta(days=1)
+        self.camps = {c[&quot;campaign_name&quot;]: c for c in config[&quot;campaigns&quot;]}
+        self.findings = []
+        self.proposals = []
+        self.near_misses = []
+        self.checks = {}
+        self.blocked = defaultdict(dict)    # campaign → {예산 판단을 막는 이유: [국가]} — 데이터 문제: 모든 제안 보류
+        self.no_increase = {}               # campaign → [이유] — 지표 이상: 원인 확인 전 증액만 막는다
+        self.by = defaultdict(list)         # (campaign, country, date) → rows
+        for r in self.rows:
+            self.by[(r[&quot;campaign_name&quot;], r[&quot;country&quot;], r[&quot;date&quot;])].append(r)
+
+    def day_rows(self, d, **filt):
+        return [r for r in self.rows if r[&quot;date&quot;] == d and all(r[k] == v for k, v in filt.items())]
+
+    def range_rows(self, d0, d1, **filt):
+        return [r for r in self.rows if d0 &lt;= r[&quot;date&quot;] &lt;= d1 and all(r[k] == v for k, v in filt.items())]
+
+    def scopes(self):
+        return sorted({(r[&quot;campaign_name&quot;], r[&quot;country&quot;]) for r in self.rows})
+
+    def block(self, camp, reason, country=None):
+        countries = self.blocked[camp].setdefault(reason, [])
+        if country and country not in countries:
+            countries.append(country)
+
+    def blockers(self, camp):
+        return [f&quot;{r}({&#x27;·&#x27;.join(c)})&quot; if c else r for r, c in self.blocked.get(camp, {}).items()]
+
+    def add(self, **f):
+        f.setdefault(&quot;country&quot;, None)
+        f.setdefault(&quot;creative&quot;, None)
+        self.findings.append(f)
+
+    # 0. 데이터 신선도·완결성
+    def check_data(self):
+        flagged = 0
+        for net in sorted({c[&quot;network&quot;] for c in self.cfg[&quot;campaigns&quot;]}):
+            if not self.day_rows(self.as_of, network=net):
+                flagged += 1
+                self.add(type=&quot;data_issue&quot;, severity=&quot;high&quot;, network=net, campaign=None, metric=&quot;freshness&quot;,
+                         value=0, baseline=None, change=None,
+                         reason=f&quot;{NETWORK_KO[net]} {md(self.as_of)} 데이터 행 없음 — 수집 작업 실패 또는 지연&quot;,
+                         action=&quot;수집 로그·토큰 만료 확인 후 재수집. 이 매체의 판단은 모두 보류&quot;,
+                         confidence=&quot;high&quot;)
+                for c in self.cfg[&quot;campaigns&quot;]:
+                    if c[&quot;network&quot;] == net:
+                        self.block(c[&quot;campaign_name&quot;], &quot;데이터 미수집&quot;)
+
+        evaluated = 0
+        for camp, country in self.scopes():
+            today = agg(self.by[(camp, country, self.as_of)])
+            if today[&quot;spend&quot;] &lt; RULES[&quot;track_min_spend&quot;]:
+                continue
+            evaluated += 1
+            if today[&quot;installs&quot;] &gt; 0:
+                continue
+            # 설치 0이 며칠째인지
+            streak, spend_s, clicks_s = 0, 0.0, 0.0
+            d = self.as_of
+            while True:
+                s = agg(self.by[(camp, country, d)])
+                if s[&quot;spend&quot;] &gt; 0 and s[&quot;installs&quot;] == 0:
+                    streak += 1
+                    spend_s += s[&quot;spend&quot;]
+                    clicks_s += s[&quot;clicks&quot;]
+                    d -= timedelta(days=1)
+                else:
+                    break
+            info = self.camps.get(camp, {})
+            platform = info.get(&quot;platform&quot;, &quot;&quot;)
+            if platform == &quot;ios&quot; and streak &lt; RULES[&quot;track_ios_min_days&quot;]:
+                self.near_misses.append({&quot;check&quot;: &quot;data_issue&quot;, &quot;campaign&quot;: camp, &quot;country&quot;: country,
+                                         &quot;note&quot;: &quot;iOS 설치 0 하루 — SKAN 포스트백 지연 가능, 내일 재확인&quot;})
+                continue
+            start = self.as_of - timedelta(days=streak - 1)
+            base_days = [agg(self.by[(camp, country, start - timedelta(days=i))])[&quot;installs&quot;]
+                         for i in range(1, 15)]
+            base_inst = median(base_days)
+            flagged += 1
+            span = f&quot;{md(start)}~{md(self.as_of)} {streak}일 연속&quot; if streak &gt; 1 else md(self.as_of)
+            self.add(type=&quot;data_issue&quot;, severity=&quot;high&quot; if streak &gt;= 2 or spend_s &gt;= 100 else &quot;medium&quot;,
+                     network=info.get(&quot;network&quot;), campaign=camp, country=country, metric=&quot;installs&quot;,
+                     value=0, baseline=base_inst, change=-1.0,
+                     days=streak, spend_during=round(spend_s, 2), clicks_during=int(clicks_s),
+                     reason=(f&quot;{span} 지출 {usd(spend_s)}·클릭 {int(clicks_s):,}건인데 MMP 설치 0 &quot;
+                             f&quot;(직전 14일 하루 중앙값 {base_inst:g}건)&quot;),
+                     action=(&quot;MMP에서 이 매체 연동·포스트백 수신 확인(iOS 는 SKAN·최신 빌드 SDK 이벤트 포함). &quot;
+                             &quot;확인 전까지 이 캠페인 예산 판단 보류&quot;),
+                     confidence=&quot;high&quot;)
+            self.block(camp, &quot;추적 누락 의심&quot;, country)
+
+        # 광고 수익 미적재(하이브리드 ROAS 가 반토막 나는 흔한 사고) — 매체 단위
+        rev_checks = 0
+        for net in sorted({c[&quot;network&quot;] for c in self.cfg[&quot;campaigns&quot;]}):
+            today = agg(self.day_rows(self.as_of, network=net))
+            if today[&quot;installs&quot;] &lt; 100:
+                continue
+            rev_checks += 1
+            hist = agg(self.range_rows(self.as_of - timedelta(days=14), self.as_of - timedelta(days=1),
+                                       network=net))
+            share = hist[&quot;rev_ad_d0&quot;] / rev_d0(hist) if rev_d0(hist) else 0
+            if today[&quot;rev_ad_d0&quot;] == 0 and share &gt; 0.10:
+                flagged += 1
+                self.add(type=&quot;data_issue&quot;, severity=&quot;medium&quot;, network=net, campaign=None, metric=&quot;rev_ad_d0&quot;,
+                         value=0, baseline=round(share, 3), change=-1.0,
+                         reason=f&quot;{NETWORK_KO[net]} 설치 코호트의 {md(self.as_of)} 광고 수익 0 (직전 14일 광고 수익 비중 {pct(share)})&quot;,
+                         action=&quot;미디에이션 노출 단위 수익 적재 확인. D0 ROAS 판단 보류&quot;,
+                         confidence=&quot;high&quot;)
+        self.checks[&quot;data_issue&quot;] = {&quot;networks&quot;: len({c[&quot;network&quot;] for c in self.cfg[&quot;campaigns&quot;]}),
+                                     &quot;scopes_evaluated&quot;: evaluated, &quot;revenue_checks&quot;: rev_checks,
+                                     &quot;flagged&quot;: flagged}
+
+    # 1. 예산 소진 속도
+    def check_pacing(self):
+        y, m = self.as_of.year, self.as_of.month
+        days_in_month = calendar.monthrange(y, m)[1]
+        elapsed = self.as_of.day / days_in_month
+        remaining = days_in_month - self.as_of.day
+        month_start = date(y, m, 1)
+        self.pacing = {}
+        flagged = 0
+        for net, monthly in self.cfg[&quot;monthly_budget&quot;].items():
+            mtd = agg(self.range_rows(month_start, self.as_of, network=net))[&quot;spend&quot;]
+            daily_now = sum(c[&quot;daily_budget&quot;] for c in self.cfg[&quot;campaigns&quot;] if c[&quot;network&quot;] == net)
+            projected = mtd + daily_now * remaining
+            ratio = (mtd / monthly) / elapsed
+            needed = (monthly - mtd) / remaining if remaining else 0
+            self.pacing[net] = {&quot;monthly_budget&quot;: monthly, &quot;mtd_spend&quot;: round(mtd, 2),
+                                &quot;mtd_share&quot;: round(mtd / monthly, 4), &quot;elapsed_share&quot;: round(elapsed, 4),
+                                &quot;pace_ratio&quot;: round(ratio, 3), &quot;daily_budget_now&quot;: daily_now,
+                                &quot;projected_month_spend&quot;: round(projected, 2),
+                                &quot;projected_vs_budget&quot;: round(projected / monthly - 1, 4),
+                                &quot;daily_needed_to_fit&quot;: round(needed, 2),
+                                &quot;headroom_daily&quot;: round(needed - daily_now, 2)}
+            if abs(ratio - 1) &lt;= RULES[&quot;pacing_tolerance&quot;]:
+                continue
+            flagged += 1
+            over = ratio &gt; 1
+            changes = [c for c in self.cfg[&quot;campaigns&quot;] if c[&quot;network&quot;] == net
+                       and c[&quot;last_budget_change&quot;][&quot;from&quot;] is not None
+                       and c[&quot;last_budget_change&quot;][&quot;date&quot;] &gt;= month_start.isoformat()]
+            cause = &quot;&quot;
+            if changes:
+                c = changes[0]
+                ch = c[&quot;last_budget_change&quot;]
+                cause = (f&quot; 이번 달 일 예산 변경: {c[&#x27;campaign_name&#x27;]} {md(date.fromisoformat(ch[&#x27;date&#x27;]))} &quot;
+                         f&quot;{usd(ch[&#x27;from&#x27;])}→{usd(ch[&#x27;to&#x27;])}.&quot;)
+            proj_txt = f&quot;{usd(projected)}({pct(projected / monthly - 1)})&quot;
+            self.add(type=&quot;pacing&quot;, severity=&quot;high&quot; if abs(ratio - 1) &gt; 0.30 else &quot;medium&quot;,
+                     network=net, campaign=None, metric=&quot;mtd_spend_share&quot;,
+                     value=round(mtd / monthly, 4), baseline=round(elapsed, 4), change=round(ratio - 1, 3),
+                     reason=(f&quot;{NETWORK_KO[net]} {m}월 예산 {usd(monthly)} 중 {usd(mtd)}({pct(mtd / monthly, 1).lstrip(&#x27;+&#x27;)}) 소진 — &quot;
+                             f&quot;경과일 비율 {pct(elapsed, 1).lstrip(&#x27;+&#x27;)}. 현재 일 예산 합계 {usd(daily_now)} 유지 시 &quot;
+                             f&quot;월말 예상 {proj_txt}.{cause}&quot;),
+                     action=(f&quot;월 배정 상향 승인 또는 남은 기간 일 예산 합계를 {usd(needed)} 이하로 조정&quot;
+                             if over else f&quot;집행 막힘 확인(심사 거절·입찰 상한). 남은 기간 일 {usd(needed)} 까지 집행 가능&quot;),
+                     confidence=&quot;high&quot;)
+        self.checks[&quot;pacing&quot;] = {&quot;networks&quot;: len(self.cfg[&quot;monthly_budget&quot;]), &quot;flagged&quot;: flagged}
+
+    # 2. 지표 이상
+    def daily_metric(self, camp, country, d):
+        return metrics(agg(self.by[(camp, country, d)]))
+
+    def check_anomaly(self):
+        bad_dir = {&quot;cpi&quot;: 1, &quot;ctr&quot;: -1, &quot;roas_d0&quot;: -1}
+        evaluated, flagged = 0, 0
+        blocked_scopes = {(f[&quot;campaign&quot;], f[&quot;country&quot;]) for f in self.findings if f[&quot;type&quot;] == &quot;data_issue&quot;}
+        for camp, country in self.scopes():
+            if (camp, country) in blocked_scopes:
+                continue
+            today = self.daily_metric(camp, country, self.as_of)
+            if today[&quot;installs&quot;] &lt; RULES[&quot;anomaly_min_installs&quot;] or today[&quot;spend&quot;] &lt; RULES[&quot;anomaly_min_spend&quot;]:
+                continue
+            evaluated += 1
+            base_days = [self.as_of - timedelta(days=i) for i in range(1, RULES[&quot;anomaly_baseline_days&quot;] + 1)]
+            base = [self.daily_metric(camp, country, d) for d in base_days]
+            s_today = agg(self.by[(camp, country, self.as_of)])
+            noise = {&quot;cpi&quot;: 1 / math.sqrt(s_today[&quot;installs&quot;]), &quot;ctr&quot;: 1 / math.sqrt(max(s_today[&quot;clicks&quot;], 1)),
+                     &quot;roas_d0&quot;: 1.5 / math.sqrt(s_today[&quot;installs&quot;])}     # 수익은 소수 결제자에 몰려 더 출렁인다
+            res = {}
+            for m, sign in bad_dir.items():
+                series = [b[m] for b in base if b[m] is not None]
+                if len(series) &lt; 7 or today[m] is None:
+                    continue
+                z, med = robust_z(today[m], series, noise[m])
+                res[m] = {&quot;z&quot;: z, &quot;value&quot;: today[m], &quot;baseline&quot;: med, &quot;change&quot;: today[m] / med - 1 if med else None}
+            hits = [m for m in (&quot;cpi&quot;, &quot;roas_d0&quot;, &quot;ctr&quot;) if m in res and res[m][&quot;z&quot;] * bad_dir[m] &gt; RULES[&quot;anomaly_z&quot;]
+                    and (res[m][&quot;change&quot;] or 0) * bad_dir[m] &gt;= RULES[&quot;anomaly_min_change&quot;][m]]
+            if not hits:
+                continue
+            flagged += 1
+            primary = hits[0]
+            p = res[primary]
+            # 며칠째인가
+            streak, d = 0, self.as_of
+            while True:
+                dm = self.daily_metric(camp, country, d)
+                series = [b[primary] for b in base if b[primary] is not None]
+                if dm[primary] is None:
+                    break
+                zz, med_ = robust_z(dm[primary], series, noise[primary])
+                if zz * bad_dir[primary] &gt; RULES[&quot;anomaly_z&quot;] and (dm[primary] / med_ - 1) * bad_dir[primary] &gt;= \
+                        RULES[&quot;anomaly_min_change&quot;][primary] and streak &lt; 14:
+                    streak += 1
+                    d -= timedelta(days=1)
+                else:
+                    break
+            # CPI = CPM ÷ IPM, IPM = CTR × CVR × 1000 — 무엇이 움직였나
+            drivers = {}
+            for m in (&quot;cpm&quot;, &quot;ctr&quot;, &quot;cvr&quot;):
+                series = [b[m] for b in base if b[m] is not None]
+                med = median(series)
+                drivers[m] = round(today[m] / med - 1, 3) if med else None
+            info = self.camps.get(camp, {})
+            net = info.get(&quot;network&quot;)
+            # 같은 국가의 다른 매체는 정상인가 — 매체 쪽 원인인지, 국가·스토어 쪽 원인인지 가르는 단서
+            peers = []
+            for c2, k2 in self.scopes():
+                if k2 != country or c2 == camp or self.camps.get(c2, {}).get(&quot;network&quot;) == net:
+                    continue
+                peers.append(c2)
+            peer_txt, peer_normal = &quot;&quot;, None
+            if peers:
+                peer_states = []
+                for c2 in peers:
+                    tm = self.daily_metric(c2, country, self.as_of)
+                    bs = [self.daily_metric(c2, country, self.as_of - timedelta(days=i))[&quot;cpi&quot;] for i in range(1, 15)]
+                    bs = [b for b in bs if b is not None]
+                    if tm[&quot;cpi&quot;] is None or len(bs) &lt; 7:
+                        continue
+                    zz, med = robust_z(tm[&quot;cpi&quot;], bs, 1 / math.sqrt(max(tm[&quot;installs&quot;], 1)))
+                    peer_states.append((c2, tm[&quot;cpi&quot;] / med - 1, zz))
+                if peer_states:
+                    c2, ch, zz = peer_states[0]
+                    peer_normal = abs(zz) &lt;= RULES[&quot;anomaly_z&quot;]
+                    state = &quot;정상&quot; if peer_normal else &quot;이상&quot;
+                    peer_txt = f&quot; 같은 국가 {c2} CPI {pct(ch)}({state}) → {&#x27;매체 쪽 원인 가능성&#x27; if state == &#x27;정상&#x27; else &#x27;국가·스토어 쪽 원인 가능성&#x27;}.&quot;
+            label = {&quot;cpi&quot;: &quot;CPI&quot;, &quot;ctr&quot;: &quot;CTR&quot;, &quot;roas_d0&quot;: &quot;D0 ROAS&quot;}[primary]
+            fmt = (lambda v: usd(v, 2)) if primary == &quot;cpi&quot; else (lambda v: f&quot;{v * 100:.1f}%&quot;)
+            span = f&quot;{md(self.as_of - timedelta(days=streak - 1))}부터 {streak}일째&quot; if streak &gt; 1 else &quot;어제 하루&quot;
+            related = {m: {&quot;value&quot;: r2(res[m][&quot;value&quot;]), &quot;baseline&quot;: r2(res[m][&quot;baseline&quot;]),
+                           &quot;change&quot;: r2(res[m][&quot;change&quot;], 3), &quot;z&quot;: round(res[m][&quot;z&quot;], 1)}
+                       for m in res if m != primary}
+            big = abs(p[&quot;z&quot;]) &gt; 5 and (p[&quot;change&quot;] or 0) * bad_dir[primary] &gt;= 0.5
+            self.add(type=&quot;anomaly&quot;, severity=&quot;high&quot; if streak &gt;= 2 or big else &quot;medium&quot;,
+                     network=net, campaign=camp, country=country, metric=primary,
+                     value=r2(p[&quot;value&quot;]), baseline=r2(p[&quot;baseline&quot;]), change=r2(p[&quot;change&quot;], 3),
+                     z=round(p[&quot;z&quot;], 1), days=streak, drivers=drivers, related=related,
+                     reason=(f&quot;{label} {fmt(p[&#x27;value&#x27;])} — 직전 14일 중앙값 {fmt(p[&#x27;baseline&#x27;])} 대비 {pct(p[&#x27;change&#x27;])} &quot;
+                             f&quot;(강건 z {p[&#x27;z&#x27;]:.1f}, {span}). 분해: CPM {pct(drivers[&#x27;cpm&#x27;])}, CTR {pct(drivers[&#x27;ctr&#x27;])}, &quot;
+                             f&quot;CVR {pct(drivers[&#x27;cvr&#x27;])}.{peer_txt}&quot;),
+                     action=anomaly_action(drivers, peer_normal, NETWORK_KO.get(net, net)),
+                     confidence=&quot;high&quot; if today[&quot;installs&quot;] &gt;= 2 * RULES[&quot;anomaly_min_installs&quot;] else &quot;medium&quot;)
+            self.no_increase.setdefault(camp, []).append(f&quot;{label} 이상({country})&quot;)
+        self.checks[&quot;anomaly&quot;] = {&quot;scopes_evaluated&quot;: evaluated, &quot;metrics&quot;: list(bad_dir), &quot;flagged&quot;: flagged}
+
+    # 3. 소재 피로
+    def creative_series(self):
+        &quot;&quot;&quot;Meta 는 캠페인×국가×소재, Google 은 캠페인×소재(에셋 지표는 겹치고 국가 분할을 전제하지 않는다).&quot;&quot;&quot;
+        series = defaultdict(lambda: defaultdict(list))
+        for r in self.rows:
+            country = r[&quot;country&quot;] if r[&quot;network&quot;] == &quot;meta&quot; else None
+            series[(r[&quot;campaign_name&quot;], country, r[&quot;creative_id&quot;])][r[&quot;date&quot;]].append(r)
+        return series
+
+    def check_fatigue(self):
+        evaluated, flagged = 0, 0
+        self.fatigued = set()
+        series = self.creative_series()
+        for (camp, country, cr), days in sorted(series.items(), key=lambda kv: (kv[0][0], kv[0][1] or &quot;&quot;, kv[0][2])):
+            active = sorted(d for d, rs in days.items() if agg(rs)[&quot;impressions&quot;] &gt; 0)
+            if len(active) &lt; 2 * RULES[&quot;fatigue_window&quot;] or active[-1] != self.as_of:
+                continue
+            net = days[active[-1]][0][&quot;network&quot;]
+            metric = &quot;ctr&quot; if net == &quot;meta&quot; else &quot;ipm&quot;
+            num = &quot;clicks&quot; if metric == &quot;ctr&quot; else &quot;installs&quot;
+            w = RULES[&quot;fatigue_window&quot;]
+            first = agg([r for d in active[:w] for r in days[d]])
+            last = agg([r for d in active[-w:] for r in days[d]])
+            if min(first[num], last[num]) &lt; RULES[&quot;fatigue_min_events&quot;] and \
+                    len(active) &gt;= 2 * RULES[&quot;fatigue_window_wide&quot;]:
+                w = RULES[&quot;fatigue_window_wide&quot;]
+                first = agg([r for d in active[:w] for r in days[d]])
+                last = agg([r for d in active[-w:] for r in days[d]])
+            if min(first[&quot;impressions&quot;], last[&quot;impressions&quot;]) &lt; RULES[&quot;creative_min_impressions&quot;] or \
+                    min(first[&quot;installs&quot;], last[&quot;installs&quot;]) &lt; RULES[&quot;creative_min_installs&quot;]:
+                continue
+            evaluated += 1
+            v0 = first[num] / first[&quot;impressions&quot;]
+            v1 = last[num] / last[&quot;impressions&quot;]
+            change = v1 / v0 - 1
+            if change &gt; RULES[&quot;fatigue_drop&quot;]:
+                continue
+            z = two_prop_z(first[num], first[&quot;impressions&quot;], last[num], last[&quot;impressions&quot;])
+            # 같은 범위의 다른 소재도 같은 날들에 함께 떨어졌다면 소재 피로가 아니라 범위 단위 문제다(이상 탐지가 맡는다)
+            others = [kv for kv in series.items() if kv[0][0] == camp and kv[0][1] == country and kv[0][2] != cr]
+            o_first = agg([r for _, dd in others for d in active[:w] for r in dd.get(d, [])])
+            o_last = agg([r for _, dd in others for d in active[-w:] for r in dd.get(d, [])])
+            peer_change = None
+            if o_first[&quot;impressions&quot;] and o_last[&quot;impressions&quot;] and o_first[num]:
+                peer_change = (o_last[num] / o_last[&quot;impressions&quot;]) / (o_first[num] / o_first[&quot;impressions&quot;]) - 1
+            relative = (1 + change) / (1 + peer_change) - 1 if peer_change is not None else change
+            freq = None
+            if net == &quot;meta&quot;:
+                freq = max(r[&quot;frequency&quot;] or 0 for r in days[self.as_of])      # 비가산 지표: 합치지 않고 최신값
+            name = days[self.as_of][0][&quot;creative_name&quot;]
+            significant = z &lt; -RULES[&quot;significance_z&quot;]
+            freq_ok = net != &quot;meta&quot; or (freq is not None and freq &gt; RULES[&quot;fatigue_meta_frequency&quot;])
+            own_drop = relative &lt;= RULES[&quot;fatigue_drop&quot;] / 2
+            if not (significant and freq_ok and own_drop):
+                why = []
+                if not own_drop:
+                    why.append(f&quot;같은 범위 다른 소재도 {pct(peer_change)} — 범위 단위 하락&quot;)
+                if not freq_ok:
+                    why.append(f&quot;frequency {freq:.1f} ≤ {RULES[&#x27;fatigue_meta_frequency&#x27;]:.0f}&quot;)
+                if not significant:
+                    why.append(f&quot;차이 검정 z {z:.1f}&quot;)
+                self.near_misses.append({&quot;check&quot;: &quot;creative_fatigue&quot;, &quot;network&quot;: net, &quot;campaign&quot;: camp,
+                                         &quot;country&quot;: country, &quot;creative&quot;: name, &quot;metric&quot;: metric,
+                                         &quot;change&quot;: round(change, 3), &quot;frequency&quot;: freq,
+                                         &quot;note&quot;: &quot;하락은 있으나 규칙 미충족: &quot; + &quot;, &quot;.join(why)})
+                continue
+            flagged += 1
+            self.fatigued.add((camp, cr))
+            unit = (lambda v: f&quot;{v * 100:.2f}%&quot;) if metric == &quot;ctr&quot; else (lambda v: f&quot;{v * 1000:.2f}&quot;)
+            label = &quot;CTR&quot; if metric == &quot;ctr&quot; else &quot;IPM&quot;
+            hook_txt = &quot;&quot;
+            if first[&quot;video_3s_views&quot;] and last[&quot;video_3s_views&quot;]:
+                h0 = first[&quot;video_3s_views&quot;] / first[&quot;impressions&quot;]
+                h1 = last[&quot;video_3s_views&quot;] / last[&quot;impressions&quot;]
+                hook_txt = f&quot;, 3초 조회율 {h0 * 100:.0f}%→{h1 * 100:.0f}%&quot;
+            freq_txt = f&quot;, frequency {freq:.1f}&quot; if freq else &quot;, 구글은 frequency 미제공 — IPM 기준만 적용&quot;
+            peer_txt = f&quot;, 같은 범위 다른 소재 {pct(peer_change)}&quot; if peer_change is not None else &quot;&quot;
+            sev = &quot;high&quot; if (net == &quot;meta&quot; and change &lt;= -0.30) else &quot;medium&quot;
+            self.add(type=&quot;creative_fatigue&quot;, severity=sev, network=net, campaign=camp, country=country,
+                     creative=name, metric=metric, value=round(v1 * (1 if metric == &quot;ctr&quot; else 1000), 4),
+                     baseline=round(v0 * (1 if metric == &quot;ctr&quot; else 1000), 4), change=round(change, 3),
+                     frequency=freq, peer_change=r2(peer_change, 3), z=round(z, 1), window_days=w,
+                     reason=(f&quot;최근 {w}일 {label} {unit(v1)} — 첫 {w}일({md(active[0])}~) {unit(v0)} 대비 {pct(change)}&quot;
+                             f&quot;{freq_txt}{hook_txt}{peer_txt}&quot;),
+                     action=(&quot;교체 소재 준비(같은 주제의 새 첫 3초 변형 2종), 이 소재 노출 비중 축소&quot;
+                             if net == &quot;meta&quot; else
+                             &quot;에셋 성과 라벨 확인 후 같은 광고 그룹에 새 영상 에셋 추가, 저성과 라벨이면 교체&quot;),
+                     confidence=&quot;high&quot; if min(first[&quot;installs&quot;], last[&quot;installs&quot;]) &gt;= 2 * RULES[&quot;creative_min_installs&quot;] else &quot;medium&quot;)
+        self.checks[&quot;creative_fatigue&quot;] = {&quot;creatives_evaluated&quot;: evaluated, &quot;flagged&quot;: flagged}
+
+    # 4. 우수 소재
+    def check_scale(self):
+        d0 = self.as_of - timedelta(days=6)
+        evaluated, flagged = 0, 0
+        for camp in sorted({r[&quot;campaign_name&quot;] for r in self.rows}):
+            if camp in self.blocked:          # 추적 누락 범위의 IPM 은 믿을 수 없다
+                continue
+            per = defaultdict(list)
+            for r in self.range_rows(d0, self.as_of, campaign_name=camp):
+                per[r[&quot;creative_id&quot;]].append(r)
+            stats = {}
+            for cr, rs in per.items():
+                s = agg(rs)
+                if s[&quot;impressions&quot;] &gt;= RULES[&quot;creative_min_impressions&quot;] and s[&quot;installs&quot;] &gt;= RULES[&quot;creative_min_installs&quot;]:
+                    stats[cr] = (s, rs[0][&quot;creative_name&quot;], s[&quot;installs&quot;] / s[&quot;impressions&quot;] * 1000)
+            if len(stats) &lt; 3:
+                continue
+            evaluated += 1
+            ipms = sorted(v[2] for v in stats.values())
+            med = median(ipms)
+            k = max(1, math.ceil(len(stats) * RULES[&quot;scale_top_share&quot;]))
+            top = sorted(stats.items(), key=lambda kv: -kv[1][2])[:k]
+            for cr, (s, name, ipm) in top:
+                if (camp, cr) in self.fatigued or ipm &lt; med * RULES[&quot;scale_min_lift&quot;]:
+                    continue
+                rest = agg([r for c2, rs in per.items() if c2 != cr for r in rs])
+                z = two_prop_z(rest[&quot;installs&quot;], rest[&quot;impressions&quot;], s[&quot;installs&quot;], s[&quot;impressions&quot;])
+                if z &lt; RULES[&quot;significance_z&quot;]:
+                    continue
+                flagged += 1
+                share = s[&quot;spend&quot;] / agg([r for rs in per.values() for r in rs])[&quot;spend&quot;]
+                info = self.camps.get(camp, {})
+                self.add(type=&quot;scale_creative&quot;, severity=&quot;low&quot;, network=info.get(&quot;network&quot;), campaign=camp,
+                         creative=name, metric=&quot;ipm&quot;, value=round(ipm, 2), baseline=round(med, 2),
+                         change=round(ipm / med - 1, 3), spend_share_7d=round(share, 3),
+                         reason=(f&quot;최근 7일 IPM {ipm:.2f} — 캠페인 소재 중앙값 {med:.2f}의 {ipm / med:.1f}배, &quot;
+                                 f&quot;설치 {int(s[&#x27;installs&#x27;]):,}건, 지출 비중 {share * 100:.0f}%&quot;),
+                         action=&quot;같은 콘셉트 변형 2~3종 제작, 다른 Tier 캠페인에 테스트 투입(기존 소재는 끄지 않음)&quot;,
+                         confidence=&quot;high&quot; if s[&quot;installs&quot;] &gt;= 100 else &quot;medium&quot;)
+        self.checks[&quot;scale_creative&quot;] = {&quot;campaigns_evaluated&quot;: evaluated, &quot;flagged&quot;: flagged}
+
+    # 5. 예산 재배분
+    def check_budget(self):
+        mult_fb = self.cfg[&quot;d7_d0_multiplier_fallback&quot;]
+        targets = self.cfg[&quot;target_roas_d7&quot;]
+        d7_from, d7_to = self.as_of - timedelta(days=13), self.as_of - timedelta(days=7)   # D7 확정 코호트
+        recent_from = self.as_of - timedelta(days=6)
+        overpacing = {n for n, p in self.pacing.items() if p[&quot;pace_ratio&quot;] - 1 &gt; RULES[&quot;pacing_tolerance&quot;]}
+        candidates = []
+        for c in self.cfg[&quot;campaigns&quot;]:
+            camp = c[&quot;campaign_name&quot;]
+            last7 = agg(self.range_rows(recent_from, self.as_of, campaign_name=camp))
+            base = {&quot;network&quot;: c[&quot;network&quot;], &quot;campaign&quot;: camp, &quot;current_daily&quot;: c[&quot;daily_budget&quot;]}
+            if last7[&quot;spend&quot;] &lt; RULES[&quot;budget_min_spend_7d&quot;]:
+                self.proposals.append(dict(base, type=&quot;hold&quot;, proposed_daily=c[&quot;daily_budget&quot;], change=0.0,
+                                           reason=f&quot;최근 7일 지출 {usd(last7[&#x27;spend&#x27;])} — 최소 표본 {usd(RULES[&#x27;budget_min_spend_7d&#x27;])} 미만, 판단 보류&quot;,
+                                           guardrail=&quot;표본 부족&quot;, confidence=&quot;low&quot;))
+                continue
+            conf = agg(self.range_rows(d7_from, d7_to, campaign_name=camp))
+            hist = agg(self.range_rows(self.as_of - timedelta(days=20), d7_to, campaign_name=camp))
+            mult = ((hist[&quot;rev_iap_d7&quot;] + hist[&quot;rev_ad_d7&quot;]) / rev_d0(hist)) if rev_d0(hist) else mult_fb
+            target = targets[c[&quot;tier&quot;]]
+            est = rev_d0(last7) / last7[&quot;spend&quot;] * mult
+            confirmed = (conf[&quot;rev_iap_d7&quot;] + conf[&quot;rev_ad_d7&quot;]) / conf[&quot;spend&quot;] if conf[&quot;spend&quot;] else None
+            ratio = est / target
+            daily_ratios = []
+            for i in range(RULES[&quot;budget_down_days&quot;]):
+                s = agg(self.range_rows(self.as_of - timedelta(days=i), self.as_of - timedelta(days=i), campaign_name=camp))
+                daily_ratios.append(rev_d0(s) / s[&quot;spend&quot;] * mult / target if s[&quot;spend&quot;] else None)
+            # CPI 안정성: 최근 3일 CPI vs 직전 14일 일별 CPI 중앙값
+            s3 = agg(self.range_rows(self.as_of - timedelta(days=2), self.as_of, campaign_name=camp))
+            prev = []
+            for i in range(3, 17):
+                s = agg(self.range_rows(self.as_of - timedelta(days=i), self.as_of - timedelta(days=i), campaign_name=camp))
+                if s[&quot;installs&quot;]:
+                    prev.append(s[&quot;spend&quot;] / s[&quot;installs&quot;])
+            cpi3 = s3[&quot;spend&quot;] / s3[&quot;installs&quot;] if s3[&quot;installs&quot;] else None
+            cpi_med = median(prev) if prev else None
+            cpi_stable = cpi3 is not None and cpi_med and cpi3 &lt;= cpi_med * (1 + RULES[&quot;cpi_stable_tolerance&quot;])
+            ch = c[&quot;last_budget_change&quot;]
+            since = (self.report_date - date.fromisoformat(ch[&quot;date&quot;])).days
+            metrics_txt = (f&quot;추정 D7 ROAS {est * 100:.1f}%(D0×{mult:.2f}) — 목표 {target * 100:.0f}%의 {ratio * 100:.0f}%&quot;
+                           + (f&quot;, 확정 D7({md(d7_from)}~{md(d7_to)} 코호트) {confirmed * 100:.1f}%&quot; if confirmed else &quot;&quot;))
+            install_conf = &quot;high&quot; if last7[&quot;installs&quot;] &gt;= 300 else &quot;medium&quot; if last7[&quot;installs&quot;] &gt;= 100 else &quot;low&quot;
+            row = dict(base, est_roas_d7=round(est, 4), confirmed_roas_d7=r2(confirmed), target_roas_d7=target,
+                       vs_target=round(ratio, 3), d7_d0_multiplier=round(mult, 2),
+                       spend_7d=round(last7[&quot;spend&quot;], 2), installs_7d=int(last7[&quot;installs&quot;]),
+                       days_since_change=since, confidence=install_conf)
+
+            want = None
+            if ratio &gt;= RULES[&quot;budget_up_ratio&quot;]:
+                want = &quot;up&quot;
+            elif all(x is not None and x &lt; RULES[&quot;budget_down_ratio&quot;] for x in daily_ratios):
+                want = &quot;down&quot;
+            blockers = self.blockers(camp)
+            if want == &quot;up&quot; and camp in self.no_increase:
+                blockers += self.no_increase[camp]
+            if want is None and camp in self.no_increase and not blockers:
+                self.proposals.append(dict(row, type=&quot;hold&quot;, proposed_daily=c[&quot;daily_budget&quot;], change=0.0,
+                                           reason=f&quot;{metrics_txt}. 감액 신호 없음, {&#x27;, &#x27;.join(self.no_increase[camp])} — 원인 확인 전 증액 금지&quot;,
+                                           guardrail=&quot;지표 이상 범위는 원인 확인 전 증액하지 않음&quot;))
+                continue
+            if want == &quot;up&quot; and not cpi_stable:
+                blockers.append(f&quot;CPI 불안정(최근 3일 {usd(cpi3 or 0, 2)} vs 중앙값 {usd(cpi_med or 0, 2)})&quot;)
+            if want == &quot;up&quot; and c[&quot;network&quot;] in overpacing:
+                blockers.append(f&quot;{NETWORK_KO[c[&#x27;network&#x27;]]} 월 예산 소진 속도 초과&quot;)
+            if want and since &lt; RULES[&quot;budget_cooldown_days&quot;]:
+                blockers.append(f&quot;쿨다운 — {md(date.fromisoformat(ch[&#x27;date&#x27;]))} 변경 후 {since}일&quot;)
+            if blockers:
+                self.proposals.append(dict(row, type=&quot;hold&quot;, proposed_daily=c[&quot;daily_budget&quot;], change=0.0,
+                                           reason=(f&quot;{metrics_txt}. {&#x27;증액 신호가 있으나 보류&#x27; if want == &#x27;up&#x27; else &#x27;감액 신호가 있으나 보류&#x27; if want == &#x27;down&#x27; else &#x27;예산 판단 보류&#x27;}: &quot;
+                                                   f&quot;{&#x27;, &#x27;.join(blockers)}&quot;),
+                                           guardrail=&quot;데이터 문제·이상·쿨다운 범위에서는 예산 제안을 내지 않음&quot;))
+                continue
+            if want == &quot;up&quot;:
+                step = RULES[&quot;budget_step_up_strong&quot;] if ratio &gt;= RULES[&quot;budget_up_strong_ratio&quot;] else RULES[&quot;budget_step_up&quot;]
+                candidates.append((row, step, metrics_txt, since, ch))
+            elif want == &quot;down&quot;:
+                pause = confirmed is not None and confirmed / target &lt; RULES[&quot;budget_down_ratio&quot;]
+                candidates.append((row, RULES[&quot;budget_step_down&quot;], metrics_txt + (&quot;, 확정 D7 도 70% 미만 — 2주 지속 시 일시 중지 검토&quot; if pause else &quot;&quot;), since, ch))
+
+        # 제로섬: 매체별로 증액분은 감액분 + 월 예산 여유분 안에서만
+        for net in sorted({r[0][&quot;network&quot;] for r in candidates}):
+            items = [x for x in candidates if x[0][&quot;network&quot;] == net]
+            downs = [x for x in items if x[1] &lt; 0]
+            ups = [x for x in items if x[1] &gt; 0]
+            freed = sum(-round_budget(x[0][&quot;current_daily&quot;] * (1 + x[1]), down=True) + x[0][&quot;current_daily&quot;] for x in downs)
+            headroom = max(0.0, self.pacing[net][&quot;headroom_daily&quot;])
+            pool = freed + headroom
+            for row, step, txt, since, ch in downs:
+                new = round_budget(row[&quot;current_daily&quot;] * (1 + step), down=True)
+                self.proposals.append(dict(row, type=&quot;budget_down&quot;, proposed_daily=new,
+                                           change=round(new / row[&quot;current_daily&quot;] - 1, 3),
+                                           reason=f&quot;{txt}. 최근 {RULES[&#x27;budget_down_days&#x27;]}일 모두 목표의 70% 미만&quot;,
+                                           guardrail=f&quot;변경 폭 20% 이내, 마지막 변경({md(date.fromisoformat(ch[&#x27;date&#x27;]))}) 후 {since}일 경과&quot;))
+            for row, step, txt, since, ch in ups:
+                want_new = round_budget(row[&quot;current_daily&quot;] * (1 + step), down=False)
+                add = want_new - row[&quot;current_daily&quot;]
+                note = &quot;&quot;
+                if add &gt; pool:
+                    add = math.floor(pool / 5) * 5
+                    note = f&quot;, 매체 내 재원 한도로 +{usd(add)} 로 축소&quot;
+                if add &lt;= 0:
+                    self.proposals.append(dict(row, type=&quot;hold&quot;, proposed_daily=row[&quot;current_daily&quot;], change=0.0,
+                                               reason=f&quot;{txt}. 증액 신호가 있으나 {NETWORK_KO[net]} 월 예산 여유·감액분이 없어 보류&quot;,
+                                               guardrail=&quot;월 총예산 초과 금지&quot;))
+                    continue
+                pool -= add
+                new = row[&quot;current_daily&quot;] + add
+                self.proposals.append(dict(row, type=&quot;budget_up&quot;, proposed_daily=new,
+                                           change=round(new / row[&quot;current_daily&quot;] - 1, 3),
+                                           reason=f&quot;{txt}. CPI 안정(최근 3일 직전 14일 중앙값 대비 +15% 이내)&quot;,
+                                           guardrail=(f&quot;변경 폭 20% 이내, 마지막 변경({md(date.fromisoformat(ch[&#x27;date&#x27;]))}) 후 {since}일 경과, &quot;
+                                                      f&quot;재원 = {NETWORK_KO[net]} 감액분 {usd(freed)} + 월 예산 여유 {usd(headroom)}/일{note}&quot;)))
+        order = {&quot;budget_down&quot;: 0, &quot;budget_up&quot;: 1, &quot;hold&quot;: 2}
+        self.proposals.sort(key=lambda p: (order[p[&quot;type&quot;]], p[&quot;network&quot;], p[&quot;campaign&quot;]))
+        for i, p in enumerate(self.proposals, 1):
+            p[&quot;id&quot;] = f&quot;B{i:02d}&quot;
+        ups = [p for p in self.proposals if p[&quot;type&quot;] == &quot;budget_up&quot;]
+        downs = [p for p in self.proposals if p[&quot;type&quot;] == &quot;budget_down&quot;]
+        self.checks[&quot;budget&quot;] = {&quot;campaigns_evaluated&quot;: len(self.cfg[&quot;campaigns&quot;]), &quot;up&quot;: len(ups),
+                                 &quot;down&quot;: len(downs), &quot;hold&quot;: len(self.proposals) - len(ups) - len(downs)}
+
+    # 요약
+    def summary(self):
+        y = agg(self.day_rows(self.as_of))
+        prev = agg(self.range_rows(self.as_of - timedelta(days=7), self.as_of - timedelta(days=1)))
+        my, mp = metrics(y), metrics(prev)
+        prev_daily_spend = prev[&quot;spend&quot;] / 7
+        blocked_scopes = {(f[&quot;campaign&quot;], f[&quot;country&quot;]) for f in self.findings if f[&quot;type&quot;] == &quot;data_issue&quot; and f[&quot;campaign&quot;]}
+        clean = agg([r for r in self.day_rows(self.as_of) if (r[&quot;campaign_name&quot;], r[&quot;country&quot;]) not in blocked_scopes])
+        mc = metrics(clean)
+        by_network = {}
+        for net in sorted({r[&quot;network&quot;] for r in self.rows}):
+            m = metrics(agg(self.day_rows(self.as_of, network=net)))
+            by_network[net] = {&quot;spend&quot;: round(m[&quot;spend&quot;], 2), &quot;installs&quot;: int(m[&quot;installs&quot;]),
+                               &quot;cpi&quot;: r2(m[&quot;cpi&quot;], 2), &quot;roas_d0&quot;: r2(m[&quot;roas_d0&quot;])}
+        by_country = {}
+        for k in sorted({r[&quot;country&quot;] for r in self.rows}):
+            m = metrics(agg(self.day_rows(self.as_of, country=k)))
+            by_country[k] = {&quot;spend&quot;: round(m[&quot;spend&quot;], 2), &quot;installs&quot;: int(m[&quot;installs&quot;]),
+                             &quot;cpi&quot;: r2(m[&quot;cpi&quot;], 2), &quot;roas_d0&quot;: r2(m[&quot;roas_d0&quot;])}
+        ad_share = y[&quot;rev_ad_d0&quot;] / rev_d0(y) if rev_d0(y) else None
+        ups = [p for p in self.proposals if p[&quot;type&quot;] == &quot;budget_up&quot;]
+        downs = [p for p in self.proposals if p[&quot;type&quot;] == &quot;budget_down&quot;]
+        return {
+            &quot;spend&quot;: round(my[&quot;spend&quot;], 2), &quot;installs&quot;: int(my[&quot;installs&quot;]), &quot;cpi&quot;: r2(my[&quot;cpi&quot;], 2),
+            &quot;roas_d0&quot;: r2(my[&quot;roas_d0&quot;]), &quot;ad_revenue_share_d0&quot;: r2(ad_share, 3),
+            &quot;vs_prev_7d&quot;: {&quot;spend&quot;: round(my[&quot;spend&quot;] / prev_daily_spend - 1, 3),
+                           &quot;cpi&quot;: round(my[&quot;cpi&quot;] / mp[&quot;cpi&quot;] - 1, 3) if my[&quot;cpi&quot;] and mp[&quot;cpi&quot;] else None,
+                           &quot;roas_d0&quot;: round(my[&quot;roas_d0&quot;] / mp[&quot;roas_d0&quot;] - 1, 3) if mp[&quot;roas_d0&quot;] else None},
+            &quot;excluding_data_issue&quot;: {&quot;spend&quot;: round(mc[&quot;spend&quot;], 2), &quot;installs&quot;: int(mc[&quot;installs&quot;]),
+                                     &quot;cpi&quot;: r2(mc[&quot;cpi&quot;], 2), &quot;note&quot;: &quot;추적 누락 의심 범위를 뺀 값&quot;},
+            &quot;by_network&quot;: by_network, &quot;by_country&quot;: by_country,
+            &quot;pacing&quot;: self.pacing,
+            &quot;budget_net_change_daily&quot;: round(sum(p[&quot;proposed_daily&quot;] - p[&quot;current_daily&quot;] for p in ups + downs), 2),
+            &quot;counts&quot;: {t: sum(1 for f in self.findings if f[&quot;type&quot;] == t) for t in TYPE_ORDER},
+        }
+
+    def run(self):
+        self.check_data()
+        self.check_pacing()
+        self.check_anomaly()
+        self.check_fatigue()
+        self.check_scale()
+        self.check_budget()
+        self.findings.sort(key=lambda f: (TYPE_ORDER[f[&quot;type&quot;]], SEVERITY_ORDER[f[&quot;severity&quot;]], f.get(&quot;campaign&quot;) or &quot;&quot;, f.get(&quot;country&quot;) or &quot;&quot;))
+        for i, f in enumerate(self.findings, 1):
+            f[&quot;id&quot;] = f&quot;F{i:02d}&quot;
+        return {
+            &quot;as_of&quot;: self.as_of.isoformat(),
+            &quot;report_date&quot;: self.report_date.isoformat(),
+            &quot;is_sample_data&quot;: bool(self.cfg.get(&quot;is_sample_data&quot;)),
+            &quot;notice&quot;: &quot;[가상 데이터] 썬더게임즈 실제 광고 데이터가 아니다.&quot; if self.cfg.get(&quot;is_sample_data&quot;) else &quot;&quot;,
+            &quot;currency&quot;: self.cfg.get(&quot;currency&quot;, &quot;USD&quot;),
+            &quot;rules_version&quot;: &quot;playbook-initial-2026-10&quot;,
+            &quot;summary&quot;: self.summary(),
+            &quot;findings&quot;: [reorder(f) for f in self.findings],
+            &quot;budget_proposals&quot;: [reorder_proposal(p) for p in self.proposals],
+            &quot;checks&quot;: self.checks,
+            &quot;near_misses&quot;: self.near_misses,
+        }
+
+
+def anomaly_action(drivers, peer_normal, net_ko):
+    cvr, cpm = drivers.get(&quot;cvr&quot;), drivers.get(&quot;cpm&quot;)
+    tail = &quot; 원인 확인 전 이 캠페인 증액 금지&quot;
+    if cvr is not None and cvr &lt;= -0.2:
+        if peer_normal:
+            return (f&quot;CVR 급락이 주원인이고 같은 국가 다른 매체는 정상 — {net_ko} 쪽 변화(노출 위치 구성, 최근 에셋·입찰·타깃 변경) &quot;
+                    &quot;확인. 스토어 페이지 문제 가능성은 낮음.&quot; + tail)
+        return &quot;CVR 급락이 주원인 — 이 국가 스토어 페이지·현지화·앱 심사/배포 상태 확인.&quot; + tail
+    if cpm is not None and cpm &gt;= 0.2:
+        return &quot;CPM 상승이 주원인 — 경매 경쟁(시즌·대형 경쟁작 집행) 여부 확인, 입찰·타깃 점검.&quot; + tail
+    return &quot;CTR 하락이 주원인 — 소재 노출 구성 변화 확인(소재 피로 항목 참고).&quot; + tail
+
+
+def round_budget(x, down):
+    &quot;&quot;&quot;일 예산은 $5 단위. 감액은 내림, 증액은 올림 — 변경 폭이 규칙보다 작아지지 않게.&quot;&quot;&quot;
+    return (math.floor(x / 5) if down else math.ceil(x / 5)) * 5
+
+
+def reorder(f):
+    head = [&quot;id&quot;, &quot;type&quot;, &quot;severity&quot;, &quot;network&quot;, &quot;country&quot;, &quot;campaign&quot;, &quot;creative&quot;, &quot;metric&quot;, &quot;value&quot;,
+            &quot;baseline&quot;, &quot;change&quot;, &quot;reason&quot;, &quot;action&quot;, &quot;confidence&quot;]
+    return {**{k: f.get(k) for k in head}, **{k: v for k, v in f.items() if k not in head}}
+
+
+def reorder_proposal(p):
+    head = [&quot;id&quot;, &quot;type&quot;, &quot;network&quot;, &quot;campaign&quot;, &quot;current_daily&quot;, &quot;proposed_daily&quot;, &quot;change&quot;, &quot;reason&quot;,
+            &quot;guardrail&quot;, &quot;confidence&quot;]
+    return {**{k: p.get(k) for k in head}, **{k: v for k, v in p.items() if k not in head}}
+
+
+def main():
+    ap = argparse.ArgumentParser(description=&quot;UA 일일 성과 분석 → findings.json&quot;)
+    ap.add_argument(&quot;--data&quot;, default=str(HERE / &quot;ads_daily_sample.csv&quot;))
+    ap.add_argument(&quot;--config&quot;, default=str(HERE / &quot;budget_config.json&quot;))
+    ap.add_argument(&quot;--as-of&quot;, default=None, help=&quot;기준일(기본: 데이터의 마지막 날짜)&quot;)
+    ap.add_argument(&quot;--out&quot;, default=str(HERE / &quot;findings.json&quot;))
+    args = ap.parse_args()
+
+    rows = load_rows(args.data)
+    with open(args.config, encoding=&quot;utf-8&quot;) as f:
+        config = json.load(f)
+    as_of = date.fromisoformat(args.as_of) if args.as_of else max(r[&quot;date&quot;] for r in rows)
+    result = Analyzer(rows, config, as_of).run()
+    with open(args.out, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+
+    s = result[&quot;summary&quot;]
+    print(f&quot;{result[&#x27;notice&#x27;]} 기준일 {result[&#x27;as_of&#x27;]} → {Path(args.out).name}&quot;)
+    print(f&quot;  어제 지출 {usd(s[&#x27;spend&#x27;])} ({pct(s[&#x27;vs_prev_7d&#x27;][&#x27;spend&#x27;])} vs 직전 7일 평균) · 설치 {s[&#x27;installs&#x27;]:,} · &quot;
+          f&quot;CPI {usd(s[&#x27;cpi&#x27;], 2)} · D0 ROAS {s[&#x27;roas_d0&#x27;] * 100:.1f}%&quot;)
+    for f in result[&quot;findings&quot;]:
+        where = &quot; · &quot;.join(x for x in (f[&quot;network&quot;], f[&quot;campaign&quot;], f[&quot;country&quot;], f[&quot;creative&quot;]) if x)
+        print(f&quot;  {f[&#x27;id&#x27;]} [{f[&#x27;severity&#x27;]:&lt;6}] {f[&#x27;type&#x27;]:&lt;16} {where}&quot;)
+    for p in result[&quot;budget_proposals&quot;]:
+        print(f&quot;  {p[&#x27;id&#x27;]} {p[&#x27;type&#x27;]:&lt;11} {p[&#x27;campaign&#x27;]:&lt;20} {usd(p[&#x27;current_daily&#x27;])} → {usd(p[&#x27;proposed_daily&#x27;])} ({pct(p[&#x27;change&#x27;])})&quot;)
+    print(f&quot;  near_misses {len(result[&#x27;near_misses&#x27;])}건, checks {json.dumps(result[&#x27;checks&#x27;], ensure_ascii=False)}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

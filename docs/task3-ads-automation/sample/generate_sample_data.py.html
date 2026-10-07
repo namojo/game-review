@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>generate_sample_data.py | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../../index.html"><img src="../../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../../task2/gallery.html">이미지 갤러리</a></li><li><a href="../../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec" open><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="analyze_ads.py.html">analyze_ads.py</a></li><li><a href="budget_config.json.html">budget_config.json</a></li><li><a href="check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="findings.json.html">findings.json</a></li><li><a href="generate_sample_data.py.html" aria-current="page">generate_sample_data.py</a></li><li><a href="make_report.py.html">make_report.py</a></li><li><a href="report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="sample_daily_report.html">sample_daily_report</a></li><li><a href="sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec"><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../../harness/CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../../harness/agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../../harness/agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../../harness/agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../../harness/agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../../harness/agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../../harness/agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../../harness/agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../../harness/skills/ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../../harness/skills/consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="../../harness/skills/review-response-ops/SKILL.html">review-response-ops / SKILL.md</a></li><li><a href="../../harness/skills/review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../../harness/skills/thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../../harness/skills/weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../../harness/skills/ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../../harness/skills/consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="../../harness/skills/review-response-ops/references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="../../harness/skills/review-response-ops/references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="../../harness/skills/review-response-ops/references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="../../harness/skills/review-response-ops/scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="../../harness/skills/review-response-ops/scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../../harness/skills/review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../../harness/skills/review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../../harness/skills/review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../../harness/skills/weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../../harness/skills/weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">과제 3 · 광고 성과 분석<span class="path">deliverables/task3-ads-automation/sample/generate_sample_data.py</span></p>
+    
+    <article class="doc"><h1>generate_sample_data.py</h1><p class="actions"><a class="btn" href="generate_sample_data.py" download>원본 내려받기</a></p><div class="docstring"><p class="pre">[가상 데이터 · SAMPLE ONLY] 「원시인 형님들 키우기」 UA 일일 성과 — 가상 광고 데이터 생성기
+
+이 스크립트가 만드는 숫자는 전부 지어낸 값이다. 썬더게임즈(T.G Inc)의 실제 광고 계정·MMP·예산과
+관계가 없다. 매체 구성(Meta 4 + Google 4 캠페인), 국가(KR·US·BR·MX·ID·TH — 리뷰 언어 분포를 대리
+지표로 고른 가정), 일 예산, 목표 ROAS 는 설명을 위한 가정이다.
+
+analyze_ads.py 가 잡아내야 할 문제를 일부러 심어 두었다.
+  P1 추적 누락 의심    META_A+APP_IOS_T1 · KR·US — 10/04~10/06 지출·클릭은 정상인데 설치 0
+  P2 국가 CPI 급등     GOOG_ACi_AOS_T3 · ID — 10/05~10/06 CVR −45%, CPM +25% 설정 (CPI 약 2.3배)
+  P3 소재 피로(Meta)   META_A+APP_AOS_T2 · BR · MV03_tower_climb_15s — 09/20부터 CTR 이 떨어져 끝에는 −37%, frequency 약 3.9 (설정값)
+  P4 소재 피로(Google) GOOG_ACi_AOS_T1 · GV02_gear_merge_15s (캠페인 전체) — 09/17부터 IPM 이 서서히 떨어져 끝에는 약 −44% (설정값, Google 은 frequency 없음)
+  P5 지출 속도 초과    Google 10월 예산 — 10/01 GOOG_ACi_AOS_T1 일 예산을 $330→$400 로 올린 뒤 월 계획 미갱신
+  P6 확장 후보 소재    META_A+APP_AOS_T1 · MP01_totem_tap_playable — IPM 이 캠페인 중앙값의 약 1.6배
+  P7 예산 신호         M1 목표 대비 D7 ROAS 약 140%(증액), M3 약 55%(감액),
+                       G2 약 130%이지만 10/05 에 예산을 바꿔 쿨다운 중(보류), G4 는 표본 부족(판단 보류)
+  미끼(잡히면 안 됨)   META_A+APP_AOS_T3 · ID · MV02 — CTR −28% 설정이지만 frequency 1.9 → 피로 규칙 미충족
+
+출력: ads_daily_sample.csv (일 × 매체 × 캠페인 × 국가 × 소재, kpi-framework 표준 컬럼)
+      budget_config.json   (월 예산·일 예산·마지막 예산 변경일·국가 Tier 목표 ROAS)
+실행: python3 generate_sample_data.py   — 표준 라이브러리만 쓴다. 시드 고정이라 항상 같은 파일이 나온다.
+
+단순화한 점(실제 데이터와 다른 곳)
+  - Google 앱 캠페인은 원래 &#x27;에셋&#x27; 단위 성과만 주고, 에셋 지표를 더해도 캠페인 합계와 맞지 않는다.
+    샘플에서는 설명을 위해 에셋 행을 더하면 캠페인 합계가 되도록 만들었다.
+  - Google 에셋 성과는 국가 분할을 전제하지 않고([확인 필요]), analyze_ads.py 는 Google 소재를 캠페인 단위로 판정한다.
+  - frequency 는 Meta 가 보고하는 최근 7일 누적값(도달 기반, 더하면 안 되는 값)으로 행마다 넣었다.
+  - installs 는 MMP 기준이라고 가정한다. iOS 는 실제로는 SKAdNetwork 집계·지연이 있다.</p></div><h2 id="code">코드 (266줄)</h2><pre><code class="language-py">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+[가상 데이터 · SAMPLE ONLY] 「원시인 형님들 키우기」 UA 일일 성과 — 가상 광고 데이터 생성기
+
+이 스크립트가 만드는 숫자는 전부 지어낸 값이다. 썬더게임즈(T.G Inc)의 실제 광고 계정·MMP·예산과
+관계가 없다. 매체 구성(Meta 4 + Google 4 캠페인), 국가(KR·US·BR·MX·ID·TH — 리뷰 언어 분포를 대리
+지표로 고른 가정), 일 예산, 목표 ROAS 는 설명을 위한 가정이다.
+
+analyze_ads.py 가 잡아내야 할 문제를 일부러 심어 두었다.
+  P1 추적 누락 의심    META_A+APP_IOS_T1 · KR·US — 10/04~10/06 지출·클릭은 정상인데 설치 0
+  P2 국가 CPI 급등     GOOG_ACi_AOS_T3 · ID — 10/05~10/06 CVR −45%, CPM +25% 설정 (CPI 약 2.3배)
+  P3 소재 피로(Meta)   META_A+APP_AOS_T2 · BR · MV03_tower_climb_15s — 09/20부터 CTR 이 떨어져 끝에는 −37%, frequency 약 3.9 (설정값)
+  P4 소재 피로(Google) GOOG_ACi_AOS_T1 · GV02_gear_merge_15s (캠페인 전체) — 09/17부터 IPM 이 서서히 떨어져 끝에는 약 −44% (설정값, Google 은 frequency 없음)
+  P5 지출 속도 초과    Google 10월 예산 — 10/01 GOOG_ACi_AOS_T1 일 예산을 $330→$400 로 올린 뒤 월 계획 미갱신
+  P6 확장 후보 소재    META_A+APP_AOS_T1 · MP01_totem_tap_playable — IPM 이 캠페인 중앙값의 약 1.6배
+  P7 예산 신호         M1 목표 대비 D7 ROAS 약 140%(증액), M3 약 55%(감액),
+                       G2 약 130%이지만 10/05 에 예산을 바꿔 쿨다운 중(보류), G4 는 표본 부족(판단 보류)
+  미끼(잡히면 안 됨)   META_A+APP_AOS_T3 · ID · MV02 — CTR −28% 설정이지만 frequency 1.9 → 피로 규칙 미충족
+
+출력: ads_daily_sample.csv (일 × 매체 × 캠페인 × 국가 × 소재, kpi-framework 표준 컬럼)
+      budget_config.json   (월 예산·일 예산·마지막 예산 변경일·국가 Tier 목표 ROAS)
+실행: python3 generate_sample_data.py   — 표준 라이브러리만 쓴다. 시드 고정이라 항상 같은 파일이 나온다.
+
+단순화한 점(실제 데이터와 다른 곳)
+  - Google 앱 캠페인은 원래 &#x27;에셋&#x27; 단위 성과만 주고, 에셋 지표를 더해도 캠페인 합계와 맞지 않는다.
+    샘플에서는 설명을 위해 에셋 행을 더하면 캠페인 합계가 되도록 만들었다.
+  - Google 에셋 성과는 국가 분할을 전제하지 않고([확인 필요]), analyze_ads.py 는 Google 소재를 캠페인 단위로 판정한다.
+  - frequency 는 Meta 가 보고하는 최근 7일 누적값(도달 기반, 더하면 안 되는 값)으로 행마다 넣었다.
+  - installs 는 MMP 기준이라고 가정한다. iOS 는 실제로는 SKAdNetwork 집계·지연이 있다.
+&quot;&quot;&quot;
+import csv
+import json
+import math
+import random
+from datetime import date, timedelta
+from pathlib import Path
+
+SEED = 20261007
+AS_OF = date(2026, 10, 6)            # 데이터 기준일(어제). 리포트는 2026-10-07 아침에 나간다
+DAYS = 28
+START = AS_OF - timedelta(days=DAYS - 1)
+HERE = Path(__file__).resolve().parent
+D7_D0_MULT = 2.9                     # 가상: D7 누적 수익 / D0 수익
+
+TARGET_ROAS_D7 = {&quot;T1&quot;: 0.10, &quot;T2&quot;: 0.09, &quot;T3&quot;: 0.08}   # 가상 목표 — 실제는 자사 28일 중앙값으로 정한다
+
+# 국가 기본값: tier, CVR(설치/클릭), CPM(Meta·Google, USD), D1 잔존율, 수익 중 광고 비중
+COUNTRIES = {
+    &quot;KR&quot;: dict(tier=&quot;T1&quot;, cvr=0.30, cpm={&quot;meta&quot;: 13.0, &quot;google&quot;: 9.5}, d1=0.40, ad_share=0.35),
+    &quot;US&quot;: dict(tier=&quot;T1&quot;, cvr=0.28, cpm={&quot;meta&quot;: 16.0, &quot;google&quot;: 11.5}, d1=0.36, ad_share=0.45),
+    &quot;BR&quot;: dict(tier=&quot;T2&quot;, cvr=0.36, cpm={&quot;meta&quot;: 4.2, &quot;google&quot;: 3.0}, d1=0.33, ad_share=0.60),
+    &quot;MX&quot;: dict(tier=&quot;T2&quot;, cvr=0.34, cpm={&quot;meta&quot;: 4.6, &quot;google&quot;: 3.3}, d1=0.34, ad_share=0.55),
+    &quot;ID&quot;: dict(tier=&quot;T3&quot;, cvr=0.40, cpm={&quot;meta&quot;: 1.9, &quot;google&quot;: 1.3}, d1=0.30, ad_share=0.65),
+    &quot;TH&quot;: dict(tier=&quot;T3&quot;, cvr=0.38, cpm={&quot;meta&quot;: 2.6, &quot;google&quot;: 1.9}, d1=0.31, ad_share=0.60),
+}
+IOS_CPM_MULT = 1.45                  # iOS 경매가 더 비싸다(가정)
+
+# 소재: 이름, 형식, 기본 CTR, CVR 배수, 영상 3초 조회율(hook), 첫 노출일
+# 게임 안 시스템(보스토벌·장비 합성·형님의 탑·문명·토템·슬롯머신)을 소재 주제로 삼았다(가상 소재).
+CREATIVES = {
+    &quot;MV01&quot;: (&quot;MV01_boss_raid_15s&quot;, &quot;video&quot;, 0.0120, 1.00, 0.27, None),
+    &quot;MV02&quot;: (&quot;MV02_gear_merge_20s&quot;, &quot;video&quot;, 0.0115, 1.00, 0.25, None),
+    &quot;MV03&quot;: (&quot;MV03_tower_climb_15s&quot;, &quot;video&quot;, 0.0140, 1.00, 0.31, date(2026, 9, 15)),
+    &quot;MI01&quot;: (&quot;MI01_caveman_bros_static&quot;, &quot;image&quot;, 0.0105, 0.95, None, None),
+    &quot;MI02&quot;: (&quot;MI02_civ_evolution_static&quot;, &quot;image&quot;, 0.0110, 0.95, None, None),
+    &quot;MP01&quot;: (&quot;MP01_totem_tap_playable&quot;, &quot;playable&quot;, 0.0150, 1.25, None, date(2026, 9, 14)),
+    &quot;GV01&quot;: (&quot;GV01_boss_raid_30s&quot;, &quot;video&quot;, 0.0092, 1.00, None, None),
+    &quot;GV02&quot;: (&quot;GV02_gear_merge_15s&quot;, &quot;video&quot;, 0.0090, 1.00, None, None),
+    &quot;GV03&quot;: (&quot;GV03_civ_timelapse_20s&quot;, &quot;video&quot;, 0.0088, 1.00, None, None),
+    &quot;GI01&quot;: (&quot;GI01_bros_banner_1200x628&quot;, &quot;image&quot;, 0.0085, 0.97, None, None),
+    &quot;GI02&quot;: (&quot;GI02_slot_bonus_1200x628&quot;, &quot;image&quot;, 0.0087, 0.97, None, None),
+    &quot;GH01&quot;: (&quot;GH01_totem_tap_html5&quot;, &quot;playable&quot;, 0.0098, 1.05, None, None),
+}
+
+# 캠페인: 예산 이력은 (적용 시작일, 일 예산). quality 는 &#x27;목표 대비 D7 ROAS&#x27; 배수(가상)
+CAMPAIGNS = [
+    dict(key=&quot;m1&quot;, id=&quot;120214500000101&quot;, name=&quot;META_A+APP_AOS_T1&quot;, network=&quot;meta&quot;, type=&quot;advantage_plus_app&quot;,
+         platform=&quot;android&quot;, countries={&quot;KR&quot;: 0.45, &quot;US&quot;: 0.55}, creatives=[&quot;MV01&quot;, &quot;MV02&quot;, &quot;MI01&quot;, &quot;MP01&quot;],
+         budget=[(date(2026, 9, 1), 350)], quality=1.40),
+    dict(key=&quot;m2&quot;, id=&quot;120214500000102&quot;, name=&quot;META_A+APP_AOS_T2&quot;, network=&quot;meta&quot;, type=&quot;advantage_plus_app&quot;,
+         platform=&quot;android&quot;, countries={&quot;BR&quot;: 0.60, &quot;MX&quot;: 0.40}, creatives=[&quot;MV01&quot;, &quot;MV02&quot;, &quot;MV03&quot;, &quot;MI01&quot;],
+         budget=[(date(2026, 9, 1), 280)], quality=0.97),
+    dict(key=&quot;m3&quot;, id=&quot;120214500000103&quot;, name=&quot;META_A+APP_AOS_T3&quot;, network=&quot;meta&quot;, type=&quot;advantage_plus_app&quot;,
+         platform=&quot;android&quot;, countries={&quot;ID&quot;: 0.55, &quot;TH&quot;: 0.45}, creatives=[&quot;MV01&quot;, &quot;MV02&quot;, &quot;MI02&quot;],
+         budget=[(date(2026, 9, 1), 300), (date(2026, 9, 28), 250)], quality=0.55),
+    dict(key=&quot;m4&quot;, id=&quot;120214500000104&quot;, name=&quot;META_A+APP_IOS_T1&quot;, network=&quot;meta&quot;, type=&quot;advantage_plus_app&quot;,
+         platform=&quot;ios&quot;, countries={&quot;KR&quot;: 0.40, &quot;US&quot;: 0.60}, creatives=[&quot;MV01&quot;, &quot;MV02&quot;, &quot;MI01&quot;],
+         budget=[(date(2026, 9, 1), 200)], quality=0.95),
+    dict(key=&quot;g1&quot;, id=&quot;21987650001&quot;, name=&quot;GOOG_ACi_AOS_T1&quot;, network=&quot;google&quot;, type=&quot;app_campaign_install&quot;,
+         platform=&quot;android&quot;, countries={&quot;KR&quot;: 0.45, &quot;US&quot;: 0.55}, creatives=[&quot;GV01&quot;, &quot;GV02&quot;, &quot;GI01&quot;, &quot;GH01&quot;],
+         budget=[(date(2026, 9, 1), 330), (date(2026, 10, 1), 400)], quality=1.02),
+    dict(key=&quot;g2&quot;, id=&quot;21987650002&quot;, name=&quot;GOOG_ACi_AOS_T2&quot;, network=&quot;google&quot;, type=&quot;app_campaign_install&quot;,
+         platform=&quot;android&quot;, countries={&quot;BR&quot;: 0.60, &quot;MX&quot;: 0.40}, creatives=[&quot;GV01&quot;, &quot;GV03&quot;, &quot;GI01&quot;],
+         budget=[(date(2026, 9, 1), 200), (date(2026, 10, 5), 220)], quality=1.30),
+    dict(key=&quot;g3&quot;, id=&quot;21987650003&quot;, name=&quot;GOOG_ACi_AOS_T3&quot;, network=&quot;google&quot;, type=&quot;app_campaign_install&quot;,
+         platform=&quot;android&quot;, countries={&quot;ID&quot;: 0.55, &quot;TH&quot;: 0.45}, creatives=[&quot;GV01&quot;, &quot;GV02&quot;, &quot;GI02&quot;],
+         budget=[(date(2026, 9, 1), 250)], quality=0.95),
+    dict(key=&quot;g4&quot;, id=&quot;21987650004&quot;, name=&quot;GOOG_ACi_IOS_T1&quot;, network=&quot;google&quot;, type=&quot;app_campaign_install&quot;,
+         platform=&quot;ios&quot;, countries={&quot;KR&quot;: 0.40, &quot;US&quot;: 0.60}, creatives=[&quot;GV01&quot;, &quot;GI01&quot;],
+         budget=[(date(2026, 9, 1), 25)], quality=1.00),
+]
+
+MONTHLY_BUDGET = {&quot;meta&quot;: 33800, &quot;google&quot;: 22500}   # 2026-10 가상 월 예산(USD)
+
+
+def daily_budget(camp, d):
+    amount = camp[&quot;budget&quot;][0][1]
+    for start, value in camp[&quot;budget&quot;]:
+        if d &gt;= start:
+            amount = value
+    return amount
+
+
+def ramp(age, start, end, floor):
+    &quot;&quot;&quot;age 가 start 일 때 1.0 → end 일 때 floor 로 선형 감소, 이후 floor 유지.&quot;&quot;&quot;
+    if age &lt;= start:
+        return 1.0
+    if age &gt;= end:
+        return floor
+    return 1.0 - (1.0 - floor) * (age - start) / (end - start)
+
+
+def effects(camp, country, cr, d, age):
+    &quot;&quot;&quot;심어 둔 문제(P1~P4, 미끼)의 배수. 그 밖의 행은 모두 1.0.&quot;&quot;&quot;
+    e = {&quot;ctr&quot;: 1.0, &quot;cvr&quot;: 1.0, &quot;cpm&quot;: 1.0, &quot;freq&quot;: 1.35 + 0.02 * min(age, 20), &quot;zero_installs&quot;: False}
+    key = camp[&quot;key&quot;]
+    if key == &quot;m4&quot; and d &gt;= date(2026, 10, 4):                      # P1 추적 누락
+        e[&quot;zero_installs&quot;] = True
+    if key == &quot;g3&quot; and country == &quot;ID&quot; and d &gt;= date(2026, 10, 5):  # P2 CPI 급등
+        e[&quot;cvr&quot;], e[&quot;cpm&quot;] = 0.55, 1.25
+    if key == &quot;m2&quot; and cr == &quot;MV03&quot;:                                # P3 소재 피로(BR 강, MX 약)
+        if country == &quot;BR&quot;:
+            e[&quot;ctr&quot;], e[&quot;freq&quot;] = ramp(age, 5, 21, 0.63), 1.30 + 0.125 * age
+        else:
+            e[&quot;ctr&quot;], e[&quot;freq&quot;] = ramp(age, 5, 21, 0.84), 1.30 + 0.058 * age
+    if key == &quot;g1&quot; and cr == &quot;GV02&quot;:                                # P4 Google 소재 피로(IPM, 캠페인 전체)
+        e[&quot;ctr&quot;], e[&quot;cvr&quot;] = ramp(age, 8, 27, 0.75), ramp(age, 8, 27, 0.75)
+    if key == &quot;m3&quot; and country == &quot;ID&quot; and cr == &quot;MV02&quot;:            # 미끼: CTR 만 하락, frequency 낮음
+        e[&quot;ctr&quot;], e[&quot;freq&quot;] = ramp(age, 0, 27, 0.72), 1.50 + 0.015 * age
+    return e
+
+
+def noisy_count(mu, rng):
+    &quot;&quot;&quot;평균 mu 의 계수 잡음(포아송 근사).&quot;&quot;&quot;
+    if mu &lt;= 0:
+        return 0
+    if mu &lt; 30:
+        # 작은 수는 포아송 직접 추출(Knuth)
+        limit, k, p = math.exp(-mu), 0, 1.0
+        while True:
+            p *= rng.random()
+            if p &lt;= limit:
+                return k
+            k += 1
+    return max(0, int(round(rng.gauss(mu, math.sqrt(mu)))))
+
+
+def base_cpi(camp, country):
+    &quot;&quot;&quot;심어 둔 문제가 없을 때의 캠페인×국가 기대 CPI — 수익(ARPU) 수준을 정하는 기준.&quot;&quot;&quot;
+    c = COUNTRIES[country]
+    cpm = c[&quot;cpm&quot;][camp[&quot;network&quot;]] * (IOS_CPM_MULT if camp[&quot;platform&quot;] == &quot;ios&quot; else 1.0)
+    shares = [1.0 / len(camp[&quot;creatives&quot;])] * len(camp[&quot;creatives&quot;])
+    ipm = sum(s * CREATIVES[k][2] * CREATIVES[k][3] for s, k in zip(shares, camp[&quot;creatives&quot;])) * c[&quot;cvr&quot;] * 1000
+    return cpm / ipm
+
+
+def main():
+    rng = random.Random(SEED)
+    rows = []
+    for i in range(DAYS):
+        d = START + timedelta(days=i)
+        for camp in CAMPAIGNS:
+            spend_total = daily_budget(camp, d) * rng.gauss(1.0, 0.035)
+            for country, cshare in camp[&quot;countries&quot;].items():
+                c = COUNTRIES[country]
+                active = [k for k in camp[&quot;creatives&quot;] if CREATIVES[k][5] is None or d &gt;= CREATIVES[k][5]]
+                weights = {k: 1.0 for k in active}
+                # ARPU 를 기대 CPI 에 묶어 두면 캠페인의 D7 ROAS 가 &#x27;목표 × quality&#x27; 근처에 모인다.
+                # iOS 는 CPI 가 비싼 만큼 ARPU 도 높다고 가정한 셈이다.
+                arpu_d7 = TARGET_ROAS_D7[c[&quot;tier&quot;]] * base_cpi(camp, country) * camp[&quot;quality&quot;]
+                for cr in active:
+                    name, fmt, ctr0, cvr_mult, hook0, launch = CREATIVES[cr]
+                    age = (d - (launch or START)).days
+                    e = effects(camp, country, cr, d, age)
+                    spend = spend_total * cshare * weights[cr] / sum(weights.values()) * rng.gauss(1.0, 0.05)
+                    cpm = c[&quot;cpm&quot;][camp[&quot;network&quot;]] * (IOS_CPM_MULT if camp[&quot;platform&quot;] == &quot;ios&quot; else 1.0)
+                    cpm *= e[&quot;cpm&quot;] * rng.gauss(1.0, 0.05)
+                    impressions = int(spend / cpm * 1000)
+                    clicks = noisy_count(impressions * ctr0 * e[&quot;ctr&quot;], rng)
+                    installs = 0 if e[&quot;zero_installs&quot;] else noisy_count(clicks * c[&quot;cvr&quot;] * cvr_mult * e[&quot;cvr&quot;], rng)
+
+                    video_3s = &quot;&quot;
+                    frequency = &quot;&quot;
+                    if camp[&quot;network&quot;] == &quot;meta&quot;:
+                        frequency = round(e[&quot;freq&quot;] * rng.gauss(1.0, 0.03), 2)
+                        if fmt == &quot;video&quot;:
+                            hook = hook0 * (0.7 + 0.3 * e[&quot;ctr&quot;]) * rng.gauss(1.0, 0.03)
+                            video_3s = int(impressions * hook)
+
+                    days_old = (AS_OF - d).days
+                    d1 = round(installs * c[&quot;d1&quot;] * rng.gauss(1.0, 0.05)) if days_old &gt;= 1 else &quot;&quot;
+                    d7 = round(installs * c[&quot;d1&quot;] * 0.38 * rng.gauss(1.0, 0.07)) if days_old &gt;= 7 else &quot;&quot;
+
+                    sigma = 0.05 + 0.5 / math.sqrt(max(installs, 1))
+                    rev_noise = rng.lognormvariate(0, sigma) / math.exp(sigma ** 2 / 2)
+                    rev_d0 = installs * arpu_d7 / D7_D0_MULT * rev_noise
+                    mult = D7_D0_MULT * rng.gauss(1.0, 0.06)
+                    ad_share = c[&quot;ad_share&quot;] * rng.gauss(1.0, 0.04)
+                    rev_iap_d0 = round(rev_d0 * (1 - ad_share), 2)
+                    rev_ad_d0 = round(rev_d0 * ad_share, 2)
+                    rev_iap_d7 = round(rev_iap_d0 * mult * rng.gauss(1.0, 0.04), 2) if days_old &gt;= 7 else &quot;&quot;
+                    rev_ad_d7 = round(rev_ad_d0 * mult * rng.gauss(1.0, 0.04), 2) if days_old &gt;= 7 else &quot;&quot;
+
+                    rows.append({
+                        &quot;date&quot;: d.isoformat(), &quot;network&quot;: camp[&quot;network&quot;], &quot;campaign_id&quot;: camp[&quot;id&quot;],
+                        &quot;campaign_name&quot;: camp[&quot;name&quot;], &quot;campaign_type&quot;: camp[&quot;type&quot;], &quot;country&quot;: country,
+                        &quot;platform&quot;: camp[&quot;platform&quot;], &quot;creative_id&quot;: cr, &quot;creative_name&quot;: name,
+                        &quot;creative_format&quot;: fmt, &quot;spend&quot;: round(spend, 2), &quot;impressions&quot;: impressions,
+                        &quot;clicks&quot;: clicks, &quot;installs&quot;: installs, &quot;video_3s_views&quot;: video_3s,
+                        &quot;frequency&quot;: frequency, &quot;d1_retained&quot;: d1, &quot;d7_retained&quot;: d7,
+                        &quot;rev_iap_d0&quot;: rev_iap_d0, &quot;rev_iap_d7&quot;: rev_iap_d7,
+                        &quot;rev_ad_d0&quot;: rev_ad_d0, &quot;rev_ad_d7&quot;: rev_ad_d7,
+                    })
+
+    csv_path = HERE / &quot;ads_daily_sample.csv&quot;
+    with open(csv_path, &quot;w&quot;, newline=&quot;&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;# [가상 데이터] 썬더게임즈 실제 광고 데이터가 아님 — generate_sample_data.py (seed=%d) 로 생성\n&quot; % SEED)
+        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(rows)
+
+    config = {
+        &quot;_notice&quot;: &quot;[가상 데이터] 예산·목표값은 설명용 가정이다. 실제 값은 썬더게임즈 확인 대상[확인 필요].&quot;,
+        &quot;is_sample_data&quot;: True,
+        &quot;currency&quot;: &quot;USD&quot;,
+        &quot;timezone&quot;: &quot;Asia/Seoul&quot;,
+        &quot;month&quot;: AS_OF.strftime(&quot;%Y-%m&quot;),
+        &quot;monthly_budget&quot;: MONTHLY_BUDGET,
+        &quot;country_tier&quot;: {k: v[&quot;tier&quot;] for k, v in COUNTRIES.items()},
+        &quot;target_roas_d7&quot;: TARGET_ROAS_D7,
+        &quot;d7_d0_multiplier_fallback&quot;: D7_D0_MULT,
+        &quot;campaigns&quot;: [],
+    }
+    for camp in CAMPAIGNS:
+        hist = camp[&quot;budget&quot;]
+        change = None
+        if len(hist) &gt; 1:
+            change = {&quot;date&quot;: hist[-1][0].isoformat(), &quot;from&quot;: hist[-2][1], &quot;to&quot;: hist[-1][1]}
+        else:
+            change = {&quot;date&quot;: hist[0][0].isoformat(), &quot;from&quot;: None, &quot;to&quot;: hist[0][1]}
+        config[&quot;campaigns&quot;].append({
+            &quot;campaign_id&quot;: camp[&quot;id&quot;], &quot;campaign_name&quot;: camp[&quot;name&quot;], &quot;network&quot;: camp[&quot;network&quot;],
+            &quot;platform&quot;: camp[&quot;platform&quot;], &quot;tier&quot;: COUNTRIES[next(iter(camp[&quot;countries&quot;]))][&quot;tier&quot;],
+            &quot;daily_budget&quot;: daily_budget(camp, AS_OF), &quot;last_budget_change&quot;: change,
+        })
+    with open(HERE / &quot;budget_config.json&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        json.dump(config, f, ensure_ascii=False, indent=2)
+
+    print(&quot;[가상 데이터] %d행 생성: %s ~ %s, 캠페인 %d개 → %s, budget_config.json&quot;
+          % (len(rows), START.isoformat(), AS_OF.isoformat(), len(CAMPAIGNS), csv_path.name))
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

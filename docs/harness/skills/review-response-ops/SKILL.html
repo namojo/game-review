@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리뷰 대응 운영 절차 | 썬더게임즈 AI 전환 산출물</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/site.css">
+<script>try{var t=localStorage.getItem('tgdocs.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <button class="icon-btn nav-toggle" type="button" aria-controls="side" aria-expanded="false" aria-label="문서 목록 열기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <a class="brand" href="../../../index.html"><img src="../../../assets/icon.png" width="36" height="36" alt=""><span><span class="plaque">AI 전환 산출물</span><span class="brand-sub">썬더게임즈 · 원시인 형님들 키우기</span></span></a>
+  <span class="grow"></span>
+  <a class="top-link" href="../../../../index.html">리뷰 검수 웹서비스로</a>
+  <button class="icon-btn theme" type="button" aria-label="화면 테마 바꾸기"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</header>
+<div class="layout">
+  <div class="side-wrap" id="side"><nav class="side" aria-label="문서 목록">
+<a class="side-home" href="../../../index.html">홈</a>
+<details class="side-sec"><summary>통합 보고서 <span class="n">2</span></summary><ul><li><a href="../../../report/index.html">통합 보고서 — 썬더게임즈 AI 전환 보고서</a></li><li><a href="../../../report/report.html">썬더게임즈 AI 전환 컨설팅 — 통합 보고서</a></li></ul></details>
+<details class="side-sec"><summary>과제 1 · 리뷰 대응 자동화 <span class="n">4</span></summary><ul><li><a href="../../../review-service/README.html">원시인 형님들 키우기 리뷰 검수함</a></li><li><a href="../../../review-service/pipeline/README.html">운영 파이프라인</a></li><li><a href="../../../task1-review-automation/guide.html">과제 1 — Google Play·App Store 리뷰 대응 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../../../index.html" class="ext">리뷰 검수 웹서비스</a></li></ul></details>
+<details class="side-sec"><summary>과제 2 · 주간 이벤트 제작 <span class="n">7</span></summary><ul><li><a href="../../../task2/gallery.html">이미지 갤러리</a></li><li><a href="../../../task2-weekly-event/event_calendar.html">주간 이벤트 캘린더 — 2026-10-12(월) ~ 2026-12-06(일), 8주</a></li><li><a href="../../../task2-weekly-event/2026-w44-halloween/copy.json.html">다국어 문구(copy.json)</a></li><li><a href="../../../task2-weekly-event/2026-w44-halloween/event_brief.html">이벤트 기획서 — 형님들의 할로윈 호박 사냥</a></li><li><a href="../../../task2-weekly-event/2026-w44-halloween/glossary_additions.html">용어집 추가분 — 2026-w44-halloween</a></li><li><a href="../../../task2-weekly-event/2026-w44-halloween/store_submission.html">스토어 등록 시트 — 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li><li><a href="../../../task2-weekly-event/2026-w44-halloween/keyart/prompts.html">키아트 프롬프트와 재생성 이력 — W44 형님들의 할로윈 호박 사냥 (2026-w44-halloween)</a></li></ul></details>
+<details class="side-sec"><summary>과제 3 · 광고 성과 분석 <span class="n">12</span></summary><ul><li><a href="../../../task3-ads-automation/guide.html">과제 3 — Meta·Google 광고 운영과 성과 분석 자동화: 적용 방안과 구현 가이드</a></li><li><a href="../../../task3-ads-automation/sample/ads_daily_sample.csv.html">ads_daily_sample.csv</a></li><li><a href="../../../task3-ads-automation/sample/analyze_ads.py.html">analyze_ads.py</a></li><li><a href="../../../task3-ads-automation/sample/budget_config.json.html">budget_config.json</a></li><li><a href="../../../task3-ads-automation/sample/check_report_numbers.py.html">check_report_numbers.py</a></li><li><a href="../../../task3-ads-automation/sample/findings.json.html">findings.json</a></li><li><a href="../../../task3-ads-automation/sample/generate_sample_data.py.html">generate_sample_data.py</a></li><li><a href="../../../task3-ads-automation/sample/make_report.py.html">make_report.py</a></li><li><a href="../../../task3-ads-automation/sample/report_prompt.html">[가상 데이터 샘플] UA 일일 리포트 작성 프롬프트 (Claude API용)</a></li><li><a href="../../../task3-ads-automation/sample/sample_daily_report.html">sample_daily_report</a></li><li><a href="../../../task3-ads-automation/sample/sweep_seeds.py.html">sweep_seeds.py</a></li><li><a href="../../../task3-ads-automation/sample/test_check_report_numbers.py.html">test_check_report_numbers.py</a></li></ul></details>
+<details class="side-sec"><summary>실행 가이드 <span class="n">6</span></summary><ul><li><a href="../../../howto/README.html">실행 가이드 — Claude Code 하네스로 세 과제를 직접 돌리는 방법</a></li><li><a href="../../../howto/00_setup.html">00. 사전 준비 — 한 번만 하면 된다</a></li><li><a href="../../../howto/01_build_harness_prompts.html">01. 하네스를 처음부터 구성 요청하는 프롬프트</a></li><li><a href="../../../howto/01_task1_review_run.html">01. 과제 1 — 리뷰 대응을 매일·매주 실행하는 방법</a></li><li><a href="../../../howto/02_task2_weekly_event_run.html">02. 과제 2 — 주간 이벤트 키트를 매주 만드는 방법</a></li><li><a href="../../../howto/03_task3_ads_run.html">03. 과제 3 — 광고 운영·성과 분석 실행 방법</a></li></ul></details>
+<details class="side-sec" open><summary>하네스 구성 <span class="n">34</span></summary><ul><li><a href="../../CLAUDE.html">썬더게임즈 AI 전환 컨설팅</a></li><li><a href="../../agents/ads-growth-strategist.html">에이전트 · ads-growth-strategist</a></li><li><a href="../../agents/consulting-qa.html">에이전트 · consulting-qa</a></li><li><a href="../../agents/consulting-report-editor.html">에이전트 · consulting-report-editor</a></li><li><a href="../../agents/event-visual-designer.html">에이전트 · event-visual-designer</a></li><li><a href="../../agents/liveops-event-planner.html">에이전트 · liveops-event-planner</a></li><li><a href="../../agents/review-ops-analyst.html">에이전트 · review-ops-analyst</a></li><li><a href="../../agents/review-service-engineer.html">에이전트 · review-service-engineer</a></li><li><a href="../ad-performance-automation/SKILL.html">ad-performance-automation / SKILL.md</a></li><li><a href="../consulting-report/SKILL.html">consulting-report / SKILL.md</a></li><li><a href="SKILL.html" aria-current="page">review-response-ops / SKILL.md</a></li><li><a href="../review-web-service/SKILL.html">review-web-service / SKILL.md</a></li><li><a href="../thunder-ai-consulting/SKILL.html">thunder-ai-consulting / SKILL.md</a></li><li><a href="../weekly-event-production/SKILL.html">weekly-event-production / SKILL.md</a></li><li><a href="../ad-performance-automation/references/analysis-playbook.html">ad-performance-automation / references/analysis-playbook.md</a></li><li><a href="../ad-performance-automation/references/data-integration.html">ad-performance-automation / references/data-integration.md</a></li><li><a href="../ad-performance-automation/references/kpi-framework.html">ad-performance-automation / references/kpi-framework.md</a></li><li><a href="../consulting-report/references/roi-model.html">consulting-report / references/roi-model.md</a></li><li><a href="references/reply-guidelines.html">review-response-ops / references/reply-guidelines.md</a></li><li><a href="references/store-apis.html">review-response-ops / references/store-apis.md</a></li><li><a href="references/taxonomy.html">review-response-ops / references/taxonomy.md</a></li><li><a href="scripts/fetch_reviews.py.html">review-response-ops / scripts/fetch_reviews.py</a></li><li><a href="scripts/make_batches.py.html">review-response-ops / scripts/make_batches.py</a></li><li><a href="scripts/merge_for_site.py.html">review-response-ops / scripts/merge_for_site.py</a></li><li><a href="scripts/validate_drafts.py.html">review-response-ops / scripts/validate_drafts.py</a></li><li><a href="../review-web-service/references/data-contract.html">review-web-service / references/data-contract.md</a></li><li><a href="../review-web-service/references/deploy.html">review-web-service / references/deploy.md</a></li><li><a href="../review-web-service/references/ui-spec.html">review-web-service / references/ui-spec.md</a></li><li><a href="../weekly-event-production/references/keyart-prompting.html">weekly-event-production / references/keyart-prompting.md</a></li><li><a href="../weekly-event-production/references/localization-glossary.html">weekly-event-production / references/localization-glossary.md</a></li><li><a href="../weekly-event-production/references/store-event-specs.html">weekly-event-production / references/store-event-specs.md</a></li><li><a href="../weekly-event-production/scripts/compose_banner.py.html">weekly-event-production / scripts/compose_banner.py</a></li><li><a href="../weekly-event-production/scripts/gen_keyart.sh.html">weekly-event-production / scripts/gen_keyart.sh</a></li><li><a href="../weekly-event-production/scripts/make_store_assets.py.html">weekly-event-production / scripts/make_store_assets.py</a></li></ul></details>
+<details class="side-sec"><summary>고객 확인 요청 <span class="n">1</span></summary><ul><li><a href="../../../records/09_editor_open_questions.html">09 editor — 고객 확인 필요 사항</a></li></ul></details>
+<details class="side-sec"><summary>검증 기록 <span class="n">5</span></summary><ul><li><a href="../../../records/08_qa_A_report.html">QA 트랙 A — 리뷰 웹서비스 (배포 전 로컬)</a></li><li><a href="../../../records/08_qa_B_report.html">QA 트랙 B — 리뷰 초안 품질 검사</a></li><li><a href="../../../records/08_qa_C_report.html">QA 트랙 C — 주간 이벤트 키트 (W44 「형님들의 할로윈 호박 사냥」)</a></li><li><a href="../../../records/08_qa_D_report.html">QA 트랙 D — 광고 운영·성과 분석 자동화 (과제 3)</a></li><li><a href="../../../records/08_qa_E_report.html">QA 트랙 E — 통합 보고서</a></li></ul></details>
+</nav></div>
+  <main id="main" tabindex="-1">
+    <p class="crumbs">하네스 구성<span class="path">.claude/skills/review-response-ops/SKILL.md</span></p>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#전체-흐름">전체 흐름</a></li><li><a href="#3단계-배치-하나를-처리하는-방법-분석가용">3단계: 배치 하나를 처리하는 방법 (분석가용)</a><ul><li><a href="#출력-형식">출력 형식</a></li></ul></li><li><a href="#품질-기준-왜-이렇게-하는가">품질 기준 — 왜 이렇게 하는가</a></li><li><a href="#재실행">재실행</a></li><li><a href="#참고-문서">참고 문서</a></li></ul></details></aside>
+    <article class="doc"><table class="meta-table"><tr><th>name</th><td>review-response-ops</td></tr><tr><th>description</th><td>썬더게임즈(T.G Inc) 「원시인 형님들 키우기」 Google Play·App Store 리뷰를 수집하고, 유형 분류·한국어 번역·GM Mr. Bow 페르소나 답변 초안을 만들어 검증하는 운영 절차. 리뷰 수집, 리뷰 분류, 리뷰 번역, 답변 초안 생성, 리뷰 배치 처리, 템플릿 답변 개선, 리뷰 데이터 갱신·재수집·재분류 요청 시 사용한다. 리뷰를 보여주는 웹 화면 구현·배포는 review-web-service, 광고 성과 분석은 ad-performance-automation 스킬이 맡는다.</td></tr></table><h1 id="리뷰-대응-운영-절차">리뷰 대응 운영 절차</h1>
+<p>운영팀은 리뷰 1건에 평균 2분을 쓰고, 다른 업무에 밀리면 며칠 치를 몰아서 처리한다. 현재는 별점별 고정 문구 4~5종을 돌려 쓴다(예: 광고 불만에도 "기대에 부응하지 못해 사과드립니다"). 이 절차의 목표는 <strong>담당자가 검수만 하면 되는 상태</strong>까지 자동으로 만드는 것이다. 수집 → 분류 → 번역 → 초안 → (사람) 검수 → 등록 가운데 검수 앞까지를 맡는다.</p>
+<h2 id="전체-흐름">전체 흐름</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>담당</th>
+<th>도구</th>
+<th>산출물</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 수집</td>
+<td>오케스트레이터</td>
+<td><a class="code-link" href="scripts/fetch_reviews.py.html"><code>scripts/fetch_reviews.py</code></a></td>
+<td><code>_workspace/01_collector_reviews_raw.json</code></td>
+</tr>
+<tr>
+<td>2. 사전 분류·배치</td>
+<td>오케스트레이터</td>
+<td><a class="code-link" href="scripts/make_batches.py.html"><code>scripts/make_batches.py</code></a></td>
+<td><code>_workspace/02_batches/batch_{name}.json</code>, <code>manifest.json</code></td>
+</tr>
+<tr>
+<td>3. 분류·번역·초안</td>
+<td>review-ops-analyst (배치당 1명)</td>
+<td>이 문서 + references</td>
+<td><code>_workspace/03_analyst_drafts_{name}.json</code></td>
+</tr>
+<tr>
+<td>4. 검증</td>
+<td>분석가 본인 → 오케스트레이터</td>
+<td><a class="code-link" href="scripts/validate_drafts.py.html"><code>scripts/validate_drafts.py</code></a></td>
+<td>종료 코드 0</td>
+</tr>
+<tr>
+<td>5. 병합</td>
+<td>오케스트레이터</td>
+<td><a class="code-link" href="scripts/merge_for_site.py.html"><code>scripts/merge_for_site.py</code></a></td>
+<td><a class="code-link ext" href="https://github.com/namojo/game-review/blob/main/data/reviews.json"><code>game-review/data/reviews.json</code></a></td>
+</tr>
+</tbody>
+</table>
+<p>스크립트는 프로젝트 루트에서 <code>./.venv/bin/python</code> 으로 실행한다(google-play-scraper·playwright 설치됨). venv 가 없으면 <code>python3 -m venv --system-site-packages .venv &amp;&amp; ./.venv/bin/pip install google-play-scraper</code>.</p>
+<pre><code class="language-bash">./.venv/bin/python .claude/skills/review-response-ops/scripts/fetch_reviews.py \
+  --out _workspace/01_collector_reviews_raw.json --days 60 --max-per-source 200
+./.venv/bin/python .claude/skills/review-response-ops/scripts/make_batches.py \
+  --raw _workspace/01_collector_reviews_raw.json --outdir _workspace/02_batches
+</code></pre>
+<p>수집 기간은 운영 주기에 맞춘다. 일일 운영은 <code>--days 2</code>, 데모·현황 분석은 <code>--days 60</code>. 작성자 이름은 저장하지 않는다. 공개 사이트에 게시될 수 있기 때문이다.</p>
+<h2 id="3단계-배치-하나를-처리하는-방법-분석가용">3단계: 배치 하나를 처리하는 방법 (분석가용)</h2>
+<ol>
+<li>배치 파일을 읽는다. <code>style_examples</code> 에 언어별 기존 운영자 답변이 들어 있다. 이 말투와 서명(GM Mr. Bow)을 기준으로 삼는다.</li>
+<li><a class="code-link" href="references/taxonomy.html"><code>references/taxonomy.md</code></a> 로 리뷰마다 <code>category</code>·<code>sentiment</code>·<code>priority</code>·<code>route_to</code>·<code>needs_cs</code>·<code>flags</code> 를 정한다.</li>
+<li>실제 언어를 판별해 <code>detected_lang</code> 에 적는다. App Store 는 국가로 언어를 추정했으므로 틀릴 수 있다.</li>
+<li>한국어가 아니면 <code>translation_ko</code> 에 자연스러운 한국어 번역을 쓴다. 운영자가 원문을 몰라도 판단할 수 있어야 한다.</li>
+<li>답변을 쓴다. <a class="code-link" href="references/reply-guidelines.html"><code>references/reply-guidelines.md</code></a> 를 따른다.
+   - <code>route: "template"</code>(짧은 칭찬) → 배치 언어별로 먼저 만든 <strong>템플릿 3종</strong> 중 하나를 고르고 <code>reply_strategy: "template"</code>. 3종을 돌아가며 써서 같은 문구가 연속되지 않게 한다.
+   - <code>route: "llm"</code> → 리뷰 내용을 구체적으로 짚는 맞춤 답변, <code>reply_strategy: "personalized"</code>. 사전 분류가 template 이어도 내용상 문제가 보이면 personalized 로 바꾼다.</li>
+<li>한국어가 아니면 <code>reply_ko</code> 에 답변의 한국어 번역을 쓴다. 검수자가 답변 내용을 확인하는 용도다.</li>
+<li>결과 파일을 쓰고 검증한다. 오류가 0이 될 때까지 고친다.</li>
+</ol>
+<pre><code class="language-bash">./.venv/bin/python .claude/skills/review-response-ops/scripts/validate_drafts.py \
+  --batch _workspace/02_batches/batch_ko-1.json --drafts _workspace/03_analyst_drafts_ko-1.json
+</code></pre>
+<h3 id="출력-형식">출력 형식</h3>
+<pre><code class="language-json">{
+  &quot;batch&quot;: &quot;ko-1&quot;,
+  &quot;templates&quot;: { &quot;ko&quot;: [&quot;템플릿1&quot;, &quot;템플릿2&quot;, &quot;템플릿3&quot;] },
+  &quot;drafts&quot;: [
+    {
+      &quot;id&quot;: &quot;gp-ko-1a2b3c4d5e&quot;,
+      &quot;category&quot;: &quot;purchase_issue&quot;,
+      &quot;sentiment&quot;: &quot;negative&quot;,
+      &quot;priority&quot;: &quot;P1&quot;,
+      &quot;route_to&quot;: &quot;cs&quot;,
+      &quot;needs_cs&quot;: true,
+      &quot;summary_ko&quot;: &quot;광고 제거 구매 후 미적용&quot;,
+      &quot;detected_lang&quot;: &quot;ko&quot;,
+      &quot;translation_ko&quot;: null,
+      &quot;reply&quot;: &quot;안녕하세요, 원시인 형님들 키우기 GM Mr. Bow입니다. ...&quot;,
+      &quot;reply_ko&quot;: null,
+      &quot;reply_strategy&quot;: &quot;personalized&quot;,
+      &quot;confidence&quot;: 0.9,
+      &quot;flags&quot;: [&quot;refund_request&quot;]
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li><code>summary_ko</code> 는 30자 안팎의 명사형 요약이다. 대시보드의 이슈 목록에 그대로 쓰인다.</li>
+<li><code>confidence</code> 는 분류와 답변이 맞다고 확신하는 정도(0~1)다. 0.6 미만이면 <code>flags</code> 에 <code>needs_human</code> 을 넣는다.</li>
+<li>배치에 있는 모든 id 를 정확히 한 번씩 포함한다. 빠지면 화면에 '분석 대기'로 남는다.</li>
+</ul>
+<h2 id="품질-기준-왜-이렇게-하는가">품질 기준 — 왜 이렇게 하는가</h2>
+<ul>
+<li><strong>리뷰 내용을 짚는다</strong>: "광고가 3개씩 나온다"에는 광고 빈도에 대한 피드백을 팀에 전달하겠다고 답한다. 일반적인 사과만 하면 사용자는 읽지 않았다고 느끼고, 다른 잠재 사용자도 그렇게 본다. 스토어 답변은 1:1 응대가 아니라 <strong>공개 게시물</strong>이다.</li>
+<li><strong>약속하지 않는다</strong>: 날짜, 보상, 기능 추가를 확정하지 않는다. 지키지 못하면 다음 리뷰가 더 나빠진다.</li>
+<li><strong>금전·계정 문제는 고객센터로 넘긴다</strong>: 공개 답변에서 결제 정보나 계정 정보를 요구하지 않는다. 게임 내 [설정 &gt; 고객센터]로 안내하고, 무엇을 준비하면 빠른지(영수증의 주문번호, 게임 내 UID, 스크린샷)를 알려준다.</li>
+<li><strong>글자 수 한도</strong>: Google Play 답변은 350자(공백 포함)를 넘으면 API가 거부한다. 목표는 150~300자다.</li>
+</ul>
+<h2 id="재실행">재실행</h2>
+<ul>
+<li>새 리뷰만 추가(누적 운영): 기존 사이트 데이터를 기준으로 쌓는다. 덮어쓰면 기존 리뷰와 검수 상태가 사라진다.
+  <code>bash
+  fetch_reviews.py --out _workspace/01_collector_reviews_raw.json --days 2
+  make_batches.py --raw _workspace/01_collector_reviews_raw.json --outdir _workspace/02_batches \
+      --exclude-existing game-review/data/reviews.json      # 이미 ai 가 있는 id 는 빼고 새 id 만 배치
+  # (새 배치만 분석)
+  merge_for_site.py --workspace _workspace --out game-review/data/reviews.json \
+      --base game-review/data/reviews.json --keep-days 180 # id 기준 누적, stats 전체 재계산</code></li>
+<li>특정 배치만 다시: 해당 <code>03_analyst_drafts_{name}.json</code> 을 지우고 그 배치만 분석가에게 맡긴다.</li>
+<li>답변 톤 변경 요청: <a class="code-link" href="references/reply-guidelines.html"><code>references/reply-guidelines.md</code></a> 를 먼저 고치고 전 배치를 다시 실행한다. 지침과 결과가 어긋나지 않게 하기 위해서다.</li>
+</ul>
+<h2 id="참고-문서">참고 문서</h2>
+<ul>
+<li><a class="code-link" href="references/taxonomy.html"><code>references/taxonomy.md</code></a> — 유형·우선순위·담당 부서 판정 기준</li>
+<li><a class="code-link" href="references/reply-guidelines.html"><code>references/reply-guidelines.md</code></a> — 페르소나, 언어별 서명, 유형별 답변 전략, 금지 사항</li>
+<li><a class="code-link" href="references/store-apis.html"><code>references/store-apis.md</code></a> — 운영 전환 시 공식 API(수집·답변 등록)와 제약</li>
+</ul></article>
+  </main>
+</div>
+<footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>
+<script src="../../../assets/site.js" defer></script>
+</body>
+</html>

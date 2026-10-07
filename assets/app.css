@@ -158,6 +158,8 @@ a { color: var(--action); }
 }
 .tabs a:hover { background: var(--surface-2); color: var(--ink); }
 .tabs a[aria-current="page"] { background: var(--ink); color: var(--surface); }
+.docs-link { font-size: 14px; font-weight: 600; white-space: nowrap; text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+.docs-link:hover { background: var(--surface-2); }
 .icon-btn {
   display: inline-grid; place-items: center;
   width: 38px; height: 38px; border-radius: 8px;
@@ -564,6 +566,7 @@ kbd {
   :root { --gutter: 16px; --top-h: 104px; }
   .topbar { flex-wrap: wrap; gap: 8px 12px; padding-top: 10px; padding-bottom: 8px; }
   .brand { flex: 1 1 auto; }
+  .docs-link { padding: 6px 6px; font-size: 13px; }
   .tabs { order: 3; width: 100%; margin-left: 0; justify-content: space-between; }
   .tabs a { padding: 7px 8px; flex: 1; text-align: center; }
   .dash-grid { grid-template-columns: minmax(0, 1fr); }
