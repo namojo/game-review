@@ -43,7 +43,7 @@
 <li>결론: <strong>화면(SPA)은 통과. 차단 1건은 파이프라인 워크플로(A-6)</strong> — 실행하면 기존 리뷰 372/378건이 사라진다. 비차단 수정 요청 3건.</li>
 </ul>
 <h2 id="1-검사-결과">1. 검사 결과</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -167,11 +167,11 @@
 <td>—</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="2-실행한-시나리오-독립">2. 실행한 시나리오 (독립)</h2>
 <p><code>qa_a.py</code>(세션 스크래치패드): 대시보드 KPI 6개 ↔ stats 대조 → PoC 고지 → 인박스 "전체" 378행 → 정렬 순서 전수 대조 → 필터 6종(데이터 건수와 대조) → Play P1 상세: 기존 답변 비교 표시, 350/351자, A 단축키, 이모지 코드포인트 → 수정 후 승인·localStorage → 승인 후 351자 재편집 → App Store 351자 → JSON·CSV 내보내기 → <code>post_replies.py</code> dry-run → 설정 고지 → 390px 5화면 → 요청 호스트·오류 수집. 로컬 루트(8765)와 하위 경로(8766 <code>/game-review/</code>) 두 번 실행.</p>
 <h2 id="3-수정-요청">3. 수정 요청</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -211,7 +211,7 @@
 <td>점검 명령을 <code>"sk-ant-[A-Za-z0-9_-]{20,}"</code>처럼 실제 키 길이 패턴으로 바꾸면 오탐이 없어진다(리더 판단)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="4-재현-명령">4. 재현 명령</h2>
 <pre><code class="language-bash">python3 -m http.server -d game-review 8765            # 로컬 루트
 ./.venv/bin/python &lt;scratchpad&gt;/qa_a.py http://localhost:8765/
@@ -225,7 +225,7 @@ curl -si -X OPTIONS https://api.anthropic.com/v1/messages -H &quot;Origin: https
 <hr />
 <h2 id="5-재검증-2026-10-07-engineer-3차-수정-후">5. 재검증 (2026-10-07, engineer 3차 수정 후)</h2>
 <p>결론: <strong>통과. 지난 실패 3건(차단 A-6, 비차단 A-3b·A-5 경미)이 모두 해결됐다. 차단 이슈 0건.</strong> 재검증 중에 새로 찾은 비차단 1건(R-5)과 참고 1건(R-6)이 있다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -286,12 +286,12 @@ curl -si -X OPTIONS https://api.anthropic.com/v1/messages -H &quot;Origin: https
 <td>언어별 최근 N종(예: 6)만 남기거나, draft_replies가 기존 템플릿이 있는 언어는 새로 만들지 않게 한다(리더 판단)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>재현 스크립트(세션 스크래치패드): <code>qa_acc.py &lt;SDK python&gt;</code>(누적 병합, 결과 <code>acc/result.json</code>), <code>qa_a2.py [base_url]</code>(승인 해제·내보내기·fallback), <code>qa_a.py [base_url]</code>(화면 회귀). 로컬 서버는 검사 뒤 종료했다.</p>
 <hr />
 <h2 id="6-a-4-배포-후-재검증-2026-10-07-httpsnamojogithubiogame-review-저장소-namojogame-review-커밋-759a252">6. A-4 배포 후 재검증 (2026-10-07, https://namojo.github.io/game-review/ · 저장소 namojo/game-review 커밋 759a252)</h2>
 <p>결론: <strong>통과. 차단 이슈 0건, 새 결함 0건.</strong> 지난 비차단 R-5(고친 리뷰 재분석)와 R-6(템플릿 누적)도 반영된 것을 확인했다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -344,7 +344,7 @@ curl -si -X OPTIONS https://api.anthropic.com/v1/messages -H &quot;Origin: https
 <td><code>--max-templates</code> 기본 6(<code>merge_for_site.py:90,111</code>). C2에서 en에 새 템플릿 3종이 들어와도 언어별 최대 6종, 전체 63 → 63(가장 오래된 en 3종이 빠짐). 다시 나온 문구는 중복 없이 최신 쪽으로 옮긴다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>참고(수정 요청 아님): 상한이 "최신 6종"이라 매일 실행하면 분석가가 다듬은 초기 템플릿이 자동 생성 템플릿으로 차례로 바뀐다. 운영 중 템플릿 품질은 검수 화면에서 보면 된다.</p>
 <p>재현 스크립트(세션 스크래치패드): <code>qa_a.py &lt;url&gt;</code>, <code>qa_a2.py &lt;url&gt;</code>, <code>qa_a3.py &lt;url&gt; &lt;C2 data_reviews.json&gt;</code>, <code>qa_acc.py &lt;SDK python&gt;</code>, 클론 <code>gr_clone/</code>.</p></article>
   </main>

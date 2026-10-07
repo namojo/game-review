@@ -42,7 +42,7 @@
 <li><strong>검증 결과: 13개 언어 × 5개 필드 = 65개 필드 모두 한도 이내. 초과 0건.</strong> 줄바꿈, 연속 문장부호, 전부 대문자인 단어도 0건이다. 여유가 1자 이하인 필드는 5개다(es·de App Store 이름 30/30, pt·tr 이름 29/30, id 긴 설명 119/120). 고칠 때 글자를 늘리지 않는다.</li>
 </ul>
 <h2 id="0-제출-일정과-체크리스트">0. 제출 일정과 체크리스트</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>날짜</th>
@@ -83,7 +83,7 @@
 <td></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>등록 전 체크리스트</p>
 <ul>
 <li>[ ] <strong>기간</strong>: 시작 2026-10-26 00:00 KST(= 10-25 15:00 UTC), 종료 2026-11-01 23:59 KST(= 11-01 14:59 UTC). 두 스토어와 인게임이 같은 시각인가</li>
@@ -99,7 +99,7 @@
 </ul>
 <h2 id="1-app-store-인앱-이벤트">1. App Store 인앱 이벤트</h2>
 <h3 id="공통-설정">공통 설정</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>필드</th>
@@ -169,10 +169,10 @@
 <td><strong>글자 없는 원본</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="언어별-문구-이름-30-짧은-설명-50-긴-설명-120">언어별 문구 (이름 ≤30 · 짧은 설명 ≤50 · 긴 설명 ≤120)</h3>
 <p>App Store Connect 로케일 코드는 ko, en-US, pt-BR, es-MX, ru, ja, zh-Hant, id, th, tr, fr-FR, de-DE, vi로 넣는다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>언어</th>
@@ -303,10 +303,10 @@
 <td>117</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="2-google-play-프로모션-콘텐츠">2. Google Play 프로모션 콘텐츠</h2>
 <h3 id="공통-설정_1">공통 설정</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>필드</th>
@@ -366,10 +366,10 @@
 <td>Play 로케일: ko-KR, en-US, pt-BR, es-419, ru-RU, ja-JP, zh-TW, id, th, tr-TR, fr-FR, de-DE, vi</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="언어별-문구-태그라인-80-설명-500">언어별 문구 (태그라인 ≤80 · 설명 ≤500)</h3>
 <p>태그라인은 스포트라이트 형식 한도(라틴 문자 등 싱글바이트 48자, 한·중·일 더블바이트 23자)까지 맞췄다. 스포트라이트 노출을 받아도 잘리지 않는다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>언어</th>
@@ -472,9 +472,9 @@
 <td>456</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="3-글자-수-검증-요약">3. 글자 수 검증 요약</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>언어</th>
@@ -619,7 +619,7 @@
 <td>통과</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>검증 방법(재실행할 때):</p>
 <pre><code class="language-bash">python3 - &lt;&lt;'EOF'
 import json
@@ -634,7 +634,7 @@ print(&quot;검사 끝&quot;)
 EOF
 </code></pre>
 <h2 id="4-제출-이미지">4. 제출 이미지</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>용도</th>
@@ -675,12 +675,12 @@ EOF
 <td>있음(합성)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <blockquote>
 <p><strong>스킬 문서 정정 제안</strong>: <code>SKILL.md</code> 4단계는 합성 배너를 "인게임 공지·SNS·Play 프로모션용"이라고 적었다. 그러나 Google Play 공식 가이드라인은 프로모션 이미지에 글자를 넣지 못하게 한다(로고·슬로건·이벤트명 포함). <a class="code-link" href="../../harness/skills/weekly-event-production/references/store-event-specs.html"><code>references/store-event-specs.md</code></a>의 Play 이미지 항목도 "텍스트를 넣으면 잘릴 수 있다"가 아니라 "텍스트 금지, 정사각 이미지 필수, 안전 영역 15/10/20%"로 고쳐야 한다.</p>
 </blockquote>
 <h2 id="5-자동화-범위">5. 자동화 범위</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>스토어</th>
@@ -700,7 +700,7 @@ EOF
 <td>프로모션 콘텐츠를 만드는 공개 API를 찾지 못했다. Play Console → 프로모션 콘텐츠 → 이벤트 만들기 → Manage translations에서 이 시트의 표를 복사해 붙인다. 13개 언어 기준 약 20~30분</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="6-출처-2026-10-07-확인">6. 출처 (2026-10-07 확인)</h2>
 <ul>
 <li>Apple — In-App Events 개요·메타데이터·미디어 규격·배지·기간: https://developer.apple.com/app-store/in-app-events/</li>

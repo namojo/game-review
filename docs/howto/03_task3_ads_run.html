@@ -49,7 +49,7 @@ python3 test_check_report_numbers.py # 검증기 시험(원본 통과 + 변형 1
 python3 sweep_seeds.py 30            # 시드 30개 반복 검증
 python3 make_report.py --dry-run     # Claude API 에 보낼 요청 확인(키 불필요)
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>파일</th>
@@ -78,7 +78,7 @@ python3 make_report.py --dry-run     # Claude API 에 보낼 요청 확인(키 �
 <td>Claude 시스템·사용자 프롬프트</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>Claude로 리포트를 실제로 쓰게 하는 두 가지 방법</strong></p>
 <p>(1) API 키로:</p>
 <pre><code class="language-bash">pip install anthropic
@@ -105,7 +105,7 @@ python3 make_report.py               # 리포트 생성 → 숫자 검증. 실�
 </code></pre>
 <h2 id="3-실제-데이터-연결-순서">3. 실제 데이터 연결 순서</h2>
 <p><a href="../task3-ads-automation/guide.html">가이드</a> 4장·8장 요약이다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>단계</th>
@@ -130,7 +130,7 @@ python3 make_report.py               # 리포트 생성 → 숫자 검증. 실�
 <td>승인 기록(approvals 표)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><a class="code-link" href="../task3-ads-automation/sample/analyze_ads.py.html"><code>analyze_ads.py</code></a> 는 <code>--data</code>(CSV)와 <code>--config</code>(budget_config.json)만 읽는다. 실데이터를 같은 22개 표준 컬럼으로 맞추면 코드를 바꾸지 않고 돌릴 수 있다.</p>
 <pre><code class="language-bash">python3 analyze_ads.py --data /path/ads_daily_20261007.csv --config /path/budget_config.json --out findings.json
 # 기준일을 바꾸려면 --as-of 2026-10-06
@@ -143,7 +143,7 @@ python3 make_report.py               # 리포트 생성 → 숫자 검증. 실�
 echo $?                                                   # 0 = 통과(발송 가능), 1 = 발송 보류
 python3 test_check_report_numbers.py                      # 규칙을 고친 뒤 검증기 자체 시험
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>잡는 것</th>
@@ -156,7 +156,7 @@ python3 test_check_report_numbers.py                      # 규칙을 고친 뒤
 <td>ID·이름 같은 키가 없는 문장의 바꿔치기, 날짜, 숫자가 아닌 서술 오류(원인 추측, 조치 문구 왜곡)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>그래서 처음 8주는 담당자가 리포트를 상세 표와 대조해 검수한다.</p>
 <h2 id="5-매일-자동-실행">5. 매일 자동 실행</h2>
 <pre><code class="language-text">/schedule 매일 06:40(KST)에 이 프로젝트에서 &quot;어제 광고 데이터로 일일 리포트 만들어줘 — 검증 통과한 것만 메신저용 5줄로, 실패하면 실패 사유만&quot; 를 실행해줘

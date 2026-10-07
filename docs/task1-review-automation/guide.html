@@ -55,7 +55,7 @@
 <hr />
 <h2 id="1-현황-진단">1. 현황 진단</h2>
 <h3 id="11-고객이-알려-준-현재-방식원문">1.1 고객이 알려 준 현재 방식(원문)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -84,9 +84,9 @@
 <td>리뷰 1개당 2분</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="12-데이터로-확인한-사실-공개-리뷰-378건2026-08-08-10-06">1.2 데이터로 확인한 사실 — 공개 리뷰 378건(2026-08-08 ~ 10-06)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>지표</th>
@@ -163,9 +163,9 @@
 <td>[실측]</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="13-사람이-바로-봐야-할-것검수-화면에서-확인-가능">1.3 사람이 바로 봐야 할 것(검수 화면에서 확인 가능)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>사안</th>
@@ -200,7 +200,7 @@
 <td>운영</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="2-목표-흐름-자동과-사람의-역할">2. 목표 흐름 — 자동과 사람의 역할</h2>
 <pre><code>매일 09:00 KST  ─────────────── 자동 ───────────────   ── 사람(담당자) ──
@@ -208,7 +208,7 @@
 (공식 API)  (11개 유형,   (한국어   (GM Mr. Bow 말투,   (350자·언어·   (P1부터,     (승인분만
             P1~P3, 부서)   번역)    맞춤/템플릿)        금지 표현)     고치고 승인)  공식 API)
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>단계(고객 용어)</th>
@@ -261,7 +261,7 @@
 <td><code>post_replies.py --execute</code>(6.1절)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>원칙:</strong> 사람이 승인하지 않은 답변은 공개하지 않는다. AI는 날짜·보상·기능을 약속하지 않고, 결제·계정 문제에 공개 답변으로 개인정보를 묻지 않는다. 준비물(주문번호 GPA., UID)은 [설정 &gt; 고객센터]로 받게 안내한다(QA B: 금지 사항 위반 0건)[실측].</p>
 <hr />
 <h2 id="3-검수-화면-사용법-httpsnamojogithubiogame-review">3. 검수 화면 사용법 — https://namojo.github.io/game-review/</h2>
@@ -269,7 +269,7 @@
 <p>PoC 고지: 공개 리뷰 데이터로 만들었고 <strong>실제 스토어에 답변을 등록하지 않는다.</strong> 검수 상태는 지금 보고 있는 브라우저에만 저장된다.</p>
 </blockquote>
 <h3 id="31-화면-구성">3.1 화면 구성</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>탭</th>
@@ -294,7 +294,7 @@
 <td>Claude API 키(선택, 이 브라우저에만 저장)·모델·답변 톤, 테마, 검수 상태 백업·가져오기·초기화</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="32-하루-검수-루틴약-1015분-가정">3.2 하루 검수 루틴(약 10~15분 [가정])</h3>
 <ol>
 <li><strong>대시보드</strong>에서 한 줄 요약과 부서별 전달 목록을 본다. 몰림 경고(예: "러시아어 P1 14건이 몰렸습니다")가 있으면 링크를 눌러 해당 리뷰만 연다.</li>
@@ -305,7 +305,7 @@
 </ol>
 <p>키보드: <code>J</code>/<code>K</code> 이동 · <code>A</code> 승인 · <code>H</code> 보류 · <code>C</code> 복사 · <code>/</code> 검색 · <code>Esc</code> 닫기. 주소(<code>#/inbox/{id}</code>)가 바뀌므로 새로고침해도 같은 리뷰가 열린다.</p>
 <h3 id="33-안전장치qa로-확인함">3.3 안전장치(QA로 확인함)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>안전장치</th>
@@ -340,7 +340,7 @@
 <td>QA R-1 통과(378 → 378, 새 리뷰 3건 → 381)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="4-현재-템플릿-답변-vs-ai-맞춤-답변-실제-리뷰-3건">4. 현재 템플릿 답변 vs AI 맞춤 답변 — 실제 리뷰 3건</h2>
 <p>원문은 데이터 그대로 옮겼다(<code>reviews.json</code>의 <code>text</code>, <code>existing_reply.text</code>, <code>ai.reply</code>). "같은 문구 사용 횟수"는 343건의 운영 답변 가운데 글자까지 같은 답변의 수다[실측].</p>
@@ -348,7 +348,7 @@
 <blockquote>
 <p><strong>리뷰:</strong> 광고가 적당히 나와야지.. 이건 뭐 광고가 3개씩 나오네;</p>
 </blockquote>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>현재 운영 답변(같은 문구 18회 사용)</th>
@@ -361,14 +361,14 @@
 <td>안녕하세요, 원시인 형님들 키우기 GM Mr. Bow입니다. 광고가 한 번에 3개씩 나와 형님, 흐름이 끊기셨겠습니다. 죄송합니다. 광고 노출 빈도에 대한 말씀은 담당 팀에 그대로 전달하겠습니다. 소중한 의견 감사합니다.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>차이: 현재 답변은 무엇이 불만인지 말하지 않고 "꼭 반영해"라고 약속한다. AI 초안은 "3개씩"을 그대로 짚고, 약속 대신 전달만 말한다. 이 리뷰는 BM팀 주간 전달 목록에 들어간다.</p>
 <h3 id="42-접속-장애-gp-ru-36f3661138google-play-러시아어-별점-1-2026-09-20-버전-363-bugp1개발">4.2 접속 장애 — <code>gp-ru-36f3661138</code>(Google Play, 러시아어, 별점 1, 2026-09-20, 버전 3.63, bug/P1/개발)</h3>
 <blockquote>
 <p><strong>리뷰:</strong> Бесконечная "Проверка версии с сервера" с последующей молчаливой ошибкой и выбросом на рабочий стол. Так и не запустилась.
 (번역: 끝없는 "서버 버전 확인" 뒤에 조용히 오류가 나며 바탕화면으로 튕깁니다. 끝내 실행되지 않았습니다.)</p>
 </blockquote>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>현재 운영 답변(같은 문구 13회 사용)</th>
@@ -385,13 +385,13 @@
 <td>(번역) 게임이 서버 버전 확인에서 멈춰 실행되지 않아 죄송합니다. 개발팀에 전달했습니다. 접속이 되시면 [설정 &gt; 고객센터]로 기기 모델과 OS 버전을 보내 주세요.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>차이: 이 사용자는 게임이 켜지지 않는다. 그런데 현재 답변은 <strong>게임 안의</strong> 고객센터로 문의하라고 한다. AI 초안은 증상을 짚고, 접속이 될 때 보낼 준비물(기기 모델·OS 버전)을 알려 준다. 같은 증상이 14건 몰려 있다는 사실은 대시보드가 개발팀에 따로 알린다.</p>
 <h3 id="43-광고-시청-후-보상-미지급-gp-en-6c497efd01google-play-영어-별점-1-2026-08-15-버전-358-bugp2개발">4.3 광고 시청 후 보상 미지급 — <code>gp-en-6c497efd01</code>(Google Play, 영어, 별점 1, 2026-08-15, 버전 3.58, bug/P2/개발)</h3>
 <blockquote>
 <p><strong>리뷰:</strong> very bad game i suggest not to download it, when you watch add there is always one option" google play" and half of the time that resets the game and you not get your rewards after 60 second of add!!! I strongly suggest to not play this game unless you want to ruin your mood by a 60sec add then no reward</p>
 </blockquote>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>현재 운영 답변(같은 문구 6회 사용)</th>
@@ -404,11 +404,11 @@
 <td>Hello, this is GM Mr. Bow from Primitive Brothers. We're sorry the game resets after the ad and the reward doesn't arrive. That's frustrating after a full minute of watching. We've passed it to the dev team. Please send your device model and OS version via [Settings &gt; Customer Center].</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>차이: 현재 답변은 "기대에 못 미쳐 죄송하다"는 일반 사과다. 버그 신고인데 재현 정보를 받지 않는다. AI 초안은 "광고 뒤 재시작·보상 미지급"을 짚고 기기 정보를 받는다. 같은 증상 리뷰 4건(en 3·pt 1)이 개발 전달 목록에 모인다.</p>
 <hr />
 <h2 id="5-파이프라인-구조저장소-pipeline">5. 파이프라인 구조(저장소 <code>pipeline/</code>)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>파일</th>
@@ -453,7 +453,7 @@
 <td>저장소 Secret <code>ANTHROPIC_API_KEY</code></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="6-운영-전환-절차">6. 운영 전환 절차</h2>
 <h3 id="61-승인-버튼과-실제-등록은-다르다">6.1 승인 버튼과 실제 등록은 다르다</h3>
@@ -461,7 +461,7 @@
 <li>검수 화면의 <strong>승인 버튼은 이 브라우저에 승인 상태를 저장할 뿐이다.</strong> 스토어에는 아무것도 올라가지 않는다.</li>
 <li>실제 등록은 승인 답변 JSON을 받아 <strong><code>post_replies.py --execute</code></strong> 로 실행한다. 고객사 자격 증명이 필요하다.</li>
 </ul>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>스토어</th>
@@ -481,7 +481,7 @@
 <td>App Store Connect [사용자 및 액세스 → 통합]</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <pre><code class="language-bash">python pipeline/post_replies.py approved_replies.json                 # 미리 보기: 등록 대상·제외 사유 출력
 export GOOGLE_APPLICATION_CREDENTIALS=/secure/play-service-account.json
 export ASC_KEY_ID=... ASC_ISSUER_ID=... ASC_PRIVATE_KEY_PATH=/secure/AuthKey.p8
@@ -493,7 +493,7 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 <li><code>--execute</code> 경로는 자격 증명이 없어 PoC에서 실행하지 않았다(미리 보기만 검증)[실측]. <strong>첫 등록은 5건 이하로 시험한다.</strong></li>
 </ul>
 <h3 id="62-운영에-필요한-추가-개발">6.2 운영에 필요한 추가 개발</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -533,7 +533,7 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 <td>개발자 1명 약 2~3주 [가정: 위 1~5, 기존 파이프라인 코드 재사용, 화면은 데이터 읽기·쓰기만 API로 교체]</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="63-api-키-없이-쓰는-방법과-권장안">6.3 API 키 없이 쓰는 방법과 권장안</h3>
 <p><strong>A안 — 지금 규모(하루 약 6건)에 맞는 가벼운 운영</strong></p>
 <ul>
@@ -570,7 +570,7 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 </ul>
 <hr />
 <h2 id="7-운영-규칙">7. 운영 규칙</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>규칙</th>
@@ -603,10 +603,10 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 <td>"형님". 결제·계정·환불 답변에서는 가볍게 들리지 않는지 검수자가 판단한다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="8-비용과-효과">8. 비용과 효과</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -659,7 +659,7 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 <td>[가정] 토큰 수. 단가는 2026-09-25 기준 Anthropic 공시</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>정성 효과(수치화하지 않고 근거만 적는다):</strong>
 - <strong>맞춤 답변</strong>: 지금은 별점 1~2점 리뷰 53건에 18종 문구가 돌아간다. PoC에서는 칭찬이 아닌 리뷰 114건 중 110건이 내용을 짚은 맞춤 답변을 받았다. 맞춤 답변 236건은 모두 문구가 다르다(QA 지적으로 중복 2쌍을 고친 뒤)[실측].
 - <strong>속도</strong>: 답변까지 중앙값 3.3일 → P1은 24시간 안, 나머지는 다음 날 아침 검수.
@@ -667,7 +667,7 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 - <strong>번역 대기 제거</strong>: 13개 언어 리뷰를 담당자가 번역기에 붙여 넣지 않는다.</p>
 <hr />
 <h2 id="9-리스크와-알려진-제한">9. 리스크와 알려진 제한</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>리스크</th>
@@ -704,7 +704,7 @@ python pipeline/post_replies.py approved_replies.json --execute       # 실제 �
 <td>BYOK 브라우저 호출과 <code>--execute</code> 등록은 자격 증명이 없어 요청 형식만 확인했다. 전환 첫 주에 실제 키로 한 번씩 확인한다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="10-확인-요청-사항">10. 확인 요청 사항</h2>
 <p>전체 목록은 통합 보고서 7장과 <a class="code-link" href="../records/09_editor_open_questions.html"><code>_workspace/09_editor_open_questions.md</code></a> 에 있다. 과제 1 관련 항목은 다음과 같다.</p>

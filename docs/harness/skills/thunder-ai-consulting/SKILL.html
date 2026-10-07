@@ -37,7 +37,7 @@
     <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#고객과제-정의-고객-제공-원문-요약">고객·과제 정의 (고객 제공 원문 요약)</a></li><li><a href="#실행-모드-혼합">실행 모드: 혼합</a></li><li><a href="#에이전트-구성">에이전트 구성</a></li><li><a href="#작업-절차">작업 절차</a><ul><li><a href="#0단계-기존-작업-확인">0단계: 기존 작업 확인</a></li><li><a href="#1단계-준비-메인-직접">1단계: 준비 (메인 직접)</a></li><li><a href="#2단계-병렬-실행-한-메시지에서-동시에">2단계: 병렬 실행 (한 메시지에서 동시에)</a></li><li><a href="#3단계-연결-완료-알림을-받는-대로">3단계: 연결 (완료 알림을 받는 대로)</a></li><li><a href="#4단계-qa-루프">4단계: QA 루프</a></li><li><a href="#5단계-동결배포">5단계: 동결·배포</a></li><li><a href="#6단계-통합-보고서">6단계: 통합 보고서</a></li><li><a href="#7단계-마무리-보고-사용자에게-한국어">7단계: 마무리 보고 (사용자에게, 한국어)</a></li></ul></li><li><a href="#데이터-전달-경로">데이터 전달 경로</a></li><li><a href="#오류-처리">오류 처리</a></li><li><a href="#테스트-시나리오">테스트 시나리오</a><ul><li><a href="#정상-흐름">정상 흐름</a></li><li><a href="#오류-흐름">오류 흐름</a></li><li><a href="#부분-재실행-흐름">부분 재실행 흐름</a></li></ul></li></ul></details></aside>
     <article class="doc"><table class="meta-table"><tr><th>name</th><td>thunder-ai-consulting</td></tr><tr><th>description</th><td>썬더게임즈(T.G Inc, 부산) AI 전환 컨설팅 하네스의 오케스트레이터. 3개 과제 — (1) Google Play·App Store 리뷰 대응 자동화와 검수 웹서비스(namojo.github.io/game-review) 배포, (2) 게임 내 주간 이벤트 제작 자동화(기획·다국어·codex-image 키아트·배너·스토어 등록), (3) Meta·Google 광고 운영·성과 분석 자동화(IT마케팅 관점) — 를 에이전트 팀으로 실행하고 통합 보고서(HTML·Markdown)까지 만든다. &#x27;썬더게임즈 컨설팅&#x27;, &#x27;원시인 형님들 키우기&#x27;, &#x27;AI 전환 과제 실행&#x27;, &#x27;하네스 실행&#x27;, &#x27;리뷰 대응·이벤트·광고 자동화 전부&#x27; 요청과, 다시 실행, 재실행, 업데이트, 리뷰 데이터 갱신, 다음 주 이벤트 키트, 과제 N만 다시, 보고서 수정·보완, 재배포, 이전 결과 개선 같은 후속 요청에 사용한다. 개별 단계만 필요하면 해당 스킬(review-response-ops, review-web-service, weekly-event-production, ad-performance-automation, consulting-report)을 직접 쓴다.</td></tr></table><h1 id="썬더게임즈-ai-전환-컨설팅-오케스트레이터">썬더게임즈 AI 전환 컨설팅 — 오케스트레이터</h1>
 <h2 id="고객과제-정의-고객-제공-원문-요약">고객·과제 정의 (고객 제공 원문 요약)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -78,13 +78,13 @@
 <td>매일 1시간 이상</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ul>
 <li>대표작: 「원시인 형님들 키우기 : 문명 x 방치형 RPG」 — Play <code>com.primitivebrother.thunder.google</code>, App Store <code>1490207503</code></li>
 <li>사용자 요구: 과제 1은 실제 리뷰로 웹서비스를 만들어 <strong>https://namojo.github.io/game-review/</strong> 에 배포, 과제 2는 <strong>codex-image</strong> 로 이벤트 이미지 제작, 과제 3은 <strong>IT마케팅 전문가 관점</strong>의 구현 방안. 최종 산출물은 <strong>HTML 보고서 + Markdown</strong>(로컬 <code>deliverables/</code>). 공개 사이트에는 리뷰 서비스만 올린다.</li>
 </ul>
 <h2 id="실행-모드-혼합">실행 모드: 혼합</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>단계</th>
@@ -134,9 +134,9 @@
 <td>동결된 산출물만 인용</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="에이전트-구성">에이전트 구성</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>이름(name)</th>
@@ -197,7 +197,7 @@
 <td><code>deliverables/report/</code>, <a class="code-link" href="../../../task1-review-automation/guide.html"><code>deliverables/task1-review-automation/guide.md</code></a></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="작업-절차">작업 절차</h2>
 <h3 id="0단계-기존-작업-확인">0단계: 기존 작업 확인</h3>
 <ol>
@@ -266,7 +266,7 @@ strategist ─▶ task3-ads-automation/ ─▶ qa(D) ─▶ editor
 qa ─▶ 08_qa_*_report.md ─▶ 생산자 수정 / editor(알려진 제한)
 </code></pre>
 <h2 id="오류-처리">오류 처리</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>상황</th>
@@ -311,7 +311,7 @@ qa ─▶ 08_qa_*_report.md ─▶ 생산자 수정 / editor(알려진 제한)
 <td>직접 확인한 사실만 넣는다. 에이전트의 판단(왜 제외했는지 등)을 추측해 채우지 않는다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="테스트-시나리오">테스트 시나리오</h2>
 <h3 id="정상-흐름">정상 흐름</h3>
 <ol>

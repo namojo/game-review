@@ -45,7 +45,7 @@
 <hr />
 <h2 id="1-요약">1. 요약</h2>
 <h3 id="과제별-결론">과제별 결론</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>과제</th>
@@ -70,9 +70,9 @@
 <td>가상 데이터 분석 샘플. 심은 문제 7건 탐지, 오탐 0, 5줄 일일 리포트</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="기대-효과시간">기대 효과(시간)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>과제</th>
@@ -102,7 +102,7 @@
 <td>FTE 1명 = 연 1,920시간[가정]. 인건비 환산은 시간당 비용을 받은 뒤 계산한다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="바로-결정할-일-3가지">바로 결정할 일 3가지</h3>
 <ol>
 <li><strong>10/9(금)까지 할로윈 이벤트 스토어 제출 여부.</strong> App Store 사전 노출(10/12부터)과 Play 피처링 요청 마감(10/12)을 지키려면 이번 주에 제출해야 한다. 그 전에 [기획 확인 필요] 15건 가운데 두 가지를 먼저 정한다. #4 할로윈 주말 48시간 광고 없는 버프를 승인할지(B안: 하루 N회로 축소), #13 러시아 스토어 노출을 접속 장애 해결 뒤로 미룰지다.</li>
@@ -112,7 +112,7 @@
 <hr />
 <h2 id="2-진단">2. 진단</h2>
 <h3 id="21-고객이-알려-준-현재-방식원문-인용">2.1 고객이 알려 준 현재 방식(원문 인용)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>과제</th>
@@ -149,9 +149,9 @@
 <td>매일 1시간 이상</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="22-데이터로-확인한-사실-공개-리뷰-378건2026-08-08-10-06">2.2 데이터로 확인한 사실 — 공개 리뷰 378건(2026-08-08 ~ 10-06)</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>사실</th>
@@ -211,7 +211,7 @@
 <td>[실측] 과제 2 캘린더</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>이 데이터는 <strong>세 과제를 잇는다.</strong> 리뷰 분류 결과로 이벤트를 설계했고(과제 2), 같은 분류로 광고 피로와 광고 수익의 관계를 본다(과제 3).</p>
 <hr />
 <h2 id="3-과제별-적용-방안">3. 과제별 적용 방안</h2>
@@ -221,7 +221,7 @@
 TO-BE  리뷰 수집 → 유형 분류 → 번역 → 답변 초안 생성 → [담당자 검수] → [답변 등록]    매일 09:00
        └──────────── 자동(Claude Haiku 4.5 · Sonnet 5.5) ────────────┘   └── 사람 ──┘
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>자동</th>
@@ -234,12 +234,12 @@ TO-BE  리뷰 수집 → 유형 분류 → 번역 → 답변 초안 생성 → [
 <td>P1부터 읽고 고치고 승인, 고객센터·개발 전달, 등록 실행, 템플릿 세트 승인</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>PoC 결과</strong>
 - 검수 웹서비스: https://namojo.github.io/game-review/ (대시보드 · 검수 인박스 · 운영 가이드 · 설정). 공개 URL 시나리오 통과(33/34, 실패 1건은 수정 전 동작을 전제한 검사), 콘솔 오류 0, 390px 가로 스크롤 없음[실측, QA A]
 - 초안 품질: 378건 전수 기계 검사 통과, 언어별 표본 38건 중 34건 통과, 금지 사항 위반 0, 답변 언어 오류 0[실측, QA B]</p>
 <p><strong>현재 템플릿 답변 vs AI 맞춤 답변 — 실제 리뷰 3건(원문 인용)</strong></p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>리뷰(원문)</th>
@@ -264,7 +264,7 @@ TO-BE  리뷰 수집 → 유형 분류 → 번역 → 답변 초안 생성 → [
 <td>"Hello, this is GM Mr. Bow from Primitive Brothers. We're sorry the game resets after the ad and the reward doesn't arrive. That's frustrating after a full minute of watching. We've passed it to the dev team. Please send your device model and OS version via [Settings &gt; Customer Center]."</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>운영 전환(구현 가이드 요약)</strong></p>
 <ol>
 <li><strong>승인과 등록은 다르다.</strong> 화면의 승인 버튼은 브라우저에 저장만 한다. 실제 등록은 <code>post_replies.py --execute</code> 와 고객사 자격 증명으로 한다. Play에는 GCP 서비스 계정과 Play Console '리뷰 답변' 권한이, App Store에는 ASC API 키(.p8)·Key ID·Issuer ID가 필요하다. 답변 표시 명의: Play에서는 개발자 이름 'T.G Inc'로 보인다. App Store 조회 결과는 개발자 'T.G', 판매자 'Thundergames'이고, 답변 표시 명의는 App Store Connect에서 확인해야 한다(확인 요청 B-10). 'GM Mr. Bow'는 본문 서명이다.</li>
@@ -288,7 +288,7 @@ TO-BE  주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국�
        캘린더 초안(자동)  초안(자동)     키아트·배너(자동)  13개 언어(자동)  등록 시트(자동)
        [승인: 사람]       [수치 확정: 사람] [선택·검수: 사람]                 [제출·피처링 요청: 사람]
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>자동</th>
@@ -301,9 +301,9 @@ TO-BE  주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국�
 <td>주제 승인, 보상 수치·시스템 확인([기획 확인 필요] 15건), 키아트 선택·보정, 스토어 제출·피처링 요청</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>PoC 결과 — W44 「형님들의 할로윈 호박 사냥」(2026-10-26 ~ 11-01)</strong></p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -343,9 +343,9 @@ TO-BE  주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국�
 <td>[실측] <a class="code-link" href="../records/08_qa_C_report.html"><code>08_qa_C_report.md</code></a></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>리뷰 불만 → 이벤트 설계 연결</strong></p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>리뷰 신호</th>
@@ -374,7 +374,7 @@ TO-BE  주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국�
 <td>러시아 스토어 노출은 장애 해결 확인 뒤에 켠다 [기획 확인 필요 #13]</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>현지화·법규 판단(사람이 놓치기 쉬운 것)</strong>
 - ko: 10/29(목) <strong>이태원 참사 4주기</strong>에는 어떤 푸시도 보내지 않는다. 문구와 키아트에 파티·인파·가면 군중 표현을 쓰지 않는다.
 - ko 푸시: <strong>정보통신망법</strong> 제50조에 따라 "(광고)", 전송자 명칭, 수신 거부 방법을 넣는다. 21:00~08:00에는 보내지 않는다.
@@ -398,7 +398,7 @@ TO-BE  주제 선정 → 제목·내용 작성 → 이미지 제작 → 다국�
 TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다음 액션 제안 → 리포트 작성 → [승인: 사람]
        06:00 API     06:30 규칙 코드  이상·피로·과속  20% 상한·3일 쿨다운   Claude 5줄 + 숫자 검증   09:00
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>자동</th>
@@ -411,9 +411,9 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>제안 승인·거절, 원인 해석(시즌·경쟁작·스토어), 월 예산 배정, 교체 소재 요청</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>PoC 결과(가상 데이터 — 썬더게임즈 실제 광고 데이터가 아니다)</strong></p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -448,14 +448,14 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td><a class="code-link" href="../task3-ads-automation/sample/sample_daily_report.html"><code>sample_daily_report.md</code></a>(가상 데이터)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>도입 전에 알아야 할 플랫폼 변화(2026-10-07 공식 문서 확인)</strong>
 - Meta Marketing API <strong>v24.0은 2026-10-06에 만료</strong>됐다. 최신은 v26.0이다. 2026-01-12부터 <strong>7d_view·28d_view 어트리뷰션 값이 나오지 않는다</strong>.
 - <strong>레거시 Advantage+ 앱 캠페인</strong>은 v25.0부터 생성할 수 없고 v26.0부터 수정할 수 없다. 새 구조로 옮기면 학습이 다시 시작된다.
 - Google 앱 캠페인은 예산·목표 CPI를 <strong>한 번에 20% 넘게 바꾸지 말라</strong>고 권장한다. 자동 제안도 20% 상한과 3일 쿨다운을 지킨다.
 - <strong>러시아어 사용자 유입원 [확인 필요]:</strong> 2022년 Google·Meta가 러시아 광고를 중단했다는 보도가 있다(S52·S53). 2026년 현재도 유지되는지는 확인하지 못했다. ru 리뷰 41건의 유입원(자연 유입, 다른 매체, CIS 국가 집행)을 MMP로 확인한다.</p>
 <p><strong>구현 가이드 요약(로드맵)</strong></p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>단계</th>
@@ -480,13 +480,13 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>승인한 예산 변경만 API로 실행</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>리스크:</strong> 광고 수익을 코호트에 붙이지 못하면 ROAS 기반 제안을 믿기 어렵다. 그 경우 범위를 데이터 점검·이상 탐지·소재 피로로 줄인다. 교체 소재를 만들 사람이 없으면 피로 탐지 효과가 반감된다. 과제 2의 키아트 파이프라인을 UA 소재 변형에도 쓸 수 있다. [확인 필요] C1~C16(매체, 국가, MMP, 미디에이션, 예산, 목표 ROAS, 메신저, 개발 인력, 캠페인 구조 등)이 풀려야 2단계 설계가 확정된다.</p>
 <hr />
 <h2 id="4-roi">4. ROI</h2>
 <p><a class="code-link" href="../harness/skills/consulting-report/references/roi-model.html"><code>.claude/skills/consulting-report/references/roi-model.md</code></a> 방식이다. 모든 가정값을 드러낸다. 인건비 환산은 고객이 시간당 비용을 알려 준 뒤에 한다.</p>
 <h3 id="41-과제-1-리뷰-대응">4.1 과제 1 — 리뷰 대응</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -541,10 +541,10 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>[가정] 건당 토큰. 단가는 2026-09-25 Anthropic 공시</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>절감 시간은 작다. 효과는 품질(맞춤 답변), 속도(P1 24시간, 지금 중앙값 3.3일), 인사이트(부서별 주간 전달), 번역 대기 제거에서 난다.</p>
 <h3 id="42-과제-2-주간-이벤트">4.2 과제 2 — 주간 이벤트</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -599,10 +599,10 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>계산</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>범위가 넓은 이유가 있다. 이번 PoC는 1주 1회 실행이었고, 디자이너가 실제로 키아트를 고치는 시간은 아직 재지 않았다. W45~W48 4주 동안 실제 작업 시간을 기록해 범위를 좁힌다.</p>
 <h3 id="43-과제-3-광고-운영">4.3 과제 3 — 광고 운영</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -632,10 +632,10 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>계산</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>낭비 예산을 일찍 막는 효과는 실제 지출 데이터가 없어 금액으로 쓰지 않는다. 대신 메커니즘으로 설명한다. 샘플에서는 메타 iOS 추적 누락으로 3일간 KR $233·US $349가 측정되지 않았는데(가상), 매일 점검하면 첫날에 잡는다.</p>
 <h3 id="44-합계">4.4 합계</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>과제</th>
@@ -660,11 +660,11 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td><strong>약 483~1,076시간 · FTE 약 0.25~0.56명분</strong>(1 FTE = 연 1,920시간[가정])</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="5-통합-로드맵12주-2026-10-12-2027-01-03">5. 통합 로드맵(12주, 2026-10-12 ~ 2027-01-03)</h2>
 <p>공통 기반을 먼저 깐다. 세 과제가 같은 기반을 쓴다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>공통 기반</th>
@@ -694,8 +694,8 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>1·3</td>
 </tr>
 </tbody>
-</table>
-<table>
+</table></div>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>주차</th>
@@ -756,10 +756,10 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>2단계 안정화, 3단계(승인형 실행) 준비</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="6-거버넌스-ai-사용-원칙">6. 거버넌스 — AI 사용 원칙</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>원칙</th>
@@ -809,11 +809,11 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>공통</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="7-다음-단계확인-요청-사항">7. 다음 단계·확인 요청 사항</h2>
 <p>전체 목록과 담당 제안은 <a class="code-link" href="../records/09_editor_open_questions.html"><code>_workspace/09_editor_open_questions.md</code></a> 에 있다. 우선순위가 높은 것만 모았다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -896,11 +896,11 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>수시</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="8-부록">8. 부록</h2>
 <h3 id="81-데이터-출처">8.1 데이터 출처</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>데이터</th>
@@ -945,9 +945,9 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="82-용어">8.2 용어</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>용어</th>
@@ -992,10 +992,10 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>상근 인력 1명분(연 1,920시간 가정)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="83-하네스-사용법-이-프로젝트를-claude-code로-다시-돌리는-방법">8.3 하네스 사용법 — 이 프로젝트를 Claude Code로 다시 돌리는 방법</h3>
 <p>이 결과물은 Claude Code의 에이전트 하네스로 만들었다. 같은 프로젝트 폴더에서 Claude Code를 열고 한국어로 요청하면 다시 실행된다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>구성</th>
@@ -1020,9 +1020,9 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>thunder-ai-consulting, review-response-ops, review-web-service, weekly-event-production, ad-performance-automation, consulting-report</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>자주 쓰는 요청 예</strong></p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>이렇게 말하면</th>
@@ -1051,7 +1051,7 @@ TO-BE  데이터 수집 → 성과 분석 → 문제점 파악 → 예산·다�
 <td>웹서비스를 공개 전 점검 뒤 다시 올린다</td>
 </tr>
 </tbody>
-</table></article>
+</table></div></article>
   </main>
 </div>
 <footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>

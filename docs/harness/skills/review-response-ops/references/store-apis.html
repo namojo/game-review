@@ -38,7 +38,7 @@
     <article class="doc"><h1 id="운영-전환용-공식-api">운영 전환용 공식 API</h1>
 <p>PoC는 공개 데이터(google-play-scraper, iTunes RSS)로 수집했다. 운영에서는 아래 공식 API로 바꾼다. 출력 스키마(<a class="code-link" href="../scripts/fetch_reviews.py.html"><code>fetch_reviews.py</code></a> 의 필드)는 그대로 유지해, 그 뒤 단계(분류·초안·웹 화면)를 고치지 않아도 되게 한다.</p>
 <h2 id="google-play-android-publisher-api-v3-reply-to-reviews">Google Play — Android Publisher API v3 (Reply to Reviews)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -75,9 +75,9 @@
 <td><code>com.primitivebrother.thunder.google</code></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="app-store-app-store-connect-api">App Store — App Store Connect API</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -106,7 +106,7 @@
 <td><code>1490207503</code></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="권장-운영-구조">권장 운영 구조</h2>
 <pre><code>[매일 09:00 KST 스케줄러 — GitHub Actions 또는 Cloud Scheduler]
   1. 공식 API로 최근 리뷰 수집 → 기존 DB와 비교해 새 리뷰만 추림

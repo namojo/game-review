@@ -36,7 +36,7 @@
     <p class="crumbs">과제 2 · 주간 이벤트 제작<span class="path">deliverables/task2-weekly-event/2026-w44-halloween/event_brief.md</span></p>
     <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#1-기간">1. 기간</a></li><li><a href="#2-대상-국가언어">2. 대상 국가·언어</a></li><li><a href="#3-리뷰-인사이트-설계-연결">3. 리뷰 인사이트 → 설계 연결</a></li><li><a href="#4-미션-5개">4. 미션 (5개)</a></li><li><a href="#5-보상-구조">5. 보상 구조</a></li><li><a href="#6-인게임-공지-ko">6. 인게임 공지 (ko)</a></li><li><a href="#7-푸시-2종">7. 푸시 (2종)</a></li><li><a href="#8-확인-필요-항목">8. 확인 필요 항목</a><ul><li><a href="#기획-확인-필요-15건">[기획 확인 필요] — 15건</a></li><li><a href="#인게임-표기-확인-glossary_additionsmd">[인게임 표기 확인] — glossary_additions.md</a></li></ul></li><li><a href="#9-리스크와-현지화-주의">9. 리스크와 현지화 주의</a></li><li><a href="#10-성과-지표-이벤트-종료-후-w45-기획-전에-확인">10. 성과 지표 (이벤트 종료 후 W45 기획 전에 확인)</a></li><li><a href="#11-제작제출-일정">11. 제작·제출 일정</a></li></ul></details></aside>
     <article class="doc"><h1 id="이벤트-기획서-형님들의-할로윈-호박-사냥">이벤트 기획서 — 형님들의 할로윈 호박 사냥</h1>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>항목</th>
@@ -69,13 +69,13 @@
 <td>2026-10-07 · liveops-event-planner. 문구 원천은 <a class="code-link" href="copy.json.html"><code>copy.json</code></a> 하나다. 이 문서의 ko 문구는 거기서 옮겼다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <blockquote>
 <p>표시 규칙: <strong>[기획 확인 필요]</strong>는 게임 시스템·수치·사업 판단이 필요한 항목이다. <strong>[인게임 표기 확인]</strong>은 다국어 용어를 실제 게임 화면 표기와 맞춰야 하는 항목이다(<a class="code-link" href="glossary_additions.html"><code>glossary_additions.md</code></a>). 8장에 모았다.</p>
 </blockquote>
 <hr />
 <h2 id="1-기간">1. 기간</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>구분</th>
@@ -116,7 +116,7 @@
 <td>시작 14일 전부터. 피처링 요청 마감과 같은 날</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ul>
 <li><strong>전 세계 동시 진행</strong>(KST 00:00 시작)을 전제로 했다. 서버가 지역마다 따로 초기화한다면 <a class="code-link" href="copy.json.html"><code>copy.json</code></a> 공지의 시각을 고친다. [기획 확인 필요 #2]</li>
 <li>언어별 공지는 주력 국가의 현지 시각으로 적었다: pt 브라질리아(UTC-3), es 멕시코 중부(UTC-6), ru 모스크바(UTC+3), id WIB·th·vi(UTC+7), zh-TW(UTC+8), ja(UTC+9), tr(UTC+3), fr·de(UTC+1, 10/25 서머타임 종료 이후), en UTC.</li>
@@ -126,7 +126,7 @@
 <p>전 세계 13개 언어: <strong>ko · pt · en · ru · id · es · th</strong>(사용자 상위 7개) + ja · zh-TW · tr · fr · de · vi. 순서는 최근 60일 리뷰 언어 분포(378건)를 따랐다. Google Play 프로모션 콘텐츠는 현지화 문구가 있는 언어 사용자에게만 노출되므로, 리뷰가 있는 언어를 모두 넣었다.</p>
 <h2 id="3-리뷰-인사이트-설계-연결">3. 리뷰 인사이트 → 설계 연결</h2>
 <p>근거는 analyst 초안 <code>_workspace/03_analyst_drafts_*.json</code>(7개 배치, 378건)과 원본 <code>_workspace/01_collector_reviews_raw.json</code>이다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>리뷰 신호</th>
@@ -179,10 +179,10 @@
 <td>무과금 유저의 한정 보상 획득률</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="4-미션-5개">4. 미션 (5개)</h2>
 <p>모두 이벤트 화면의 미션 목록으로 제공한다. 미션을 달성하면 이벤트 재화 <strong>호박</strong>을 준다. 횟수와 지급량은 [기획 확인 필요 #9]다.</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -235,7 +235,7 @@
 <td>W45 장비 합성 페스티벌로 이어진다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ul>
 <li><strong>넣지 않은 것</strong>: 광고 시청 미션(광고 피로·광고 보상 버그 때문), 슬롯머신 미션(스토어 프로모션 문구에 사행성으로 비칠 표현을 피하기 위해. 인게임 미션에만 넣을지는 [#15와 함께 판단]), 결제 미션.</li>
 <li>형님의 탑과 보스토벌에 진입 조건이 있으면 신규 유저는 M3·M4를 할 수 없다. 이 경우 M1·M2만으로도 한정 보상을 받을 수 있게 지급량을 나눈다 [#3, #9].</li>
@@ -247,7 +247,7 @@
 복귀 형님(14일 이상 미접속) ──▶ 복귀 호박 꾸러미(첫 접속 1회)
 할로윈 주말 48시간 ──▶ 광고 버프 자동 적용(광고 시청 없음)
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>보상</th>
@@ -292,7 +292,7 @@
 <td>다른 재화로 바꿔 줄지 [#11]</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ul>
 <li><strong>수치는 확정하지 않는다.</strong> 보상량과 확률은 기획 확인 대상이다. 설계 기준은 하나만 둔다: "무과금 유저가 매일 접속하고 일일 미션을 하면 7일 안에 한정 보상과 누적 보상 마지막 단계에 닿는다."</li>
 <li><strong>광고 없는 버프의 대안(B안)</strong>: 주말 전체 자동 적용이 광고 수익 면에서 부담스러우면 "할로윈 주말 동안 하루 N회, 광고 없이 버프 켜기"로 줄인다. B안으로 가면 <a class="code-link" href="copy.json.html"><code>copy.json</code></a>에서 13개 언어의 해당 문장("광고를 보지 않아도 광고 버프가 자동으로 켜집니다")만 고친다. 이 문장은 공지·푸시 2·Play 설명·App Store 긴 설명에 한 문장씩만 들어 있어 따로 떼어 고칠 수 있다.</li>
@@ -331,7 +331,7 @@
 </code></pre>
 <p>13개 언어 공지는 <a class="code-link" href="copy.json.html"><code>copy.json</code></a> → <code>locales.{lang}.notice</code>에 있다.</p>
 <h2 id="7-푸시-2종">7. 푸시 (2종)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -354,7 +354,7 @@
 <td>주말 복귀 유도. 모든 지역에서 광고 없는 버프가 켜져 있는 시각</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <ul>
 <li><strong>ko 법규</strong>: 정보통신망법 제50조에 따라 영리 목적의 앱 푸시는 맨 앞에 "(광고)"와 전송자 명칭을 붙이고, 수신 거부 방법을 적는다. 21:00~08:00 발송에는 별도 야간 동의가 필요하므로 위 두 시각은 그 범위 밖으로 잡았다. 수신 거부 메뉴의 실제 이름은 [#14]다.</li>
 <li><strong>발송 금지</strong>: ko 10/29(목) 이태원 참사 4주기에는 추가 리마인드를 포함해 어떤 푸시도 보내지 않는다. pt·es에는 11/2 교환 마감 리마인드를 보내지 않는다(br Finados, mx 망자의 날 추모일).</li>
@@ -362,7 +362,7 @@
 </ul>
 <h2 id="8-확인-필요-항목">8. 확인 필요 항목</h2>
 <h3 id="기획-확인-필요-15건">[기획 확인 필요] — 15건</h3>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -463,11 +463,11 @@
 <td>사업</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="인게임-표기-확인-glossary_additionsmd">[인게임 표기 확인] — <a class="code-link" href="glossary_additions.html"><code>glossary_additions.md</code></a></h3>
 <p>보스토벌·형님의 탑·장비 합성·광고 버프·보석 같은 게임 용어를 언어마다 새로 번역했다. 실제 게임 화면 표기와 다르면 <a class="code-link" href="copy.json.html"><code>copy.json</code></a>만 고친다.</p>
 <h2 id="9-리스크와-현지화-주의">9. 리스크와 현지화 주의</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>국가·언어</th>
@@ -517,9 +517,9 @@
 <td>미션에서 광고를 뺐다. CS 매크로에 "광고 보상 미지급 → [설정 &gt; 고객센터]" 안내를 미리 준비한다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="10-성과-지표-이벤트-종료-후-w45-기획-전에-확인">10. 성과 지표 (이벤트 종료 후 W45 기획 전에 확인)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>지표</th>
@@ -554,9 +554,9 @@
 <td>사전 노출 2주의 효과</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="11-제작제출-일정">11. 제작·제출 일정</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>날짜</th>
@@ -606,7 +606,7 @@
 <td>운영</td>
 </tr>
 </tbody>
-</table></article>
+</table></div></article>
   </main>
 </div>
 <footer class="foot"><p>썬더게임즈 AI 전환 컨설팅 산출물 — 공개 데이터와 가상 샘플 데이터 기반 PoC. 실제 스토어·광고 계정에 반영하지 않았습니다.</p></footer>

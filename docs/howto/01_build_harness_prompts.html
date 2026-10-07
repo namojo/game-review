@@ -38,7 +38,7 @@
     <article class="doc"><h1 id="01-하네스를-처음부터-구성-요청하는-프롬프트">01. 하네스를 처음부터 구성 요청하는 프롬프트</h1>
 <p>이미 만든 하네스를 복사해 쓰는 방법은 <a href="00_setup.html">00_setup.md</a> 3절에 있다. 이 문서는 <strong>다른 게임, 다른 팀, 새 과제</strong>에 같은 방식으로 하네스를 새로 만들 때 쓴다. 하네스 플러그인(<code>harness@harness-marketplace</code>)을 설치해야 한다(00_setup.md 4절).</p>
 <p>하네스가 만들어 주는 것:</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>구성</th>
@@ -68,7 +68,7 @@
 <td>하네스 목표·호출 조건·변경 이력</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <hr />
 <h2 id="a-전체-3과제-하네스-구성-프롬프트-완성형">(a) 전체 3과제 하네스 구성 프롬프트 — 완성형</h2>
 <p>이 프로젝트를 만들 때 쓴 요청을 다듬은 것이다. <code>{ }</code> 부분만 바꾸면 다른 게임에도 쓸 수 있다. Claude Code를 프로젝트 폴더에서 열고 그대로 붙여 넣는다.</p>
@@ -156,7 +156,7 @@
 </code></pre>
 <hr />
 <h2 id="c-좋은-프롬프트의-요소">(c) 좋은 프롬프트의 요소</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>요소</th>
@@ -201,7 +201,7 @@
 <td>"다음 주 이벤트 키트"</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>나쁜 예</strong></p>
 <pre><code class="language-text">우리 게임 리뷰 자동으로 답변하는 거 만들어줘.
 </code></pre>
@@ -219,7 +219,7 @@
 <pre><code class="language-bash">ls .claude/agents .claude/skills
 sed -n 1,40p CLAUDE.md
 </code></pre>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>확인</th>
@@ -248,7 +248,7 @@ sed -n 1,40p CLAUDE.md
 <td>하네스를 만든 <strong>같은 세션</strong>에서는 새 에이전트 유형이 아직 등록되지 않아 <code>Agent type not found</code> 가 날 수 있다(2026-10-07 실제로 겪음). Claude Code를 다시 시작하거나, 오케스트레이터에 "이름을 붙여 호출하고 프롬프트 첫 줄에 역할 정의 파일을 읽게 한다"는 대응이 들어 있는지 본다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="하네스-개선-요청-harnessevolve">하네스 개선 요청 — <code>/harness:evolve</code></h2>
 <p>실행해 보고 아쉬운 점이 있으면, 그 경험을 하네스에 반영하게 한다. 개선 내용은 에이전트·스킬·오케스트레이터와 <a class="code-link" href="../harness/CLAUDE.html"><code>CLAUDE.md</code></a> 변경 이력에 남는다.</p>
 <pre><code class="language-text">/harness:evolve

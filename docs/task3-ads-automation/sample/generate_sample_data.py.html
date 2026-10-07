@@ -61,7 +61,7 @@ analyze_ads.py 가 잡아내야 할 문제를 일부러 심어 두었다.
     샘플에서는 설명을 위해 에셋 행을 더하면 캠페인 합계가 되도록 만들었다.
   - Google 에셋 성과는 국가 분할을 전제하지 않고([확인 필요]), analyze_ads.py 는 Google 소재를 캠페인 단위로 판정한다.
   - frequency 는 Meta 가 보고하는 최근 7일 누적값(도달 기반, 더하면 안 되는 값)으로 행마다 넣었다.
-  - installs 는 MMP 기준이라고 가정한다. iOS 는 실제로는 SKAdNetwork 집계·지연이 있다.</p></div><h2 id="code">코드 (266줄)</h2><pre><code class="language-py">#!/usr/bin/env python3
+  - installs 는 MMP 기준이라고 가정한다. iOS 는 실제로는 SKAdNetwork 집계·지연이 있다.</p></div><h2 id="code">코드 (266줄)</h2><pre class="code-view"><code class="language-py">#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 &quot;&quot;&quot;
 [가상 데이터 · SAMPLE ONLY] 「원시인 형님들 키우기」 UA 일일 성과 — 가상 광고 데이터 생성기

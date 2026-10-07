@@ -43,7 +43,7 @@
 <li>결론: <strong>통과(차단 이슈 0건)</strong>. 비차단 수정 요청 9건(아래 3절). 동결 전에 생산자가 반영하기를 권한다.</li>
 </ul>
 <h2 id="1-기계-검사-전수-378건">1. 기계 검사 (전수 378건)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>검사 항목</th>
@@ -198,12 +198,12 @@
 <td>3절 #7</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>분포(참고): category praise 262 / other 28 / bug 24 / ads 14 / content_request 13 / balance 12 / monetization 8 / purchase_issue 7 / account 6 / reward_issue 4. priority P1 30 / P2 48 / P3 300. personalized 236 / template 142.</p>
 <h2 id="2-언어별-표본-판정">2. 언어별 표본 판정</h2>
 <p>표본: 언어별로 무작위 섞은 뒤 P1 → 부정 → 낮은 별점 순으로 3건(zh-CN·zh-TW는 1건씩만 있음). 12개 언어×3 + 2 = <strong>38건</strong>. 표본과 별도로 칭찬 외 맞춤 답변 전부(56건)를 추가로 읽었다. 그 과정에서 찾은 문제는 표 아래에 따로 적었다.</p>
 <p>판정 기준: ① 리뷰 내용을 짚었는가 ② 금지 사항 없음 ③ 번역(translation_ko·reply_ko) 정확 ④ 분류·우선순위 타당 ⑤ 답변 언어 = 리뷰 언어</p>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>id</th>
@@ -676,7 +676,7 @@
 <td>경쟁작을 답변에서 반복하지 않음, competitor_mention 플래그</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>표본 결과: <strong>38건 중 통과 34, 실패 4</strong>(금지 사항 위반 0, 답변 언어 오류 0).</p>
 <p>표본 밖 추가 정독(칭찬 외 맞춤 답변 56건)에서 찾은 것:
 - gp-id-bd558c092f — 번역 오역으로 칭찬을 불만으로 읽음(3절 #2)
@@ -684,7 +684,7 @@
 - gp-ko-9f6f5d21c5 — "ev 어플"을 "이벤트"로 바꿔 씀(3절 #6)
 - 나머지 P1 30건 전부 읽음: 고객센터 안내·준비물·복구 비확정 원칙 지킴. gp-ko-c7a5b7ba04(환불 요청)는 환불을 확정하지 않고 needs_human 표시돼 있음.</p>
 <h2 id="3-수정-요청-모두-비차단">3. 수정 요청 (모두 비차단)</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -759,7 +759,7 @@
 <td>ko-1 맞춤 답변에 "형님" 호칭을 자연스럽게 넣는다(예: "형님, ~하셨군요"). 단, purchase_issue·account·환불 답변에서는 가볍게 들리지 않도록 검수자가 판단한다. 기준을 정하기 어려우면 reply-guidelines.md에 "부정·결제 답변에서의 호칭 사용"을 한 줄 추가하는 것을 리더에게 제안</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>참고(수정 요청 아님): gp-ru-37cf892857의 translation_ko는 요약 번역이라 "PC에서는 다른 닉네임을 쓴다", "전쟁 중인 나라 사람들도 문제 삼지 않았다"가 빠졌다. 검수자 판단에는 지장이 없다.</p>
 <h2 id="4-재현-명령">4. 재현 명령</h2>
 <pre><code class="language-bash">./.venv/bin/python .claude/skills/review-response-ops/scripts/validate_drafts.py --all _workspace; echo &quot;EXIT=$?&quot;

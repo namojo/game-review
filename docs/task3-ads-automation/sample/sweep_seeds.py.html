@@ -45,7 +45,7 @@
   - 탐지율: 심어 둔 문제(아래 EXPECTED)가 findings 에 (유형·캠페인·국가·소재)로 나온 시드 수 / N
   - 오탐: EXPECTED 에 없는 findings 항목 수. 시드마다 고유한 (유형·캠페인·국가·소재) 묶음을 1건으로 세고 N개 시드를 합한다.
           예산 제안(budget_proposals)은 오탐 수에 넣지 않고 따로 센다.
-  - 미끼(META_A+APP_AOS_T3 · ID · MV02)가 findings 에 나오면 오탐으로도 센다.</p></div><h2 id="code">코드 (76줄)</h2><pre><code class="language-py">#!/usr/bin/env python3
+  - 미끼(META_A+APP_AOS_T3 · ID · MV02)가 findings 에 나오면 오탐으로도 센다.</p></div><h2 id="code">코드 (76줄)</h2><pre class="code-view"><code class="language-py">#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 &quot;&quot;&quot;
 [가상 데이터로 시연] 시드 반복 검증 — 잡음만 바꿔 N번 돌리고 탐지율·오탐을 센다.

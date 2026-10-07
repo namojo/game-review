@@ -38,7 +38,7 @@
     <article class="doc"><h1 id="데이터-연동">데이터 연동</h1>
 <p>API 버전·필드 이름은 자주 바뀐다. 아래는 설계 기준이며, guide.md 를 쓸 때 공식 문서로 현재 버전을 확인하고 출처를 단다.</p>
 <h2 id="소스별-연동">소스별 연동</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>소스</th>
@@ -79,7 +79,7 @@
 <td>방치형은 광고 수익을 빠뜨리면 ROAS가 크게 낮게 나온다</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>썬더게임즈가 실제로 쓰는 MMP·미디에이션·BI는 확인 대상이다([확인 필요]). 확인 전에는 설계를 MMP 중립적으로 쓴다.</p>
 <h2 id="적재처리-구조-권장">적재·처리 구조 (권장)</h2>
 <pre><code>매일 06:00 KST  ─ 스케줄러(Cloud Scheduler 또는 GitHub Actions)
@@ -90,7 +90,7 @@
   └─ BI 대시보드(Looker Studio 등)는 ads_daily 를 직접 읽는다
 </code></pre>
 <h2 id="단계별-도구-선택">단계별 도구 선택</h2>
-<table>
+<div class="table-scroll"><table>
 <thead>
 <tr>
 <th>단계</th>
@@ -123,7 +123,7 @@
 <td>질문형 분석·실행까지. 권한·감사 로그·승인 절차 필수</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="보안">보안</h2>
 <ul>
 <li>토큰·개발자 토큰·서비스 계정 키는 비밀 관리자(GitHub Secrets, GCP Secret Manager)에만 둔다.</li>
