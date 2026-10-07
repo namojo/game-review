@@ -94,7 +94,7 @@ main:focus { outline: none; }
 .doc pre { position: relative; background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: 13px; line-height: 1.55; }
 .doc pre code { background: none; padding: 0; font-size: inherit; overflow-wrap: normal; white-space: pre; }
 /* 문서 속 프롬프트·표 형식 텍스트는 줄을 바꿔 전부 보이게 한다(복사 버튼은 원문 그대로 복사). 코드 보기 페이지(.py 등)는 들여쓰기를 지키려고 스크롤을 유지한다. */
-.doc pre:not(.code-view) code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.doc pre:not(.code-view) code { display: block; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; }
 /* 문단은 읽기 좋은 길이로, 표·코드·갤러리는 본문 폭 전체를 쓴다 */
 .doc > p, .doc > ul, .doc > ol, .doc > blockquote, .doc > h1, .doc > h2, .doc > h3, .doc > h4 { max-width: 52rem; }
 .copy-btn { position: absolute; top: 8px; right: 8px; font: 600 12px var(--font-ui); padding: 3px 10px; border-radius: 6px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer; }
@@ -109,8 +109,8 @@ main:focus { outline: none; }
 .doc table.kv { display: table; }
 .doc table.kv td { overflow-wrap: anywhere; min-width: 8em; }
 .doc table.kv table.kv { margin: 0; font-size: 13px; }
-.doc table.grid td, .doc table.grid th { white-space: nowrap; }
-.doc table.copy td { white-space: normal; min-width: 14em; }
+.doc table.csv td, .doc table.csv th { white-space: nowrap; }  /* 숫자 열만 한 줄로. copy·JSON 표는 칸 줄바꿈 */
+.doc table.copy td { white-space: normal; min-width: 10em; }
 .doc table.csv { font-size: 12px; font-variant-numeric: tabular-nums; }
 .num { font-variant-numeric: tabular-nums; }
 .meta-table { font-size: 13px !important; }

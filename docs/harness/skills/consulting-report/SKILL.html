@@ -34,7 +34,7 @@
 </nav></div>
   <main id="main" tabindex="-1">
     <p class="crumbs">하네스 구성<span class="path">.claude/skills/consulting-report/SKILL.md</span></p>
-    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#독자와-목적">독자와 목적</a></li><li><a href="#산출물">산출물</a></li><li><a href="#보고서-목차">보고서 목차</a></li><li><a href="#작성-원칙-이유">작성 원칙 — 이유</a></li><li><a href="#html-형식">HTML 형식</a></li><li><a href="#재실행">재실행</a></li><li><a href="#참고-문서">참고 문서</a></li></ul></details></aside>
+    <aside class="toc" aria-label="이 문서의 목차"><details open><summary>목차</summary><ul><li><a href="#독자와-목적">독자와 목적</a></li><li><a href="#산출물">산출물</a></li><li><a href="#보고서-목차">보고서 목차</a></li><li><a href="#작성-원칙-이유">작성 원칙 — 이유</a></li><li><a href="#html-형식">HTML 형식</a></li><li><a href="#문서-웹사이트-공개-httpsnamojogithubiogame-reviewdocs">문서 웹사이트 (공개: https://namojo.github.io/game-review/docs/)</a></li><li><a href="#재실행">재실행</a></li><li><a href="#참고-문서">참고 문서</a></li></ul></details></aside>
     <article class="doc"><table class="meta-table"><tr><th>name</th><td>consulting-report</td></tr><tr><th>description</th><td>썬더게임즈 AI 전환 컨설팅의 과제별 산출물(리뷰 대응 자동화·주간 이벤트 제작 자동화·광고 운영 분석 자동화)을 하나의 통합 보고서(HTML + Markdown)로 엮는 절차. 적용 방안, 구현 가이드, ROI(가정 명시), 로드맵, 거버넌스, 의사결정 요청 사항을 고객사 경영진·실무자가 함께 읽을 수 있게 정리한다. 통합 보고서 작성, 컨설팅 보고서 갱신, 경영진 요약, 로드맵·ROI 수정 요청 시 사용한다. 개별 과제의 상세 산출물 제작에는 쓰지 않는다.</td></tr></table><h1 id="통합-컨설팅-보고서">통합 컨설팅 보고서</h1>
 <h2 id="독자와-목적">독자와 목적</h2>
 <ul>
@@ -76,6 +76,13 @@
 <li>라이트·다크 모드, 인쇄용 CSS(<code>@media print</code>: 목차 숨김, 페이지 나눔).</li>
 <li>시각 방향은 <code>frontend-design</code> 스킬로 정한다. 컨설팅 보고서답게 절제하되 게임사 고객에 맞는 따뜻한 포인트 색을 하나 쓴다.</li>
 </ul>
+<h2 id="문서-웹사이트-공개-httpsnamojogithubiogame-reviewdocs">문서 웹사이트 (공개: https://namojo.github.io/game-review/docs/)</h2>
+<p>모든 산출물(보고서·과제별 가이드·실행 가이드 <code>deliverables/howto/</code>·이벤트 키트·광고 샘플·하네스 문서·QA 기록)을 웹에서 읽게 하는 정적 사이트다. Markdown 의 <code>.md</code> 링크와 <code>경로</code> 표기는 생성 페이지 링크로 바뀐다.</p>
+<pre><code class="language-bash">./.venv/bin/python deliverables/site_build/build_site.py   # → game-review/docs/ (약 3초, 깨진 링크·경로 노출 검사 포함)
+./.venv/bin/python deliverables/site_build/check_site.py   # Playwright 점검
+cd game-review &amp;&amp; git add -A docs &amp;&amp; git commit -m &quot;docs: …&quot; &amp;&amp; git push   # Pages 자동 재배포
+</code></pre>
+<p>반응형 규칙(2026-10-07 사용자 지적 "표와 콘텐츠가 잘려 보인다" 이후): 본문 칸은 화면 폭을 따라 넓어지고(최대 80rem), 1500px 미만에서는 목차를 본문 위로 올린다. <code>body</code> 에 <code>overflow-x: hidden</code> 을 쓰지 않는다(넘친 내용이 스크롤 없이 잘린다). 표는 <code>.table-scroll</code> 상자로 감싸 칸 안 글은 줄바꿈하고 좁은 화면에서만 상자 안에서 스크롤한다. 문서 속 코드 블록(프롬프트)은 줄바꿈, 코드 보기 페이지만 가로 스크롤. 배포 전 1920·1440·1024·390px 에서 페이지 가로 넘침 0을 확인한다.</p>
 <h2 id="재실행">재실행</h2>
 <ul>
 <li>특정 장만 수정: 해당 장만 고치고 요약(1장)의 수치가 본문과 일치하는지 다시 확인한다.</li>
