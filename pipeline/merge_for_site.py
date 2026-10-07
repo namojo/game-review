@@ -11,6 +11,7 @@ references/data-contract.md 와 같아야 한다.
     make_batches.py --exclude-existing 이 이런 리뷰를 다시 배치에 넣으므로 ai 는 새 초안으로 바뀐다.
     화면은 content_changed_at 보다 먼저 저장된 검수 상태를 버리고 '내용 변경됨'으로 표시한다.
   - 새 id 만 추가한다. stats 는 합친 전체 기준으로 다시 계산한다.
+  - templates 는 언어별로 중복을 없애고 최신 --max-templates 종(기본 6)만 남긴다(실행마다 3종씩 쌓이지 않게).
   - --keep-days N 을 주면 수집 기준 시각에서 N일보다 오래된 리뷰만 잘라낸다(기본: 자르지 않음).
 --base 가 없으면 이번 수집분만으로 만든다(처음 만들 때, 데모 재생성).
 
@@ -86,6 +87,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--base", help="누적 병합할 기존 reviews.json (없으면 이번 수집분만으로 만든다)")
     ap.add_argument("--keep-days", type=int, help="--base 와 함께: 수집 기준 시각에서 N일보다 오래된 리뷰를 잘라낸다")
+    ap.add_argument("--max-templates", type=int, default=6, help="--base 와 함께: 언어별로 남길 최신 템플릿 수(기본 6)")
     args = ap.parse_args()
 
     raw = json.load(open(os.path.join(args.workspace, "01_collector_reviews_raw.json"), encoding="utf-8"))
@@ -102,9 +104,11 @@ def main():
             merged_tpl[lang].extend(variants)
         for lang, variants in templates.items():
             for v in variants:
-                if v not in merged_tpl[lang]:
-                    merged_tpl[lang].append(v)
-        templates = merged_tpl
+                if v in merged_tpl[lang]:  # 다시 나온 문구는 최신 쪽으로 옮긴다
+                    merged_tpl[lang].remove(v)
+                merged_tpl[lang].append(v)
+        # 뒤쪽이 최신이다. 언어별 최신 N종만 남긴다
+        templates = {lang: list(dict.fromkeys(v))[-args.max_templates:] for lang, v in merged_tpl.items()}
     elif args.base:
         print(f"[warn] --base {args.base} 가 없어 이번 수집분만으로 만든다")
 
